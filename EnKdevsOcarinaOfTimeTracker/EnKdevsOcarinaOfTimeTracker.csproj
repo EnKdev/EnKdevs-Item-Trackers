@@ -1,0 +1,195 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Constants.cs~RF147907.TMP" />
+    <None Remove="Icons\Equip\OoT3D_Biggoron%27s_Sword_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Biggoron%27s_Sword_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Deku_Shield_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Deku_Shield_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Goron_Tunic_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Goron_Tunic_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Hover_Boots_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Hover_Boots_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Hylian_Shield_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Hylian_Shield_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Iron_Boots_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Iron_Boots_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Kokiri_Boots_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Kokiri_Sword_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Kokiri_Sword_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Kokiri_Tunic_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Master_Sword_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Master_Sword_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Mirror_Shield_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Mirror_Shield_Icon_Disabled.png" />
+    <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon.png" />
+    <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Fire_Medallion_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Fire_Medallion_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Forest_Medallion_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Forest_Medallion_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Goron%27s_Ruby_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Goron%27s_Ruby_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Kokiri%27s_Emerald_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Kokiri%27s_Emerald_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Light_Medallion_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Light_Medallion_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Shadow_Medallion_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Shadow_Medallion_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Spirit_Medallion_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Spirit_Medallion_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Water_Medallion_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Water_Medallion_Icon_Disabled.png" />
+    <None Remove="Icons\Quest\OoT3D_Zora%27s_Sapphire_Icon.png" />
+    <None Remove="Icons\Quest\OoT3D_Zora%27s_Sapphire_Icon_Disabled.png" />
+    <None Remove="Images\OoTTrackerGear.png" />
+    <None Remove="Images\OoTTrackerItems+Songs.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icons\Equip\OoT3D_Biggoron's_Sword_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Biggoron's_Sword_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Deku_Shield_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Deku_Shield_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Goron_Tunic_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Goron_Tunic_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Hover_Boots_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Hover_Boots_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Hylian_Shield_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Hylian_Shield_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Iron_Boots_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Iron_Boots_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Kokiri_Boots_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Kokiri_Sword_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Kokiri_Sword_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Kokiri_Tunic_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Master_Sword_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Master_Sword_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Mirror_Shield_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Mirror_Shield_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Zora_Tunic_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Fire_Medallion_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Fire_Medallion_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Forest_Medallion_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Forest_Medallion_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Goron's_Ruby_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Goron's_Ruby_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Kokiri's_Emerald_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Kokiri's_Emerald_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Light_Medallion_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Light_Medallion_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Shadow_Medallion_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Shadow_Medallion_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Spirit_Medallion_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Spirit_Medallion_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Water_Medallion_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Water_Medallion_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Zora's_Sapphire_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Quest\OoT3D_Zora's_Sapphire_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\OoTTrackerGear.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\OoTTrackerItems+Songs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Semver" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Icons\Item\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="EnKdevsOcarinaOfTimeTracker.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EnKdevsOcarinaOfTimeTracker"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="400" FontFamily="FOT-Chiaro Std B" Foreground="White">
+    <UserControl.DataContext>
+        <local:MainWindowViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="350"/>
+        </Grid.RowDefinitions>
+        <Grid Row="0" Column="0">
+            <Image Source="{Binding ItemSongBackground}"/>
+        </Grid>
+        <Grid Row="1" Column="0">
+            <Image Source="{Binding GearBackground}"/>
+            <!-- Medallions -->
+            <Image Source="{Binding LightMedallionImage}" Width="35" Height="35" Margin="-216, -250, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateLightMedallionCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateLightMedallionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ForestMedallionImage}" Width="35" Height="35" Margin="-104, -191, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateForestMedallionCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateForestMedallionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding FireMedallionImage}" Width="35" Height="35" Margin="-104, -73, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateFireMedallionCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateFireMedallionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding WaterMedallionImage}" Width="35" Height="35" Margin="-216, -13, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateWaterMedallionCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateWaterMedallionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ShadowMedallionImage}" Width="35" Height="35" Margin="-326, -195, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateShadowMedallionCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateShadowMedallionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SpiritMedallionImage}" Width="35" Height="35" Margin="-326, -77, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateSpiritMedallionCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateSpiritMedallionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Spiritual Stones -->
+            <Image Source="{Binding KokiriEmeraldImage}" Width="35" Height="35" Margin="-326, 88, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateKokiriEmeraldCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateKokiriEmeraldCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding GoronRubyImage}" Width="35" Height="35" Margin="-214, 88, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateGoronRubyCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateGoronRubyCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ZoraSapphireImage}" Width="35" Height="35" Margin="-103, 88, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateZoraSapphireCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateZoraSapphireCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Equips -->
+            <Image Source="{Binding KokiriSwordImage}" Width="45" Height="45" Margin="85, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateKokiriSwordCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateKokiriSwordCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MasterSwordImage}" Width="45" Height="45" Margin="210, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateMasterSwordCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateMasterSwordCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BiggoronSwordImage}" Width="45" Height="45" Margin="340, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBiggoronSwordCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBiggoronSwordCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding DekuShieldImage}" Width="45" Height="45" Margin="85, -120, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateDekuShieldCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateDekuShieldCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding HylianShieldImage}" Width="45" Height="45" Margin="210, -120, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateHylianShieldCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateHylianShieldCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MirrorShieldImage}" Width="45" Height="45" Margin="340, -120, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateMirrorShieldCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateMirrorShieldCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding KokiriTunicImage}" Width="45" Height="45" Margin="85, 5, 0, 0"/>
+            <Image Source="{Binding GoronTunicImage}" Width="45" Height="45" Margin="210, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateGoronTunicCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateGoronTunicCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ZoraTunicImage}" Width="45" Height="45" Margin="340, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateZoraTunicCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateZoraTunicCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding KokiriBootsImage}" Width="45" Height="45" Margin="85, 140, 0, 0"/>
+            <Image Source="{Binding IronBootsImage}" Width="45" Height="45" Margin="210, 140, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateIronBootsCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateIronBootsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding HoverBootsImage}" Width="45" Height="45" Margin="340, 140, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateHoverBootsCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateHoverBootsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+        </Grid>
+    </Grid>
+</UserControl>
