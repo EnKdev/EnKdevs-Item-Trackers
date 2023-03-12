@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Constants.cs~RF147907.TMP" />
     <None Remove="Icons\Equip\OoT3D_Biggoron%27s_Sword_Icon.png" />
     <None Remove="Icons\Equip\OoT3D_Biggoron%27s_Sword_Icon_Disabled.png" />
     <None Remove="Icons\Equip\OoT3D_Deku_Shield_Icon.png" />
@@ -49,6 +48,31 @@
     <None Remove="Icons\Quest\OoT3D_Water_Medallion_Icon_Disabled.png" />
     <None Remove="Icons\Quest\OoT3D_Zora%27s_Sapphire_Icon.png" />
     <None Remove="Icons\Quest\OoT3D_Zora%27s_Sapphire_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Biggest_Quiver_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Big_Bomb_Bag_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Big_Quiver_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Bomb_Bag_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Bomb_Bag_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Bullet_Bag_30_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Bullet_Bag_30_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Bullet_Bag_40_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Bullet_Bag_50_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Fairy_Ocarina_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Fairy_Ocarina_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Giant%27s_Wallet_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Golden_Gauntlets_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Golden_Scale_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Goron_Bracelet_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Goron_Bracelet_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Ocarina_of_Time_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Quiver_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Quiver_Icon_Disabled.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Silver_Gauntlets_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Silver_Scale_Icon.png" />
+    <None Remove="Icons\Upgrade\OoT3D_Silver_Scale_Icon_Disabled.png" />
     <None Remove="Images\OoTTrackerGear.png" />
     <None Remove="Images\OoTTrackerItems+Songs.png" />
   </ItemGroup>
@@ -172,6 +196,81 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Quest\OoT3D_Zora's_Sapphire_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Adult's_Wallet_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Adult's_Wallet_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Biggest_Quiver_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Big_Bomb_Bag_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Big_Quiver_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Bomb_Bag_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Bomb_Bag_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Bullet_Bag_30_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Bullet_Bag_30_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Bullet_Bag_40_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Bullet_Bag_50_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Fairy_Ocarina_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Fairy_Ocarina_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Giant's_Wallet_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Golden_Gauntlets_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Golden_Scale_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Goron_Bracelet_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Goron_Bracelet_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Ocarina_of_Time_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Quiver_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Quiver_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Silver_Gauntlets_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Silver_Scale_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Upgrade\OoT3D_Silver_Scale_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\OoTTrackerGear.png">

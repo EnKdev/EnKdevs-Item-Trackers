@@ -88,32 +88,32 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Title = Constants.AppTitle;
 
-        ItemSongBackground = "pack://application:,,,/Images/OoTTrackerItems+Songs.png";
-        GearBackground = "pack://application:,,,/Images/OoTTrackerGear.png";
+        ItemSongBackground = Constants.ItemSongBg;
+        GearBackground = Constants.GearBg;
 
-        KokiriEmeraldImage = "pack://application:,,,/Icons/Quest/OoT3D_Kokiri's_Emerald_Icon_Disabled.png";
-        GoronRubyImage = "pack://application:,,,/Icons/Quest/OoT3D_Goron's_Ruby_Icon_Disabled.png";
-        ZoraSapphireImage = "pack://application:,,,/Icons/Quest/OoT3D_Zora's_Sapphire_Icon_Disabled.png";
+        KokiriEmeraldImage = Constants.DisabledStones[0];
+        GoronRubyImage = Constants.DisabledStones[1];
+        ZoraSapphireImage = Constants.DisabledStones[2];
         
-        LightMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Light_Medallion_Icon_Disabled.png";
-        ForestMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Forest_Medallion_Icon_Disabled.png";
-        FireMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Fire_Medallion_Icon_Disabled.png";
-        WaterMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Water_Medallion_Icon_Disabled.png";
-        ShadowMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Shadow_Medallion_Icon_Disabled.png";
-        SpiritMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Spirit_Medallion_Icon_Disabled.png";
+        LightMedallionImage = Constants.DisabledMeds[0];
+        ForestMedallionImage = Constants.DisabledMeds[1];
+        FireMedallionImage = Constants.DisabledMeds[2];
+        WaterMedallionImage = Constants.DisabledMeds[3];
+        ShadowMedallionImage = Constants.DisabledMeds[4];
+        SpiritMedallionImage = Constants.DisabledMeds[5];
 
-        KokiriSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Kokiri_Sword_Icon_Disabled.png";
-        MasterSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Master_Sword_Icon_Disabled.png";
-        BiggoronSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Biggoron's_Sword_Icon_Disabled.png";
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Deku_Shield_Icon_Disabled.png";
-        HylianShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Hylian_Shield_Icon_Disabled.png";
-        MirrorShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Mirror_Shield_Icon_Disabled.png";
-        KokiriTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Kokiri_Tunic_Icon.png";
-        GoronTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Goron_Tunic_Icon_Disabled.png";
-        ZoraTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Zora_Tunic_Icon_Disabled.png";
-        KokiriBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Kokiri_Boots_Icon.png";
-        IronBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Iron_Boots_Icon_Disabled.png";
-        HoverBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Hover_Boots_Icon_Disabled.png";
+        KokiriSwordImage = Constants.DisabledEquip[0];
+        MasterSwordImage = Constants.DisabledEquip[1];
+        BiggoronSwordImage = Constants.DisabledEquip[2];
+        DekuShieldImage = Constants.DisabledEquip[3];
+        HylianShieldImage = Constants.DisabledEquip[4];
+        MirrorShieldImage = Constants.DisabledEquip[5];
+        KokiriTunicImage = Constants.KokiriTunicSprite;
+        GoronTunicImage = Constants.DisabledEquip[6];
+        ZoraTunicImage = Constants.DisabledEquip[7];
+        KokiriBootsImage = Constants.KokiriBootsSprite;
+        IronBootsImage = Constants.DisabledEquip[8];
+        HoverBootsImage = Constants.DisabledEquip[9];
     }
 
     #region Quest Items (Dungeon Rewards)
@@ -121,109 +121,109 @@ public partial class MainWindowViewModel : ObservableRecipient
     [RelayCommand]
     public void ActivateKokiriEmerald()
     {
-        KokiriEmeraldImage = "pack://application:,,,/Icons/Quest/OoT3D_Kokiri's_Emerald_Icon.png";
+        KokiriEmeraldImage = Constants.EnabledStones[0];
     }
 
     [RelayCommand]
     public void DeactivateKokiriEmerald()
     {
-        KokiriEmeraldImage = "pack://application:,,,/Icons/Quest/OoT3D_Kokiri's_Emerald_Icon_Disabled.png";
+        KokiriEmeraldImage = Constants.DisabledStones[0];
     }
 
     [RelayCommand]
     public void ActivateGoronRuby()
     {
-        GoronRubyImage = "pack://application:,,,/Icons/Quest/OoT3D_Goron's_Ruby_Icon.png";
+        GoronRubyImage = Constants.EnabledStones[1];
     }
 
     [RelayCommand]
     public void DeactivateGoronRuby()
     {
-        GoronRubyImage = "pack://application:,,,/Icons/Quest/OoT3D_Goron's_Ruby_Icon_Disabled.png";
+        GoronRubyImage = Constants.DisabledStones[1];
     }
 
     [RelayCommand]
     public void ActivateZoraSapphire()
     {
-        ZoraSapphireImage = "pack://application:,,,/Icons/Quest/OoT3D_Zora's_Sapphire_Icon.png";
+        ZoraSapphireImage = Constants.EnabledStones[2];
     }
 
     [RelayCommand]
     public void DeactivateZoraSapphire()
     {
-        ZoraSapphireImage = "pack://application:,,,/Icons/Quest/OoT3D_Zora's_Sapphire_Icon_Disabled.png";
+        ZoraSapphireImage = Constants.DisabledStones[2];
     }
 
     [RelayCommand]
     public void ActivateLightMedallion()
     {
-        LightMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Light_Medallion_Icon.png";
+        LightMedallionImage = Constants.EnabledMeds[0];
     }
 
     [RelayCommand]
     public void DeactivateLightMedallion()
     {
-        LightMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Light_Medallion_Icon_Disabled.png";
+        LightMedallionImage = Constants.DisabledMeds[0];
     }
 
     [RelayCommand]
     public void ActivateForestMedallion()
     {
-        ForestMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Forest_Medallion_Icon.png";
+        ForestMedallionImage = Constants.EnabledMeds[1];
     }
 
     [RelayCommand]
     public void DeactivateForestMedallion()
     {
-        ForestMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Forest_Medallion_Icon_Disabled.png";
+        ForestMedallionImage = Constants.DisabledMeds[1];
     }
 
     [RelayCommand]
     public void ActivateFireMedallion()
     {
-        FireMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Fire_Medallion_Icon.png";
+        FireMedallionImage = Constants.EnabledMeds[2];
     }
 
     [RelayCommand]
     public void DeactivateFireMedallion()
     {
-        FireMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Fire_Medallion_Icon_Disabled.png";
+        FireMedallionImage = Constants.DisabledMeds[2];
     }
 
     [RelayCommand]
     public void ActivateWaterMedallion()
     {
-        WaterMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Water_Medallion_Icon.png";
+        WaterMedallionImage = Constants.EnabledMeds[3];
     }
 
     [RelayCommand]
     public void DeactivateWaterMedallion()
     {
-        WaterMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Water_Medallion_Icon_Disabled.png";
+        WaterMedallionImage = Constants.DisabledMeds[3];
     }
 
     [RelayCommand]
     public void ActivateShadowMedallion()
     {
-        ShadowMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Shadow_Medallion_Icon.png";
+        ShadowMedallionImage = Constants.EnabledMeds[4];
     }
 
     [RelayCommand]
     public void DeactivateShadowMedallion()
     {
-        ShadowMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Shadow_Medallion_Icon_Disabled.png";
+        ShadowMedallionImage = Constants.DisabledMeds[4];
     }
 
     [RelayCommand]
     public void ActivateSpiritMedallion()
     {
-        SpiritMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Spirit_Medallion_Icon.png";
+        SpiritMedallionImage = Constants.EnabledMeds[5];
     }
 
     [RelayCommand]
     public void DeactivateSpiritMedallion()
     {
-        SpiritMedallionImage = "pack://application:,,,/Icons/Quest/OoT3D_Spirit_Medallion_Icon_Disabled.png";
+        SpiritMedallionImage = Constants.DisabledMeds[5];
     }
 
     #endregion
@@ -232,124 +232,124 @@ public partial class MainWindowViewModel : ObservableRecipient
     [RelayCommand]
     public void ActivateKokiriSword()
     {
-        KokiriSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Kokiri_Sword_Icon.png";
+        KokiriSwordImage = Constants.EnabledEquip[0];
     }
 
     [RelayCommand]
     public void DeactivateKokiriSword()
     {
-        KokiriSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Kokiri_Sword_Icon_Disabled.png";
+        KokiriSwordImage = Constants.DisabledEquip[0];
     }
 
     [RelayCommand]
     public void ActivateMasterSword()
     {
-        MasterSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Master_Sword_Icon.png";
+        MasterSwordImage = Constants.EnabledEquip[1];
     }
 
     [RelayCommand]
     public void DeactivateMasterSword()
     {
-        MasterSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Master_Sword_Icon_Disabled.png";
+        MasterSwordImage = Constants.DisabledEquip[1];
     }
 
     [RelayCommand]
     public void ActivateBiggoronSword()
     {
-        BiggoronSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Biggoron's_Sword_Icon.png";
+        BiggoronSwordImage = Constants.EnabledEquip[2];
     }
 
     [RelayCommand]
     public void DeactivateBiggoronSword()
     {
-        BiggoronSwordImage = "pack://application:,,,/Icons/Equip/OoT3D_Biggoron's_Sword_Icon_Disabled.png";
+        BiggoronSwordImage = Constants.DisabledEquip[2];
     }
     #endregion
     #region Shields
     [RelayCommand]
     public void ActivateDekuShield()
     {
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Deku_Shield_Icon.png";
+        DekuShieldImage = Constants.EnabledEquip[3];
     }
 
     [RelayCommand]
     public void DeactivateDekuShield()
     {
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Deku_Shield_Icon_Disabled.png";
+        DekuShieldImage = Constants.DisabledEquip[3];
     }
 
     [RelayCommand]
     public void ActivateHylianShield()
     {
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Hylian_Shield_Icon.png";
+        HylianShieldImage = Constants.EnabledEquip[4];
     }
 
     [RelayCommand]
     public void DeactivateHylianShield()
     {
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Hylian_Shield_Icon_Disabled.png";
+        HylianShieldImage = Constants.DisabledEquip[4];
     }
 
     [RelayCommand]
     public void ActivateMirrorShield()
     {
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Mirror_Shield_Icon.png";
+        MirrorShieldImage = Constants.EnabledEquip[5];
     }
 
     [RelayCommand]
     public void DeactivateMirrorShield()
     {
-        DekuShieldImage = "pack://application:,,,/Icons/Equip/OoT3D_Mirror_Shield_Icon_Disabled.png";
+        MirrorShieldImage = Constants.DisabledEquip[5];
     }
     #endregion
     #region Tunics
     [RelayCommand]
     public void ActivateGoronTunic()
     {
-        GoronTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Goron_Tunic_Icon.png";
+        GoronTunicImage = Constants.EnabledEquip[6];
     }
 
     [RelayCommand]
     public void DeactivateGoronTunic()
     {
-        GoronTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Goron_Tunic_Icon_Disabled.png";
+        GoronTunicImage = Constants.DisabledEquip[6];
     }
 
     [RelayCommand]
     public void ActivateZoraTunic()
     {
-        ZoraTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Zora_Tunic_Icon.png";
+        ZoraTunicImage = Constants.EnabledEquip[7];
     }
 
     [RelayCommand]
     public void DeactivateZoraTunic()
     {
-        ZoraTunicImage = "pack://application:,,,/Icons/Equip/OoT3D_Zora_Tunic_Icon_Disabled.png";
+        ZoraTunicImage = Constants.DisabledEquip[7];
     }
     #endregion
     #region Boots
     [RelayCommand]
     public void ActivateIronBoots()
     {
-        IronBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Iron_Boots_Icon.png";
+        IronBootsImage = Constants.EnabledEquip[8];
     }
 
     [RelayCommand]
     public void DeactivateIronBoots()
     {
-        IronBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Iron_Boots_Icon_Disabled.png";
+        IronBootsImage = Constants.DisabledEquip[8];
     }
 
     [RelayCommand]
     public void ActivateHoverBoots()
     {
-        IronBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Hover_Boots_Icon.png";
+        HoverBootsImage = Constants.EnabledEquip[9];
     }
 
     [RelayCommand]
     public void DeactivateHoverBoots()
     {
-        IronBootsImage = "pack://application:,,,/Icons/Equip/OoT3D_Hover_Boots_Icon_Disabled.png";
+        HoverBootsImage = Constants.DisabledEquip[9];
     }
     #endregion
     #endregion
