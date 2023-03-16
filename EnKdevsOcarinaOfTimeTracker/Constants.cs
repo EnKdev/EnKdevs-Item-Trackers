@@ -6,7 +6,7 @@ namespace EnKdevsOcarinaOfTimeTracker;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 2, "dev")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 3, "dev")}";
 
     public const string ItemSongBg = "pack://application:,,,/Images/OoTTrackerItems+Songs.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
@@ -79,6 +79,36 @@ public static class Constants
     public static List<string> DisabledUpgrade = new()
     {
         "pack://application:,,,/Icons/Upgrade/OoT3D_Adult's_Wallet_Icon_Disabled.png",
-        // Todo: Add rest of disabled upgrade icons.
-    }
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Bomb_Bag_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Bullet_Bag_30_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Fairy_Ocarina_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Goron_Bracelet_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Quiver_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Silver_Scale_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon_Disabled.png"
+    };
+
+    public static List<string> EnabledUpgrade = new()
+    {
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Adult's_Wallet_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Giant's_Wallet_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Bomb_Bag_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Big_Bomb_Bag_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Biggest_Bomb_Bag_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Bullet_Bag_30_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Bullet_Bag_40_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Bullet_Bag_50_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Fairy_Ocarina_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Ocarina_of_Time_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Goron_Bracelet_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Silver_Gauntlets_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Golden_Gauntlets_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Quiver_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Big_Quiver_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Biggest_Quiver_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Silver_Scale_Icon.png",
+        "pack://application:,,,/Icons/Upgrade/OoT3D_Golden_Scale_Icon.png",
+        "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon.png",
+        "pack://application:,,,/Icons/Item/OoT3D_Longshot_Icon.png"
+    };
 }

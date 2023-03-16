@@ -1,12 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace EnKdevsOcarinaOfTimeTracker;
-
-public class TrackerData
-{
-    [JsonProperty("questStatus")]
-    public DungeonRewardData RewardData { get; set; }
-}
+namespace EnKdevsOcarinaOfTimeTracker.Models;
 
 public class DungeonRewardData
 {

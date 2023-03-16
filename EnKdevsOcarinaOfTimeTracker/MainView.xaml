@@ -138,6 +138,43 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateHoverBootsCommand}"/>
                 </Image.InputBindings>
             </Image>
+            <!-- Upgradeables -->
+            <Image Source="{Binding OcarinaImage}" Width="45" Height="45" Margin="-220, 165, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeOcarinaCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DowngradeOcarinaCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ScaleImage}" Width="45" Height="45" Margin="370, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeScaleCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DowngradeScaleCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding StrengthImage}" Width="45" Height="45" Margin="285, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeStrengthCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DowngradeStrengthCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BombImage}" Width="45" Height="45" Margin="200, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeBombCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DowngradeBombCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding QuiverImage}" Width="45" Height="45" Margin="125, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeQuiverCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DowngradeQuiverCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BulletImage}" Width="45" Height="45" Margin="40, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeBulletCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DowngradeBulletCommand}"/>
+                </Image.InputBindings>
+            </Image>
         </Grid>
     </Grid>
 </UserControl>
