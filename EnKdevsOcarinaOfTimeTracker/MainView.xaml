@@ -20,15 +20,15 @@
         <Grid Row="1" Column="0">
             <Image Source="{Binding GearBackground}"/>
             <!-- Reward locations -->
-            <TextBlock Text="{Binding Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, 120, 0, 0"/>
-            <TextBlock Text="{Binding Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, 120, 0, 0"/>
-            <TextBlock Text="{Binding Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, 120, 0, 0"/>
-            <TextBlock Text="{Binding Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, -205, 0, 0"/>
-            <TextBlock Text="{Binding Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, -145, 0, 0"/>
-            <TextBlock Text="{Binding Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
-            <TextBlock Text="{Binding Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
-            <TextBlock Text="{Binding Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
-            <TextBlock Text="{Binding Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
+            <TextBlock Text="{Binding Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, 45, 0, 0"/>
+            <TextBlock Text="{Binding Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, 45, 0, 0"/>
+            <TextBlock Text="{Binding Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, 45, 0, 0"/>
+            <TextBlock Text="{Binding Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, -295, 0, 0"/>
+            <TextBlock Text="{Binding Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, -235, 0, 0"/>
+            <TextBlock Text="{Binding Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, -120, 0, 0"/>
+            <TextBlock Text="{Binding Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, -57, 0, 0"/>
+            <TextBlock Text="{Binding Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, -235, 0, 0"/>
+            <TextBlock Text="{Binding Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, -120, 0, 0"/>
             <!-- Medallions -->
             <Image Source="{Binding LightMedallionImage}" Width="35" Height="35" Margin="-216, -250, 0, 0">
                 <Image.InputBindings>
