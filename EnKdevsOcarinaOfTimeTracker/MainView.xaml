@@ -19,41 +19,57 @@
         </Grid>
         <Grid Row="1" Column="0">
             <Image Source="{Binding GearBackground}"/>
+            <!-- Reward locations -->
+            <TextBlock Text="{Binding Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, 120, 0, 0"/>
+            <TextBlock Text="{Binding Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, 120, 0, 0"/>
+            <TextBlock Text="{Binding Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, 120, 0, 0"/>
+            <TextBlock Text="{Binding Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, -205, 0, 0"/>
+            <TextBlock Text="{Binding Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, -145, 0, 0"/>
+            <TextBlock Text="{Binding Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
+            <TextBlock Text="{Binding Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
+            <TextBlock Text="{Binding Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
+            <TextBlock Text="{Binding Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0"/>
             <!-- Medallions -->
             <Image Source="{Binding LightMedallionImage}" Width="35" Height="35" Margin="-216, -250, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateLightMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateLightMedallionCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetLightLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding ForestMedallionImage}" Width="35" Height="35" Margin="-104, -191, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateForestMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateForestMedallionCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetForestLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding FireMedallionImage}" Width="35" Height="35" Margin="-104, -73, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateFireMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateFireMedallionCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetFireLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding WaterMedallionImage}" Width="35" Height="35" Margin="-216, -13, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateWaterMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateWaterMedallionCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetWaterLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding ShadowMedallionImage}" Width="35" Height="35" Margin="-326, -195, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateShadowMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateShadowMedallionCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetShadowLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding SpiritMedallionImage}" Width="35" Height="35" Margin="-326, -77, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateSpiritMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateSpiritMedallionCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetSpiritLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <!-- Spiritual Stones -->
@@ -61,18 +77,21 @@
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateKokiriEmeraldCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateKokiriEmeraldCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetEmeraldLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding GoronRubyImage}" Width="35" Height="35" Margin="-214, 88, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateGoronRubyCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateGoronRubyCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetRubyLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding ZoraSapphireImage}" Width="35" Height="35" Margin="-103, 88, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateZoraSapphireCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateZoraSapphireCommand}"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding SetSapphireLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <!-- Equips -->
@@ -173,6 +192,26 @@
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeBulletCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeBulletCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Collectibles and other things -->
+            <Image Source="{Binding GsImage}" Width="45" Height="45" Margin="-150, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseGSCountCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DecreaseGSCountCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <TextBlock Text="{Binding GsTokens}" Width="100" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-5, 275, 0, 0"/>
+            <Image Source="{Binding GerudoTokenImage}" Width="45" Height="45" Margin="-250, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateTokenCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateTokenCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ShardImage}" Width="45" Height="45" Margin="-345, 272, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateShardCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateShardCommand}"/>
                 </Image.InputBindings>
             </Image>
         </Grid>

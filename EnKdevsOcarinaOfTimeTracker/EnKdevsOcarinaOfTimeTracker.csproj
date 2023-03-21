@@ -279,6 +279,27 @@
     <Content Include="Images\OoTTrackerItems+Songs.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Remove="Icons\Other\OoT3D_Gerudo_Token_Icon.png" />
+    <Content Include="Icons\Other\OoT3D_Gerudo_Token_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Other\OoT3D_Gerudo_Token_Icon_Disabled.png" />
+    <Content Include="Icons\Other\OoT3D_Gerudo_Token_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Other\OoT3D_Shard_of_Agony_Icon.png" />
+    <Content Include="Icons\Other\OoT3D_Shard_of_Agony_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Other\OoT3D_Shard_of_Agony_Icon_Disabled.png" />
+    <Content Include="Icons\Other\OoT3D_Shard_of_Agony_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Other\OoT3D_Token_Icon.png" />
+    <Content Include="Icons\Other\OoT3D_Token_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Other\Rupee_Icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -289,6 +310,7 @@
 
   <ItemGroup>
     <Folder Include="Icons\Item\" />
+    <Folder Include="Icons\Other" />
   </ItemGroup>
 
 </Project>

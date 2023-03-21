@@ -12,6 +12,34 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _title;
 
+    // Reward Locations
+    [ObservableProperty]
+    private string _location1;
+
+    [ObservableProperty]
+    private string _location2;
+
+    [ObservableProperty]
+    private string _location3;
+
+    [ObservableProperty]
+    private string _location4;
+
+    [ObservableProperty]
+    private string _location5;
+
+    [ObservableProperty]
+    private string _location6;
+
+    [ObservableProperty]
+    private string _location7;
+
+    [ObservableProperty]
+    private string _location8;
+
+    [ObservableProperty]
+    private string _location9;
+
     // Quest Items (Dungeon Rewards)
     [ObservableProperty]
     private string _kokiriEmeraldImage;
@@ -95,7 +123,19 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     [ObservableProperty]
     private string _bulletImage;
+    
+    // Other
+    [ObservableProperty]
+    private string _gsImage;
 
+    [ObservableProperty] 
+    private int _gsTokens;
+
+    [ObservableProperty] 
+    private string _gerudoTokenImage;
+
+    [ObservableProperty] 
+    private string _shardImage;
 
     // Backgrounds
     [ObservableProperty]
@@ -137,9 +177,32 @@ public partial class MainWindowViewModel : ObservableRecipient
     private int _quiverState;
     private int _bulletState;
 
+    private bool _gotGerudoToken;
+    private bool _gotShard;
+
+    private int _location1Idx;
+    private int _location2Idx;
+    private int _location3Idx;
+    private int _location4Idx;
+    private int _location5Idx;
+    private int _location6Idx;
+    private int _location7Idx;
+    private int _location8Idx;
+    private int _location9Idx;
+
     public MainWindowViewModel()
     {
         Title = Constants.AppTitle;
+
+        Location1 = Constants.DungeonLocations[0];
+        Location2 = Constants.DungeonLocations[0];
+        Location3 = Constants.DungeonLocations[0];
+        Location4 = Constants.DungeonLocations[0];
+        Location5 = Constants.DungeonLocations[0];
+        Location6 = Constants.DungeonLocations[0];
+        Location7 = Constants.DungeonLocations[0];
+        Location8 = Constants.DungeonLocations[0];
+        Location9 = Constants.DungeonLocations[0];
 
         ItemSongBackground = Constants.ItemSongBg;
         GearBackground = Constants.GearBg;
@@ -174,6 +237,11 @@ public partial class MainWindowViewModel : ObservableRecipient
         QuiverImage = Constants.DisabledUpgrade[5];
         BombImage = Constants.DisabledUpgrade[1];
         BulletImage = Constants.DisabledUpgrade[2];
+
+        GsImage = Constants.GsIcon;
+
+        GerudoTokenImage = Constants.DisabledOther[0];
+        ShardImage = Constants.DisabledOther[1];
     }
 
     #region Quest Items (Dungeon Rewards)
@@ -193,6 +261,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
+    public void SetEmeraldLocation()
+    {
+        if (_location1Idx > 9)
+        {
+            // Reset back to 0
+            _location1Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location1Idx)
+            {
+                case 0:
+                    Location1 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location1 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location1 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location1 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location1 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location1 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location1 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location1 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location1 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location1 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location1Idx++;
+        });
+    }
+
+    [RelayCommand]
     public void ActivateGoronRuby()
     {
         GoronRubyImage = Constants.EnabledStones[1];
@@ -204,6 +321,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         GoronRubyImage = Constants.DisabledStones[1];
         _gotRuby = false;
+    }
+
+    [RelayCommand]
+    public void SetRubyLocation()
+    {
+        if (_location2Idx > 9)
+        {
+            // Reset back to 0
+            _location2Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location2Idx)
+            {
+                case 0:
+                    Location2 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location2 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location2 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location2 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location2 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location2 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location2 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location2 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location2 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location2 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location2Idx++;
+        });
     }
 
     [RelayCommand]
@@ -221,6 +387,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
+    public void SetSapphireLocation()
+    {
+        if (_location3Idx > 9)
+        {
+            // Reset back to 0
+            _location3Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location3Idx)
+            {
+                case 0:
+                    Location3 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location3 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location3 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location3 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location3 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location3 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location3 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location3 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location3 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location3 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location3Idx++;
+        });
+    }
+
+    [RelayCommand]
     public void ActivateLightMedallion()
     {
         LightMedallionImage = Constants.EnabledMeds[0];
@@ -232,6 +447,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         LightMedallionImage = Constants.DisabledMeds[0];
         _gotLightMed = false;
+    }
+
+    [RelayCommand]
+    public void SetLightLocation()
+    {
+        if (_location4Idx > 9)
+        {
+            // Reset back to 0
+            _location4Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location4Idx)
+            {
+                case 0:
+                    Location4 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location4 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location4 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location4 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location4 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location4 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location4 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location4 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location4 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location4 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location4Idx++;
+        });
     }
 
     [RelayCommand]
@@ -249,6 +513,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
+    public void SetForestLocation()
+    {
+        if (_location5Idx > 9)
+        {
+            // Reset back to 0
+            _location5Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location5Idx)
+            {
+                case 0:
+                    Location5 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location5 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location5 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location5 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location5 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location5 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location5 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location5 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location5 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location5 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location5Idx++;
+        });
+    }
+
+    [RelayCommand]
     public void ActivateFireMedallion()
     {
         FireMedallionImage = Constants.EnabledMeds[2];
@@ -260,6 +573,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         FireMedallionImage = Constants.DisabledMeds[2];
         _gotFireMed = false;
+    }
+
+    [RelayCommand]
+    public void SetFireLocation()
+    {
+        if (_location6Idx > 9)
+        {
+            // Reset back to 0
+            _location6Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location6Idx)
+            {
+                case 0:
+                    Location6 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location6 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location6 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location6 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location6 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location6 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location6 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location6 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location6 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location6 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location6Idx++;
+        });
     }
 
     [RelayCommand]
@@ -277,6 +639,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
+    public void SetWaterLocation()
+    {
+        if (_location7Idx > 9)
+        {
+            // Reset back to 0
+            _location7Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location7Idx)
+            {
+                case 0:
+                    Location7 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location7 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location7 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location7 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location7 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location7 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location7 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location7 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location7 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location7 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location7Idx++;
+        });
+    }
+
+    [RelayCommand]
     public void ActivateShadowMedallion()
     {
         ShadowMedallionImage = Constants.EnabledMeds[4];
@@ -291,6 +702,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
+    public void SetShadowLocation()
+    {
+        if (_location8Idx > 9)
+        {
+            // Reset back to 0
+            _location8Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location8Idx)
+            {
+                case 0:
+                    Location8 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location8 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location8 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location8 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location8 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location8 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location8 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location8 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location8 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location8 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location8Idx++;
+        });
+    }
+
+    [RelayCommand]
     public void ActivateSpiritMedallion()
     {
         SpiritMedallionImage = Constants.EnabledMeds[5];
@@ -302,6 +762,55 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         SpiritMedallionImage = Constants.DisabledMeds[5];
         _gotSpiritMed = false;
+    }
+
+    [RelayCommand]
+    public void SetSpiritLocation()
+    {
+        if (_location9Idx > 9)
+        {
+            // Reset back to 0
+            _location9Idx = 0;
+        }
+
+        App.Current.Dispatcher.BeginInvoke(() =>
+        {
+            switch (_location9Idx)
+            {
+                case 0:
+                    Location9 = Constants.DungeonLocations[0]; // ""
+                    break;
+                case 1:
+                    Location9 = Constants.DungeonLocations[1]; // "FREE"
+                    break;
+                case 2:
+                    Location9 = Constants.DungeonLocations[2]; // "DEKU"
+                    break;
+                case 3:
+                    Location9 = Constants.DungeonLocations[3]; // "DC"
+                    break;
+                case 4:
+                    Location9 = Constants.DungeonLocations[4]; // "JABU"
+                    break;
+                case 5:
+                    Location9 = Constants.DungeonLocations[5]; // "FRST"
+                    break;
+                case 6:
+                    Location9 = Constants.DungeonLocations[6]; // "FIRE"
+                    break;
+                case 7:
+                    Location9 = Constants.DungeonLocations[7]; // "WTR"
+                    break;
+                case 8:
+                    Location9 = Constants.DungeonLocations[8]; // "SHDW"
+                    break;
+                case 9:
+                    Location9 = Constants.DungeonLocations[9]; // "SPRT"
+                    break;
+            }
+
+            _location9Idx++;
+        });
     }
 
     #endregion
@@ -676,6 +1185,63 @@ public partial class MainWindowViewModel : ObservableRecipient
                 _bulletState = 0;
                 break;
         }
+    }
+    #endregion
+    #region Other
+    [RelayCommand]
+    public void IncreaseGSCount()
+    {
+        // Cap at 100
+        if (GsTokens == 100)
+        {
+            GsTokens = 100;
+        }
+        else
+        {
+            GsTokens++;
+        }
+    }
+
+    [RelayCommand]
+    public void DecreaseGSCount()
+    {
+        // Cap at 0
+        if (GsTokens == 0)
+        {
+            GsTokens = 0;
+        }
+        else
+        {
+            GsTokens--;
+        }
+    }
+
+    [RelayCommand]
+    public void ActivateToken()
+    {
+        GerudoTokenImage = Constants.EnabledOther[0];
+        _gotGerudoToken = true;
+    }
+
+    [RelayCommand]
+    public void DeactivateToken()
+    {
+        GerudoTokenImage = Constants.DisabledOther[0];
+        _gotGerudoToken = false;
+    }
+
+    [RelayCommand]
+    public void ActivateShard()
+    {
+        ShardImage = Constants.EnabledOther[1];
+        _gotShard = true;
+    }
+
+    [RelayCommand]
+    public void DeactivateShard()
+    {
+        ShardImage = Constants.DisabledOther[1];
+        _gotShard = false;
     }
     #endregion
 }

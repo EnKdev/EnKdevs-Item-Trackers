@@ -6,10 +6,24 @@ namespace EnKdevsOcarinaOfTimeTracker;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 3, "dev")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 4, "dev")}";
 
     public const string ItemSongBg = "pack://application:,,,/Images/OoTTrackerItems+Songs.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
+
+    public static List<string> DungeonLocations = new()
+    {
+        "",
+        "FREE",
+        "DEKU",
+        "DC",
+        "JABU",
+        "FRST",
+        "FIRE",
+        "WTR",
+        "SHDW",
+        "SPRT"
+    };
 
     public static List<string> DisabledStones = new()
     {
@@ -110,5 +124,19 @@ public static class Constants
         "pack://application:,,,/Icons/Upgrade/OoT3D_Golden_Scale_Icon.png",
         "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon.png",
         "pack://application:,,,/Icons/Item/OoT3D_Longshot_Icon.png"
+    };
+
+    public static string GsIcon = "pack://application:,,,/Icons/Other/OoT3D_Token_Icon.png";
+
+    public static List<string> DisabledOther = new()
+    {
+        "pack://application:,,,/Icons/Other/OoT3D_Gerudo_Token_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Other/OoT3D_Shard_of_Agony_Icon_Disabled.png"
+    };
+
+    public static List<string> EnabledOther = new()
+    {
+        "pack://application:,,,/Icons/Other/OoT3D_Gerudo_Token_Icon.png",
+        "pack://application:,,,/Icons/Other/OoT3D_Shard_of_Agony_Icon.png"
     };
 }
