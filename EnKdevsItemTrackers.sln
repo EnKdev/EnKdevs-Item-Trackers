@@ -5,11 +5,10 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnKdevsOcarinaOfTimeTracker", "EnKdevsOcarinaOfTimeTracker\EnKdevsOcarinaOfTimeTracker.csproj", "{B77E47D8-98E6-4D46-A001-47B5B4D2B2F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dev Progress", "Dev Progress", "{B83DE689-8420-4D65-8CC1-C5F278001C23}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27BED8DE-3D33-4DAE-A8FE-34AF0BBEA1C8}"
 	ProjectSection(SolutionItems) = preProject
-		progress-oot-tracker-code.json = progress-oot-tracker-code.json
-		progress-oot-tracker-general.json = progress-oot-tracker-general.json
-		progress-oot-tracker-ui.json = progress-oot-tracker-ui.json
+		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

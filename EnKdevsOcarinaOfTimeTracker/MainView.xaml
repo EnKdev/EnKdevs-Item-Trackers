@@ -16,6 +16,79 @@
         </Grid.RowDefinitions>
         <Grid Row="0" Column="0">
             <Image Source="{Binding ItemSongBackground}"/>
+            <!-- Songs -->
+            <Image Source="{Binding LullabyImage}" Width="45" Height="45" Margin="203, -258, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateLullabyCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateLullabyCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding EponaImage}" Width="45" Height="45" Margin="203, -160, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateEponaCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateEponaCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SariaImage}" Width="45" Height="45" Margin="203, -60, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateSariaCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateSariaCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SosImage}" Width="45" Height="45" Margin="203, 38, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateStormsCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateStormsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SunsImage}" Width="45" Height="45" Margin="203, 135, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateSunCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateSunCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SotImage}" Width="45" Height="45" Margin="203, 243, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateTimeCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateTimeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MinuetImage}" Width="45" Height="45" Margin="330, -258, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateMinuetCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateMinuetCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BoleroImage}" Width="45" Height="45" Margin="330, -160, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBoleroCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBoleroCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SerenadeImage}" Width="45" Height="45" Margin="330, -60, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateSerenadeCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateSerenadeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding RequiemImage}" Width="45" Height="45" Margin="330, 38, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateRequiemCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateRequiemCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding NocturneImage}" Width="45" Height="45" Margin="330, 135, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateNocturneCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateNocturneCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding PreludeImage}" Width="45" Height="45" Margin="330, 243, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivatePreludeCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivatePreludeCommand}"/>
+                </Image.InputBindings>
+            </Image>
         </Grid>
         <Grid Row="1" Column="0">
             <Image Source="{Binding GearBackground}"/>
@@ -201,7 +274,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding DecreaseGSCountCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <TextBlock Text="{Binding GsTokens}" Width="100" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-5, 275, 0, 0"/>
+            <TextBlock Text="{Binding GsTokens}" Width="45" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-60,296,0,0"/>
             <Image Source="{Binding GerudoTokenImage}" Width="45" Height="45" Margin="-250, 272, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateTokenCommand}"/>

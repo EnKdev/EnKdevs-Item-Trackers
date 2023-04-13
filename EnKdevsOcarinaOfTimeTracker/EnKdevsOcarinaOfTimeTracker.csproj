@@ -48,6 +48,30 @@
     <None Remove="Icons\Quest\OoT3D_Water_Medallion_Icon_Disabled.png" />
     <None Remove="Icons\Quest\OoT3D_Zora%27s_Sapphire_Icon.png" />
     <None Remove="Icons\Quest\OoT3D_Zora%27s_Sapphire_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Bolero_of_Fire_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Bolero_of_Fire_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Epona%27s_Song_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Epona%27s_Song_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Minuet_of_Forest_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Minuet_of_Forest_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Nocturne_of_Shadow_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Nocturne_of_Shadow_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Prelude_of_Light_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Prelude_of_Light_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Requiem_of_Spirit_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Requiem_of_Spirit_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Saria%27s_Song_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Saria%27s_Song_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Serenade_of_Water_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Serenade_of_Water_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Song_of_Storms_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Song_of_Storms_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Song_of_Time_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Song_of_Time_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Sun%27s_Song_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Sun%27s_Song_Icon_Disabled.png" />
+    <None Remove="Icons\Songs\OoT3D_Zelda%27s_Lullaby_Icon.png" />
+    <None Remove="Icons\Songs\OoT3D_Zelda%27s_Lullaby_Icon_Disabled.png" />
     <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon.png" />
     <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon_Disabled.png" />
     <None Remove="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png" />
@@ -311,6 +335,81 @@
   <ItemGroup>
     <Folder Include="Icons\Item\" />
     <Folder Include="Icons\Other" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icons\Songs\OoT3D_Bolero_of_Fire_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Bolero_of_Fire_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Epona's_Song_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Epona's_Song_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Minuet_of_Forest_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Minuet_of_Forest_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Nocturne_of_Shadow_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Nocturne_of_Shadow_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Prelude_of_Light_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Prelude_of_Light_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Requiem_of_Spirit_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Requiem_of_Spirit_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Saria's_Song_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Saria's_Song_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Serenade_of_Water_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Serenade_of_Water_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Song_of_Storms_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Song_of_Storms_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Song_of_Time_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Song_of_Time_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Sun's_Song_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Sun's_Song_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Zelda's_Lullaby_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Songs\OoT3D_Zelda's_Lullaby_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

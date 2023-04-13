@@ -6,7 +6,7 @@ namespace EnKdevsOcarinaOfTimeTracker;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 4, "dev")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 5, "dev")}";
 
     public const string ItemSongBg = "pack://application:,,,/Images/OoTTrackerItems+Songs.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
@@ -138,5 +138,37 @@ public static class Constants
     {
         "pack://application:,,,/Icons/Other/OoT3D_Gerudo_Token_Icon.png",
         "pack://application:,,,/Icons/Other/OoT3D_Shard_of_Agony_Icon.png"
+    };
+
+    public static List<string> DisabledSongs = new()
+    {
+        "pack://application:,,,/Icons/Songs/OoT3D_Zelda's_Lullaby_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Epona's_Song_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Saria's_Song_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Song_of_Storms_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Sun's_Song_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Song_of_Time_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Minuet_of_Forest_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Bolero_of_Fire_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Serenade_of_Water_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Requiem_of_Spirit_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Nocturne_of_Shadow_Icon_Disabled.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Prelude_of_Light_Icon_Disabled.png"
+    };
+
+    public static List<string> EnabledSongs = new()
+    {
+        "pack://application:,,,/Icons/Songs/OoT3D_Zelda's_Lullaby_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Epona's_Song_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Saria's_Song_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Song_of_Storms_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Sun's_Song_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Song_of_Time_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Minuet_of_Forest_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Bolero_of_Fire_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Serenade_of_Water_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Requiem_of_Spirit_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Nocturne_of_Shadow_Icon.png",
+        "pack://application:,,,/Icons/Songs/OoT3D_Prelude_of_Light_Icon.png"
     };
 }

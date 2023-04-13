@@ -5,6 +5,9 @@ namespace EnKdevsOcarinaOfTimeTracker.Models;
 
 public class TrackerData
 {
+    [JsonProperty("songs")]
+    public SongData SongData { get; set; }
+
     [JsonProperty("questStatus")]
     public DungeonRewardData RewardData { get; set; }
 
