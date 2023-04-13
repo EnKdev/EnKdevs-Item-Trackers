@@ -1,12 +1,14 @@
-# OoT Item Tracker
-An Ocarina of Time Item Tracker written in C# and XAML.
+# EnKdevs Ocarina of Time/Majora's Mask Trackers
+Two Trackers written in C# and XAML.
 
-Current Version: <b>1.0.5-dev</b>
-<br/>
-Next Version: <b>1.0.6-dev</b>
+Current Version (OoT): <b>1.0.5-dev</b><br/>
+Current Version (MM): <b>Not started yet</b>
+
+Next Version (OoT): <b>1.0.6-ootDev</b><br/>
+Next Version (MM): <b>1.0.0-mmDev</b>
 <br/>
 
-### On plan for 1.0.6-dev:
+### On plan for 1.0.6-ootDev:
 
 - First implementation of Data Saving/Data Loading.
 - First General Items (Deku Sticks, Deku Nuts, etc) being added.
