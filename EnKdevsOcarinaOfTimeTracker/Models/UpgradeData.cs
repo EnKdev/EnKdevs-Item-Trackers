@@ -7,9 +7,6 @@ public class UpgradeData
     [JsonProperty("ocarinaState")]
     public int OcarinaState { get; set; }
 
-    [JsonProperty("walletState")]
-    public int WalletState { get; set; }
-
     [JsonProperty("bombState")]
     public int BombState { get; set; }
 

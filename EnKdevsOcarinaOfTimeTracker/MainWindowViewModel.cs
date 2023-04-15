@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Windows;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using EnKdevsOcarinaOfTimeTracker.Data;
+using EnKdevsOcarinaOfTimeTracker.Models;
 using Semver;
 
 namespace EnKdevsOcarinaOfTimeTracker;
@@ -314,6 +317,13 @@ public partial class MainWindowViewModel : ObservableRecipient
     private int _location7Idx;
     private int _location8Idx;
     private int _location9Idx;
+
+    private int _childTradeStage;
+    private int _adultTradeStage;
+
+    private int _hookState;
+
+    private TrackerData _trackerData;
 
     public MainWindowViewModel()
     {
@@ -1420,6 +1430,121 @@ public partial class MainWindowViewModel : ObservableRecipient
         }
 
         _acquiredItems.Remove(targetItem);
+    }
+
+    private void PrepareData()
+    {
+        _trackerData = new TrackerData
+        {
+            SongData = new SongData
+            {
+                SongLullaby = _gotLullaby,
+                SongEpona = _gotEpona,
+                SongSaria = _gotSaria,
+                SongStorms = _gotStorms,
+                SongSuns = _gotSuns,
+                SongTime = _gotTime,
+                SongMinuet = _gotMinuet,
+                SongBolero = _gotBolero,
+                SongSerenade = _gotSerenade,
+                SongRequiem = _gotRequiem,
+                SongNocturne = _gotNocturne,
+                SongPrelude = _gotPrelude
+            },
+            RewardData = new DungeonRewardData
+            {
+                GotEmerald = _gotEmerald,
+                GotRuby = _gotRuby,
+                GotSapphire = _gotSapphire,
+                GotLightMedallion = _gotLightMed,
+                GotForestMedallion = _gotForestMed,
+                GotFireMedallion = _gotFireMed,
+                GotWaterMedallion = _gotWaterMed,
+                GotSpiritMedallion = _gotSpiritMed,
+                GotShadowMedallion = _gotShadowMed
+            },
+            EquipData = new EquipData
+            {
+                Boots = new BootsData
+                {
+                    GotIronBoots = _gotIronBoots,
+                    GotHoverBoots = _gotHoverBoots
+                },
+                Shields = new ShieldData
+                {
+                    GotDekuShield = _gotDekuShield,
+                    GotHylianShield = _gotHylianShield,
+                    GotMirrorShield = _gotMirrorShield
+                },
+                Swords = new SwordData
+                {
+                    GotKokiriSword = _gotKokiriSword,
+                    GotMasterSword = _gotMasterSword,
+                    GotBiggoronSword = _gotMasterSword
+                },
+                Tunics = new TunicData
+                {
+                    GotGoronTunic = _gotGoronTunic,
+                    GotZoraTunic = _gotZoraTunic
+                }
+            },
+            TradeData = new TradeData
+            {
+                TradeStageChild = _childTradeStage,
+                TradeStageAdult = _adultTradeStage
+            },
+            UpgradeData = new UpgradeData
+            {
+                BombState = _bombState,
+                BulletState = _bulletState,
+                HookState = _hookState,
+                OcarinaState = _ocarinaState,
+                QuiverState = _quiverState,
+                ScaleState = _scaleState,
+                StrengthState = _strengthState
+            },
+            LocationData = new LocationData
+            {
+                Location1 = _location1Idx,
+                Location2 = _location2Idx,
+                Location3 = _location3Idx,
+                Location4 = _location4Idx,
+                Location5 = _location5Idx,
+                Location6 = _location6Idx,
+                Location7 = _location7Idx,
+                Location8 = _location8Idx,
+                Location9 = _location9Idx
+            },
+            AcquiredItems = _acquiredItems
+        };
+    }
+
+    [RelayCommand]
+    public void WriteData()
+    {
+        PrepareData();
+        DataWriter.WriteData(_trackerData);
+    }
+
+    [RelayCommand]
+    public void ReadData()
+    {
+        _trackerData = DataReader.ReadData();
+        // SetTracker();
+    }
+
+    private void SetTracker()
+    {
+        // Todo...
+    }
+
+    [RelayCommand]
+    public void DeleteData()
+    {
+        if (File.Exists($"./trackerState"))
+        {
+            File.Delete($"./trackerState");
+        }
     }
     #endregion
 }

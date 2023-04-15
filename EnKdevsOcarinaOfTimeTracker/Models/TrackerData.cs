@@ -19,6 +19,9 @@ public class TrackerData
 
     [JsonProperty("upgradeData")]
     public UpgradeData UpgradeData { get; set; }
+    
+    [JsonProperty("locationData")]
+    public LocationData LocationData { get; set; }
 
     [JsonProperty("acquiredItems")]
     public List<string> AcquiredItems { get; set; }

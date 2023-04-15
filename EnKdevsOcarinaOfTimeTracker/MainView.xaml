@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EnKdevsOcarinaOfTimeTracker"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="400" FontFamily="FOT-Chiaro Std B" Foreground="White">
+             d:DesignHeight="730" d:DesignWidth="400" FontFamily="FOT-Chiaro Std B" Foreground="White">
     <UserControl.DataContext>
         <local:MainWindowViewModel/>
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="350"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="350"/>
         </Grid.RowDefinitions>
         <Grid Row="0" Column="0">
@@ -208,26 +209,26 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBeansCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding Bottle4Image}" Width="45" Height="45" Margin="0, 0, 0, 0">
+            <Image Source="{Binding Bottle4Image}" Width="45" Height="45" Margin="95, 135, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBottleCommand}" CommandParameter="4"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBottleCommand}" CommandParameter="4"/>
                 </Image.InputBindings>
             </Image>
             <!-- Special Arrows -->
-            <Image Source="{Binding FireArrowImage}" Width="45" Height="45" Margin="0, 0, 0, 0">
+            <Image Source="{Binding FireArrowImage}" Width="45" Height="45" Margin="-290, 243, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateFireArrowCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateFireArrowCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding IceArrowImage}" Width="45" Height="45" Margin="0, 0, 0, 0">
+            <Image Source="{Binding IceArrowImage}" Width="45" Height="45" Margin="-122, 243, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateIceArrowCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateIceArrowCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding LightArrowImage}" Width="45" Height="45" Margin="0, 0, 0, 0">
+            <Image Source="{Binding LightArrowImage}" Width="45" Height="45" Margin="46, 243, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ActivateLightArrowCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivateLightArrowCommand}"/>
@@ -235,6 +236,32 @@
             </Image>
         </Grid>
         <Grid Row="1" Column="0">
+            <Button Width="45" Content="Save" Margin="-100, 0, 0, 0" Command="{Binding WriteDataCommand}"
+                    Grid.RowSpan="2" Background="#22FFFFFF" Foreground="White" BorderBrush="Transparent">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Width="45" Content="Load" Margin="0, 0, 0, 0" Command="{Binding ReadDataCommand}"
+                    Grid.RowSpan="2" Background="#22FFFFFF" Foreground="White" BorderBrush="Transparent">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Width="45" Content="Delete" Margin="100, 0, 0, 0" Command="{Binding DeleteDataCommand}"
+                    Grid.RowSpan="2" Background="#22FFFFFF" Foreground="White" BorderBrush="Transparent">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Row="2" Column="0">
             <Image Source="{Binding GearBackground}"/>
             <!-- Reward locations -->
             <TextBlock Text="{Binding Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, 45, 0, 0"/>
