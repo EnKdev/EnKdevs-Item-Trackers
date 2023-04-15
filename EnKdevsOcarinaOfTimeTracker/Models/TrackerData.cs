@@ -13,6 +13,9 @@ public class TrackerData
 
     [JsonProperty("equipData")]
     public EquipData EquipData { get; set; }
+    
+    [JsonProperty("tradeData")]
+    public TradeData TradeData { get; set; }
 
     [JsonProperty("upgradeData")]
     public UpgradeData UpgradeData { get; set; }

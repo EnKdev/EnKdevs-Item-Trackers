@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Metadata;
 using System.Windows;
 using System.Windows.Input;
@@ -175,6 +177,76 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _preludeImage;
 
+    // General items
+    [ObservableProperty] 
+    private string _stickImage;
+
+    [ObservableProperty] 
+    private string _nutImage;
+
+    [ObservableProperty]
+    private string _slingshotImage;
+
+    [ObservableProperty]
+    private string _dinsFireImage;
+
+    [ObservableProperty]
+    private string _bombItemImage;
+
+    [ObservableProperty]
+    private string _bombchuImage;
+
+    [ObservableProperty]
+    private string _childTradeItemImage;
+
+    [ObservableProperty]
+    private string _faroresWindImage;
+
+    [ObservableProperty]
+    private string _boomerangImage;
+
+    [ObservableProperty]
+    private string _hookshotImage;
+
+    [ObservableProperty]
+    private string _adultTradeItemImage;
+
+    [ObservableProperty]
+    private string _nayrusLoveImage;
+
+    [ObservableProperty]
+    private string _lensImage;
+
+    [ObservableProperty]
+    private string _megatonHammerImage;
+
+    [ObservableProperty]
+    private string _bowImage;
+
+    [ObservableProperty]
+    private string _magicBeansImage;
+
+    [ObservableProperty]
+    private string _bottle1Image;
+
+    [ObservableProperty]
+    private string _bottle2Image;
+
+    [ObservableProperty]
+    private string _bottle3Image;
+
+    [ObservableProperty]
+    private string _bottle4Image;
+
+    [ObservableProperty]
+    private string _fireArrowImage;
+
+    [ObservableProperty]
+    private string _iceArrowImage;
+
+    [ObservableProperty]
+    private string _lightArrowImage;
+    
     // Backgrounds
     [ObservableProperty]
     private string _itemSongBackground;
@@ -231,6 +303,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     private bool _gotNocturne;
     private bool _gotPrelude;
 
+    private List<string> _acquiredItems;
+
     private int _location1Idx;
     private int _location2Idx;
     private int _location3Idx;
@@ -261,7 +335,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         KokiriEmeraldImage = Constants.DisabledStones[0];
         GoronRubyImage = Constants.DisabledStones[1];
         ZoraSapphireImage = Constants.DisabledStones[2];
-        
+
         LightMedallionImage = Constants.DisabledMeds[0];
         ForestMedallionImage = Constants.DisabledMeds[1];
         FireMedallionImage = Constants.DisabledMeds[2];
@@ -306,6 +380,33 @@ public partial class MainWindowViewModel : ObservableRecipient
         RequiemImage = Constants.DisabledSongs[9];
         NocturneImage = Constants.DisabledSongs[10];
         PreludeImage = Constants.DisabledSongs[11];
+
+        _acquiredItems = new List<string>();
+
+        BombItemImage = Constants.DisabledItems[0];
+        BombchuImage = Constants.DisabledItems[1];
+        BoomerangImage = Constants.DisabledItems[2];
+        Bottle1Image = Constants.DisabledItems[3];
+        Bottle2Image = Constants.DisabledItems[3];
+        Bottle3Image = Constants.DisabledItems[3];
+        Bottle4Image = Constants.DisabledItems[3];
+        NutImage = Constants.DisabledItems[4];
+        StickImage = Constants.DisabledItems[5];
+        DinsFireImage = Constants.DisabledItems[6];
+        BowImage = Constants.DisabledItems[7];
+        SlingshotImage = Constants.DisabledItems[8];
+        FaroresWindImage = Constants.DisabledItems[9];
+        FireArrowImage = Constants.DisabledItems[10];
+        HookshotImage = Constants.DisabledItems[11];
+        IceArrowImage = Constants.DisabledItems[12];
+        LensImage = Constants.DisabledItems[13];
+        LightArrowImage = Constants.DisabledItems[14];
+        MegatonHammerImage = Constants.DisabledItems[15];
+        NayrusLoveImage = Constants.DisabledItems[16];
+        MagicBeansImage = Constants.DisabledItems[17];
+
+        ChildTradeItemImage = Constants.ChildTradingSequence[0];
+        AdultTradeItemImage = Constants.AdultTradingSequence[0];
     }
 
     #region Quest Items (Dungeon Rewards)
@@ -1304,6 +1405,21 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         PreludeImage = Constants.DisabledSongs[11];
         _gotPrelude = false;
+    }
+    #endregion
+    #region General Items
+    #endregion
+    #region Utils
+    private void RemoveElementFromAcquiredItemList(string element)
+    {
+        var targetItem = _acquiredItems.First(x => x == element);
+
+        if (targetItem == string.Empty)
+        {
+            return;
+        }
+
+        _acquiredItems.Remove(targetItem);
     }
     #endregion
 }

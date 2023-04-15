@@ -30,6 +30,8 @@
     <None Remove="Icons\Equip\OoT3D_Mirror_Shield_Icon_Disabled.png" />
     <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon.png" />
     <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Magic_Bean_Icon.png" />
+    <None Remove="Icons\Item\OoT3D_Magic_Bean_Icon_Disabled.png" />
     <None Remove="Icons\Quest\OoT3D_Fire_Medallion_Icon.png" />
     <None Remove="Icons\Quest\OoT3D_Fire_Medallion_Icon_Disabled.png" />
     <None Remove="Icons\Quest\OoT3D_Forest_Medallion_Icon.png" />
@@ -166,6 +168,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Magic_Bean_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Magic_Bean_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Quest\OoT3D_Fire_Medallion_Icon.png">
@@ -324,6 +332,238 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Remove="Icons\Other\Rupee_Icon.png" />
+    <None Remove="Icons\Item\OoT3D_Bombchu_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Bombchu_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Bombchu_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Bombchu_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Boomerang_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Boomerang_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Boomerang_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Boomerang_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Boss_Key_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Boss_Key_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Bottle_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Bottle_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Bottle_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Bottle_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Compass_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Compass_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Deku_Nut_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Deku_Nut_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Deku_Nut_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Deku_Nut_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Deku_Stick_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Deku_Stick_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Deku_Stick_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Deku_Stick_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Din's_Fire_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Din's_Fire_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Din's_Fire_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Din's_Fire_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Dungeon_Map_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Dungeon_Map_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Fairy_Bow_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Fairy_Bow_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Fairy_Bow_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Fairy_Bow_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Fairy_Slingshot_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Fairy_Slingshot_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Fairy_Slingshot_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Fairy_Slingshot_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Farore's_Wind_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Farore's_Wind_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Farore's_Wind_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Farore's_Wind_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Fire_Arrow_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Fire_Arrow_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Fire_Arrow_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Fire_Arrow_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Hookshot_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Hookshot_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Hookshot_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Hookshot_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Ice_Arrow_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Ice_Arrow_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Ice_Arrow_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Ice_Arrow_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Lens_of_Truth_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Lens_of_Truth_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Lens_of_Truth_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Lens_of_Truth_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Light_Arrow_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Light_Arrow_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Light_Arrow_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Light_Arrow_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Longshot_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Longshot_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Megaton_Hammer_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Megaton_Hammer_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Megaton_Hammer_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Megaton_Hammer_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Nayru's_Love_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Nayru's_Love_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Nayru's_Love_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Nayru's_Love_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Small_Key_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Small_Key_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Bomb_Icon.png" />
+    <Content Include="Icons\Item\OoT3D_Bomb_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\Item\OoT3D_Bomb_Icon_Disabled.png" />
+    <Content Include="Icons\Item\OoT3D_Bomb_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\ChildTrade\OoT3D_Cucco_Icon.png" />
+    <Content Include="Icons\ChildTrade\OoT3D_Cucco_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\ChildTrade\OoT3D_Mask_of_Truth_Icon.png" />
+    <Content Include="Icons\ChildTrade\OoT3D_Mask_of_Truth_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\ChildTrade\OoT3D_Skull_Mask_Icon.png" />
+    <Content Include="Icons\ChildTrade\OoT3D_Skull_Mask_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\ChildTrade\OoT3D_Weird_Egg_Icon.png" />
+    <Content Include="Icons\ChildTrade\OoT3D_Weird_Egg_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\ChildTrade\OoT3D_Weird_Egg_Icon_Disabled.png" />
+    <Content Include="Icons\ChildTrade\OoT3D_Weird_Egg_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\ChildTrade\OoT3D_Zeldas_Letter_Icon.png" />
+    <Content Include="Icons\ChildTrade\OoT3D_Zeldas_Letter_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Broken_Gorons_Sword_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Broken_Gorons_Sword_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Claim_Check_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Claim_Check_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Cojiro_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Cojiro_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Eye_Drops_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Eye_Drops_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Eyeball_Frog_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Eyeball_Frog_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Odd_Mushroom_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Odd_Mushroom_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Odd_Poultice_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Odd_Poultice_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Poachers_Saw_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Poachers_Saw_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Pocket_Cucco_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Pocket_Cucco_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Pocket_Egg_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Pocket_Egg_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Prescription_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Prescription_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Pocket_Egg_Icon_Disabled.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Pocket_Egg_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Icons\AdultTrade\OoT3D_Giants_Knife_Icon.png" />
+    <Content Include="Icons\AdultTrade\OoT3D_Giants_Knife_Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -333,7 +573,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Icons\Item\" />
+    <Folder Include="Icons\AdultTrade\" />
+    <Folder Include="Icons\ChildTrade\" />
     <Folder Include="Icons\Other" />
   </ItemGroup>
 

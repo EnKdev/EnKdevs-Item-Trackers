@@ -89,6 +89,150 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding DeactivatePreludeCommand}"/>
                 </Image.InputBindings>
             </Image>
+            <!-- General Items -->
+            <!-- Row 1 -->
+            <Image Source="{Binding StickImage}" Width="45" Height="45" Margin="-350, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateStickCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateStickCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding NutImage}" Width="45" Height="45" Margin="-240, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateStickCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateStickCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SlingshotImage}" Width="45" Height="45" Margin="-130, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateSlingshotCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateSlingshotCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding DinsFireImage}" Width="45" Height="45" Margin="-20, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateDinsCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateDinsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle1Image}" Width="45" Height="45" Margin="95, -255, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBottleCommand}" CommandParameter="1"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBottleCommand}" CommandParameter="1"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Row 2 -->
+            <Image Source="{Binding BombItemImage}" Width="45" Height="45" Margin="-352, -125, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBombCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBombCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BombchuImage}" Width="45" Height="45" Margin="-240, -125, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBombchuCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBombchuCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ChildTradeItemImage}" Width="45" Height="45" Margin="-130, -125, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseChildTradeCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DecreaseChildTradeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding FaroresWindImage}" Width="45" Height="45" Margin="-20, -125, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateFaroreCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateFaroreCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle2Image}" Width="45" Height="45" Margin="95, -125, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBottleCommand}" CommandParameter="2"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBottleCommand}" CommandParameter="2"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Row 3 -->
+            <Image Source="{Binding BoomerangImage}" Width="45" Height="45" Margin="-353, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBoomerangCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBoomerangCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding HookshotImage}" Width="45" Height="45" Margin="-236, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseHookshotCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DecreaseHookshotCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding AdultTradeItemImage}" Width="45" Height="45" Margin="-127, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseAdultTradeCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DecreaseAdultTradeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding NayrusLoveImage}" Width="45" Height="45" Margin="-20, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateNayruCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateNayruCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle3Image}" Width="45" Height="45" Margin="95, 5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBottleCommand}" CommandParameter="3"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBottleCommand}" CommandParameter="3"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Row 4 -->
+            <Image Source="{Binding LensImage}" Width="45" Height="45" Margin="-350, 135, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateLensCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateLensCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MegatonHammerImage}" Width="45" Height="45" Margin="-240, 135, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateHammerCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateHammerCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BowImage}" Width="45" Height="45" Margin="-130 135, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBowCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBowCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MagicBeansImage}" Width="45" Height="45" Margin="-20, 135, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBeansCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBeansCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle4Image}" Width="45" Height="45" Margin="0, 0, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateBottleCommand}" CommandParameter="4"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateBottleCommand}" CommandParameter="4"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Special Arrows -->
+            <Image Source="{Binding FireArrowImage}" Width="45" Height="45" Margin="0, 0, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateFireArrowCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateFireArrowCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding IceArrowImage}" Width="45" Height="45" Margin="0, 0, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateIceArrowCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateIceArrowCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding LightArrowImage}" Width="45" Height="45" Margin="0, 0, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateLightArrowCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateLightArrowCommand}"/>
+                </Image.InputBindings>
+            </Image>
         </Grid>
         <Grid Row="1" Column="0">
             <Image Source="{Binding GearBackground}"/>
