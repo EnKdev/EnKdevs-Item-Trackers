@@ -4,11 +4,11 @@ Two Trackers written in C# and XAML.
 Current Version (OoT): <b>1.0.6-ootDev</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>1.0.6.1-ootDev</b><br/>
+Next Version (OoT): <b>1.0.6-ootDev+build.2</b><br/>
 Next Version (MM): <b>1.0.0-mmDev</b>
 <br/>
 
-### On plan for 1.0.6.1-ootDev:
+### On plan for 1.0.6-ootDev+build.2:
 
 - First implementation of Data Saving/Data Loading.
 
