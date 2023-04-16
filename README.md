@@ -1,17 +1,16 @@
 # EnKdevs Ocarina of Time/Majora's Mask Trackers
 Two Trackers written in C# and XAML.
 
-Current Version (OoT): <b>1.0.6-ootDev+build.2</b><br/>
+Current Version (OoT): <b>1.0.6-ootDev+build.3</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>1.0.6-ootDev+build.3</b><br/>
+Next Version (OoT): <b>1.0.6-ootDev+build.4</b><br/>
 Next Version (MM): <b>1.0.0-mmDev</b>
 <br/>
 
-### On plan for 1.0.6-ootDev+build.3:
+### On plan for 1.0.6-ootDev+build.4:
 
 - Item activation/deactivation logic
-- Load previous state of tracker after reading `trackerState` file
 
 ---
 
@@ -29,6 +28,9 @@ Next Version (MM): <b>1.0.0-mmDev</b>
 
 1.0.6-ootDev+build.2:
 - First version of Data Saving/Data Reading functionality
+
+1.0.6-ootDev+build.3:
+- UI is being set properly after reading data from `trackerState` file
 
 ### Download:
 

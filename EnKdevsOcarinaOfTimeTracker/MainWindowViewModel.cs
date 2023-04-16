@@ -258,55 +258,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     private string _gearBackground;
 
     // Data
-    private bool _gotEmerald;
-    private bool _gotRuby;
-    private bool _gotSapphire;
-
-    private bool _gotLightMed;
-    private bool _gotForestMed;
-    private bool _gotFireMed;
-    private bool _gotWaterMed;
-    private bool _gotShadowMed;
-    private bool _gotSpiritMed;
-
-    private bool _gotKokiriSword;
-    private bool _gotMasterSword;
-    private bool _gotBiggoronSword;
-
-    private bool _gotDekuShield;
-    private bool _gotHylianShield;
-    private bool _gotMirrorShield;
-
-    private bool _gotGoronTunic;
-    private bool _gotZoraTunic;
-
-    private bool _gotIronBoots;
-    private bool _gotHoverBoots;
-
     private int _ocarinaState;
     private int _scaleState;
     private int _strengthState;
     private int _bombState;
     private int _quiverState;
     private int _bulletState;
-
-    private bool _gotGerudoToken;
-    private bool _gotShard;
-
-    private bool _gotLullaby;
-    private bool _gotEpona;
-    private bool _gotSaria;
-    private bool _gotStorms;
-    private bool _gotSuns;
-    private bool _gotTime;
-    private bool _gotMinuet;
-    private bool _gotBolero;
-    private bool _gotSerenade;
-    private bool _gotRequiem;
-    private bool _gotNocturne;
-    private bool _gotPrelude;
-
-    private List<string> _acquiredItems;
 
     private int _location1Idx;
     private int _location2Idx;
@@ -391,8 +348,6 @@ public partial class MainWindowViewModel : ObservableRecipient
         NocturneImage = Constants.DisabledSongs[10];
         PreludeImage = Constants.DisabledSongs[11];
 
-        _acquiredItems = new List<string>();
-
         BombItemImage = Constants.DisabledItems[0];
         BombchuImage = Constants.DisabledItems[1];
         BoomerangImage = Constants.DisabledItems[2];
@@ -425,14 +380,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateKokiriEmerald()
     {
         KokiriEmeraldImage = Constants.EnabledStones[0];
-        _gotEmerald = true;
     }
 
     [RelayCommand]
     public void DeactivateKokiriEmerald()
     {
         KokiriEmeraldImage = Constants.DisabledStones[0];
-        _gotEmerald = false;
     }
 
     [RelayCommand]
@@ -469,14 +422,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateGoronRuby()
     {
         GoronRubyImage = Constants.EnabledStones[1];
-        _gotRuby = true;
     }
 
     [RelayCommand]
     public void DeactivateGoronRuby()
     {
         GoronRubyImage = Constants.DisabledStones[1];
-        _gotRuby = false;
     }
 
     [RelayCommand]
@@ -513,14 +464,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateZoraSapphire()
     {
         ZoraSapphireImage = Constants.EnabledStones[2];
-        _gotSapphire = true;
     }
 
     [RelayCommand]
     public void DeactivateZoraSapphire()
     {
         ZoraSapphireImage = Constants.DisabledStones[2];
-        _gotSapphire = false;
     }
 
     [RelayCommand]
@@ -557,14 +506,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateLightMedallion()
     {
         LightMedallionImage = Constants.EnabledMeds[0];
-        _gotLightMed = true;
     }
 
     [RelayCommand]
     public void DeactivateLightMedallion()
     {
         LightMedallionImage = Constants.DisabledMeds[0];
-        _gotLightMed = false;
     }
 
     [RelayCommand]
@@ -601,14 +548,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateForestMedallion()
     {
         ForestMedallionImage = Constants.EnabledMeds[1];
-        _gotForestMed = true;
     }
 
     [RelayCommand]
     public void DeactivateForestMedallion()
     {
         ForestMedallionImage = Constants.DisabledMeds[1];
-        _gotForestMed = false;
     }
 
     [RelayCommand]
@@ -645,14 +590,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateFireMedallion()
     {
         FireMedallionImage = Constants.EnabledMeds[2];
-        _gotFireMed = true;
     }
 
     [RelayCommand]
     public void DeactivateFireMedallion()
     {
         FireMedallionImage = Constants.DisabledMeds[2];
-        _gotFireMed = false;
     }
 
     [RelayCommand]
@@ -689,14 +632,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateWaterMedallion()
     {
         WaterMedallionImage = Constants.EnabledMeds[3];
-        _gotWaterMed = true;
     }
 
     [RelayCommand]
     public void DeactivateWaterMedallion()
     {
         WaterMedallionImage = Constants.DisabledMeds[3];
-        _gotWaterMed = false;
     }
 
     [RelayCommand]
@@ -733,14 +674,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateShadowMedallion()
     {
         ShadowMedallionImage = Constants.EnabledMeds[4];
-        _gotShadowMed = true;
     }
 
     [RelayCommand]
     public void DeactivateShadowMedallion()
     {
         ShadowMedallionImage = Constants.DisabledMeds[4];
-        _gotShadowMed = false;
     }
 
     [RelayCommand]
@@ -777,14 +716,12 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateSpiritMedallion()
     {
         SpiritMedallionImage = Constants.EnabledMeds[5];
-        _gotSpiritMed = true;
     }
 
     [RelayCommand]
     public void DeactivateSpiritMedallion()
     {
         SpiritMedallionImage = Constants.DisabledMeds[5];
-        _gotSpiritMed = false;
     }
 
     [RelayCommand]
@@ -824,42 +761,36 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateKokiriSword()
     {
         KokiriSwordImage = Constants.EnabledEquip[0];
-        _gotKokiriSword = true;
     }
 
     [RelayCommand]
     public void DeactivateKokiriSword()
     {
         KokiriSwordImage = Constants.DisabledEquip[0];
-        _gotKokiriSword = false;
     }
 
     [RelayCommand]
     public void ActivateMasterSword()
     {
         MasterSwordImage = Constants.EnabledEquip[1];
-        _gotMasterSword = true;
     }
 
     [RelayCommand]
     public void DeactivateMasterSword()
     {
         MasterSwordImage = Constants.DisabledEquip[1];
-        _gotMasterSword = false;
     }
 
     [RelayCommand]
     public void ActivateBiggoronSword()
     {
         BiggoronSwordImage = Constants.EnabledEquip[2];
-        _gotBiggoronSword = true;
     }
 
     [RelayCommand]
     public void DeactivateBiggoronSword()
     {
         BiggoronSwordImage = Constants.DisabledEquip[2];
-        _gotBiggoronSword = false;
     }
     #endregion
     #region Shields
@@ -867,42 +798,36 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateDekuShield()
     {
         DekuShieldImage = Constants.EnabledEquip[3];
-        _gotDekuShield = true;
     }
 
     [RelayCommand]
     public void DeactivateDekuShield()
     {
         DekuShieldImage = Constants.DisabledEquip[3];
-        _gotDekuShield = false;
     }
 
     [RelayCommand]
     public void ActivateHylianShield()
     {
         HylianShieldImage = Constants.EnabledEquip[4];
-        _gotHylianShield = true;
     }
 
     [RelayCommand]
     public void DeactivateHylianShield()
     {
         HylianShieldImage = Constants.DisabledEquip[4];
-        _gotHylianShield = false;
     }
 
     [RelayCommand]
     public void ActivateMirrorShield()
     {
         MirrorShieldImage = Constants.EnabledEquip[5];
-        _gotMirrorShield = true;
     }
 
     [RelayCommand]
     public void DeactivateMirrorShield()
     {
         MirrorShieldImage = Constants.DisabledEquip[5];
-        _gotMirrorShield = false;
     }
     #endregion
     #region Tunics
@@ -910,28 +835,24 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateGoronTunic()
     {
         GoronTunicImage = Constants.EnabledEquip[6];
-        _gotGoronTunic = true;
     }
 
     [RelayCommand]
     public void DeactivateGoronTunic()
     {
         GoronTunicImage = Constants.DisabledEquip[6];
-        _gotGoronTunic = false;
     }
 
     [RelayCommand]
     public void ActivateZoraTunic()
     {
         ZoraTunicImage = Constants.EnabledEquip[7];
-        _gotZoraTunic = true;
     }
 
     [RelayCommand]
     public void DeactivateZoraTunic()
     {
         ZoraTunicImage = Constants.DisabledEquip[7];
-        _gotZoraTunic = false;
     }
     #endregion
     #region Boots
@@ -939,28 +860,24 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateIronBoots()
     {
         IronBootsImage = Constants.EnabledEquip[8];
-        _gotIronBoots = true;
     }
 
     [RelayCommand]
     public void DeactivateIronBoots()
     {
         IronBootsImage = Constants.DisabledEquip[8];
-        _gotIronBoots = false;
     }
 
     [RelayCommand]
     public void ActivateHoverBoots()
     {
         HoverBootsImage = Constants.EnabledEquip[9];
-        _gotHoverBoots = true;
     }
 
     [RelayCommand]
     public void DeactivateHoverBoots()
     {
         HoverBootsImage = Constants.DisabledEquip[9];
-        _gotHoverBoots = false;
     }
     #endregion
     #endregion
@@ -1224,28 +1141,24 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateToken()
     {
         GerudoTokenImage = Constants.EnabledOther[0];
-        _gotGerudoToken = true;
     }
 
     [RelayCommand]
     public void DeactivateToken()
     {
         GerudoTokenImage = Constants.DisabledOther[0];
-        _gotGerudoToken = false;
     }
 
     [RelayCommand]
     public void ActivateShard()
     {
         ShardImage = Constants.EnabledOther[1];
-        _gotShard = true;
     }
 
     [RelayCommand]
     public void DeactivateShard()
     {
         ShardImage = Constants.DisabledOther[1];
-        _gotShard = false;
     }
     #endregion
     #region Songs
@@ -1253,241 +1166,153 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ActivateLullaby()
     {
         LullabyImage = Constants.EnabledSongs[0];
-        _gotLullaby = true;
     }
 
     [RelayCommand]
     public void DeactivateLullaby()
     {
         LullabyImage = Constants.DisabledSongs[0];
-        _gotLullaby = false;
     }
 
     [RelayCommand]
     public void ActivateEpona()
     {
         EponaImage = Constants.EnabledSongs[1];
-        _gotEpona = true;
     }
 
     [RelayCommand]
     public void DeactivateEpona()
     {
         EponaImage = Constants.DisabledSongs[1];
-        _gotEpona = false;
     }
 
     [RelayCommand]
     public void ActivateSaria()
     {
         SariaImage = Constants.EnabledSongs[2];
-        _gotSaria = true;
     }
 
     [RelayCommand]
     public void DeactivateSaria()
     {
         SariaImage = Constants.DisabledSongs[2];
-        _gotSaria = false;
     }
 
     [RelayCommand]
     public void ActivateStorms()
     {
         SosImage = Constants.EnabledSongs[3];
-        _gotStorms = true;
     }
 
     [RelayCommand]
     public void DeactivateStorms()
     {
         SosImage = Constants.DisabledSongs[3];
-        _gotStorms = false;
     }
 
     [RelayCommand]
     public void ActivateSun()
     {
         SunsImage = Constants.EnabledSongs[4];
-        _gotSuns = true;
     }
 
     [RelayCommand]
     public void DeactivateSun()
     {
         SunsImage = Constants.DisabledSongs[4];
-        _gotSuns = false;
     }
 
     [RelayCommand]
     public void ActivateTime()
     {
         SotImage = Constants.EnabledSongs[5];
-        _gotTime = true;
     }
 
     [RelayCommand]
     public void DeactivateTime()
     {
         SotImage = Constants.DisabledSongs[5];
-        _gotTime = false;
     }
 
     [RelayCommand]
     public void ActivateMinuet()
     {
         MinuetImage = Constants.EnabledSongs[6];
-        _gotMinuet = true;
     }
 
     [RelayCommand]
     public void DeactivateMinuet()
     {
         MinuetImage = Constants.DisabledSongs[6];
-        _gotMinuet = false;
     }
 
     [RelayCommand]
     public void ActivateBolero()
     {
         BoleroImage = Constants.EnabledSongs[7];
-        _gotBolero = true;
     }
 
     [RelayCommand]
     public void DeactivateBolero()
     {
         BoleroImage = Constants.DisabledSongs[7];
-        _gotBolero = false;
     }
 
     [RelayCommand]
     public void ActivateSerenade()
     {
         SerenadeImage = Constants.EnabledSongs[8];
-        _gotSerenade = true;
     }
 
     [RelayCommand]
     public void DeactivateSerenade()
     {
         SerenadeImage = Constants.DisabledSongs[8];
-        _gotSerenade = false;
     }
 
     [RelayCommand]
     public void ActivateRequiem()
     {
         RequiemImage = Constants.EnabledSongs[9];
-        _gotRequiem = true;
     }
 
     [RelayCommand]
     public void DeactivateRequiem()
     {
         RequiemImage = Constants.DisabledSongs[9];
-        _gotRequiem = false;
     }
 
     [RelayCommand]
     public void ActivateNocturne()
     {
         NocturneImage = Constants.EnabledSongs[10];
-        _gotNocturne = true;
     }
 
     [RelayCommand]
     public void DeactivateNocturne()
     {
         NocturneImage = Constants.DisabledSongs[10];
-        _gotNocturne = false;
     }
 
     [RelayCommand]
     public void ActivatePrelude()
     {
         PreludeImage = Constants.EnabledSongs[11];
-        _gotPrelude = true;
     }
 
     [RelayCommand]
     public void DeactivatePrelude()
     {
         PreludeImage = Constants.DisabledSongs[11];
-        _gotPrelude = false;
     }
     #endregion
     #region General Items
     #endregion
     #region Utils
-    private void RemoveElementFromAcquiredItemList(string element)
-    {
-        var targetItem = _acquiredItems.First(x => x == element);
-
-        if (targetItem == string.Empty)
-        {
-            return;
-        }
-
-        _acquiredItems.Remove(targetItem);
-    }
-
     private void PrepareData()
     {
         _trackerData = new TrackerData
         {
-            SongData = new SongData
-            {
-                SongLullaby = _gotLullaby,
-                SongEpona = _gotEpona,
-                SongSaria = _gotSaria,
-                SongStorms = _gotStorms,
-                SongSuns = _gotSuns,
-                SongTime = _gotTime,
-                SongMinuet = _gotMinuet,
-                SongBolero = _gotBolero,
-                SongSerenade = _gotSerenade,
-                SongRequiem = _gotRequiem,
-                SongNocturne = _gotNocturne,
-                SongPrelude = _gotPrelude
-            },
-            RewardData = new DungeonRewardData
-            {
-                GotEmerald = _gotEmerald,
-                GotRuby = _gotRuby,
-                GotSapphire = _gotSapphire,
-                GotLightMedallion = _gotLightMed,
-                GotForestMedallion = _gotForestMed,
-                GotFireMedallion = _gotFireMed,
-                GotWaterMedallion = _gotWaterMed,
-                GotSpiritMedallion = _gotSpiritMed,
-                GotShadowMedallion = _gotShadowMed
-            },
-            EquipData = new EquipData
-            {
-                Boots = new BootsData
-                {
-                    GotIronBoots = _gotIronBoots,
-                    GotHoverBoots = _gotHoverBoots
-                },
-                Shields = new ShieldData
-                {
-                    GotDekuShield = _gotDekuShield,
-                    GotHylianShield = _gotHylianShield,
-                    GotMirrorShield = _gotMirrorShield
-                },
-                Swords = new SwordData
-                {
-                    GotKokiriSword = _gotKokiriSword,
-                    GotMasterSword = _gotMasterSword,
-                    GotBiggoronSword = _gotMasterSword
-                },
-                Tunics = new TunicData
-                {
-                    GotGoronTunic = _gotGoronTunic,
-                    GotZoraTunic = _gotZoraTunic
-                }
-            },
             TradeData = new TradeData
             {
                 TradeStageChild = _childTradeStage,
@@ -1515,7 +1340,87 @@ public partial class MainWindowViewModel : ObservableRecipient
                 Location8 = _location8Idx,
                 Location9 = _location9Idx
             },
-            AcquiredItems = _acquiredItems
+            UiData = new UiRelevantData
+            {
+                Location1String = Location1,
+                Location2String = Location2,
+                Location3String = Location3,
+                Location4String = Location4,
+                Location5String = Location5,
+                Location6String = Location6,
+                Location7String = Location7,
+                Location8String = Location8,
+                Location9String = Location9,
+                
+                EmeraldString = KokiriEmeraldImage,
+                RubyString = GoronRubyImage,
+                SapphireString = ZoraSapphireImage,
+                LightMedallionString = LightMedallionImage,
+                ForestMedallionString = ForestMedallionImage,
+                FireMedallionString = FireMedallionImage,
+                WaterMedallionString = WaterMedallionImage,
+                SpiritMedallionString = SpiritMedallionImage,
+                ShadowMedallionString = ShadowMedallionImage,
+                
+                KokiriSwordString = KokiriSwordImage,
+                MasterSwordString = MasterSwordImage,
+                BiggoronSwordString = BiggoronSwordImage,
+                DekuShieldString = DekuShieldImage,
+                HylianShieldString = HylianShieldImage,
+                MirrorShieldString = MirrorShieldImage,
+                GoronTunicString = GoronTunicImage,
+                ZoraTunicString = ZoraTunicImage,
+                IronBootsString = IronBootsImage,
+                HoverBootsString = HoverBootsImage,
+                
+                OcarinaString = OcarinaImage,
+                ScaleString = ScaleImage,
+                StrengthString = StrengthImage,
+                BombString = BombImage,
+                QuiverString = QuiverImage,
+                BulletString = BulletImage,
+                
+                GsTokenCount = GsTokens,
+                GerudoTokenString = GerudoTokenImage,
+                ShardString = ShardImage,
+                
+                LullabyString = LullabyImage,
+                EponaString = EponaImage,
+                SariaString = SariaImage,
+                StormsString = SosImage,
+                SunsString = SunsImage,
+                TimeString = SotImage,
+                MinuetString = MinuetImage,
+                BoleroString = BoleroImage,
+                SerenadeString = SerenadeImage,
+                RequiemString = RequiemImage,
+                NocturneString = NocturneImage,
+                PreludeString = PreludeImage,
+                
+                StickString = StickImage,
+                NutString = NutImage,
+                SlingshotString = SlingshotImage,
+                DinsString = DinsFireImage,
+                BombItemString = BombItemImage,
+                BombchuString = BombchuImage,
+                ChildTradeString = ChildTradeItemImage,
+                AdultTradeString = AdultTradeItemImage,
+                FaroresString = FaroresWindImage,
+                BoomerangString = BoomerangImage,
+                HookshotString = HookshotImage,
+                NayrusString = NayrusLoveImage,
+                LensString = LensImage,
+                HammerString = MegatonHammerImage,
+                BowString = BowImage,
+                BeanString = MagicBeansImage,
+                FireArrowString = FireArrowImage,
+                IceArrowString = IceArrowImage,
+                LightArrowString = LightArrowImage,
+                Bottle1String = Bottle1Image,
+                Bottle2String = Bottle2Image,
+                Bottle3String = Bottle3Image,
+                Bottle4String = Bottle4Image
+            }
         };
     }
 
@@ -1530,12 +1435,114 @@ public partial class MainWindowViewModel : ObservableRecipient
     public void ReadData()
     {
         _trackerData = DataReader.ReadData();
-        // SetTracker();
+        SetTrackerUi();
+        SetTrackerCtrl();
     }
 
-    private void SetTracker()
+    private void SetTrackerUi()
     {
-        // Todo...
+        Location1 = _trackerData.UiData.Location1String;
+        Location2 = _trackerData.UiData.Location2String;
+        Location3 = _trackerData.UiData.Location3String;
+        Location4 = _trackerData.UiData.Location4String;
+        Location5 = _trackerData.UiData.Location5String;
+        Location6 = _trackerData.UiData.Location6String;
+        Location7 = _trackerData.UiData.Location7String;
+        Location8 = _trackerData.UiData.Location8String;
+        Location9 = _trackerData.UiData.Location9String;
+
+        KokiriEmeraldImage = _trackerData.UiData.EmeraldString;
+        GoronRubyImage = _trackerData.UiData.RubyString;
+        ZoraSapphireImage = _trackerData.UiData.SapphireString;
+        LightMedallionImage = _trackerData.UiData.LightMedallionString;
+        ForestMedallionImage = _trackerData.UiData.ForestMedallionString;
+        FireMedallionImage = _trackerData.UiData.FireMedallionString;
+        WaterMedallionImage = _trackerData.UiData.WaterMedallionString;
+        SpiritMedallionImage = _trackerData.UiData.SpiritMedallionString;
+        ShadowMedallionImage = _trackerData.UiData.ShadowMedallionString;
+
+        KokiriSwordImage = _trackerData.UiData.KokiriSwordString;
+        MasterSwordImage = _trackerData.UiData.MasterSwordString;
+        BiggoronSwordImage = _trackerData.UiData.BiggoronSwordString;
+        DekuShieldImage = _trackerData.UiData.DekuShieldString;
+        HylianShieldImage = _trackerData.UiData.HylianShieldString;
+        MirrorShieldImage = _trackerData.UiData.MirrorShieldString;
+        IronBootsImage = _trackerData.UiData.IronBootsString;
+        HoverBootsImage = _trackerData.UiData.HoverBootsString;
+        GoronTunicImage = _trackerData.UiData.GoronTunicString;
+        ZoraTunicImage = _trackerData.UiData.ZoraTunicString;
+
+        OcarinaImage = _trackerData.UiData.OcarinaString;
+        ScaleImage = _trackerData.UiData.ScaleString;
+        StrengthImage = _trackerData.UiData.StrengthString;
+        BombImage = _trackerData.UiData.BombString;
+        QuiverImage = _trackerData.UiData.QuiverString;
+        BulletImage = _trackerData.UiData.BulletString;
+
+        GsTokens = _trackerData.UiData.GsTokenCount;
+        GerudoTokenImage = _trackerData.UiData.GerudoTokenString;
+        ShardImage = _trackerData.UiData.ShardString;
+        
+        LullabyImage = _trackerData.UiData.LullabyString;
+        EponaImage = _trackerData.UiData.EponaString;
+        SariaImage = _trackerData.UiData.SariaString;
+        SosImage = _trackerData.UiData.StormsString;
+        SunsImage = _trackerData.UiData.SunsString;
+        SotImage = _trackerData.UiData.TimeString;
+        MinuetImage = _trackerData.UiData.MinuetString;
+        BoleroImage = _trackerData.UiData.BoleroString;
+        SerenadeImage = _trackerData.UiData.SerenadeString;
+        RequiemImage = _trackerData.UiData.RequiemString;
+        NocturneImage = _trackerData.UiData.NocturneString;
+        PreludeImage = _trackerData.UiData.PreludeString;
+        
+        StickImage = _trackerData.UiData.StickString;
+        NutImage = _trackerData.UiData.NutString;
+        SlingshotImage = _trackerData.UiData.SlingshotString;
+        DinsFireImage = _trackerData.UiData.DinsString;
+        BombItemImage = _trackerData.UiData.BombItemString;
+        BombchuImage = _trackerData.UiData.BombchuString;
+        ChildTradeItemImage = _trackerData.UiData.ChildTradeString;
+        AdultTradeItemImage = _trackerData.UiData.AdultTradeString;
+        FaroresWindImage = _trackerData.UiData.FaroresString;
+        BoomerangImage = _trackerData.UiData.BoomerangString;
+        HookshotImage = _trackerData.UiData.HookshotString;
+        NayrusLoveImage = _trackerData.UiData.NayrusString;
+        LensImage = _trackerData.UiData.LensString;
+        MegatonHammerImage = _trackerData.UiData.HammerString;
+        BowImage = _trackerData.UiData.BowString;
+        MagicBeansImage = _trackerData.UiData.BeanString;
+        FireArrowImage = _trackerData.UiData.FireArrowString;
+        IceArrowImage = _trackerData.UiData.IceArrowString;
+        LightArrowImage = _trackerData.UiData.LightArrowString;
+        Bottle1Image = _trackerData.UiData.Bottle1String;
+        Bottle2Image = _trackerData.UiData.Bottle2String;
+        Bottle3Image = _trackerData.UiData.Bottle3String;
+        Bottle4Image = _trackerData.UiData.Bottle4String;
+    }
+
+    private void SetTrackerCtrl()
+    {
+        _ocarinaState = _trackerData.UpgradeData.OcarinaState;
+        _scaleState = _trackerData.UpgradeData.ScaleState;
+        _strengthState = _trackerData.UpgradeData.StrengthState;
+        _bombState = _trackerData.UpgradeData.BombState;
+        _quiverState = _trackerData.UpgradeData.QuiverState;
+        _bulletState = _trackerData.UpgradeData.BulletState;
+        _hookState = _trackerData.UpgradeData.HookState;
+
+        _location1Idx = _trackerData.LocationData.Location1;
+        _location2Idx = _trackerData.LocationData.Location2;
+        _location3Idx = _trackerData.LocationData.Location3;
+        _location4Idx = _trackerData.LocationData.Location4;
+        _location5Idx = _trackerData.LocationData.Location5;
+        _location6Idx = _trackerData.LocationData.Location6;
+        _location7Idx = _trackerData.LocationData.Location7;
+        _location8Idx = _trackerData.LocationData.Location8;
+        _location9Idx = _trackerData.LocationData.Location9;
+
+        _childTradeStage = _trackerData.TradeData.TradeStageChild;
+        _adultTradeStage = _trackerData.TradeData.TradeStageAdult;
     }
 
     [RelayCommand]
