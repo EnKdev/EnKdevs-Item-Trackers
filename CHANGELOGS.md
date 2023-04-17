@@ -20,6 +20,9 @@
 1.0.6-ootDev+build.4:
 - Implement remaining item activation/deactivation logic
 
+1.0.0-beta.1+ocarina:
+- Start of the private beta test
+
 ---
 
 1.0.0-mmDev+build.1:
