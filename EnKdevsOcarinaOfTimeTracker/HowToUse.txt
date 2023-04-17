@@ -1,0 +1,33 @@
+﻿Thanks for downloading my Ocarina of Time Item Tracker!
+Before you start using this software, I just want to point out a few things before you should use this:
+
+It should be noted that this software is meant to be used as you're playing through
+an Ocarina of Time Randomizer run, whether be it one generated through the usual web generator
+or through Ship of Harkinian.
+
+To activate an item on the tracker, simply left click on it.
+To deactivate an item on the tracker, you have to right click it.
+The spiritual stones and medallions have a third interaction that's special to those.
+If you click with your middle mouse button on them, you can set their location reflecting on in which
+dungeon these dungeon rewards are.
+
+Please note:
+Due to certain limitations posed by the UI technology used, some things can be coming off as slowly
+or a bit janky.
+There is sadly not much I can do to fix that behavior.
+All I can advice you to do is to click slowly and not fast.
+
+Secondly, if you are done with making progress for your current run, I implore you to press the Save button!
+It will save your trackers state so you can just load it back in the next time you continue your randomizer run.
+
+Thirdly, please use the Delete button as sparingly as possible.
+It should only be used if your trackers state has somehow become corrupted and can't be read.
+If that happens and you closed the tracker before that came to be, then sorry mate, tough luck.
+(It is also advised to have a screenshot at the ready as a plan b to restore the previous tracker state if you made one)
+
+And that's it, that should be all the instructions I can give to you for using this tracker.
+If you have any suggestions for improvements, please leave an Issue over at the trackers github page.
+You can find it here: https://github.com/EnKdev/EnKdevs-Item-Trackers
+
+With that done, I hope this tracker will come handy to you.
+-EnKdev

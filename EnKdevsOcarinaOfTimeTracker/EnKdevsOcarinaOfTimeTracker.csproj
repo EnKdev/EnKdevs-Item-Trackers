@@ -101,6 +101,9 @@
     <None Remove="Icons\Upgrade\OoT3D_Silver_Scale_Icon_Disabled.png" />
     <None Remove="Images\OoTTrackerGear.png" />
     <None Remove="Images\OoTTrackerItems+Songs.png" />
+    <None Update="HowToUse.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
