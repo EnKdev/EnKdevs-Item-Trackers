@@ -100,8 +100,8 @@
             </Image>
             <Image Source="{Binding NutImage}" Width="45" Height="45" Margin="-240, -255, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateStickCommand}"/>
-                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateStickCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ActivateNutCommand}"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding DeactivateNutCommand}"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding SlingshotImage}" Width="45" Height="45" Margin="-130, -255, 0, 0">

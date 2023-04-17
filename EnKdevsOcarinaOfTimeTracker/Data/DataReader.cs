@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Text;
 using System.Windows;
 using EnKdevsOcarinaOfTimeTracker.Internal;
 using EnKdevsOcarinaOfTimeTracker.Models;

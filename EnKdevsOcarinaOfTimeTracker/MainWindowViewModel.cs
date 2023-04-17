@@ -1307,6 +1307,417 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
     #endregion
     #region General Items
+    [RelayCommand]
+    public void ActivateStick()
+    {
+        StickImage = Constants.EnabledItems[5];
+    }
+
+    [RelayCommand]
+    public void DeactivateStick()
+    {
+        StickImage = Constants.DisabledItems[5];
+    }
+
+    [RelayCommand]
+    public void ActivateNut()
+    {
+        NutImage = Constants.EnabledItems[3];
+    }
+
+    [RelayCommand]
+    public void DeactivateNut()
+    {
+        NutImage = Constants.DisabledItems[3];
+    }
+
+    [RelayCommand]
+    public void ActivateSlingshot()
+    {
+        SlingshotImage = Constants.EnabledItems[8];
+    }
+
+    [RelayCommand]
+    public void DeactivateSlingshot()
+    {
+        SlingshotImage = Constants.DisabledItems[8];
+    }
+
+    [RelayCommand]
+    public void ActivateDins()
+    {
+        DinsFireImage = Constants.EnabledItems[6];
+    }
+
+    [RelayCommand]
+    public void DeactivateDins()
+    {
+        DinsFireImage = Constants.DisabledItems[6];
+    }
+
+    [RelayCommand]
+    public void ActivateBomb()
+    {
+        BombItemImage = Constants.EnabledItems[0];
+    }
+
+    [RelayCommand]
+    public void DeactivateBomb()
+    {
+        BombItemImage = Constants.DisabledItems[0];
+    }
+
+    [RelayCommand]
+    public void ActivateBombchu()
+    {
+        BombchuImage = Constants.EnabledItems[1];
+    }
+
+    [RelayCommand]
+    public void DeactivateBombchu()
+    {
+        BombchuImage = Constants.DisabledItems[1];
+    }
+
+    [RelayCommand]
+    public void IncreaseChildTrade()
+    {
+        if (_childTradeStage > 5)
+        {
+            _childTradeStage = 5;
+        }
+
+        ChildTradeItemImage = _childTradeStage switch
+        {
+            0 => Constants.ChildTradingSequence[1],
+            1 => Constants.ChildTradingSequence[2],
+            2 => Constants.ChildTradingSequence[3],
+            3 => Constants.ChildTradingSequence[4],
+            4 => Constants.ChildTradingSequence[5],
+            _ => ChildTradeItemImage
+        };
+
+        if (_childTradeStage >= 5)
+        {
+            _childTradeStage = 5;
+        }
+        else
+        {
+            _childTradeStage++;
+        }
+    }
+
+    [RelayCommand]
+    public void DecreaseChildTrade()
+    {
+        if (_childTradeStage < 0)
+        {
+            _childTradeStage = 0;
+        }
+
+        ChildTradeItemImage = _childTradeStage switch
+        {
+            5 => Constants.ChildTradingSequence[4],
+            4 => Constants.ChildTradingSequence[3],
+            3 => Constants.ChildTradingSequence[2],
+            2 => Constants.ChildTradingSequence[1],
+            1 => Constants.ChildTradingSequence[0],
+            _ => ChildTradeItemImage
+        };
+
+        if (_childTradeStage <= 0)
+        {
+            _childTradeStage = 0;
+        }
+        else
+        {
+            _childTradeStage--;
+        }
+    }
+
+    [RelayCommand]
+    public void ActivateFarore()
+    {
+        FaroresWindImage = Constants.EnabledItems[9];
+    }
+
+    [RelayCommand]
+    public void DeactivateFarore()
+    {
+        FaroresWindImage = Constants.DisabledItems[9];
+    }
+
+    [RelayCommand]
+    public void ActivateBoomerang()
+    {
+        BoomerangImage = Constants.EnabledItems[2];
+    }
+
+    [RelayCommand]
+    public void DeactivateBoomerang()
+    {
+        BoomerangImage = Constants.DisabledItems[2];
+    }
+
+    [RelayCommand]
+    public void IncreaseHookshot()
+    {
+        if (_hookState > 2)
+        {
+            _hookState = 2;
+        }
+
+        HookshotImage = _hookState switch
+        {
+            0 => Constants.EnabledItems[11],
+            1 => Constants.EnabledItems[14],
+            _ => HookshotImage
+        };
+
+        if (_hookState >= 2)
+        {
+            _hookState = 2;
+        }
+        else
+        {
+            _hookState++;   
+        }
+    }
+
+    [RelayCommand]
+    public void DecreaseHookshot()
+    {
+        if (_hookState < 0)
+        {
+            _hookState = 0;
+        }
+
+        HookshotImage = _hookState switch
+        {
+            2 => Constants.EnabledItems[11],
+            1 => Constants.DisabledItems[11],
+            _ => HookshotImage
+        };
+
+        if (_hookState <= 0)
+        {
+            _hookState = 0;
+        }
+        else
+        {
+            _hookState--;
+        }
+    }
+
+    [RelayCommand]
+    public void IncreaseAdultTrade()
+    {
+        if (_adultTradeStage > 12)
+        {
+            _adultTradeStage = 12;
+        }
+
+        AdultTradeItemImage = _adultTradeStage switch
+        {
+            0 => Constants.AdultTradingSequence[1],
+            1 => Constants.AdultTradingSequence[2],
+            2 => Constants.AdultTradingSequence[3],
+            3 => Constants.AdultTradingSequence[4],
+            4 => Constants.AdultTradingSequence[5],
+            5 => Constants.AdultTradingSequence[6],
+            6 => Constants.AdultTradingSequence[7],
+            7 => Constants.AdultTradingSequence[8],
+            8 => Constants.AdultTradingSequence[9],
+            9 => Constants.AdultTradingSequence[10],
+            10 => Constants.AdultTradingSequence[11],
+            11 => Constants.AdultTradingSequence[12],
+            _ => AdultTradeItemImage
+        };
+
+        if (_adultTradeStage >= 12)
+        {
+            _adultTradeStage = 12;
+        }
+        else
+        {
+            _adultTradeStage++;   
+        }
+    }
+
+    [RelayCommand]
+    public void DecreaseAdultTrade()
+    {
+        if (_adultTradeStage < 0)
+        {
+            _adultTradeStage = 0;
+        }
+
+        AdultTradeItemImage = _adultTradeStage switch
+        {
+            12 => Constants.AdultTradingSequence[11],
+            11 => Constants.AdultTradingSequence[10],
+            10 => Constants.AdultTradingSequence[9],
+            9 => Constants.AdultTradingSequence[8],
+            8 => Constants.AdultTradingSequence[7],
+            7 => Constants.AdultTradingSequence[6],
+            6 => Constants.AdultTradingSequence[5],
+            5 => Constants.AdultTradingSequence[4],
+            4 => Constants.AdultTradingSequence[3],
+            3 => Constants.AdultTradingSequence[2],
+            2 => Constants.AdultTradingSequence[1],
+            1 => Constants.AdultTradingSequence[0],
+            _ => AdultTradeItemImage
+        };
+
+        if (_adultTradeStage <= 0)
+        {
+            _adultTradeStage = 0;
+        }
+        else
+        {
+            _adultTradeStage--;   
+        }
+    }
+
+    [RelayCommand]
+    public void ActivateNayru()
+    {
+        NayrusLoveImage = Constants.EnabledItems[17];
+    }
+
+    [RelayCommand]
+    public void DeactivateNayru()
+    {
+        NayrusLoveImage = Constants.DisabledItems[16];
+    }
+
+    [RelayCommand]
+    public void ActivateLens()
+    {
+        LensImage = Constants.EnabledItems[13];
+    }
+
+    [RelayCommand]
+    public void DeactivateLens()
+    {
+        LensImage = Constants.DisabledItems[13];
+    }
+
+    [RelayCommand]
+    public void ActivateHammer()
+    {
+        MegatonHammerImage = Constants.EnabledItems[16];
+    }
+
+    [RelayCommand]
+    public void DeactivateHammer()
+    {
+        MegatonHammerImage = Constants.DisabledItems[15];
+    }
+
+    [RelayCommand]
+    public void ActivateBow()
+    {
+        BowImage = Constants.EnabledItems[7];
+    }
+
+    [RelayCommand]
+    public void DeactivateBow()
+    {
+        BowImage = Constants.DisabledItems[7];
+    }
+
+    [RelayCommand]
+    public void ActivateBeans()
+    {
+        MagicBeansImage = Constants.EnabledItems[18];
+    }
+
+    [RelayCommand]
+    public void DeactivateBeans()
+    {
+        MagicBeansImage = Constants.DisabledItems[17];
+    }
+
+    [RelayCommand]
+    public void ActivateFireArrow()
+    {
+        FireArrowImage = Constants.EnabledItems[10];
+    }
+
+    [RelayCommand]
+    public void DeactivateFireArrow()
+    {
+        FireArrowImage = Constants.DisabledItems[10];
+    }
+
+    [RelayCommand]
+    public void ActivateIceArrow()
+    {
+        IceArrowImage = Constants.EnabledItems[12];
+    }
+
+    [RelayCommand]
+    public void DeactivateIceArrow()
+    {
+        IceArrowImage = Constants.DisabledItems[12];
+    }
+
+    [RelayCommand]
+    public void ActivateLightArrow()
+    {
+        LightArrowImage = Constants.EnabledItems[15];
+    }
+
+    [RelayCommand]
+    public void DeactivateLightArrow()
+    {
+        LightArrowImage = Constants.DisabledItems[14];
+    }
+
+    [RelayCommand]
+    public void ActivateBottle(string bottleNumber)
+    {
+        var bottleNum = int.Parse(bottleNumber);
+        
+        switch (bottleNum)
+        {
+            case 1:
+                Bottle1Image = Constants.EnabledItems[3];
+                break;
+            case 2:
+                Bottle2Image = Constants.EnabledItems[3];
+                break;
+            case 3:
+                Bottle3Image = Constants.EnabledItems[3];
+                break;
+            case 4:
+                Bottle4Image = Constants.EnabledItems[3];
+                break;
+        }
+    }
+    
+    [RelayCommand]
+    public void DeactivateBottle(string bottleNumber)
+    {
+        var bottleNum = int.Parse(bottleNumber);
+        
+        switch (bottleNum)
+        {
+            case 1:
+                Bottle1Image = Constants.DisabledItems[3];
+                break;
+            case 2:
+                Bottle2Image = Constants.DisabledItems[3];
+                break;
+            case 3:
+                Bottle3Image = Constants.DisabledItems[3];
+                break;
+            case 4:
+                Bottle4Image = Constants.DisabledItems[3];
+                break;
+        }
+    }
     #endregion
     #region Utils
     private void PrepareData()

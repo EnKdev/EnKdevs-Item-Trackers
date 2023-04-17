@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Documents;
 using Semver;
 
 namespace EnKdevsOcarinaOfTimeTracker;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 6, "ootDev", "build.3")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1, 0, 6, "ootDev", "build.4")}";
 
     public const string ItemSongBg = "pack://application:,,,/Images/OoTTrackerItems+Songs.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
@@ -174,73 +173,73 @@ public static class Constants
 
     public static List<string> DisabledItems = new()
     {
-        "pack://application:,,,/Icons/Item/OoT3D_Bomb_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Bombchu_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Boomerang_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Bottle_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Deku_Nut_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Deku_Stick_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Din's_Fire_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Fairy_Bow_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Fairy_Slingshot_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Farore's_Wind_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Fire_Arrow_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Ice_Arrow_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Lens_of_Truth_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Light_Arrow_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Megaton_Hammer_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Nayru's_Love_Icon_Disabled.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon_Disabled.png"
+       /* 0 */ "pack://application:,,,/Icons/Item/OoT3D_Bomb_Icon_Disabled.png",
+       /* 1 */ "pack://application:,,,/Icons/Item/OoT3D_Bombchu_Icon_Disabled.png",
+       /* 2 */ "pack://application:,,,/Icons/Item/OoT3D_Boomerang_Icon_Disabled.png",
+       /* 3 */ "pack://application:,,,/Icons/Item/OoT3D_Bottle_Icon_Disabled.png",
+       /* 4 */ "pack://application:,,,/Icons/Item/OoT3D_Deku_Nut_Icon_Disabled.png",
+       /* 5 */ "pack://application:,,,/Icons/Item/OoT3D_Deku_Stick_Icon_Disabled.png",
+       /* 6 */ "pack://application:,,,/Icons/Item/OoT3D_Din's_Fire_Icon_Disabled.png",
+       /* 7 */ "pack://application:,,,/Icons/Item/OoT3D_Fairy_Bow_Icon_Disabled.png",
+       /* 8 */ "pack://application:,,,/Icons/Item/OoT3D_Fairy_Slingshot_Icon_Disabled.png",
+       /* 9 */ "pack://application:,,,/Icons/Item/OoT3D_Farore's_Wind_Icon_Disabled.png",
+       /* 10 */ "pack://application:,,,/Icons/Item/OoT3D_Fire_Arrow_Icon_Disabled.png",
+       /* 11 */ "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon_Disabled.png",
+       /* 12 */ "pack://application:,,,/Icons/Item/OoT3D_Ice_Arrow_Icon_Disabled.png",
+       /* 13 */ "pack://application:,,,/Icons/Item/OoT3D_Lens_of_Truth_Icon_Disabled.png",
+       /* 14 */ "pack://application:,,,/Icons/Item/OoT3D_Light_Arrow_Icon_Disabled.png",
+       /* 15 */ "pack://application:,,,/Icons/Item/OoT3D_Megaton_Hammer_Icon_Disabled.png",
+       /* 16 */ "pack://application:,,,/Icons/Item/OoT3D_Nayru's_Love_Icon_Disabled.png",
+       /* 17 */ "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon_Disabled.png"
     };
 
     public static List<string> EnabledItems = new()
     {
-        "pack://application:,,,/Icons/Item/OoT3D_Bomb_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Bombchu_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Boomerang_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Bottle_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Deku_Nut_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Deku_Stick_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Din's_Fire_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Fairy_Bow_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Fairy_Slingshot_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Farore's_Wind_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Fire_Arrow_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Ice_Arrow_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Lens_of_Truth_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Longshot_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Light_Arrow_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Megaton_Hammer_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Nayru's_Love_Icon.png",
-        "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon.png"
+        /* 0 */ "pack://application:,,,/Icons/Item/OoT3D_Bomb_Icon.png",
+        /* 1 */ "pack://application:,,,/Icons/Item/OoT3D_Bombchu_Icon.png",
+        /* 2 */ "pack://application:,,,/Icons/Item/OoT3D_Boomerang_Icon.png",
+        /* 3 */ "pack://application:,,,/Icons/Item/OoT3D_Bottle_Icon.png",
+        /* 4 */ "pack://application:,,,/Icons/Item/OoT3D_Deku_Nut_Icon.png",
+        /* 5 */ "pack://application:,,,/Icons/Item/OoT3D_Deku_Stick_Icon.png",
+        /* 6 */ "pack://application:,,,/Icons/Item/OoT3D_Din's_Fire_Icon.png",
+        /* 7 */ "pack://application:,,,/Icons/Item/OoT3D_Fairy_Bow_Icon.png",
+        /* 8 */ "pack://application:,,,/Icons/Item/OoT3D_Fairy_Slingshot_Icon.png",
+        /* 9 */ "pack://application:,,,/Icons/Item/OoT3D_Farore's_Wind_Icon.png",
+        /* 10 */ "pack://application:,,,/Icons/Item/OoT3D_Fire_Arrow_Icon.png",
+        /* 11 */ "pack://application:,,,/Icons/Item/OoT3D_Hookshot_Icon.png",
+        /* 12 */ "pack://application:,,,/Icons/Item/OoT3D_Ice_Arrow_Icon.png",
+        /* 13 */ "pack://application:,,,/Icons/Item/OoT3D_Lens_of_Truth_Icon.png",
+        /* 14 */ "pack://application:,,,/Icons/Item/OoT3D_Longshot_Icon.png",
+        /* 15 */ "pack://application:,,,/Icons/Item/OoT3D_Light_Arrow_Icon.png",
+        /* 16 */ "pack://application:,,,/Icons/Item/OoT3D_Megaton_Hammer_Icon.png",
+        /* 17 */ "pack://application:,,,/Icons/Item/OoT3D_Nayru's_Love_Icon.png",
+        /* 18 */ "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon.png"
     };
 
     public static List<string> ChildTradingSequence = new()
     {
-        "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon_Disabled.png",
-        "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon.png",
-        "pack://application:,,,/Icons/ChildTrade/OoT3D_Cucco_Icon.png",
-        "pack://application:,,,/Icons/ChildTrade/OoT3D_Zeldas_Letter_Icon.png",
-        "pack://application:,,,/Icons/ChildTrade/OoT3D_Skull_Mask_Icon.png",
-        "pack://application:,,,/Icons/ChildTrade/OoT3D_Mask_of_Truth_Icon.png"
+        /* 0 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon_Disabled.png",
+        /* 1 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon.png",
+        /* 2 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Cucco_Icon.png",
+        /* 3 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Zeldas_Letter_Icon.png",
+        /* 4 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Skull_Mask_Icon.png",
+        /* 5 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Mask_of_Truth_Icon.png"
     };
 
     public static List<string> AdultTradingSequence = new()
     {
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon_Disabled.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Cucco_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Cojiro_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Mushroom_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Poultice_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Poachers_Saw_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Giants_Knife_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Broken_Gorons_Sword_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Prescription_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Eyeball_Frog_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Eye_Drops_Icon.png",
-        "pack://application:,,,/Icons/AdultTrade/OoT3D_Claim_Check_Icon.png"
+        /* 0 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon_Disabled.png",
+        /* 1 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon.png",
+        /* 2 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Cucco_Icon.png",
+        /* 3 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Cojiro_Icon.png",
+        /* 4 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Mushroom_Icon.png",
+        /* 5 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Poultice_Icon.png",
+        /* 6 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Poachers_Saw_Icon.png",
+        /* 7 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Giants_Knife_Icon.png",
+        /* 8 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Broken_Gorons_Sword_Icon.png",
+        /* 9 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Prescription_Icon.png",
+        /* 10 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eyeball_Frog_Icon.png",
+        /* 11 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eye_Drops_Icon.png",
+        /* 12 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Claim_Check_Icon.png"
     };
 }

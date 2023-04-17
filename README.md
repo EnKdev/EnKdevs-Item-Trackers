@@ -1,38 +1,23 @@
 # EnKdevs Ocarina of Time/Majora's Mask Trackers
 Two Trackers written in C# and XAML.
 
-Current Version (OoT): <b>1.0.6-ootDev+build.3</b><br/>
+Current Version (OoT): <b>1.0.6-ootDev+build.4</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>1.0.6-ootDev+build.4</b><br/>
-Next Version (MM): <b>1.0.0-mmDev</b>
+Next Version (OoT): <b>1.0.0-beta.1+ocarina</b><br/>
+Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 <br/>
 
-### On plan for 1.0.6-ootDev+build.4:
+### On plan for 1.0.0-ootDev+beta.1:
+- Beta Testing! (The release of the OoT Tracker is near!)
 
-- Item activation/deactivation logic
+### On plan for 1.0.0-mmDev+build.1:
+- Designing the UI screens (Masks, Dungeons, Items, Quest)
 
 ---
 
-### Changelog & Latest Release:
+### [Changelogs](https://github.com/EnKdev/EnKdevs-Item-Trackers/blob/main/CHANGELOGS.md) & Latest Release:
 
-1.0.5-dev
-- Removed dev progress trackers
-- Added songs to the upper layout
-- Fixed GS Count Label covering Bullet Bag, preventing it from being upgradeable
-- Added Disabled/Enabled Lists for Song Images
-
-1.0.6-ootDev:
-- Added rest of the missing item icons to the UI
-- Fixed Lists in Constants.cs missing paths to certain item icons
-
-1.0.6-ootDev+build.2:
-- First version of Data Saving/Data Reading functionality
-
-1.0.6-ootDev+build.3:
-- UI is being set properly after reading data from `trackerState` file
-
-### Download:
 
 There is no official release yet.
 <br/>
