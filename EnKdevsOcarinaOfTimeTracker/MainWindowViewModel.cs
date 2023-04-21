@@ -375,23 +375,19 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     #region Quest Items (Dungeon Rewards)
-    
-    [RelayCommand]
-    public void ActivateKokiriEmerald()
-    {
-        KokiriEmeraldImage = Constants.EnabledStones[0];
-    }
 
     [RelayCommand]
-    public void DeactivateKokiriEmerald()
+    public void ToggleEmerald()
     {
-        KokiriEmeraldImage = Constants.DisabledStones[0];
+        KokiriEmeraldImage = GetState(KokiriEmeraldImage) ? 
+            Constants.DisabledStones[0] : 
+            Constants.EnabledStones[0];
     }
 
     [RelayCommand]
     public void SetEmeraldLocation()
     {
-        if (_location1Idx > 9)
+        if (_location1Idx >= 9)
         {
             // Reset back to 0
             _location1Idx = 0;
@@ -399,9 +395,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location1Idx++;
+            
             Location1 = _location1Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -413,27 +411,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location1
             };
-
-            _location1Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateGoronRuby()
+    public void ToggleGoronRuby()
     {
-        GoronRubyImage = Constants.EnabledStones[1];
-    }
-
-    [RelayCommand]
-    public void DeactivateGoronRuby()
-    {
-        GoronRubyImage = Constants.DisabledStones[1];
+        GoronRubyImage = GetState(GoronRubyImage)
+            ? Constants.DisabledStones[1]
+            : Constants.EnabledStones[1];
     }
 
     [RelayCommand]
     public void SetRubyLocation()
     {
-        if (_location2Idx > 9)
+        if (_location2Idx >= 9)
         {
             // Reset back to 0
             _location2Idx = 0;
@@ -441,9 +433,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location2Idx++;
+            
             Location2 = _location2Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -455,27 +449,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location2
             };
-
-            _location2Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateZoraSapphire()
+    public void ToggleZorasSapphire()
     {
-        ZoraSapphireImage = Constants.EnabledStones[2];
-    }
-
-    [RelayCommand]
-    public void DeactivateZoraSapphire()
-    {
-        ZoraSapphireImage = Constants.DisabledStones[2];
+        ZoraSapphireImage = GetState(ZoraSapphireImage)
+            ? Constants.DisabledStones[2]
+            : Constants.EnabledStones[2];
     }
 
     [RelayCommand]
     public void SetSapphireLocation()
     {
-        if (_location3Idx > 9)
+        if (_location3Idx >= 9)
         {
             // Reset back to 0
             _location3Idx = 0;
@@ -483,9 +471,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location3Idx++;
+            
             Location3 = _location3Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -497,27 +487,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location3
             };
-
-            _location3Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateLightMedallion()
+    public void ToggleLightMedallion()
     {
-        LightMedallionImage = Constants.EnabledMeds[0];
-    }
-
-    [RelayCommand]
-    public void DeactivateLightMedallion()
-    {
-        LightMedallionImage = Constants.DisabledMeds[0];
+        LightMedallionImage = GetState(LightMedallionImage)
+            ? Constants.DisabledMeds[0]
+            : Constants.EnabledMeds[0];
     }
 
     [RelayCommand]
     public void SetLightLocation()
     {
-        if (_location4Idx > 9)
+        if (_location4Idx >= 9)
         {
             // Reset back to 0
             _location4Idx = 0;
@@ -525,9 +509,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location4Idx++;
+            
             Location4 = _location4Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -539,27 +525,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location4
             };
-
-            _location4Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateForestMedallion()
+    public void ToggleForestMedallion()
     {
-        ForestMedallionImage = Constants.EnabledMeds[1];
-    }
-
-    [RelayCommand]
-    public void DeactivateForestMedallion()
-    {
-        ForestMedallionImage = Constants.DisabledMeds[1];
+        ForestMedallionImage = GetState(ForestMedallionImage)
+            ? Constants.DisabledMeds[1]
+            : Constants.EnabledMeds[1];
     }
 
     [RelayCommand]
     public void SetForestLocation()
     {
-        if (_location5Idx > 9)
+        if (_location5Idx >= 9)
         {
             // Reset back to 0
             _location5Idx = 0;
@@ -567,9 +547,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location5Idx++;
+            
             Location5 = _location5Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -581,27 +563,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location5
             };
-
-            _location5Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateFireMedallion()
+    public void ToggleFireMedallion()
     {
-        FireMedallionImage = Constants.EnabledMeds[2];
-    }
-
-    [RelayCommand]
-    public void DeactivateFireMedallion()
-    {
-        FireMedallionImage = Constants.DisabledMeds[2];
+        FireMedallionImage = GetState(FireMedallionImage)
+            ? Constants.DisabledMeds[2]
+            : Constants.EnabledMeds[2];
     }
 
     [RelayCommand]
     public void SetFireLocation()
     {
-        if (_location6Idx > 9)
+        if (_location6Idx >= 9)
         {
             // Reset back to 0
             _location6Idx = 0;
@@ -609,9 +585,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location6Idx++;
+            
             Location6 = _location6Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -623,27 +601,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location6
             };
-
-            _location6Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateWaterMedallion()
+    public void ToggleWaterMedallion()
     {
-        WaterMedallionImage = Constants.EnabledMeds[3];
-    }
-
-    [RelayCommand]
-    public void DeactivateWaterMedallion()
-    {
-        WaterMedallionImage = Constants.DisabledMeds[3];
+        WaterMedallionImage = GetState(WaterMedallionImage)
+            ? Constants.DisabledMeds[3]
+            : Constants.EnabledMeds[3];
     }
 
     [RelayCommand]
     public void SetWaterLocation()
     {
-        if (_location7Idx > 9)
+        if (_location7Idx >= 9)
         {
             // Reset back to 0
             _location7Idx = 0;
@@ -651,9 +623,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location7Idx++;
+            
             Location7 = _location7Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -665,27 +639,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location7
             };
-
-            _location7Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateShadowMedallion()
+    public void ToggleShadowMedallion()
     {
-        ShadowMedallionImage = Constants.EnabledMeds[4];
-    }
-
-    [RelayCommand]
-    public void DeactivateShadowMedallion()
-    {
-        ShadowMedallionImage = Constants.DisabledMeds[4];
+        ShadowMedallionImage = GetState(ShadowMedallionImage)
+            ? Constants.DisabledMeds[4]
+            : Constants.EnabledMeds[4];
     }
 
     [RelayCommand]
     public void SetShadowLocation()
     {
-        if (_location8Idx > 9)
+        if (_location8Idx >= 9)
         {
             // Reset back to 0
             _location8Idx = 0;
@@ -693,9 +661,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location8Idx++;
+            
             Location8 = _location8Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "???"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -707,27 +677,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location8
             };
-
-            _location8Idx++;
         });
     }
 
     [RelayCommand]
-    public void ActivateSpiritMedallion()
+    public void ToggleSpiritMedallion()
     {
-        SpiritMedallionImage = Constants.EnabledMeds[5];
-    }
-
-    [RelayCommand]
-    public void DeactivateSpiritMedallion()
-    {
-        SpiritMedallionImage = Constants.DisabledMeds[5];
+        SpiritMedallionImage = GetState(SpiritMedallionImage)
+            ? Constants.DisabledMeds[5]
+            : Constants.EnabledMeds[5];
     }
 
     [RelayCommand]
     public void SetSpiritLocation()
     {
-        if (_location9Idx > 9)
+        if (_location9Idx >= 9)
         {
             // Reset back to 0
             _location9Idx = 0;
@@ -735,9 +699,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            _location9Idx++;
+        
             Location9 = _location9Idx switch
             {
-                0 => Constants.DungeonLocations[0], // ""
+                0 => Constants.DungeonLocations[0], // "??"
                 1 => Constants.DungeonLocations[1], // "FREE"
                 2 => Constants.DungeonLocations[2], // "DEKU"
                 3 => Constants.DungeonLocations[3], // "DC"
@@ -749,8 +715,6 @@ public partial class MainWindowViewModel : ObservableRecipient
                 9 => Constants.DungeonLocations[9], // "SPRT"
                 _ => Location9
             };
-
-            _location9Idx++;
         });
     }
 
@@ -758,126 +722,86 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Equip Items (Tunics, Swords, Shields, Boots)
     #region Swords
     [RelayCommand]
-    public void ActivateKokiriSword()
+    public void ToggleKokiriSword()
     {
-        KokiriSwordImage = Constants.EnabledEquip[0];
+        KokiriSwordImage = GetState(KokiriSwordImage)
+            ? Constants.DisabledEquip[0]
+            : Constants.EnabledEquip[0];
     }
 
     [RelayCommand]
-    public void DeactivateKokiriSword()
+    public void ToggleMasterSword()
     {
-        KokiriSwordImage = Constants.DisabledEquip[0];
+        MasterSwordImage = GetState(MasterSwordImage)
+            ? Constants.DisabledEquip[1]
+            : Constants.EnabledEquip[1];
     }
 
     [RelayCommand]
-    public void ActivateMasterSword()
+    public void ToggleBiggoronSword()
     {
-        MasterSwordImage = Constants.EnabledEquip[1];
-    }
-
-    [RelayCommand]
-    public void DeactivateMasterSword()
-    {
-        MasterSwordImage = Constants.DisabledEquip[1];
-    }
-
-    [RelayCommand]
-    public void ActivateBiggoronSword()
-    {
-        BiggoronSwordImage = Constants.EnabledEquip[2];
-    }
-
-    [RelayCommand]
-    public void DeactivateBiggoronSword()
-    {
-        BiggoronSwordImage = Constants.DisabledEquip[2];
+        BiggoronSwordImage = GetState(BiggoronSwordImage)
+            ? Constants.DisabledEquip[2]
+            : Constants.EnabledEquip[2];
     }
     #endregion
     #region Shields
     [RelayCommand]
-    public void ActivateDekuShield()
+    public void ToggleDekuShield()
     {
-        DekuShieldImage = Constants.EnabledEquip[3];
+        DekuShieldImage = GetState(DekuShieldImage)
+            ? Constants.DisabledEquip[3]
+            : Constants.EnabledEquip[3];
     }
 
     [RelayCommand]
-    public void DeactivateDekuShield()
+    public void ToggleHylianShield()
     {
-        DekuShieldImage = Constants.DisabledEquip[3];
+        HylianShieldImage = GetState(HylianShieldImage)
+            ? Constants.DisabledEquip[4]
+            : Constants.EnabledEquip[4];
     }
 
     [RelayCommand]
-    public void ActivateHylianShield()
+    public void ToggleMirrorShield()
     {
-        HylianShieldImage = Constants.EnabledEquip[4];
-    }
-
-    [RelayCommand]
-    public void DeactivateHylianShield()
-    {
-        HylianShieldImage = Constants.DisabledEquip[4];
-    }
-
-    [RelayCommand]
-    public void ActivateMirrorShield()
-    {
-        MirrorShieldImage = Constants.EnabledEquip[5];
-    }
-
-    [RelayCommand]
-    public void DeactivateMirrorShield()
-    {
-        MirrorShieldImage = Constants.DisabledEquip[5];
+        MirrorShieldImage = GetState(MirrorShieldImage)
+            ? Constants.DisabledEquip[5]
+            : Constants.EnabledEquip[5];
     }
     #endregion
     #region Tunics
     [RelayCommand]
-    public void ActivateGoronTunic()
+    public void ToggleGoronTunic()
     {
-        GoronTunicImage = Constants.EnabledEquip[6];
+        GoronTunicImage = GetState(GoronTunicImage)
+            ? Constants.DisabledEquip[6]
+            : Constants.EnabledEquip[6];
     }
 
     [RelayCommand]
-    public void DeactivateGoronTunic()
+    public void ToggleZoraTunic()
     {
-        GoronTunicImage = Constants.DisabledEquip[6];
-    }
-
-    [RelayCommand]
-    public void ActivateZoraTunic()
-    {
-        ZoraTunicImage = Constants.EnabledEquip[7];
-    }
-
-    [RelayCommand]
-    public void DeactivateZoraTunic()
-    {
-        ZoraTunicImage = Constants.DisabledEquip[7];
+        ZoraTunicImage = GetState(ZoraTunicImage)
+            ? Constants.DisabledEquip[7]
+            : Constants.EnabledEquip[7];
     }
     #endregion
     #region Boots
     [RelayCommand]
-    public void ActivateIronBoots()
+    public void ToggleIronBoots()
     {
-        IronBootsImage = Constants.EnabledEquip[8];
+        IronBootsImage = GetState(IronBootsImage)
+            ? Constants.DisabledEquip[8]
+            : Constants.EnabledEquip[8];
     }
 
     [RelayCommand]
-    public void DeactivateIronBoots()
+    public void ToggleHoverBoots()
     {
-        IronBootsImage = Constants.DisabledEquip[8];
-    }
-
-    [RelayCommand]
-    public void ActivateHoverBoots()
-    {
-        HoverBootsImage = Constants.EnabledEquip[9];
-    }
-
-    [RelayCommand]
-    public void DeactivateHoverBoots()
-    {
-        HoverBootsImage = Constants.DisabledEquip[9];
+        HoverBootsImage = GetState(HoverBootsImage)
+            ? Constants.DisabledEquip[9]
+            : Constants.EnabledEquip[9];
     }
     #endregion
     #endregion
@@ -1110,7 +1034,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     #endregion
     #region Other
     [RelayCommand]
-    public void IncreaseGSCount()
+    public void IncreaseGsCount()
     {
         // Cap at 100
         if (GsTokens == 100)
@@ -1124,7 +1048,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DecreaseGSCount()
+    public void DecreaseGsCount()
     {
         // Cap at 0
         if (GsTokens == 0)
@@ -1138,245 +1062,165 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ActivateToken()
+    public void ToggleGerudoToken()
     {
-        GerudoTokenImage = Constants.EnabledOther[0];
+        GerudoTokenImage = GetState(GerudoTokenImage)
+            ? Constants.DisabledOther[0]
+            : Constants.EnabledOther[0];
     }
 
     [RelayCommand]
-    public void DeactivateToken()
+    public void ToggleShard()
     {
-        GerudoTokenImage = Constants.DisabledOther[0];
-    }
-
-    [RelayCommand]
-    public void ActivateShard()
-    {
-        ShardImage = Constants.EnabledOther[1];
-    }
-
-    [RelayCommand]
-    public void DeactivateShard()
-    {
-        ShardImage = Constants.DisabledOther[1];
+        ShardImage = GetState(ShardImage)
+            ? Constants.DisabledOther[1]
+            : Constants.EnabledOther[1];
     }
     #endregion
     #region Songs
     [RelayCommand]
-    public void ActivateLullaby()
+    public void ToggleZeldasLullaby()
     {
-        LullabyImage = Constants.EnabledSongs[0];
+        LullabyImage = GetState(LullabyImage)
+            ? Constants.DisabledSongs[0]
+            : Constants.EnabledSongs[0];
     }
 
     [RelayCommand]
-    public void DeactivateLullaby()
+    public void ToggleEponasSong()
     {
-        LullabyImage = Constants.DisabledSongs[0];
+        EponaImage = GetState(EponaImage)
+            ? Constants.DisabledSongs[1]
+            : Constants.EnabledSongs[1];
     }
 
     [RelayCommand]
-    public void ActivateEpona()
+    public void ToggleSariasSong()
     {
-        EponaImage = Constants.EnabledSongs[1];
+        SariaImage = GetState(SariaImage)
+            ? Constants.DisabledSongs[2]
+            : Constants.EnabledSongs[2];
     }
 
     [RelayCommand]
-    public void DeactivateEpona()
+    public void ToggleSongOfStorms()
     {
-        EponaImage = Constants.DisabledSongs[1];
+        SosImage = GetState(SosImage)
+            ? Constants.DisabledSongs[3]
+            : Constants.EnabledSongs[3];
     }
 
     [RelayCommand]
-    public void ActivateSaria()
+    public void ToggleSunsSong()
     {
-        SariaImage = Constants.EnabledSongs[2];
+        SunsImage = GetState(SunsImage)
+            ? Constants.DisabledSongs[4]
+            : Constants.EnabledSongs[4];
     }
 
     [RelayCommand]
-    public void DeactivateSaria()
+    public void ToggleSongOfTime()
     {
-        SariaImage = Constants.DisabledSongs[2];
+        SotImage = GetState(SotImage)
+            ? Constants.DisabledSongs[5]
+            : Constants.EnabledSongs[5];
     }
 
     [RelayCommand]
-    public void ActivateStorms()
+    public void ToggleMinuet()
     {
-        SosImage = Constants.EnabledSongs[3];
+        MinuetImage = GetState(MinuetImage)
+            ? Constants.DisabledSongs[6]
+            : Constants.EnabledSongs[6];
     }
 
     [RelayCommand]
-    public void DeactivateStorms()
+    public void ToggleBolero()
     {
-        SosImage = Constants.DisabledSongs[3];
+        BoleroImage = GetState(BoleroImage)
+            ? Constants.DisabledSongs[7]
+            : Constants.EnabledSongs[7];
     }
 
     [RelayCommand]
-    public void ActivateSun()
+    public void ToggleSerenade()
     {
-        SunsImage = Constants.EnabledSongs[4];
+        SerenadeImage = GetState(SerenadeImage)
+            ? Constants.DisabledSongs[8]
+            : Constants.EnabledSongs[8];
     }
 
     [RelayCommand]
-    public void DeactivateSun()
+    public void ToggleRequiem()
     {
-        SunsImage = Constants.DisabledSongs[4];
+        RequiemImage = GetState(RequiemImage)
+            ? Constants.DisabledSongs[9]
+            : Constants.EnabledSongs[9];
     }
 
     [RelayCommand]
-    public void ActivateTime()
+    public void ToggleNocturne()
     {
-        SotImage = Constants.EnabledSongs[5];
+        NocturneImage = GetState(NocturneImage)
+            ? Constants.DisabledSongs[10]
+            : Constants.EnabledSongs[10];
     }
 
     [RelayCommand]
-    public void DeactivateTime()
+    public void TogglePrelude()
     {
-        SotImage = Constants.DisabledSongs[5];
-    }
-
-    [RelayCommand]
-    public void ActivateMinuet()
-    {
-        MinuetImage = Constants.EnabledSongs[6];
-    }
-
-    [RelayCommand]
-    public void DeactivateMinuet()
-    {
-        MinuetImage = Constants.DisabledSongs[6];
-    }
-
-    [RelayCommand]
-    public void ActivateBolero()
-    {
-        BoleroImage = Constants.EnabledSongs[7];
-    }
-
-    [RelayCommand]
-    public void DeactivateBolero()
-    {
-        BoleroImage = Constants.DisabledSongs[7];
-    }
-
-    [RelayCommand]
-    public void ActivateSerenade()
-    {
-        SerenadeImage = Constants.EnabledSongs[8];
-    }
-
-    [RelayCommand]
-    public void DeactivateSerenade()
-    {
-        SerenadeImage = Constants.DisabledSongs[8];
-    }
-
-    [RelayCommand]
-    public void ActivateRequiem()
-    {
-        RequiemImage = Constants.EnabledSongs[9];
-    }
-
-    [RelayCommand]
-    public void DeactivateRequiem()
-    {
-        RequiemImage = Constants.DisabledSongs[9];
-    }
-
-    [RelayCommand]
-    public void ActivateNocturne()
-    {
-        NocturneImage = Constants.EnabledSongs[10];
-    }
-
-    [RelayCommand]
-    public void DeactivateNocturne()
-    {
-        NocturneImage = Constants.DisabledSongs[10];
-    }
-
-    [RelayCommand]
-    public void ActivatePrelude()
-    {
-        PreludeImage = Constants.EnabledSongs[11];
-    }
-
-    [RelayCommand]
-    public void DeactivatePrelude()
-    {
-        PreludeImage = Constants.DisabledSongs[11];
+        PreludeImage = GetState(PreludeImage)
+            ? Constants.DisabledSongs[11]
+            : Constants.EnabledSongs[11];
     }
     #endregion
     #region General Items
     [RelayCommand]
-    public void ActivateStick()
+    public void ToggleStick()
     {
-        StickImage = Constants.EnabledItems[5];
+        StickImage = GetState(StickImage)
+            ? Constants.DisabledItems[5]
+            : Constants.EnabledItems[5];
     }
 
     [RelayCommand]
-    public void DeactivateStick()
+    public void ToggleNut()
     {
-        StickImage = Constants.DisabledItems[5];
+        NutImage = GetState(NutImage)
+            ? Constants.DisabledItems[4]
+            : Constants.EnabledItems[4];
     }
 
     [RelayCommand]
-    public void ActivateNut()
+    public void ToggleSlingshot()
     {
-        NutImage = Constants.EnabledItems[3];
+        SlingshotImage = GetState(SlingshotImage)
+            ? Constants.DisabledItems[8]
+            : Constants.EnabledItems[8];
     }
 
     [RelayCommand]
-    public void DeactivateNut()
+    public void ToggleDins()
     {
-        NutImage = Constants.DisabledItems[3];
+        DinsFireImage = GetState(DinsFireImage)
+            ? Constants.DisabledItems[6]
+            : Constants.EnabledItems[6];
     }
 
     [RelayCommand]
-    public void ActivateSlingshot()
+    public void ToggleBomb()
     {
-        SlingshotImage = Constants.EnabledItems[8];
+        BombItemImage = GetState(BombItemImage)
+            ? Constants.DisabledItems[0]
+            : Constants.EnabledItems[0];
     }
 
     [RelayCommand]
-    public void DeactivateSlingshot()
+    public void ToggleBombchu()
     {
-        SlingshotImage = Constants.DisabledItems[8];
-    }
-
-    [RelayCommand]
-    public void ActivateDins()
-    {
-        DinsFireImage = Constants.EnabledItems[6];
-    }
-
-    [RelayCommand]
-    public void DeactivateDins()
-    {
-        DinsFireImage = Constants.DisabledItems[6];
-    }
-
-    [RelayCommand]
-    public void ActivateBomb()
-    {
-        BombItemImage = Constants.EnabledItems[0];
-    }
-
-    [RelayCommand]
-    public void DeactivateBomb()
-    {
-        BombItemImage = Constants.DisabledItems[0];
-    }
-
-    [RelayCommand]
-    public void ActivateBombchu()
-    {
-        BombchuImage = Constants.EnabledItems[1];
-    }
-
-    [RelayCommand]
-    public void DeactivateBombchu()
-    {
-        BombchuImage = Constants.DisabledItems[1];
+        BombchuImage = GetState(BombchuImage)
+            ? Constants.DisabledItems[1]
+            : Constants.EnabledItems[1];
     }
 
     [RelayCommand]
@@ -1436,27 +1280,19 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ActivateFarore()
+    public void ToggleFarore()
     {
-        FaroresWindImage = Constants.EnabledItems[9];
+        FaroresWindImage = GetState(FaroresWindImage)
+            ? Constants.DisabledItems[9]
+            : Constants.EnabledItems[9];
     }
 
     [RelayCommand]
-    public void DeactivateFarore()
+    public void ToggleBoomerang()
     {
-        FaroresWindImage = Constants.DisabledItems[9];
-    }
-
-    [RelayCommand]
-    public void ActivateBoomerang()
-    {
-        BoomerangImage = Constants.EnabledItems[2];
-    }
-
-    [RelayCommand]
-    public void DeactivateBoomerang()
-    {
-        BoomerangImage = Constants.DisabledItems[2];
+        BoomerangImage = GetState(BoomerangImage)
+            ? Constants.DisabledItems[2]
+            : Constants.EnabledItems[2];
     }
 
     [RelayCommand]
@@ -1580,141 +1416,95 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ActivateNayru()
+    public void ToggleNayru()
     {
-        NayrusLoveImage = Constants.EnabledItems[17];
+        NayrusLoveImage = GetState(NayrusLoveImage)
+            ? Constants.DisabledItems[16]
+            : Constants.EnabledItems[17];
     }
 
     [RelayCommand]
-    public void DeactivateNayru()
+    public void ToggleLens()
     {
-        NayrusLoveImage = Constants.DisabledItems[16];
+        LensImage = GetState(LensImage)
+            ? Constants.DisabledItems[13]
+            : Constants.EnabledItems[13];
     }
 
     [RelayCommand]
-    public void ActivateLens()
+    public void ToggleHammer()
     {
-        LensImage = Constants.EnabledItems[13];
+        MegatonHammerImage = GetState(MegatonHammerImage)
+            ? Constants.DisabledItems[15]
+            : Constants.EnabledItems[16];
     }
 
     [RelayCommand]
-    public void DeactivateLens()
+    public void ToggleBow()
     {
-        LensImage = Constants.DisabledItems[13];
+        BowImage = GetState(BowImage)
+            ? Constants.DisabledItems[7]
+            : Constants.EnabledItems[7];
     }
 
     [RelayCommand]
-    public void ActivateHammer()
+    public void ToggleBeans()
     {
-        MegatonHammerImage = Constants.EnabledItems[16];
+        MagicBeansImage = GetState(MagicBeansImage)
+            ? Constants.DisabledItems[17]
+            : Constants.EnabledItems[18];
     }
 
     [RelayCommand]
-    public void DeactivateHammer()
+    public void ToggleFireArrow()
     {
-        MegatonHammerImage = Constants.DisabledItems[15];
+        FireArrowImage = GetState(FireArrowImage)
+            ? Constants.DisabledItems[10]
+            : Constants.EnabledItems[10];
     }
 
     [RelayCommand]
-    public void ActivateBow()
+    public void ToggleIceArrow()
     {
-        BowImage = Constants.EnabledItems[7];
+        IceArrowImage = GetState(IceArrowImage)
+            ? Constants.DisabledItems[12]
+            : Constants.EnabledItems[12];
     }
 
     [RelayCommand]
-    public void DeactivateBow()
+    public void ToggleLightArrow()
     {
-        BowImage = Constants.DisabledItems[7];
+        LightArrowImage = GetState(LightArrowImage)
+            ? Constants.DisabledItems[14]
+            : Constants.EnabledItems[15];
     }
 
     [RelayCommand]
-    public void ActivateBeans()
-    {
-        MagicBeansImage = Constants.EnabledItems[18];
-    }
-
-    [RelayCommand]
-    public void DeactivateBeans()
-    {
-        MagicBeansImage = Constants.DisabledItems[17];
-    }
-
-    [RelayCommand]
-    public void ActivateFireArrow()
-    {
-        FireArrowImage = Constants.EnabledItems[10];
-    }
-
-    [RelayCommand]
-    public void DeactivateFireArrow()
-    {
-        FireArrowImage = Constants.DisabledItems[10];
-    }
-
-    [RelayCommand]
-    public void ActivateIceArrow()
-    {
-        IceArrowImage = Constants.EnabledItems[12];
-    }
-
-    [RelayCommand]
-    public void DeactivateIceArrow()
-    {
-        IceArrowImage = Constants.DisabledItems[12];
-    }
-
-    [RelayCommand]
-    public void ActivateLightArrow()
-    {
-        LightArrowImage = Constants.EnabledItems[15];
-    }
-
-    [RelayCommand]
-    public void DeactivateLightArrow()
-    {
-        LightArrowImage = Constants.DisabledItems[14];
-    }
-
-    [RelayCommand]
-    public void ActivateBottle(string bottleNumber)
+    public void ToggleBottle(string bottleNumber)
     {
         var bottleNum = int.Parse(bottleNumber);
         
         switch (bottleNum)
         {
             case 1:
-                Bottle1Image = Constants.EnabledItems[3];
+                Bottle1Image = GetState(Bottle1Image)
+                    ? Constants.DisabledItems[3]
+                    : Constants.EnabledItems[3];
                 break;
             case 2:
-                Bottle2Image = Constants.EnabledItems[3];
+                Bottle2Image = GetState(Bottle2Image)
+                    ? Constants.DisabledItems[3]
+                    : Constants.EnabledItems[3];
                 break;
             case 3:
-                Bottle3Image = Constants.EnabledItems[3];
+                Bottle3Image = GetState(Bottle3Image)
+                    ? Constants.DisabledItems[3]
+                    : Constants.EnabledItems[3];
                 break;
             case 4:
-                Bottle4Image = Constants.EnabledItems[3];
-                break;
-        }
-    }
-    
-    [RelayCommand]
-    public void DeactivateBottle(string bottleNumber)
-    {
-        var bottleNum = int.Parse(bottleNumber);
-        
-        switch (bottleNum)
-        {
-            case 1:
-                Bottle1Image = Constants.DisabledItems[3];
-                break;
-            case 2:
-                Bottle2Image = Constants.DisabledItems[3];
-                break;
-            case 3:
-                Bottle3Image = Constants.DisabledItems[3];
-                break;
-            case 4:
-                Bottle4Image = Constants.DisabledItems[3];
+                Bottle4Image = GetState(Bottle4Image)
+                    ? Constants.DisabledItems[3]
+                    : Constants.EnabledItems[3];
                 break;
         }
     }
@@ -1963,6 +1753,13 @@ public partial class MainWindowViewModel : ObservableRecipient
         {
             File.Delete($"./trackerState");
         }
+    }
+
+    private static bool GetState(string spriteName)
+    {
+        // Returns true if the sprite is active
+        // Or false is inactive
+        return !spriteName.Contains("_Disabled");
     }
     #endregion
 }

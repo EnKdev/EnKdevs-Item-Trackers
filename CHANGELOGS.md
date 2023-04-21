@@ -23,6 +23,10 @@
 1.0.0-beta.1+ocarina:
 - Start of the private beta test
 
+1.0.0-beta.2+ocarina:
+- A whole lot of code refactoring
+- Locations are more responsive now
+
 ---
 
 1.0.0-mmDev+build.1:

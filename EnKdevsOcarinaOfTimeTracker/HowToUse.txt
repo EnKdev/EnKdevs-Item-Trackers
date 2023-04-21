@@ -6,9 +6,9 @@ an Ocarina of Time Randomizer run, whether be it one generated through the usual
 or through Ship of Harkinian.
 
 To activate an item on the tracker, simply left click on it.
-To deactivate an item on the tracker, you have to right click it.
+To deactivate an item on the tracker, you have to left click it again.
 The spiritual stones and medallions have a third interaction that's special to those.
-If you click with your middle mouse button on them, you can set their location reflecting on in which
+If you click with your right mouse button on them, you can set their location reflecting on in which
 dungeon these dungeon rewards are.
 
 Please note:
