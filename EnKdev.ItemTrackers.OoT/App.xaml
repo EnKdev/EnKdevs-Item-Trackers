@@ -1,7 +1,7 @@
 ﻿<Application x:Class="EnKdev.ItemTrackers.OoT.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:EnKdevsOcarinaOfTimeTracker"
+             xmlns:local="clr-namespace:EnKdev.ItemTrackers.OoT"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <FontFamily x:Key="FOT-Chiaro Std B">./Fonts/FOT-Chiaro-Std-B.otf#FOT-Chiaro Std B</FontFamily>
