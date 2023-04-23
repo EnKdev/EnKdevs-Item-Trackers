@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:EnKdevsOcarinaOfTimeTracker"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
+        <FontFamily x:Key="FOT-Chiaro Std B">./Fonts/FOT-Chiaro-Std-B.otf#FOT-Chiaro Std B</FontFamily>
     </Application.Resources>
 </Application>

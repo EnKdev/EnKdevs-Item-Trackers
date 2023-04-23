@@ -656,4 +656,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Fonts\FOT-Chiaro-Std-B.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

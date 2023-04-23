@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EnKdevsOcarinaOfTimeTracker"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="400" FontFamily="FOT-Chiaro Std B" Foreground="White">
+             d:DesignHeight="730" d:DesignWidth="400" FontFamily="{StaticResource 'FOT-Chiaro Std B'}" Foreground="White">
     <UserControl.DataContext>
         <local:MainWindowViewModel/>
     </UserControl.DataContext>

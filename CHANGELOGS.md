@@ -27,6 +27,11 @@
 - A whole lot of code refactoring
 - Locations are more responsive now
 
+1.0.0-beta.3+ocarina:
+- Embedded used font into the application
+- Operating Systems would fall back on the next available fonts because the app relied on you installing the used font.
+- This is now fixed by having the font being bundled with the app
+
 ---
 
 1.0.0-mmDev+build.1:
