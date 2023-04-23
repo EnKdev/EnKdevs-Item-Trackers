@@ -399,4 +399,4 @@ FodyWeavers.xsd
 
 .idea/**
 .vs/**
-EnKdevsOcarinaOfTimeTracker/Internal/PrivateCryptoKey.cs
+EnKdev.ItemTrackers.OoT/Internal/PrivateCryptoKey.cs
