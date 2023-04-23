@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EnKdevsOcarinaOfTimeTracker
+namespace EnKdev.ItemTrackers.OoT
 {
     /// <summary>
     /// Interaktionslogik für MainView.xaml

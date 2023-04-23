@@ -11,7 +11,7 @@ using EnKdevsOcarinaOfTimeTracker.Data;
 using EnKdevsOcarinaOfTimeTracker.Models;
 using Semver;
 
-namespace EnKdevsOcarinaOfTimeTracker;
+namespace EnKdev.ItemTrackers.OoT;
 
 public partial class MainWindowViewModel : ObservableRecipient
 {

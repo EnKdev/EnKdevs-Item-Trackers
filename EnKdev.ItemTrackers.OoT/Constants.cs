@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Semver;
 
-namespace EnKdevsOcarinaOfTimeTracker;
+namespace EnKdev.ItemTrackers.OoT;
 
 public static class Constants
 {

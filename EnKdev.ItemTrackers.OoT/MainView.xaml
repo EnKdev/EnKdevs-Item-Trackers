@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="EnKdevsOcarinaOfTimeTracker.MainView"
+﻿<UserControl x:Class="EnKdev.ItemTrackers.OoT.MainView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:EnKdevsOcarinaOfTimeTracker"
+             xmlns:local="clr-namespace:EnKdev.ItemTrackers.OoT"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="400" FontFamily="{StaticResource 'FOT-Chiaro Std B'}" Foreground="White">
     <UserControl.DataContext>
