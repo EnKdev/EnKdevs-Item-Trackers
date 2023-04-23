@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection.Metadata;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using EnKdevsOcarinaOfTimeTracker.Data;
-using EnKdevsOcarinaOfTimeTracker.Models;
-using Semver;
+using EnKdev.ItemTrackers.OoT.Data;
+using EnKdev.ItemTrackers.OoT.Models;
 
 namespace EnKdev.ItemTrackers.OoT;
 

@@ -1,9 +1,9 @@
 ﻿using System.IO;
-using EnKdevsOcarinaOfTimeTracker.Internal;
-using EnKdevsOcarinaOfTimeTracker.Models;
+using EnKdev.ItemTrackers.OoT.Internal;
+using EnKdev.ItemTrackers.OoT.Models;
 using Newtonsoft.Json;
 
-namespace EnKdevsOcarinaOfTimeTracker.Data;
+namespace EnKdev.ItemTrackers.OoT.Data;
 
 public static class DataWriter
 {

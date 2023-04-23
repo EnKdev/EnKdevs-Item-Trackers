@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace EnKdevsOcarinaOfTimeTracker.Models;
+namespace EnKdev.ItemTrackers.OoT.Models;
 
 public class LocationData
 {
