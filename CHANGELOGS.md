@@ -36,6 +36,9 @@
 - Fixed a crash that occured if you attempted to load a non-existing `trackerState` file
 - Implemented logging that logs pretty much everything.
 
+1.0.0
+- Initial release (HOORAY!)
+
 ---
 
 1.0.0-mmDev+build.1:

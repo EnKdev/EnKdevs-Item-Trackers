@@ -1,29 +1,23 @@
 # EnKdevs Ocarina of Time/Majora's Mask Trackers
 Two Trackers written in C# and XAML.
 
-Current Version (OoT): <b>1.0.0-beta.4+ocarina</b><br/>
+Current Version (OoT): <b>1.0.0</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>1.0.0-release+ocarina</b> (If everything goes to plan)<br/>
+Next Version (OoT): <b>2.0.0</b>
 Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 <br/>
 
-### On plan for 1.0.0-release+ocarina:
-- Initial release!
+### On plan for 2.0.0 (OoT):
+- Dungeons Support
+- Preparations for Keysanity Support
 
 ### On plan for 1.0.0-mmDev+build.1:
 - Designing the UI screens (Masks, Dungeons, Items, Quest)
 
 ---
 
-### [Changelogs](https://github.com/EnKdev/EnKdevs-Item-Trackers/blob/main/CHANGELOGS.md) & Latest Release:
-
-
-There is no official release yet.
-<br/>
-Once the tracker has undergone testing, I'll make a release on here.
-<br/>
-But until then, stay patient...
+### [Changelogs](https://github.com/EnKdev/EnKdevs-Item-Trackers/blob/main/CHANGELOGS.md) & [Latest Release](https://github.com/EnKdev/EnKdevs-Item-Trackers/releases)
 
 ---
 
