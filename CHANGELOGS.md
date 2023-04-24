@@ -32,6 +32,10 @@
 - Operating Systems would fall back on the next available fonts because the app relied on you installing the used font.
 - This is now fixed by having the font being bundled with the app
 
+1.0.0-beta.4+ocarina:
+- Fixed a crash that occured if you attempted to load a non-existing `trackerState` file
+- Implemented logging that logs pretty much everything.
+
 ---
 
 1.0.0-mmDev+build.1:
