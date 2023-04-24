@@ -4,7 +4,7 @@ Two Trackers written in C# and XAML.
 Current Version (OoT): <b>1.0.0</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>2.0.0</b>
+Next Version (OoT): <b>2.0.0</b><br/>
 Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 <br/>
 
