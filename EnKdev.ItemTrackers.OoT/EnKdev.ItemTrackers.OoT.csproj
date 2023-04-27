@@ -319,9 +319,6 @@
     <Content Include="Images\OoTTrackerGear.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\OoTTrackerItems+Songs.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Remove="Icons\Other\OoT3D_Gerudo_Token_Icon.png" />
     <Content Include="Icons\Other\OoT3D_Gerudo_Token_Icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
