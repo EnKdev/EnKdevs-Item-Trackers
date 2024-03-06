@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EnKdev.ItemTrackers.OoT"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="400" FontFamily="{StaticResource 'FOT-Chiaro Std B'}" Foreground="White">
+             d:DesignHeight="730" d:DesignWidth="930" FontFamily="{StaticResource 'FOT-Chiaro Std B'}" Foreground="White">
     <UserControl.DataContext>
         <local:MainWindowViewModel/>
     </UserControl.DataContext>
@@ -15,195 +15,105 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="350"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
         <Grid Row="0" Column="0">
-            <Image Source="{Binding ItemSongBackground}"/>
-            <!-- Songs -->
-            <Image Source="{Binding LullabyImage}" Width="45" Height="45" Margin="203, -258, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleZeldasLullabyCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding EponaImage}" Width="45" Height="45" Margin="203, -160, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEponasSongCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding SariaImage}" Width="45" Height="45" Margin="203, -60, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSariasSongCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding SosImage}" Width="45" Height="45" Margin="203, 38, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSongOfStormsCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding SunsImage}" Width="45" Height="45" Margin="203, 135, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSunsSongCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding SotImage}" Width="45" Height="45" Margin="203, 243, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSongOfTimeCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding MinuetImage}" Width="45" Height="45" Margin="330, -258, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMinuetCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding BoleroImage}" Width="45" Height="45" Margin="330, -160, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBoleroCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding SerenadeImage}" Width="45" Height="45" Margin="330, -60, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSerenadeCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding RequiemImage}" Width="45" Height="45" Margin="330, 38, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleRequiemCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding NocturneImage}" Width="45" Height="45" Margin="330, 135, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleNocturneCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding PreludeImage}" Width="45" Height="45" Margin="330, 243, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePreludeCommand}"/>
-                </Image.InputBindings>
-            </Image>
+            <Image Source="{Binding ItemBackground}"/>
             <!-- General Items -->
-            <!-- Row 1 -->
-            <Image Source="{Binding StickImage}" Width="45" Height="45" Margin="-350, -255, 0, 0">
+            <!-- Child Exclusive -->
+            <Image Source="{Binding StickImage}" Width="45" Height="45" Margin="-360, -123, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleStickCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding NutImage}" Width="45" Height="45" Margin="-240, -255, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleNutCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding SlingshotImage}" Width="45" Height="45" Margin="-130, -255, 0, 0">
+            <Image Source="{Binding SlingshotImage}" Width="45" Height="45" Margin="-260, -123, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSlingshotCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding DinsFireImage}" Width="45" Height="45" Margin="-20, -255, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleDinsCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding Bottle1Image}" Width="45" Height="45" Margin="95, -255, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="1"/>
-                </Image.InputBindings>
-            </Image>
-            <!-- Row 2 -->
-            <Image Source="{Binding BombItemImage}" Width="45" Height="45" Margin="-352, -125, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBombCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding BombchuImage}" Width="45" Height="45" Margin="-240, -125, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBombchuCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding ChildTradeItemImage}" Width="45" Height="45" Margin="-130, -125, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseChildTradeCommand}"/>
-                    <MouseBinding Gesture="RightClick" Command="{Binding DecreaseChildTradeCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding FaroresWindImage}" Width="45" Height="45" Margin="-20, -125, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleFaroreCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding Bottle2Image}" Width="45" Height="45" Margin="95, -125, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="2"/>
-                </Image.InputBindings>
-            </Image>
-            <!-- Row 3 -->
-            <Image Source="{Binding BoomerangImage}" Width="45" Height="45" Margin="-353, 5, 0, 0">
+            <Image Source="{Binding BoomerangImage}" Width="45" Height="45" Margin="-360, -5, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBoomerangCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding HookshotImage}" Width="45" Height="45" Margin="-236, 5, 0, 0">
+            <Image Source="{Binding MagicBeansImage}" Width="45" Height="45" Margin="-260, -5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBeansCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Universal Items -->
+            <Image Source="{Binding NutImage}" Width="45" Height="45" Margin="-103, -123, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleNutCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding DinsFireImage}" Width="45" Height="45" Margin="-103, -5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleDinsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BombItemImage}" Width="45" Height="45" Margin="3, -123, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBombCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BombchuImage}" Width="45" Height="45" Margin="103, -123, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBombchuCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding FaroresWindImage}" Width="45" Height="45" Margin="3, -5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleFaroreCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding NayrusLoveImage}" Width="45" Height="45" Margin="103, -5, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleNayruCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding LensImage}" Width="45" Height="45" Margin="3, 120, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleLensCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Adult Exclusive -->
+            <Image Source="{Binding HookshotImage}" Width="45" Height="45" Margin="260, -123, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseHookshotCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DecreaseHookshotCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding AdultTradeItemImage}" Width="45" Height="45" Margin="-127, 5, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseAdultTradeCommand}"/>
-                    <MouseBinding Gesture="RightClick" Command="{Binding DecreaseAdultTradeCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding NayrusLoveImage}" Width="45" Height="45" Margin="-20, 5, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleNayruCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding Bottle3Image}" Width="45" Height="45" Margin="95, 5, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="3"/>
-                </Image.InputBindings>
-            </Image>
-            <!-- Row 4 -->
-            <Image Source="{Binding LensImage}" Width="45" Height="45" Margin="-350, 135, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleLensCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding MegatonHammerImage}" Width="45" Height="45" Margin="-240, 135, 0, 0">
+            <Image Source="{Binding MegatonHammerImage}" Width="45" Height="45" Margin="365, -123, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleHammerCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding BowImage}" Width="45" Height="45" Margin="-130 135, 0, 0">
+            <Image Source="{Binding BowImage}" Width="45" Height="45" Margin="260,-5 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBowCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding MagicBeansImage}" Width="45" Height="45" Margin="-20, 135, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBeansCommand}"/>
-                </Image.InputBindings>
-            </Image>
-            <Image Source="{Binding Bottle4Image}" Width="45" Height="45" Margin="95, 135, 0, 0">
-                <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="4"/>
-                </Image.InputBindings>
-            </Image>
-            <!-- Special Arrows -->
-            <Image Source="{Binding FireArrowImage}" Width="45" Height="45" Margin="-290, 243, 0, 0">
+            <Image Source="{Binding FireArrowImage}" Width="45" Height="45" Margin="365, -5, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleFireArrowCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding IceArrowImage}" Width="45" Height="45" Margin="-122, 243, 0, 0">
+            <Image Source="{Binding IceArrowImage}" Width="45" Height="45" Margin="365, 120, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleIceArrowCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding LightArrowImage}" Width="45" Height="45" Margin="46, 243, 0, 0">
+            <Image Source="{Binding LightArrowImage}" Width="45" Height="45" Margin="260, 120, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleLightArrowCommand}"/>
                 </Image.InputBindings>
             </Image>
         </Grid>
-        <Grid Row="1" Column="0">
+        <Grid Row="1" Column="0" ColumnSpan="3">
             <Button Width="45" Content="Save" Margin="-100, 0, 0, 0" Command="{Binding WriteDataCommand}"
                     Grid.RowSpan="2" Background="#22FFFFFF" Foreground="White" BorderBrush="Transparent">
                 <Button.Resources>
@@ -232,177 +142,354 @@
         <Grid Row="2" Column="0">
             <Image Source="{Binding GearBackground}"/>
             <!-- Reward locations -->
-            <TextBlock Text="{Binding Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, 45, 0, 0"/>
-            <TextBlock Text="{Binding Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, 45, 0, 0"/>
-            <TextBlock Text="{Binding Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, 45, 0, 0"/>
-            <TextBlock Text="{Binding Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, -295, 0, 0"/>
-            <TextBlock Text="{Binding Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, -235, 0, 0"/>
-            <TextBlock Text="{Binding Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-104, -120, 0, 0"/>
-            <TextBlock Text="{Binding Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-216, -57, 0, 0"/>
-            <TextBlock Text="{Binding Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, -235, 0, 0"/>
-            <TextBlock Text="{Binding Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-326, -120, 0, 0"/>
+            <TextBlock Text="{Binding Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-338, 40, 0, 0"/>
+            <TextBlock Text="{Binding Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-222, 40, 0, 0"/>
+            <TextBlock Text="{Binding Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-107, 40, 0, 0"/>
+            <TextBlock Text="{Binding Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-225, -310, 0, 0"/>
+            <TextBlock Text="{Binding Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-109, -250, 0, 0"/>
+            <TextBlock Text="{Binding Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-109, -130, 0, 0"/>
+            <TextBlock Text="{Binding Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-225, -65, 0, 0"/>
+            <TextBlock Text="{Binding Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-339, -250, 0, 0"/>
+            <TextBlock Text="{Binding Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-339, -130, 0, 0"/>
             <!-- Medallions -->
-            <Image Source="{Binding LightMedallionImage}" Width="35" Height="35" Margin="-216, -250, 0, 0">
+            <Image Source="{Binding LightMedallionImage}" Width="40" Height="35" Margin="-224, -260, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleLightMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLightLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding ForestMedallionImage}" Width="35" Height="35" Margin="-104, -191, 0, 0">
+            <Image Source="{Binding ForestMedallionImage}" Width="35" Height="35" Margin="-108, -198, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleForestMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetForestLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding FireMedallionImage}" Width="35" Height="35" Margin="-104, -73, 0, 0">
+            <Image Source="{Binding FireMedallionImage}" Width="35" Height="35" Margin="-108, -76, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleFireMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetFireLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding WaterMedallionImage}" Width="35" Height="35" Margin="-216, -13, 0, 0">
+            <Image Source="{Binding WaterMedallionImage}" Width="35" Height="35" Margin="-224, -14, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleWaterMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetWaterLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding ShadowMedallionImage}" Width="35" Height="35" Margin="-326, -195, 0, 0">
+            <Image Source="{Binding ShadowMedallionImage}" Width="35" Height="35" Margin="-338, -202, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleShadowMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetShadowLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding SpiritMedallionImage}" Width="35" Height="35" Margin="-326, -77, 0, 0">
+            <Image Source="{Binding SpiritMedallionImage}" Width="35" Height="35" Margin="-338, -80, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSpiritMedallionCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetSpiritLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <!-- Spiritual Stones -->
-            <Image Source="{Binding KokiriEmeraldImage}" Width="35" Height="35" Margin="-326, 88, 0, 0">
+            <Image Source="{Binding KokiriEmeraldImage}" Width="35" Height="35" Margin="-338, 90, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEmeraldCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetEmeraldLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding GoronRubyImage}" Width="35" Height="35" Margin="-214, 88, 0, 0">
+            <Image Source="{Binding GoronRubyImage}" Width="35" Height="35" Margin="-221, 90, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleGoronRubyCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetRubyLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding ZoraSapphireImage}" Width="35" Height="35" Margin="-103, 88, 0, 0">
+            <Image Source="{Binding ZoraSapphireImage}" Width="35" Height="35" Margin="-106, 90, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleZorasSapphireCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetSapphireLocationCommand}"/>
                 </Image.InputBindings>
             </Image>
             <!-- Equips -->
-            <Image Source="{Binding KokiriSwordImage}" Width="45" Height="45" Margin="85, -255, 0, 0">
+            <Image Source="{Binding KokiriSwordImage}" Width="45" Height="45" Margin="85, -260, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleKokiriSwordCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding MasterSwordImage}" Width="45" Height="45" Margin="210, -255, 0, 0">
+            <Image Source="{Binding MasterSwordImage}" Width="45" Height="45" Margin="210, -260, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMasterSwordCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding BiggoronSwordImage}" Width="45" Height="45" Margin="340, -255, 0, 0">
+            <Image Source="{Binding BiggoronSwordImage}" Width="45" Height="45" Margin="340, -260, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBiggoronSwordCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding DekuShieldImage}" Width="45" Height="45" Margin="85, -120, 0, 0">
+            <Image Source="{Binding DekuShieldImage}" Width="45" Height="45" Margin="85, -125, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleDekuShieldCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding HylianShieldImage}" Width="45" Height="45" Margin="210, -120, 0, 0">
+            <Image Source="{Binding HylianShieldImage}" Width="45" Height="45" Margin="210, -125, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleHylianShieldCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding MirrorShieldImage}" Width="45" Height="45" Margin="340, -120, 0, 0">
+            <Image Source="{Binding MirrorShieldImage}" Width="45" Height="45" Margin="340, -125, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMirrorShieldCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding KokiriTunicImage}" Width="45" Height="45" Margin="85, 5, 0, 0"/>
-            <Image Source="{Binding GoronTunicImage}" Width="45" Height="45" Margin="210, 5, 0, 0">
+            <Image Source="{Binding KokiriTunicImage}" Width="45" Height="45" Margin="85, 10, 0, 0"/>
+            <Image Source="{Binding GoronTunicImage}" Width="45" Height="45" Margin="210, 10, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleGoronTunicCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding ZoraTunicImage}" Width="45" Height="45" Margin="340, 5, 0, 0">
+            <Image Source="{Binding ZoraTunicImage}" Width="45" Height="45" Margin="340, 10, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleZoraTunicCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding KokiriBootsImage}" Width="45" Height="45" Margin="85, 140, 0, 0"/>
-            <Image Source="{Binding IronBootsImage}" Width="45" Height="45" Margin="210, 140, 0, 0">
+            <Image Source="{Binding KokiriBootsImage}" Width="45" Height="45" Margin="85, 145, 0, 0"/>
+            <Image Source="{Binding IronBootsImage}" Width="45" Height="45" Margin="210, 145, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleIronBootsCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding HoverBootsImage}" Width="45" Height="45" Margin="340, 140, 0, 0">
+            <Image Source="{Binding HoverBootsImage}" Width="45" Height="45" Margin="340, 145, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleHoverBootsCommand}"/>
                 </Image.InputBindings>
             </Image>
             <!-- Upgradeables -->
-            <Image Source="{Binding OcarinaImage}" Width="45" Height="45" Margin="-220, 165, 0, 0">
+            <Image Source="{Binding OcarinaImage}" Width="45" Height="45" Margin="-230, 170, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeOcarinaCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeOcarinaCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding ScaleImage}" Width="45" Height="45" Margin="370, 272, 0, 0">
+            <Image Source="{Binding ScaleImage}" Width="45" Height="45" Margin="380, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeScaleCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeScaleCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding StrengthImage}" Width="45" Height="45" Margin="285, 272, 0, 0">
+            <Image Source="{Binding StrengthImage}" Width="45" Height="45" Margin="290, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeStrengthCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeStrengthCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding BombImage}" Width="45" Height="45" Margin="200, 272, 0, 0">
+            <Image Source="{Binding BombImage}" Width="45" Height="45" Margin="210, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeBombCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeBombCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding QuiverImage}" Width="45" Height="45" Margin="125, 272, 0, 0">
+            <Image Source="{Binding QuiverImage}" Width="45" Height="45" Margin="130, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeQuiverCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeQuiverCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding BulletImage}" Width="45" Height="45" Margin="40, 272, 0, 0">
+            <Image Source="{Binding BulletImage}" Width="45" Height="45" Margin="40, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding UpgradeBulletCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DowngradeBulletCommand}"/>
                 </Image.InputBindings>
             </Image>
             <!-- Collectibles and other things -->
-            <Image Source="{Binding GsImage}" Width="45" Height="45" Margin="-150, 272, 0, 0">
+            <Image Source="{Binding GsImage}" Width="45" Height="45" Margin="-145, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding IncreaseGsCountCommand}"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding DecreaseGsCountCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <TextBlock Text="{Binding GsTokens}" Width="45" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-60,296,0,0"/>
-            <Image Source="{Binding GerudoTokenImage}" Width="45" Height="45" Margin="-250, 272, 0, 0">
+            <TextBlock Text="{Binding GsTokens}" Width="45" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-55,301,0,0"/>
+            <Image Source="{Binding GerudoTokenImage}" Width="45" Height="45" Margin="-240, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleGerudoTokenCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding ShardImage}" Width="45" Height="45" Margin="-345, 272, 0, 0">
+            <Image Source="{Binding ShardImage}" Width="45" Height="45" Margin="-335, 282, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleShardCommand}"/>
+                </Image.InputBindings>
+            </Image>
+        </Grid>
+        <!--Other and Dungeons-->
+        <Grid Row="0" Column="2">
+            <Image Source="{Binding DungeonBackground}"/>
+            <Image Source="{Binding MapImage}" Width="40" Height="40"></Image>
+        </Grid>
+        <Grid Row="2" Column="2">
+            <Image Source="{Binding OtherBackground}"/>
+            <!-- Songs -->
+            <Image Source="{Binding LullabyImage}" Width="40" Height="40" Margin="-78, -265, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleZeldasLullabyCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding EponaImage}" Width="40" Height="40" Margin="4, -265, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEponasSongCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SariaImage}" Width="40" Height="40" Margin="86, -265, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSariasSongCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SosImage}" Width="40" Height="40" Margin="168, -265, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSongOfStormsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SunsImage}" Width="40" Height="40" Margin="250, -265, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSunsSongCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SotImage}" Width="40" Height="40" Margin="332, -265, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSongOfTimeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MinuetImage}" Width="40" Height="40" Margin="-78, -185, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMinuetCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BoleroImage}" Width="40" Height="40" Margin="4, -185, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBoleroCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SerenadeImage}" Width="40" Height="40" Margin="86, -185, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSerenadeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding RequiemImage}" Width="40" Height="40" Margin="168, -185, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleRequiemCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding NocturneImage}" Width="40" Height="40" Margin="250, -185, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleNocturneCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding PreludeImage}" Width="40" Height="40" Margin="332, -185, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePreludeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Bottles -->
+            <Image Source="{Binding Bottle1Image}" Width="40" Height="40" Margin="-77, -80, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="1"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle2Image}" Width="40" Height="40" Margin="4, -80, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="2"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle3Image}" Width="40" Height="40" Margin="86, -80, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="3"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding Bottle4Image}" Width="40" Height="40" Margin="168, -80, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBottleCommand}" CommandParameter="4"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Child Trade -->
+            <Image Source="{Binding WeirdEggIcon}" Width="40" Height="40" Margin="-77, 50, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleWeirdEggCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding CuccoIcon}" Width="40" Height="40" Margin="4, 50, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCuccoCommand}" CommandParameter="child"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding LetterIcon}" Width="40" Height="40" Margin="86, 50, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleLetterCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding SkullMaskIcon}" Width="40" Height="40" Margin="168, 50, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSkullMaskCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding MaskOfTruthIcon}" Width="40" Height="40" Margin="250, 50, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMaskOfTruthCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <!-- Adult Trade -->
+            <Image Source="{Binding PocketEggImage}" Width="40" Height="40" Margin="-73, 200, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePocketEggCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding PocketCuccoImage}" Width="40" Height="40" Margin="5, 200, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePocketCuccoCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding CojiroImage}" Width="40" Height="40" Margin="91, 200, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCojiroCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding OddMushroomImage}" Width="40" Height="40" Margin="172, 200, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleOddMushroomCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding OddPoulticeImage}" Width="40" Height="40" Margin="251, 200, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleOddPoulticeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding PoachersSawImage}" Width="40" Height="40" Margin="335, 200, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePoachersSawCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding GiantsKnifeImage}" Width="40" Height="40" Margin="-73, 280, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleGiantsKnifeCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding BrokenGoronsSwordImage}" Width="40" Height="40" Margin="5, 280, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleBgsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding PrescriptionImage}" Width="40" Height="40" Margin="91, 280, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePrescriptionCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding EyeballFrogImage}" Width="40" Height="40" Margin="172, 280, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEyeballFrogCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding EyeDropsImage}" Width="40" Height="40" Margin="257, 280, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEyeDropsCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="{Binding ClaimCheckImage}" Width="40" Height="40" Margin="335, 280, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleClaimCheckCommand}"/>
                 </Image.InputBindings>
             </Image>
         </Grid>

@@ -4,13 +4,15 @@ Two Trackers written in C# and XAML.
 Current Version (OoT): <b>1.0.0</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>2.0.0</b><br/>
+Next Version (OoT): <b>2.0.0 (Read Important Notes!)</b><br/>
 Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 <br/>
 
 ### On plan for 2.0.0 (OoT):
 - Dungeons Support
 - Preparations for Keysanity Support
+- Complete UI redesign
+- Complete App Restructuring
 
 ### On plan for 1.0.0-mmDev+build.1:
 - Designing the UI screens (Masks, Dungeons, Items, Quest)
@@ -26,8 +28,8 @@ Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 Tools Used:
 
 - Visual Studio 2022 Community
-- JetBrains ReSharper 2023.1
-- JetBrains Rider 2023.1
+- JetBrains ReSharper 2023.3.3
+- JetBrains Rider 2024.1 EAP7
 
 IDE used for the code: JetBrains Rider 2023
 
@@ -45,3 +47,10 @@ IDE used for UI Work: Visual Studio 2022 Community
 
 - [Riddim-GLiTCH](https://github.com/Riddim-GLiTCH) for being my major driving force behind this project.
 - [Ship of Harkinian](https://www.shipofharkinian.com/) for porting Ocarina of Time to the PC (I wouldn't do this tracker if this wouldn't be a thing.)
+
+---
+
+## Important Notes
+
+With Version 2.0.0 of the Ocarina of Time Tracker, previously existing tracker states won't be usable.<br/>
+Make sure to secure your previously existing progress by the usage of a screenshot so you can transfer it to the new format.

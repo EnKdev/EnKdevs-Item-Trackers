@@ -4,6 +4,9 @@ namespace EnKdev.ItemTrackers.OoT.Models;
 
 public class TrackerData
 {
+    [JsonProperty("dungeonData")]
+    public DungeonData DungeonData { get; set; }
+
     [JsonProperty("tradeData")]
     public TradeData TradeData { get; set; }
 

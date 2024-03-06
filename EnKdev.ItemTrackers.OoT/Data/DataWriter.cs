@@ -18,8 +18,8 @@ public static class DataWriter
             }
 
             var fileText = JsonConvert.SerializeObject(data, Formatting.Indented);
-            var encryptedData = PrivateCryptoKey.EncryptData(fileText);
-            File.WriteAllBytes($"./trackerState", encryptedData);
+            var encryptedData = CryptoHelper.EncryptAndEncode(fileText);
+            File.WriteAllText($"./trackerState", encryptedData);
         }
         catch (Exception ex)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection.Metadata;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -13,7 +14,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _title;
 
-    // Reward Locations
+    #region Textfields - Reward Locations
+
     [ObservableProperty]
     private string _location1;
 
@@ -41,7 +43,10 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _location9;
 
-    // Quest Items (Dungeon Rewards)
+    #endregion
+
+    #region Quest Reward Images
+
     [ObservableProperty]
     private string _kokiriEmeraldImage;
 
@@ -69,7 +74,10 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _spiritMedallionImage;
 
-    // Equips (Boots, Shields, Swords, Tunics)
+    #endregion
+
+    #region Equip Images
+
     [ObservableProperty]
     private string _kokiriSwordImage;
 
@@ -106,7 +114,10 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _hoverBootsImage;
 
-    // Upgrades
+    #endregion
+
+    #region Upgrade Images
+
     [ObservableProperty]
     private string _ocarinaImage;
 
@@ -124,8 +135,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     [ObservableProperty]
     private string _bulletImage;
-    
-    // Other
+
+    #endregion
+
+    #region Other Images
+
     [ObservableProperty]
     private string _gsImage;
 
@@ -138,7 +152,10 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty] 
     private string _shardImage;
 
-    // Songs
+    #endregion
+
+    #region Song Images
+
     [ObservableProperty]
     private string _lullabyImage;
 
@@ -175,7 +192,85 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private string _preludeImage;
 
-    // General items
+    #endregion
+
+    #region Bottle Images
+
+    [ObservableProperty]
+	private string _bottle1Image;
+
+	[ObservableProperty]
+	private string _bottle2Image;
+
+	[ObservableProperty]
+	private string _bottle3Image;
+
+	[ObservableProperty]
+	private string _bottle4Image;
+
+    #endregion
+
+    #region Child Trade Images
+
+    [ObservableProperty]
+    private string _weirdEggIcon;
+
+    [ObservableProperty]
+    private string _cuccoIcon;
+
+    [ObservableProperty]
+    private string _letterIcon;
+
+    [ObservableProperty]
+    private string _skullMaskIcon;
+
+    [ObservableProperty]
+    private string _maskOfTruthIcon;
+
+    #endregion
+
+    #region Adult Trade Images
+
+    [ObservableProperty]
+    private string _pocketEggImage;
+
+    [ObservableProperty]
+    private string _pocketCuccoImage;
+
+    [ObservableProperty]
+    private string _cojiroImage;
+
+    [ObservableProperty]
+    private string _oddMushroomImage;
+
+    [ObservableProperty]
+    private string _oddPoulticeImage;
+
+    [ObservableProperty]
+    private string _poachersSawImage;
+
+    [ObservableProperty]
+    private string _giantsKnifeImage;
+
+    [ObservableProperty]
+    private string _brokenGoronsSwordImage;
+
+    [ObservableProperty]
+    private string _prescriptionImage;
+
+    [ObservableProperty]
+    private string _eyeballFrogImage;
+
+    [ObservableProperty]
+    private string _eyeDropsImage;
+
+    [ObservableProperty]
+    private string _claimCheckImage;
+
+    #endregion
+
+    #region General Item Images
+
     [ObservableProperty] 
     private string _stickImage;
 
@@ -225,18 +320,6 @@ public partial class MainWindowViewModel : ObservableRecipient
     private string _magicBeansImage;
 
     [ObservableProperty]
-    private string _bottle1Image;
-
-    [ObservableProperty]
-    private string _bottle2Image;
-
-    [ObservableProperty]
-    private string _bottle3Image;
-
-    [ObservableProperty]
-    private string _bottle4Image;
-
-    [ObservableProperty]
     private string _fireArrowImage;
 
     [ObservableProperty]
@@ -244,15 +327,61 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     [ObservableProperty]
     private string _lightArrowImage;
-    
-    // Backgrounds
+
+    #endregion
+
+    #region Dungeon Related Images
+
     [ObservableProperty]
-    private string _itemSongBackground;
+    public string _dekuMapImage;
+
+    [ObservableProperty]
+    public string _dekuCompassImage;
+
+    [ObservableProperty]
+    public string _dcMapImage;
+
+    [ObservableProperty]
+    public string _dcCompassImage;
+
+    [ObservableProperty]
+    public string _jabuMapImage;
+
+    [ObservableProperty]
+    public string _jabuCompassImage;
+
+    [ObservableProperty]
+    public string _forestMapImage;
+
+    [ObservableProperty]
+    public string _forestCompassImage;
+
+    [ObservableProperty]
+    public string _forestKeyImage;
+
+    [ObservableProperty]
+    public string _forestBkImage;
+
+    #endregion
+
+    #region Backgrounds
+
+    [ObservableProperty]
+    private string _itemBackground;
 
     [ObservableProperty] 
     private string _gearBackground;
 
-    // Data
+    [ObservableProperty]
+    private string _dungeonBackground;
+
+    [ObservableProperty]
+    private string _otherBackground;
+
+    #endregion
+
+	#region Data
+
     private int _ocarinaState;
     private int _scaleState;
     private int _strengthState;
@@ -270,12 +399,56 @@ public partial class MainWindowViewModel : ObservableRecipient
     private int _location8Idx;
     private int _location9Idx;
 
-    private int _childTradeStage;
-    private int _adultTradeStage;
-
     private int _hookState;
 
     private TrackerData? _trackerData;
+
+    private int _forestKeyCount = 0;
+    private int _fireKeyCount = 0;
+    private int _waterKeyCount = 0;
+    private int _shadowKeyCount = 0;
+    private int _spiritKeyCount = 0;
+    private int _bottomKeyCount = 0;
+    private int _ganonKeyCount = 0;
+    private int _gtgKeyCount = 0;
+
+    private int _maxForestKeysVanilla = 5;
+    private int _maxForestKeysMq = 6;
+
+    private int _maxFireKeysVanilla = 8;
+    private int _maxFireKeysMq = 5;
+
+    private int _maxWaterKeysVanilla = 6;
+    private int _maxWaterKeysMq = 2;
+
+    private int _maxShadowKeysVanilla = 5;
+    private int _maxShadowKeysMq = 6;
+
+    private int _maxSpiritKeysVanilla = 5;
+    private int _maxSpiritKeysMq = 7;
+
+    private int _maxBottomKeysVanilla = 3;
+    private int _maxBottomKeysMq = 2;
+
+    private int _maxGanonKeysVanilla = 2;
+    private int _maxGanonKeysMq = 3;
+
+    private int _maxGtgKeysVanilla = 9;
+    private int _maxGtgKeysMq = 3;
+
+    private bool _isDekuMq = false;
+    private bool _isDcMq = false;
+    private bool _isJabuMq = false;
+    private bool _isForestMq = false;
+    private bool _isFireMq = false;
+    private bool _isWaterMq = false;
+    private bool _isShadowMq = false;
+    private bool _isSpiritMq = false;
+    private bool _isBottomMq = false;
+    private bool _isGanonMq = false;
+    private bool _isGtgMq = false;
+
+    #endregion
 
     public MainWindowViewModel()
     {
@@ -293,8 +466,10 @@ public partial class MainWindowViewModel : ObservableRecipient
         Location8 = Constants.DungeonLocations[0];
         Location9 = Constants.DungeonLocations[0];
 
-        ItemSongBackground = Constants.ItemSongBg;
+        ItemBackground = Constants.ItemBg;
         GearBackground = Constants.GearBg;
+        DungeonBackground = Constants.DungeonBg;
+        OtherBackground = Constants.OtherBg;
 
         KokiriEmeraldImage = Constants.DisabledStones[0];
         GoronRubyImage = Constants.DisabledStones[1];
@@ -367,8 +542,24 @@ public partial class MainWindowViewModel : ObservableRecipient
         NayrusLoveImage = Constants.DisabledItems[16];
         MagicBeansImage = Constants.DisabledItems[17];
 
-        ChildTradeItemImage = Constants.ChildTradingSequence[0];
-        AdultTradeItemImage = Constants.AdultTradingSequence[0];
+        WeirdEggIcon = Constants.ChildTradingItemsDisabled[0];
+        CuccoIcon = Constants.ChildTradingItemsDisabled[1];
+        LetterIcon = Constants.ChildTradingItemsDisabled[2];
+        SkullMaskIcon = Constants.ChildTradingItemsDisabled[3];
+        MaskOfTruthIcon = Constants.ChildTradingItemsDisabled[4];
+
+        PocketEggImage = Constants.AdultTradingItemsDisabled[0];
+        PocketCuccoImage = Constants.AdultTradingItemsDisabled[1];
+        CojiroImage = Constants.AdultTradingItemsDisabled[2];
+        OddMushroomImage = Constants.AdultTradingItemsDisabled[3];
+        OddPoulticeImage = Constants.AdultTradingItemsDisabled[4];
+        PoachersSawImage = Constants.AdultTradingItemsDisabled[5];
+        GiantsKnifeImage = Constants.AdultTradingItemsDisabled[6];
+        BrokenGoronsSwordImage = Constants.AdultTradingItemsDisabled[7];
+        PrescriptionImage = Constants.AdultTradingItemsDisabled[8];
+        EyeballFrogImage = Constants.AdultTradingItemsDisabled[9];
+        EyeDropsImage = Constants.AdultTradingItemsDisabled[10];
+        ClaimCheckImage = Constants.AdultTradingItemsDisabled[11];
     }
 
     #region Quest Items (Dungeon Rewards)
@@ -1445,70 +1636,6 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void IncreaseChildTrade()
-    {
-        Logger.LogCommand(nameof(IncreaseChildTradeCommand));
-        
-        if (_childTradeStage > 5)
-        {
-            _childTradeStage = 5;
-        }
-
-        ChildTradeItemImage = _childTradeStage switch
-        {
-            0 => Constants.ChildTradingSequence[1],
-            1 => Constants.ChildTradingSequence[2],
-            2 => Constants.ChildTradingSequence[3],
-            3 => Constants.ChildTradingSequence[4],
-            4 => Constants.ChildTradingSequence[5],
-            _ => ChildTradeItemImage
-        };
-
-        if (_childTradeStage >= 5)
-        {
-            _childTradeStage = 5;
-        }
-        else
-        {
-            _childTradeStage++;
-        }
-        
-        Logger.LogInteraction(nameof(ChildTradeItemImage));
-    }
-
-    [RelayCommand]
-    public void DecreaseChildTrade()
-    {
-        Logger.LogCommand(nameof(DecreaseChildTradeCommand));
-        
-        if (_childTradeStage < 0)
-        {
-            _childTradeStage = 0;
-        }
-
-        ChildTradeItemImage = _childTradeStage switch
-        {
-            5 => Constants.ChildTradingSequence[4],
-            4 => Constants.ChildTradingSequence[3],
-            3 => Constants.ChildTradingSequence[2],
-            2 => Constants.ChildTradingSequence[1],
-            1 => Constants.ChildTradingSequence[0],
-            _ => ChildTradeItemImage
-        };
-
-        if (_childTradeStage <= 0)
-        {
-            _childTradeStage = 0;
-        }
-        else
-        {
-            _childTradeStage--;
-        }
-        
-        Logger.LogInteraction(nameof(ChildTradeItemImage));
-    }
-
-    [RelayCommand]
     public void ToggleFarore()
     {
         Logger.LogCommand(nameof(ToggleFaroreCommand));
@@ -1590,83 +1717,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         Logger.LogInteraction(nameof(HookshotImage));
     }
 
-    [RelayCommand]
-    public void IncreaseAdultTrade()
-    {
-        Logger.LogCommand(nameof(IncreaseAdultTradeCommand));
-        
-        if (_adultTradeStage > 12)
-        {
-            _adultTradeStage = 12;
-        }
-
-        AdultTradeItemImage = _adultTradeStage switch
-        {
-            0 => Constants.AdultTradingSequence[1],
-            1 => Constants.AdultTradingSequence[2],
-            2 => Constants.AdultTradingSequence[3],
-            3 => Constants.AdultTradingSequence[4],
-            4 => Constants.AdultTradingSequence[5],
-            5 => Constants.AdultTradingSequence[6],
-            6 => Constants.AdultTradingSequence[7],
-            7 => Constants.AdultTradingSequence[8],
-            8 => Constants.AdultTradingSequence[9],
-            9 => Constants.AdultTradingSequence[10],
-            10 => Constants.AdultTradingSequence[11],
-            11 => Constants.AdultTradingSequence[12],
-            _ => AdultTradeItemImage
-        };
-
-        if (_adultTradeStage >= 12)
-        {
-            _adultTradeStage = 12;
-        }
-        else
-        {
-            _adultTradeStage++;   
-        }
-        
-        Logger.LogInteraction(nameof(AdultTradeItemImage));
-    }
-
-    [RelayCommand]
-    public void DecreaseAdultTrade()
-    {
-        Logger.LogCommand(nameof(DecreaseAdultTradeCommand));
-        
-        if (_adultTradeStage < 0)
-        {
-            _adultTradeStage = 0;
-        }
-
-        AdultTradeItemImage = _adultTradeStage switch
-        {
-            12 => Constants.AdultTradingSequence[11],
-            11 => Constants.AdultTradingSequence[10],
-            10 => Constants.AdultTradingSequence[9],
-            9 => Constants.AdultTradingSequence[8],
-            8 => Constants.AdultTradingSequence[7],
-            7 => Constants.AdultTradingSequence[6],
-            6 => Constants.AdultTradingSequence[5],
-            5 => Constants.AdultTradingSequence[4],
-            4 => Constants.AdultTradingSequence[3],
-            3 => Constants.AdultTradingSequence[2],
-            2 => Constants.AdultTradingSequence[1],
-            1 => Constants.AdultTradingSequence[0],
-            _ => AdultTradeItemImage
-        };
-
-        if (_adultTradeStage <= 0)
-        {
-            _adultTradeStage = 0;
-        }
-        else
-        {
-            _adultTradeStage--;   
-        }
-        
-        Logger.LogInteraction(nameof(AdultTradeItemImage));
-    }
+    
 
     [RelayCommand]
     public void ToggleNayru()
@@ -1811,10 +1862,14 @@ public partial class MainWindowViewModel : ObservableRecipient
         {
             TradeData = new TradeData
             {
-                TradeStageChild = _childTradeStage,
-                TradeStageAdult = _adultTradeStage
+                ChildTradeData = new ChildTradeData
+                {
+                },
+                AdultTradeData = new AdultTradeData
+                {
+                }
             },
-            UpgradeData = new UpgradeData
+	        UpgradeData = new UpgradeData
             {
                 BombState = _bombState,
                 BulletState = _bulletState,
@@ -2048,9 +2103,6 @@ public partial class MainWindowViewModel : ObservableRecipient
         _location7Idx = _trackerData.LocationData.Location7;
         _location8Idx = _trackerData.LocationData.Location8;
         _location9Idx = _trackerData.LocationData.Location9;
-
-        _childTradeStage = _trackerData.TradeData.TradeStageChild;
-        _adultTradeStage = _trackerData.TradeData.TradeStageAdult;
     }
 
     [RelayCommand]

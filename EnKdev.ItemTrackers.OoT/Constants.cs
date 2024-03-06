@@ -5,10 +5,12 @@ namespace EnKdev.ItemTrackers.OoT;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(1)}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.2")}";
 
-    public const string ItemSongBg = "pack://application:,,,/Images/OoTTrackerItems+Songs.png";
+    public const string ItemBg = "pack://application:,,,/Images/OoTTrackerItems.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
+    public const string DungeonBg = "pack://application:,,,/Images/OoTTrackerDungeons.png";
+    public const string OtherBg = "pack://application:,,,/Images/OoTTrackerOther.png";
 
     public static List<string> DungeonLocations = new()
     {
@@ -22,6 +24,13 @@ public static class Constants
         "WTR",
         "SHDW",
         "SPRT"
+    };
+
+    public static List<string> DungeonTypes = new()
+    {
+	    "???",
+	    "VANILLA",
+	    "MQ"
     };
 
     public static List<string> DisabledStones = new()
@@ -190,7 +199,9 @@ public static class Constants
        /* 14 */ "pack://application:,,,/Icons/Item/OoT3D_Light_Arrow_Icon_Disabled.png",
        /* 15 */ "pack://application:,,,/Icons/Item/OoT3D_Megaton_Hammer_Icon_Disabled.png",
        /* 16 */ "pack://application:,,,/Icons/Item/OoT3D_Nayru's_Love_Icon_Disabled.png",
-       /* 17 */ "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon_Disabled.png"
+       /* 17 */ "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon_Disabled.png",
+       /* 18 */ "pack://application:,,,/Icons/Item/OoT3D_Boss_Key_Icon_Disabled.png",
+       /* 19 */ "pack://application:,,,/Icons/Item/OoT3D_Small_Key_Icon_Disabled.png"
     };
 
     public static List<string> EnabledItems = new()
@@ -213,33 +224,58 @@ public static class Constants
         /* 15 */ "pack://application:,,,/Icons/Item/OoT3D_Light_Arrow_Icon.png",
         /* 16 */ "pack://application:,,,/Icons/Item/OoT3D_Megaton_Hammer_Icon.png",
         /* 17 */ "pack://application:,,,/Icons/Item/OoT3D_Nayru's_Love_Icon.png",
-        /* 18 */ "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon.png"
+        /* 18 */ "pack://application:,,,/Icons/Item/OoT3D_Magic_Bean_Icon.png",
+        /* 19 */ "pack://application:,,,/Icons/Item/OoT3D_Boss_Key_Icon.png",
+        /* 20 */ "pack://application:,,,/Icons/Item/OoT3D_Small_Key_Icon.png"
     };
 
-    public static List<string> ChildTradingSequence = new()
+    public static List<string> ChildTradingItemsEnabled = new()
     {
-        /* 0 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon_Disabled.png",
-        /* 1 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon.png",
-        /* 2 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Cucco_Icon.png",
-        /* 3 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Zeldas_Letter_Icon.png",
-        /* 4 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Skull_Mask_Icon.png",
-        /* 5 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Mask_of_Truth_Icon.png"
+        /* 0 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon.png",
+        /* 1 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Cucco_Icon.png",
+        /* 2 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Zeldas_Letter_Icon.png",
+        /* 3 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Skull_Mask_Icon.png",
+        /* 4 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Mask_of_Truth_Icon.png"
     };
 
-    public static List<string> AdultTradingSequence = new()
+    public static List<string> ChildTradingItemsDisabled = new()
     {
-        /* 0 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon_Disabled.png",
-        /* 1 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon.png",
-        /* 2 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Cucco_Icon.png",
-        /* 3 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Cojiro_Icon.png",
-        /* 4 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Mushroom_Icon.png",
-        /* 5 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Poultice_Icon.png",
-        /* 6 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Poachers_Saw_Icon.png",
-        /* 7 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Giants_Knife_Icon.png",
-        /* 8 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Broken_Gorons_Sword_Icon.png",
-        /* 9 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Prescription_Icon.png",
-        /* 10 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eyeball_Frog_Icon.png",
-        /* 11 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eye_Drops_Icon.png",
-        /* 12 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Claim_Check_Icon.png"
+	    /* 0 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Weird_Egg_Icon_Disabled.png",
+	    /* 1 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Cucco_Icon_Disabled.png",
+	    /* 2 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Zeldas_Letter_Icon_Disabled.png",
+	    /* 3 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Skull_Mask_Icon_Disabled.png",
+	    /* 4 */ "pack://application:,,,/Icons/ChildTrade/OoT3D_Mask_of_Truth_Icon_Disabled.png"
     };
+
+    public static List<string> AdultTradingItemsEnabled = new()
+    {
+        /* 0 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon.png",
+        /* 1 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Cucco_Icon.png",
+        /* 2 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Cojiro_Icon.png",
+        /* 3 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Mushroom_Icon.png",
+        /* 4 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Poultice_Icon.png",
+        /* 5 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Poachers_Saw_Icon.png",
+        /* 6 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Giants_Knife_Icon.png",
+        /* 7 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Broken_Gorons_Sword_Icon.png",
+        /* 8 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Prescription_Icon.png",
+        /* 9 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eyeball_Frog_Icon.png",
+        /* 10 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eye_Drops_Icon.png",
+        /* 11 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Claim_Check_Icon.png"
+    };
+
+    public static List<string> AdultTradingItemsDisabled = new()
+    {
+	    /* 0 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Egg_Icon_Disabled.png",
+        /* 1 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Pocket_Cucco_Icon_Disabled.png",
+        /* 2 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Cojiro_Icon_Disabled.png",
+        /* 3 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Mushroom_Icon_Disabled.png",
+        /* 4 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Odd_Poultice_Icon_Disabled.png",
+        /* 5 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Poachers_Saw_Icon_Disabled.png",
+        /* 6 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Giants_Knife_Icon_Disabled.png",
+        /* 7 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Broken_Gorons_Sword_Icon_Disabled.png",
+        /* 8 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Prescription_Icon_Disabled.png",
+        /* 9 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eyeball_Frog_Icon_Disabled.png",
+        /* 10 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Eye_Drops_Icon_Disabled.png",
+        /* 11 */ "pack://application:,,,/Icons/AdultTrade/OoT3D_Claim_Check_Icon_Disabled.png"
+	};
 }
