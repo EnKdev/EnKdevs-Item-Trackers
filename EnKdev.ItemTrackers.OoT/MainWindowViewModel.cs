@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection.Metadata;
 using System.Windows;
+using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using EnKdev.ItemTrackers.OoT.Data;
@@ -114,11 +115,24 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private int _gtgKeyCount;
 
-	#endregion
+    #endregion
 
-	#region Quest Reward Images
+    #region Colors
 
-	[ObservableProperty]
+    [ObservableProperty] 
+    private SolidColorBrush _noKeyColor;
+
+    [ObservableProperty]
+    private SolidColorBrush _hasKeyColor;
+
+    [ObservableProperty]
+    private SolidColorBrush _allKeyColor;
+
+    #endregion
+
+    #region Quest Reward Images
+
+    [ObservableProperty]
     private string _kokiriEmeraldImage;
 
     [ObservableProperty]
@@ -622,6 +636,10 @@ public partial class MainWindowViewModel : ObservableRecipient
         DungeonType10 = Constants.DungeonTypes[0];
         DungeonType11 = Constants.DungeonTypes[0];
         DungeonType12 = Constants.DungeonTypes[0];
+
+        NoKeyColor = Constants.NoKeyColor;
+        HasKeyColor = Constants.HasKeyColor;
+        AllKeyColor = Constants.AllKeyColor;
 
 		ItemBackground = Constants.ItemBg;
         GearBackground = Constants.GearBg;

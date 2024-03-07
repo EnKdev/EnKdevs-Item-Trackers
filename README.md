@@ -1,15 +1,15 @@
 # EnKdevs Ocarina of Time/Majora's Mask Trackers
 Two Trackers written in C# and XAML.
 
-Current Version (OoT): <b>1.0.0</b><br/>
+Current Version (OoT): <b>2.0.0-ootDev+build.5</b><br/>
 Current Version (MM): <b>Not started yet</b>
 
-Next Version (OoT): <b>2.0.0 (Read Important Notes!)</b><br/>
+Next Version (OoT): <b>2.0.0</b><br/>
 Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 <br/>
 
 ### On plan for 2.0.0 (OoT):
-- Dungeons Support
+- Dungeons Support (Includes Vanilla/MQ Support)
 - Preparations for Keysanity Support
 - Complete UI redesign
 - Complete App Restructuring
@@ -29,9 +29,9 @@ Tools Used:
 
 - Visual Studio 2022 Community
 - JetBrains ReSharper 2023.3.3
-- JetBrains Rider 2024.1 EAP7
+- JetBrains Rider 2024.1 EAP8
 
-IDE used for the code: JetBrains Rider 2023
+IDE used for the code: JetBrains Rider 2024
 
 IDE used for UI Work: Visual Studio 2022 Community
 

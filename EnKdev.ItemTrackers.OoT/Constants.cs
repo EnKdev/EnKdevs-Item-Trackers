@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Media;
 using Semver;
 
 namespace EnKdev.ItemTrackers.OoT;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.4")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.5")}";
 
     public const string ItemBg = "pack://application:,,,/Images/OoTTrackerItems.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
@@ -25,6 +26,10 @@ public static class Constants
         "SHDW",
         "SPRT"
     };
+
+    public static SolidColorBrush NoKeyColor = new(Color.FromRgb(0, 0, 0));
+    public static SolidColorBrush HasKeyColor = new(Color.FromRgb(255, 255, 255));
+    public static SolidColorBrush AllKeyColor = new(Color.FromRgb(0, 255, 0));
 
     public const string DungeonMapDisabled = "pack://application:,,,/Icons/Item/OoT3D_Dungeon_Map_Icon_Disabled.png";
     public const string DungeonMapEnabled = "pack://application:,,,/Icons/Item/OoT3D_Dungeon_Map_Icon.png";
