@@ -45,9 +45,80 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     #endregion
 
-    #region Quest Reward Images
+    #region Textfields - Dungeon Types
 
     [ObservableProperty]
+    private string _dungeonType1;
+
+    [ObservableProperty]
+    private string _dungeonType2;
+
+    [ObservableProperty]
+    private string _dungeonType3;
+
+    [ObservableProperty]
+    private string _dungeonType4;
+
+    [ObservableProperty]
+    private string _dungeonType5;
+
+    [ObservableProperty]
+    private string _dungeonType6;
+
+    [ObservableProperty]
+    private string _dungeonType7;
+
+    [ObservableProperty]
+    private string _dungeonType8;
+
+    [ObservableProperty]
+    private string _dungeonType9;
+
+    [ObservableProperty]
+    private string _dungeonType10;
+
+    [ObservableProperty]
+    private string _dungeonType11;
+
+    [ObservableProperty]
+    private string _dungeonType12;
+
+	#endregion
+
+	#region Textfields - Numbers
+
+	[ObservableProperty]
+	private int _gsTokens;
+
+    [ObservableProperty]
+    private int _forestKeyCount;
+
+    [ObservableProperty]
+    private int _fireKeyCount;
+
+    [ObservableProperty]
+    private int _waterKeyCount;
+
+    [ObservableProperty]
+    private int _shadowKeyCount;
+
+    [ObservableProperty]
+    private int _spiritKeyCount;
+
+    [ObservableProperty]
+    private int _bottomKeyCount;
+
+    [ObservableProperty]
+    private int _ganonKeyCount;
+
+    [ObservableProperty]
+    private int _gtgKeyCount;
+
+	#endregion
+
+	#region Quest Reward Images
+
+	[ObservableProperty]
     private string _kokiriEmeraldImage;
 
     [ObservableProperty]
@@ -142,9 +213,6 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     [ObservableProperty]
     private string _gsImage;
-
-    [ObservableProperty] 
-    private int _gsTokens;
 
     [ObservableProperty] 
     private string _gerudoTokenImage;
@@ -471,18 +539,22 @@ public partial class MainWindowViewModel : ObservableRecipient
     private int _location8Idx;
     private int _location9Idx;
 
+    private int _dungeon1Idx;
+    private int _dungeon2Idx;
+    private int _dungeon3Idx;
+    private int _dungeon4Idx;
+    private int _dungeon5Idx;
+    private int _dungeon6Idx;
+    private int _dungeon7Idx;
+    private int _dungeon8Idx;
+    private int _dungeon9Idx;
+    private int _dungeon10Idx;
+    private int _dungeon11Idx;
+    private int _dungeon12Idx;
+
     private int _hookState;
 
     private TrackerData? _trackerData;
-
-    private int _forestKeyCount = 0;
-    private int _fireKeyCount = 0;
-    private int _waterKeyCount = 0;
-    private int _shadowKeyCount = 0;
-    private int _spiritKeyCount = 0;
-    private int _bottomKeyCount = 0;
-    private int _ganonKeyCount = 0;
-    private int _gtgKeyCount = 0;
 
     private int _maxForestKeysVanilla = 5;
     private int _maxForestKeysMq = 6;
@@ -538,7 +610,20 @@ public partial class MainWindowViewModel : ObservableRecipient
         Location8 = Constants.DungeonLocations[0];
         Location9 = Constants.DungeonLocations[0];
 
-        ItemBackground = Constants.ItemBg;
+        DungeonType1 = Constants.DungeonTypes[0];
+        DungeonType2 = Constants.DungeonTypes[0];
+        DungeonType3 = Constants.DungeonTypes[0];
+        DungeonType4 = Constants.DungeonTypes[0];
+        DungeonType5 = Constants.DungeonTypes[0];
+        DungeonType6 = Constants.DungeonTypes[0];
+        DungeonType7 = Constants.DungeonTypes[0];
+        DungeonType8 = Constants.DungeonTypes[0];
+        DungeonType9 = Constants.DungeonTypes[0];
+        DungeonType10 = Constants.DungeonTypes[0];
+        DungeonType11 = Constants.DungeonTypes[0];
+        DungeonType12 = Constants.DungeonTypes[0];
+
+		ItemBackground = Constants.ItemBg;
         GearBackground = Constants.GearBg;
         DungeonBackground = Constants.DungeonBg;
         OtherBackground = Constants.OtherBg;
@@ -1097,6 +1182,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     #endregion
+
     #region Equip Items (Tunics, Swords, Shields, Boots)
     #region Swords
     [RelayCommand]
@@ -1223,6 +1309,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
     #endregion
     #endregion
+
     #region Upgrades
     [RelayCommand]
     public void UpgradeOcarina()
@@ -1474,6 +1561,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         }
     }
     #endregion
+
     #region Other
     [RelayCommand]
     public void IncreaseGsCount()
@@ -1535,6 +1623,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         Logger.LogInteraction(nameof(ShardImage));
     }
     #endregion
+
     #region Songs
     [RelayCommand]
     public void ToggleZeldasLullaby()
@@ -1680,6 +1769,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         Logger.LogInteraction(nameof(PreludeImage));
     }
     #endregion
+
     #region General Items
     [RelayCommand]
     public void ToggleStick()
@@ -1986,6 +2076,9 @@ public partial class MainWindowViewModel : ObservableRecipient
                 AdultTradeData = new AdultTradeData
                 {
                 }
+            },
+            DungeonData = new DungeonData
+            {
             },
 	        UpgradeData = new UpgradeData
             {

@@ -5,7 +5,7 @@ namespace EnKdev.ItemTrackers.OoT;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.3")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.4")}";
 
     public const string ItemBg = "pack://application:,,,/Images/OoTTrackerItems.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
