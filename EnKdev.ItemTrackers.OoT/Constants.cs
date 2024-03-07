@@ -5,7 +5,7 @@ namespace EnKdev.ItemTrackers.OoT;
 
 public static class Constants
 {
-    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.2")}";
+    public static string AppTitle = $"EnKdevs Ocarina of Time Item Tracker V{SemVersion.ParsedFrom(2, 0, 0, "ootDev", "build.3")}";
 
     public const string ItemBg = "pack://application:,,,/Images/OoTTrackerItems.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
@@ -25,6 +25,15 @@ public static class Constants
         "SHDW",
         "SPRT"
     };
+
+    public const string DungeonMapDisabled = "pack://application:,,,/Icons/Item/OoT3D_Dungeon_Map_Icon_Disabled.png";
+    public const string DungeonMapEnabled = "pack://application:,,,/Icons/Item/OoT3D_Dungeon_Map_Icon.png";
+    public const string CompassDisabled = "pack://application:,,,/Icons/Item/OoT3D_Compass_Icon_Disabled.png";
+    public const string CompassEnabled = "pack://application:,,,/Icons/Item/OoT3D_Compass_Icon.png";
+    public const string SmallKeyDisabled = "pack://application:,,,/Icons/Item/OoT3D_Small_Key_Icon_Disabled.png";
+    public const string SmallKeyEnabled = "pack://application:,,,/Icons/Item/OoT3D_Small_Key_Icon.png";
+    public const string BossKeyDisabled = "pack://application:,,,/Icons/Item/OoT3D_Boss_Key_Icon_Disabled.png";
+    public const string BossKeyEnabled = "pack://application:,,,/Icons/Item/OoT3D_Boss_Key_Icon.png";
 
     public static List<string> DungeonTypes = new()
     {

@@ -362,11 +362,83 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     public string _forestBkImage;
 
-    #endregion
-
-    #region Backgrounds
+    [ObservableProperty]
+    public string _fireMapImage;
 
     [ObservableProperty]
+    public string _fireCompassImage;
+
+    [ObservableProperty]
+    public string _fireKeyImage;
+
+    [ObservableProperty]
+    public string _fireBkImage;
+
+    [ObservableProperty]
+    public string _waterMapImage;
+
+    [ObservableProperty]
+    public string _waterCompassImage;
+
+    [ObservableProperty]
+    public string _waterKeyImage;
+
+    [ObservableProperty]
+    public string _waterBkImage;
+
+    [ObservableProperty]
+    public string _shadowMapImage;
+
+    [ObservableProperty]
+    public string _shadowCompassImage;
+
+    [ObservableProperty]
+    public string _shadowKeyImage;
+
+    [ObservableProperty]
+    public string _shadowBkImage;
+
+    [ObservableProperty]
+    public string _spiritMapImage;
+
+    [ObservableProperty]
+    public string _spiritCompassImage;
+
+    [ObservableProperty]
+    public string _spiritKeyImage;
+
+    [ObservableProperty]
+    public string _spiritBkImage;
+
+    [ObservableProperty]
+    public string _cavernMapImage;
+
+    [ObservableProperty]
+    public string _cavernCompassImage;
+
+    [ObservableProperty]
+    public string _bottomMapImage;
+
+    [ObservableProperty]
+    public string _bottomCompassImage;
+
+    [ObservableProperty]
+    public string _bottomKeyImage;
+
+    [ObservableProperty]
+    public string _ganonKeyImage;
+
+    [ObservableProperty]
+    public string _ganonBkImage;
+
+    [ObservableProperty]
+    public string _gtgKeyImage;
+
+	#endregion
+
+	#region Backgrounds
+
+	[ObservableProperty]
     private string _itemBackground;
 
     [ObservableProperty] 
@@ -560,6 +632,52 @@ public partial class MainWindowViewModel : ObservableRecipient
         EyeballFrogImage = Constants.AdultTradingItemsDisabled[9];
         EyeDropsImage = Constants.AdultTradingItemsDisabled[10];
         ClaimCheckImage = Constants.AdultTradingItemsDisabled[11];
+
+        DekuMapImage = Constants.DungeonMapDisabled;
+        DekuCompassImage = Constants.CompassDisabled;
+
+        DcMapImage = Constants.DungeonMapDisabled;
+        DcCompassImage = Constants.CompassDisabled;
+
+        JabuMapImage = Constants.DungeonMapDisabled;
+        JabuCompassImage = Constants.CompassDisabled;
+
+        ForestMapImage = Constants.DungeonMapDisabled;
+        ForestCompassImage = Constants.CompassDisabled;
+        ForestKeyImage = Constants.SmallKeyDisabled;
+        ForestBkImage = Constants.BossKeyDisabled;
+
+        FireMapImage = Constants.DungeonMapDisabled;
+        FireCompassImage = Constants.CompassDisabled;
+        FireKeyImage = Constants.SmallKeyDisabled;
+        FireBkImage = Constants.BossKeyDisabled;
+
+        WaterMapImage = Constants.DungeonMapDisabled;
+        WaterCompassImage = Constants.CompassDisabled;
+        WaterKeyImage = Constants.SmallKeyDisabled;
+        WaterBkImage = Constants.BossKeyDisabled;
+
+        ShadowMapImage = Constants.DungeonMapDisabled;
+        ShadowCompassImage = Constants.CompassDisabled;
+        ShadowKeyImage = Constants.SmallKeyDisabled;
+        ShadowBkImage = Constants.BossKeyDisabled;
+        
+        SpiritMapImage = Constants.DungeonMapDisabled;
+        SpiritCompassImage = Constants.CompassDisabled;
+        SpiritKeyImage = Constants.SmallKeyDisabled;
+        SpiritBkImage = Constants.BossKeyDisabled;
+
+        CavernMapImage = Constants.DungeonMapDisabled;
+        CavernCompassImage = Constants.CompassDisabled;
+
+        BottomMapImage = Constants.DungeonMapDisabled;
+        BottomCompassImage = Constants.CompassDisabled;
+        BottomKeyImage = Constants.SmallKeyDisabled;
+
+        GanonKeyImage = Constants.SmallKeyDisabled;
+        GanonBkImage = Constants.BossKeyDisabled;
+
+        GtgKeyImage = Constants.SmallKeyDisabled;
     }
 
     #region Quest Items (Dungeon Rewards)

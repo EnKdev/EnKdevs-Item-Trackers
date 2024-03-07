@@ -48,6 +48,8 @@
     <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon.png" />
     <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png" />
     <None Remove="Icons\Item\OoT3D_Boss_Key_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Compass_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Dungeon_Map_Icon_Disabled.png" />
     <None Remove="Icons\Item\OoT3D_Magic_Bean_Icon.png" />
     <None Remove="Icons\Item\OoT3D_Magic_Bean_Icon_Disabled.png" />
     <None Remove="Icons\Item\OoT3D_Small_Key_Icon_Disabled.png" />
@@ -244,6 +246,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Item\OoT3D_Boss_Key_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Compass_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Dungeon_Map_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Item\OoT3D_Magic_Bean_Icon.png">

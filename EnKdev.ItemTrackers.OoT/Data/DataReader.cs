@@ -3,8 +3,6 @@ using System.IO;
 using System.Windows;
 using EnKdev.ItemTrackers.OoT.Internal;
 using EnKdev.ItemTrackers.OoT.Models;
-using log4net;
-using log4net.Config;
 using Newtonsoft.Json;
 
 namespace EnKdev.ItemTrackers.OoT.Data;
