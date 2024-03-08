@@ -39,6 +39,43 @@
 1.0.0
 - Initial release (HOORAY!)
 
+2.0.0-ootDev+build.1
+- Initial start of V2.0.0 developments
+- Redesigned UI interfaces
+- Changed file saving and reading methods
+
+2.0.0-ootDev+build.2
+- More UI redesigns
+- Changed some internal list orders
+- Split internal lists up in order for UI redesigns to make sense
+- Split `ChildTradingSequence` and `AdultTradingSequence` Lists up
+- -> New lists are `ChildTradingItemsDisabled`, `ChildTradingItemsEnabled`, `AdultTradingItemsDisabled` and `AdultTradingItemsEnabled`
+- More work on file saving and reading methods
+- Added more disabled icon variants
+
+2.0.0-ootDev+build.3
+- Added constant values for disabled Maps, Compasses, Keys and Boss Keys
+- Added constant values for enabled Maps, Compasses, Keys and Boss Keys
+- Resized the Tracker
+- A lot of data field additions
+- Even more UI redesigns
+
+2.0.0-ootDev+build.4
+- Moved dungeon names a slight bit more upwards to make room for the dungeon types.
+- UI population for maps, compasses, keys, key counts and boss keys
+- UI adjustments for existing elements
+- Even more data field additions
+- Changed the data format on how tracker data is stored
+
+2.0.0-ootDev+build.5
+- More UI population for maps, compasses, keys, key counts and boss keys (Also includes dungeon types)
+- Added constant `SolidColorBrush` definitions that are used for no keys, keys and all keys.
+
+2.0.0-ootDev+build.6
+- Added functionality to save everything related to dungeons (Maps, Compasses, Keys, Key Count, Dungeon Types, Boss Keys)
+- Added functionality to toggle maps, compasses and dungeon types.
+- Added functionality to switch dungeon types between `VANILLA` and `MQ`
+
 ---
 
 1.0.0-mmDev+build.1:

@@ -31,6 +31,42 @@ public class UiRelevantData
     [JsonProperty("ui_loc9str")]
     public string Location9String { get; set; }
     
+    [JsonProperty("ui_d1type")]
+    public string Dungeon1Type { get; set; }
+    
+    [JsonProperty("ui_d2type")]
+    public string Dungeon2Type { get; set; }
+    
+    [JsonProperty("ui_d3type")]
+    public string Dungeon3Type { get; set; }
+    
+    [JsonProperty("ui_d4type")]
+    public string Dungeon4Type { get; set; }
+    
+    [JsonProperty("ui_d5type")]
+    public string Dungeon5Type { get; set; }
+    
+    [JsonProperty("ui_d6type")]
+    public string Dungeon6Type { get; set; }
+    
+    [JsonProperty("ui_d7type")]
+    public string Dungeon7Type { get; set; }
+    
+    [JsonProperty("ui_d8type")]
+    public string Dungeon8Type { get; set; }
+    
+    [JsonProperty("ui_d9type")]
+    public string Dungeon9Type { get; set; }
+    
+    [JsonProperty("ui_d10type")]
+    public string Dungeon10Type { get; set; }
+    
+    [JsonProperty("ui_d11type")]
+    public string Dungeon11Type { get; set; }
+    
+    [JsonProperty("ui_d12type")]
+    public string Dungeon12Type { get; set; }
+    
     [JsonProperty("q_kokEmStr")]
     public string EmeraldString { get; set; }
     

@@ -415,106 +415,112 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Dungeon Related Images
 
     [ObservableProperty]
-    public string _dekuMapImage;
+    private string _dekuMapImage;
 
     [ObservableProperty]
-    public string _dekuCompassImage;
+    private string _dekuCompassImage;
 
     [ObservableProperty]
-    public string _dcMapImage;
+    private string _dcMapImage;
 
     [ObservableProperty]
-    public string _dcCompassImage;
+    private string _dcCompassImage;
 
     [ObservableProperty]
-    public string _jabuMapImage;
+    private string _jabuMapImage;
 
     [ObservableProperty]
-    public string _jabuCompassImage;
+    private string _jabuCompassImage;
 
     [ObservableProperty]
-    public string _forestMapImage;
+    private string _forestMapImage;
 
     [ObservableProperty]
-    public string _forestCompassImage;
+    private string _forestCompassImage;
 
     [ObservableProperty]
-    public string _forestKeyImage;
+    private string _forestKeyImage;
 
     [ObservableProperty]
-    public string _forestBkImage;
+    private string _forestBkImage;
 
     [ObservableProperty]
-    public string _fireMapImage;
+    private string _fireMapImage;
 
     [ObservableProperty]
-    public string _fireCompassImage;
+    private string _fireCompassImage;
 
     [ObservableProperty]
-    public string _fireKeyImage;
+    private string _fireKeyImage;
 
     [ObservableProperty]
-    public string _fireBkImage;
+    private string _fireBkImage;
 
     [ObservableProperty]
-    public string _waterMapImage;
+    private string _waterMapImage;
 
     [ObservableProperty]
-    public string _waterCompassImage;
+    private string _waterCompassImage;
 
     [ObservableProperty]
-    public string _waterKeyImage;
+    private string _waterKeyImage;
 
     [ObservableProperty]
-    public string _waterBkImage;
+    private string _waterBkImage;
 
     [ObservableProperty]
-    public string _shadowMapImage;
+    private string _shadowMapImage;
 
     [ObservableProperty]
-    public string _shadowCompassImage;
+    private string _shadowCompassImage;
 
     [ObservableProperty]
-    public string _shadowKeyImage;
+    private string _shadowKeyImage;
 
     [ObservableProperty]
-    public string _shadowBkImage;
+    private string _shadowBkImage;
 
     [ObservableProperty]
-    public string _spiritMapImage;
+    private string _spiritMapImage;
 
     [ObservableProperty]
-    public string _spiritCompassImage;
+    private string _spiritCompassImage;
 
     [ObservableProperty]
-    public string _spiritKeyImage;
+    private string _spiritKeyImage;
 
     [ObservableProperty]
-    public string _spiritBkImage;
+    private string _spiritBkImage;
 
     [ObservableProperty]
-    public string _cavernMapImage;
+    private string _cavernMapImage;
 
     [ObservableProperty]
-    public string _cavernCompassImage;
+    private string _cavernCompassImage;
 
     [ObservableProperty]
-    public string _bottomMapImage;
+    private string _bottomMapImage;
 
     [ObservableProperty]
-    public string _bottomCompassImage;
+    private string _bottomCompassImage;
 
     [ObservableProperty]
-    public string _bottomKeyImage;
+    private string _bottomKeyImage;
+
+    [ObservableProperty] 
+    private string _ganonCompassImage;
 
     [ObservableProperty]
-    public string _ganonKeyImage;
+    private string _ganonKeyImage;
 
     [ObservableProperty]
-    public string _ganonBkImage;
+    private string _ganonBkImage;
 
+    [ObservableProperty] 
+    private string _gtgCompassImage;
+    
     [ObservableProperty]
-    public string _gtgKeyImage;
+    private string _gtgKeyImage;
 
 	#endregion
 
@@ -603,6 +609,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     private bool _isShadowMq = false;
     private bool _isSpiritMq = false;
     private bool _isBottomMq = false;
+    private bool _isCavernMq = false;
     private bool _isGanonMq = false;
     private bool _isGtgMq = false;
 
@@ -777,9 +784,11 @@ public partial class MainWindowViewModel : ObservableRecipient
         BottomCompassImage = Constants.CompassDisabled;
         BottomKeyImage = Constants.SmallKeyDisabled;
 
+        GanonCompassImage = Constants.CompassEnabled;
         GanonKeyImage = Constants.SmallKeyDisabled;
         GanonBkImage = Constants.BossKeyDisabled;
 
+        GtgCompassImage = Constants.CompassEnabled;
         GtgKeyImage = Constants.SmallKeyDisabled;
     }
 
@@ -2081,6 +2090,439 @@ public partial class MainWindowViewModel : ObservableRecipient
         }
     }
     #endregion
+    
+    #region Maps, Compasses, Keys, Boss Keys, Etc.
+
+    [RelayCommand]
+    public void ToggleMap(string dungeonPrefix)
+    {
+        Logger.LogCommand(nameof(ToggleMapCommand));
+        
+        switch (dungeonPrefix)
+        {
+            case "deku":
+                DekuMapImage = GetState(DekuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(DekuMapImage));
+                break;
+            case "dc":
+                DcMapImage = GetState(DcMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(DcMapImage));
+                break;
+            case "jabu":
+                JabuMapImage = GetState(JabuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(JabuMapImage));
+                break;
+            case "frst":
+                ForestMapImage = GetState(ForestMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(ForestMapImage));
+                break;
+            case "fire":
+                FireMapImage = GetState(FireMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(FireMapImage));
+                break;
+            case "wtr":
+                WaterMapImage = GetState(WaterMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(WaterMapImage));
+                break;
+            case "sprt":
+                SpiritMapImage = GetState(SpiritMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(SpiritMapImage));
+                break;
+            case "shdw":
+                ShadowMapImage = GetState(ShadowMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(ShadowMapImage));
+                break;
+            case "botw":
+                BottomMapImage = GetState(BottomMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(BottomMapImage));
+                break;
+            case "ice":
+                CavernMapImage = GetState(CavernMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                Logger.LogInteraction(nameof(CavernMapImage));
+                break;
+        }
+    }
+
+    [RelayCommand]
+    public void ToggleCompass(string dungeonPrefix)
+    {
+        Logger.LogCommand(nameof(ToggleCompassCommand));
+        
+        switch (dungeonPrefix)
+        {
+            case "deku":
+                DekuCompassImage = GetState(DekuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(DekuCompassImage));
+                break;
+            case "dc":
+                DcCompassImage = GetState(DcCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(DcCompassImage));
+                break;
+            case "jabu":
+                JabuCompassImage = GetState(JabuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(JabuCompassImage));
+                break;
+            case "frst":
+                ForestCompassImage =
+                    GetState(ForestCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(ForestCompassImage));
+                break;
+            case "fire":
+                FireCompassImage = GetState(FireCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(FireCompassImage));
+                break;
+            case "wtr":
+                WaterCompassImage = GetState(WaterCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(WaterCompassImage));
+                break;
+            case "shdw":
+                ShadowCompassImage =
+                    GetState(ShadowCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(ShadowCompassImage));
+                break;
+            case "sprt":
+                SpiritCompassImage =
+                    GetState(SpiritCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(SpiritCompassImage));
+                break;
+            case "botw":
+                BottomCompassImage =
+                    GetState(BottomCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(BottomCompassImage));
+                break;
+            case "ice":
+                CavernCompassImage =
+                    GetState(CavernCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                Logger.LogInteraction(nameof(CavernCompassImage));
+                break;
+        }
+        
+    }
+
+    [RelayCommand]
+    public void ToggleDungeonState(string dungeonPrefix)
+    {
+        Logger.LogCommand(nameof(ToggleDungeonStateCommand));
+
+        switch (dungeonPrefix)
+        {
+            case "deku":
+                if (_dungeon1Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon1Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon1Idx++;
+
+                    DungeonType1 = _dungeon1Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType1
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isDekuMq = !_isDekuMq;
+                Logger.LogInteraction(nameof(DungeonType1));
+                break;
+            case "dc":
+                if (_dungeon2Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon2Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon2Idx++;
+
+                    DungeonType2 = _dungeon2Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType2
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isDcMq = !_isDcMq;
+                Logger.LogInteraction(nameof(DungeonType2));
+                break;
+            case "jabu":
+                if (_dungeon3Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon3Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon3Idx++;
+
+                    DungeonType3 = _dungeon3Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType3
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isJabuMq = !_isJabuMq;
+                Logger.LogInteraction(nameof(DungeonType3));
+                break;
+            case "frst":
+                if (_dungeon4Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon4Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon4Idx++;
+
+                    DungeonType4 = _dungeon4Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType4
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isForestMq = !_isForestMq;
+                Logger.LogInteraction(nameof(DungeonType4));
+                break;
+            case "fire":
+                if (_dungeon5Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon5Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon5Idx++;
+
+                    DungeonType5 = _dungeon5Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType5
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isFireMq = !_isFireMq;
+                Logger.LogInteraction(nameof(DungeonType5));
+                break;
+            case "wtr":
+                if (_dungeon6Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon6Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon6Idx++;
+
+                    DungeonType6 = _dungeon6Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType6
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isWaterMq = !_isWaterMq;
+                Logger.LogInteraction(nameof(DungeonType6));
+                break;
+            case "shdw":
+                if (_dungeon7Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon7Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon7Idx++;
+
+                    DungeonType7 = _dungeon7Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType7
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isShadowMq = !_isShadowMq;
+                Logger.LogInteraction(nameof(DungeonType7));
+                break;
+            case "sprt":
+                if (_dungeon8Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon8Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon8Idx++;
+
+                    DungeonType8 = _dungeon8Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType8
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isSpiritMq = !_isSpiritMq;
+                Logger.LogInteraction(nameof(DungeonType8));
+                break;
+            case "botw":
+                if (_dungeon9Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon9Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon9Idx++;
+
+                    DungeonType9 = _dungeon9Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType9
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isBottomMq = !_isBottomMq;
+                Logger.LogInteraction(nameof(DungeonType9));
+                break;
+            case "ice":
+                if (_dungeon10Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon10Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon10Idx++;
+
+                    DungeonType10 = _dungeon10Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType10
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isCavernMq = !_isCavernMq;
+                Logger.LogInteraction(nameof(DungeonType10));
+                break;
+            case "gtg":
+                if (_dungeon11Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon11Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon11Idx++;
+
+                    DungeonType11 = _dungeon11Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType11
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isGtgMq = !_isGtgMq;
+                Logger.LogInteraction(nameof(DungeonType11));
+                break;
+            case "ganon":
+                if (_dungeon12Idx >= 2)
+                {
+                    // Reset back to 0
+                    _dungeon12Idx = 0;
+                }
+
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _dungeon12Idx++;
+
+                    DungeonType12 = _dungeon12Idx switch
+                    {
+                        0 => Constants.DungeonTypes[0], // ???
+                        1 => Constants.DungeonTypes[1], // VANILLA
+                        2 => Constants.DungeonTypes[2], // MQ
+                        _ => DungeonType12
+                    };
+                });
+
+                // Toggle switch.
+                // If bool is false, then it becomes true.
+                // Since !false = true and !true = false.
+                _isGanonMq = !_isGanonMq;
+                Logger.LogInteraction(nameof(DungeonType12));
+                break;
+        }
+    }
+    
+    #endregion
+    
     #region Utils
     private void PrepareData()
     {
@@ -2090,13 +2532,99 @@ public partial class MainWindowViewModel : ObservableRecipient
             {
                 ChildTradeData = new ChildTradeData
                 {
+                    WeirdEggString = WeirdEggIcon,
+                    CuccoString = CuccoIcon,
+                    LetterString = LetterIcon,
+                    SkullMaskString = SkullMaskIcon,
+                    MaskOfTruthString = MaskOfTruthIcon
                 },
                 AdultTradeData = new AdultTradeData
                 {
+                    PocketEggString = PocketEggImage,
+                    PocketCuccoString = PocketCuccoImage,
+                    CojiroString = CojiroImage,
+                    OddMushroomString = OddMushroomImage,
+                    OddPoulticeString = OddPoulticeImage,
+                    PoachersSawString = PoachersSawImage,
+                    GiantsKnifeString = GiantsKnifeImage,
+                    BrokenGoronsSwordString = BrokenGoronsSwordImage,
+                    PrescriptionString = PrescriptionImage,
+                    EyeballFrogString = EyeballFrogImage,
+                    EyeDropsString = EyeDropsImage,
+                    ClaimCheckString = ClaimCheckImage
                 }
             },
             DungeonData = new DungeonData
             {
+                DekuCompassString = DekuCompassImage,
+                DekuMapString = DekuMapImage,
+                IsDekuMq = _isDekuMq,
+                DcCompassString = DcCompassImage,
+                DcMapString = DcMapImage,
+                IsDcMq = _isDcMq,
+                JabuCompassString = JabuCompassImage,
+                JabuMapString = JabuMapImage,
+                IsJabuMq = _isJabuMq,
+                ForestCompassString = ForestCompassImage,
+                ForestMapString = ForestMapImage,
+                ForestKeyString = ForestKeyImage,
+                ForestKeyCount = ForestKeyCount,
+                ForestBkString = ForestBkImage,
+                IsForestMq = _isForestMq,
+                FireCompassString = FireCompassImage,
+                FireMapString = FireMapImage,
+                FireKeyString = FireKeyImage,
+                FireKeyCount = FireKeyCount,
+                FireBkString = FireBkImage,
+                IsFireMq = _isFireMq,
+                WaterCompassString = WaterCompassImage,
+                WaterMapString = WaterMapImage,
+                WaterKeyString = WaterKeyImage,
+                WaterKeyCount = WaterKeyCount,
+                WaterBkString = WaterBkImage,
+                IsWaterMq = _isWaterMq,
+                SpiritCompassString = SpiritCompassImage,
+                SpiritMapString = SpiritMapImage,
+                SpiritKeyString = SpiritKeyImage,
+                SpiritKeyCount = SpiritKeyCount,
+                SpiritBkString = SpiritBkImage,
+                IsSpiritMq = _isSpiritMq,
+                ShadowCompassString = ShadowCompassImage,
+                ShadowMapString = ShadowMapImage,
+                ShadowKeyString = ShadowKeyImage,
+                ShadowKeyCount = ShadowKeyCount,
+                ShadowBkString = ShadowBkImage,
+                IsShadowMq = _isShadowMq,
+                BottomCompassString = BottomCompassImage,
+                BottomMapString = BottomMapImage,
+                BottomKeyString = BottomKeyImage,
+                BottomKeyCount = BottomKeyCount,
+                IsBottomMq = _isBottomMq,
+                CavernCompassString = CavernCompassImage,
+                CavernMapString = CavernMapImage,
+                IsCavernMq = _isCavernMq,
+                GanonKeyString = GanonKeyImage,
+                GanonKeyCount = GanonKeyCount,
+                GanonBkString = GanonBkImage,
+                IsGanonMq = _isGanonMq,
+                GtgKeyString = GtgKeyImage,
+                GtgKeyCount = GtgKeyCount,
+                IsGtgMq = _isGtgMq
+            },
+            DungeonTypeData = new DungeonTypeData
+            {
+                Dungeon1 = _dungeon1Idx,
+                Dungeon2 = _dungeon2Idx,
+                Dungeon3 = _dungeon3Idx,
+                Dungeon4 = _dungeon4Idx,
+                Dungeon5 = _dungeon5Idx,
+                Dungeon6 = _dungeon6Idx,
+                Dungeon7 = _dungeon7Idx,
+                Dungeon8 = _dungeon8Idx,
+                Dungeon9 = _dungeon9Idx,
+                Dungeon10 = _dungeon10Idx,
+                Dungeon11 = _dungeon11Idx,
+                Dungeon12 = _dungeon12Idx
             },
 	        UpgradeData = new UpgradeData
             {
@@ -2131,6 +2659,19 @@ public partial class MainWindowViewModel : ObservableRecipient
                 Location7String = Location7,
                 Location8String = Location8,
                 Location9String = Location9,
+                
+                Dungeon1Type = DungeonType1,
+                Dungeon2Type = DungeonType2,
+                Dungeon3Type = DungeonType3,
+                Dungeon4Type = DungeonType4,
+                Dungeon5Type = DungeonType5,
+                Dungeon6Type = DungeonType6,
+                Dungeon7Type = DungeonType7,
+                Dungeon8Type = DungeonType8,
+                Dungeon9Type = DungeonType9,
+                Dungeon10Type = DungeonType10,
+                Dungeon11Type = DungeonType11,
+                Dungeon12Type = DungeonType12,
                 
                 EmeraldString = KokiriEmeraldImage,
                 RubyString = GoronRubyImage,
@@ -2243,6 +2784,19 @@ public partial class MainWindowViewModel : ObservableRecipient
         Location8 = _trackerData.UiData.Location8String;
         Location9 = _trackerData.UiData.Location9String;
 
+        DungeonType1 = _trackerData.UiData.Dungeon1Type;
+        DungeonType2 = _trackerData.UiData.Dungeon2Type;
+        DungeonType3 = _trackerData.UiData.Dungeon3Type;
+        DungeonType4 = _trackerData.UiData.Dungeon4Type;
+        DungeonType5 = _trackerData.UiData.Dungeon5Type;
+        DungeonType6 = _trackerData.UiData.Dungeon6Type;
+        DungeonType7 = _trackerData.UiData.Dungeon7Type;
+        DungeonType8 = _trackerData.UiData.Dungeon8Type;
+        DungeonType9 = _trackerData.UiData.Dungeon9Type;
+        DungeonType10 = _trackerData.UiData.Dungeon10Type;
+        DungeonType11 = _trackerData.UiData.Dungeon11Type;
+        DungeonType12 = _trackerData.UiData.Dungeon12Type;
+
         KokiriEmeraldImage = _trackerData.UiData.EmeraldString;
         GoronRubyImage = _trackerData.UiData.RubyString;
         ZoraSapphireImage = _trackerData.UiData.SapphireString;
@@ -2307,10 +2861,77 @@ public partial class MainWindowViewModel : ObservableRecipient
         FireArrowImage = _trackerData.UiData.FireArrowString;
         IceArrowImage = _trackerData.UiData.IceArrowString;
         LightArrowImage = _trackerData.UiData.LightArrowString;
+        
         Bottle1Image = _trackerData.UiData.Bottle1String;
         Bottle2Image = _trackerData.UiData.Bottle2String;
         Bottle3Image = _trackerData.UiData.Bottle3String;
         Bottle4Image = _trackerData.UiData.Bottle4String;
+
+        WeirdEggIcon = _trackerData.TradeData.ChildTradeData.WeirdEggString;
+        CuccoIcon = _trackerData.TradeData.ChildTradeData.CuccoString;
+        LetterIcon = _trackerData.TradeData.ChildTradeData.LetterString;
+        SkullMaskIcon = _trackerData.TradeData.ChildTradeData.SkullMaskString;
+        MaskOfTruthIcon = _trackerData.TradeData.ChildTradeData.MaskOfTruthString;
+
+        PocketEggImage = _trackerData.TradeData.AdultTradeData.PocketEggString;
+        PocketCuccoImage = _trackerData.TradeData.AdultTradeData.PocketCuccoString;
+        CojiroImage = _trackerData.TradeData.AdultTradeData.CojiroString;
+        OddMushroomImage = _trackerData.TradeData.AdultTradeData.OddMushroomString;
+        OddPoulticeImage = _trackerData.TradeData.AdultTradeData.OddPoulticeString;
+        PoachersSawImage = _trackerData.TradeData.AdultTradeData.PoachersSawString;
+        GiantsKnifeImage = _trackerData.TradeData.AdultTradeData.GiantsKnifeString;
+        BrokenGoronsSwordImage = _trackerData.TradeData.AdultTradeData.BrokenGoronsSwordString;
+        PrescriptionImage = _trackerData.TradeData.AdultTradeData.PrescriptionString;
+        EyeballFrogImage = _trackerData.TradeData.AdultTradeData.EyeballFrogString;
+        EyeDropsImage = _trackerData.TradeData.AdultTradeData.EyeDropsString;
+        ClaimCheckImage = _trackerData.TradeData.AdultTradeData.ClaimCheckString;
+
+        DekuMapImage = _trackerData.DungeonData.DekuMapString;
+        DcMapImage = _trackerData.DungeonData.DcMapString;
+        JabuMapImage = _trackerData.DungeonData.JabuMapString;
+        ForestMapImage = _trackerData.DungeonData.ForestMapString;
+        FireMapImage = _trackerData.DungeonData.FireMapString;
+        WaterMapImage = _trackerData.DungeonData.WaterMapString;
+        SpiritMapImage = _trackerData.DungeonData.SpiritMapString;
+        ShadowMapImage = _trackerData.DungeonData.ShadowMapString;
+        BottomMapImage = _trackerData.DungeonData.BottomMapString;
+        CavernMapImage = _trackerData.DungeonData.CavernMapString;
+
+        DekuCompassImage = _trackerData.DungeonData.DekuCompassString;
+        DcCompassImage = _trackerData.DungeonData.DcCompassString;
+        JabuCompassImage = _trackerData.DungeonData.JabuCompassString;
+        ForestCompassImage = _trackerData.DungeonData.ForestCompassString;
+        FireCompassImage = _trackerData.DungeonData.FireCompassString;
+        WaterCompassImage = _trackerData.DungeonData.WaterCompassString;
+        SpiritCompassImage = _trackerData.DungeonData.SpiritCompassString;
+        ShadowCompassImage = _trackerData.DungeonData.ShadowCompassString;
+        BottomCompassImage = _trackerData.DungeonData.BottomCompassString;
+        CavernCompassImage = _trackerData.DungeonData.CavernCompassString;
+
+        ForestKeyImage = _trackerData.DungeonData.ForestKeyString;
+        FireKeyImage = _trackerData.DungeonData.FireKeyString;
+        WaterKeyImage = _trackerData.DungeonData.WaterKeyString;
+        SpiritKeyImage = _trackerData.DungeonData.SpiritKeyString;
+        ShadowKeyImage = _trackerData.DungeonData.ShadowKeyString;
+        BottomKeyImage = _trackerData.DungeonData.BottomKeyString;
+        GanonKeyImage = _trackerData.DungeonData.GanonKeyString;
+        GtgKeyImage = _trackerData.DungeonData.GtgKeyString;
+
+        ForestBkImage = _trackerData.DungeonData.ForestBkString;
+        FireBkImage = _trackerData.DungeonData.FireBkString;
+        WaterBkImage = _trackerData.DungeonData.WaterBkString;
+        SpiritBkImage = _trackerData.DungeonData.SpiritBkString;
+        ShadowBkImage = _trackerData.DungeonData.ShadowBkString;
+        GanonBkImage = _trackerData.DungeonData.GanonBkString;
+
+        ForestKeyCount = _trackerData.DungeonData.ForestKeyCount;
+        FireKeyCount = _trackerData.DungeonData.FireKeyCount;
+        WaterKeyCount = _trackerData.DungeonData.WaterKeyCount;
+        SpiritKeyCount = _trackerData.DungeonData.SpiritKeyCount;
+        ShadowKeyCount = _trackerData.DungeonData.ShadowKeyCount;
+        BottomKeyCount = _trackerData.DungeonData.BottomKeyCount;
+        GanonKeyCount = _trackerData.DungeonData.GanonKeyCount;
+        GtgKeyCount = _trackerData.DungeonData.GtgKeyCount;
     }
 
     private void SetTrackerCtrl()
@@ -2332,6 +2953,32 @@ public partial class MainWindowViewModel : ObservableRecipient
         _location7Idx = _trackerData.LocationData.Location7;
         _location8Idx = _trackerData.LocationData.Location8;
         _location9Idx = _trackerData.LocationData.Location9;
+
+        _dungeon1Idx = _trackerData.DungeonTypeData.Dungeon1;
+        _dungeon2Idx = _trackerData.DungeonTypeData.Dungeon2;
+        _dungeon3Idx = _trackerData.DungeonTypeData.Dungeon3;
+        _dungeon4Idx = _trackerData.DungeonTypeData.Dungeon4;
+        _dungeon5Idx = _trackerData.DungeonTypeData.Dungeon5;
+        _dungeon6Idx = _trackerData.DungeonTypeData.Dungeon6;
+        _dungeon7Idx = _trackerData.DungeonTypeData.Dungeon7;
+        _dungeon8Idx = _trackerData.DungeonTypeData.Dungeon8;
+        _dungeon9Idx = _trackerData.DungeonTypeData.Dungeon9;
+        _dungeon10Idx = _trackerData.DungeonTypeData.Dungeon10;
+        _dungeon11Idx = _trackerData.DungeonTypeData.Dungeon11;
+        _dungeon12Idx = _trackerData.DungeonTypeData.Dungeon12;
+
+        _isDekuMq = _trackerData.DungeonData.IsDekuMq;
+        _isDcMq = _trackerData.DungeonData.IsDcMq;
+        _isJabuMq = _trackerData.DungeonData.IsJabuMq;
+        _isForestMq = _trackerData.DungeonData.IsForestMq;
+        _isFireMq = _trackerData.DungeonData.IsFireMq;
+        _isWaterMq = _trackerData.DungeonData.IsWaterMq;
+        _isSpiritMq = _trackerData.DungeonData.IsSpiritMq;
+        _isShadowMq = _trackerData.DungeonData.IsShadowMq;
+        _isBottomMq = _trackerData.DungeonData.IsBottomMq;
+        _isCavernMq = _trackerData.DungeonData.IsCavernMq;
+        _isGanonMq = _trackerData.DungeonData.IsGanonMq;
+        _isGtgMq = _trackerData.DungeonData.IsGtgMq;
     }
 
     [RelayCommand]
@@ -2351,5 +2998,6 @@ public partial class MainWindowViewModel : ObservableRecipient
         // Or false is inactive
         return !spriteName.Contains("_Disabled");
     }
+    
     #endregion
 }
