@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Windows.Media;
+using Newtonsoft.Json;
 
 namespace EnKdev.ItemTrackers.OoT.Models;
 
@@ -66,6 +67,30 @@ public class UiRelevantData
     
     [JsonProperty("ui_d12type")]
     public string Dungeon12Type { get; set; }
+    
+    [JsonProperty("c_frstKeyColor")]
+    public SolidColorBrush ForestKeyColor { get; set; }
+    
+    [JsonProperty("c_fireKeyColor")]
+    public SolidColorBrush FireKeyColor { get; set; }
+    
+    [JsonProperty("c_wtrKeyColor")]
+    public SolidColorBrush WaterKeyColor { get; set; }
+    
+    [JsonProperty("c_shdwKeyColor")]
+    public SolidColorBrush ShadowKeyColor { get; set; }
+    
+    [JsonProperty("c_sprtKeyColor")]
+    public SolidColorBrush SpiritKeyColor { get; set; }
+    
+    [JsonProperty("c_botwKeyColor")]
+    public SolidColorBrush BottomKeyColor { get; set; }
+    
+    [JsonProperty("c_ganonKeyColor")]
+    public SolidColorBrush GanonKeyColor { get; set; }
+    
+    [JsonProperty("c_gtgKeyColor")]
+    public SolidColorBrush GtgKeyColor { get; set; }
     
     [JsonProperty("q_kokEmStr")]
     public string EmeraldString { get; set; }

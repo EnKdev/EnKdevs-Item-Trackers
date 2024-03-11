@@ -76,6 +76,10 @@
 - Added functionality to toggle maps, compasses and dungeon types.
 - Added functionality to switch dungeon types between `VANILLA` and `MQ`
 
+2.0.0-ootDev+build.7
+- Added functionality to toggle and increase key counts
+- Added functionality to toggle dungeon boss keys
+
 ---
 
 1.0.0-mmDev+build.1:

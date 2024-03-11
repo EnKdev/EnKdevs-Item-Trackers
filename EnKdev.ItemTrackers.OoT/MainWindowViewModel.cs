@@ -120,13 +120,28 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Colors
 
     [ObservableProperty] 
-    private SolidColorBrush _noKeyColor;
+    private SolidColorBrush _forestKeyColor;
+
+    [ObservableProperty] 
+    private SolidColorBrush _fireKeyColor;
+
+    [ObservableProperty] 
+    private SolidColorBrush _waterKeyColor;
+
+    [ObservableProperty] 
+    private SolidColorBrush _shadowKeyColor;
 
     [ObservableProperty]
-    private SolidColorBrush _hasKeyColor;
+    private SolidColorBrush _spiritKeyColor;
 
     [ObservableProperty]
-    private SolidColorBrush _allKeyColor;
+    private SolidColorBrush _bottomKeyColor;
+
+    [ObservableProperty]
+    private SolidColorBrush _ganonKeyColor;
+
+    [ObservableProperty]
+    private SolidColorBrush _gtgKeyColor;
 
     #endregion
 
@@ -644,9 +659,14 @@ public partial class MainWindowViewModel : ObservableRecipient
         DungeonType11 = Constants.DungeonTypes[0];
         DungeonType12 = Constants.DungeonTypes[0];
 
-        NoKeyColor = Constants.NoKeyColor;
-        HasKeyColor = Constants.HasKeyColor;
-        AllKeyColor = Constants.AllKeyColor;
+        ForestKeyColor = Constants.NoKeyColor;
+        FireKeyColor = Constants.NoKeyColor;
+        WaterKeyColor = Constants.NoKeyColor;
+        ShadowKeyColor = Constants.NoKeyColor;
+        SpiritKeyColor = Constants.NoKeyColor;
+        BottomKeyColor = Constants.NoKeyColor;
+        GanonKeyColor = Constants.NoKeyColor;
+        GtgKeyColor = Constants.NoKeyColor;
 
 		ItemBackground = Constants.ItemBg;
         GearBackground = Constants.GearBg;
@@ -2094,11 +2114,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Maps, Compasses, Keys, Boss Keys, Etc.
 
     [RelayCommand]
-    public void ToggleMap(string dungeonPrefix)
+    public void ToggleMap(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleMapCommand));
         
-        switch (dungeonPrefix)
+        switch (dungeon)
         {
             case "deku":
                 DekuMapImage = GetState(DekuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
@@ -2144,11 +2164,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleCompass(string dungeonPrefix)
+    public void ToggleCompass(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleCompassCommand));
         
-        switch (dungeonPrefix)
+        switch (dungeon)
         {
             case "deku":
                 DekuCompassImage = GetState(DekuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
@@ -2200,11 +2220,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleDungeonState(string dungeonPrefix)
+    public void ToggleDungeonState(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleDungeonStateCommand));
 
-        switch (dungeonPrefix)
+        switch (dungeon)
         {
             case "deku":
                 if (_dungeon1Idx >= 2)
@@ -2217,19 +2237,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon1Idx++;
 
-                    DungeonType1 = _dungeon1Idx switch
+                    switch (_dungeon1Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType1
-                    };
+                        case 0:
+                            DungeonType1 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType1 = Constants.DungeonTypes[1]; // VANILLA
+                            _isDekuMq = false;
+                            break;
+                        case 2:
+                            DungeonType1 = Constants.DungeonTypes[2]; // MQ
+                            _isDekuMq = true;
+                            break;
+                    }
                 });
-
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isDekuMq = !_isDekuMq;
+                
                 Logger.LogInteraction(nameof(DungeonType1));
                 break;
             case "dc":
@@ -2243,19 +2266,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon2Idx++;
 
-                    DungeonType2 = _dungeon2Idx switch
+                    switch (_dungeon2Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType2
-                    };
+                        case 0:
+                            DungeonType2 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType2 = Constants.DungeonTypes[1]; // VANILLA
+                            _isDcMq = false;
+                            break;
+                        case 2:
+                            DungeonType2 = Constants.DungeonTypes[2]; // MQ
+                            _isDcMq = true;
+                            break;
+                    }
                 });
-
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isDcMq = !_isDcMq;
+                
                 Logger.LogInteraction(nameof(DungeonType2));
                 break;
             case "jabu":
@@ -2269,19 +2295,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon3Idx++;
 
-                    DungeonType3 = _dungeon3Idx switch
+                    switch (_dungeon3Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType3
-                    };
+                        case 0:
+                            DungeonType3 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType3 = Constants.DungeonTypes[1]; // VANILLA
+                            _isJabuMq = false;
+                            break;
+                        case 2:
+                            DungeonType3 = Constants.DungeonTypes[2]; // MQ
+                            _isJabuMq = true;
+                            break;
+                    }
                 });
 
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isJabuMq = !_isJabuMq;
                 Logger.LogInteraction(nameof(DungeonType3));
                 break;
             case "frst":
@@ -2295,19 +2324,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon4Idx++;
 
-                    DungeonType4 = _dungeon4Idx switch
+                    switch (_dungeon4Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType4
-                    };
+                        case 0:
+                            DungeonType4 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType4 = Constants.DungeonTypes[1]; // VANILLA
+                            _isForestMq = false;
+                            break;
+                        case 2:
+                            DungeonType4 = Constants.DungeonTypes[2]; // MQ
+                            _isForestMq = true;
+                            break;
+                    }
                 });
 
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isForestMq = !_isForestMq;
                 Logger.LogInteraction(nameof(DungeonType4));
                 break;
             case "fire":
@@ -2321,19 +2353,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon5Idx++;
 
-                    DungeonType5 = _dungeon5Idx switch
+                    switch (_dungeon5Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType5
-                    };
+                        case 0:
+                            DungeonType5 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType5 = Constants.DungeonTypes[1]; // VANILLA
+                            _isFireMq = false;
+                            break;
+                        case 2:
+                            DungeonType5 = Constants.DungeonTypes[2]; // MQ
+                            _isFireMq = true;
+                            break;
+                    }
                 });
 
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isFireMq = !_isFireMq;
                 Logger.LogInteraction(nameof(DungeonType5));
                 break;
             case "wtr":
@@ -2347,19 +2382,25 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon6Idx++;
 
-                    DungeonType6 = _dungeon6Idx switch
+                    switch (_dungeon6Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType6
-                    };
+                        case 0:
+                            DungeonType6 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType6 = Constants.DungeonTypes[1]; // VANILLA
+                            _isWaterMq = false;
+                            break;
+                        case 2:
+                            DungeonType6 = Constants.DungeonTypes[2]; // MQ
+                            _isWaterMq = true;
+                            break;
+                        default:
+                            DungeonType6 = DungeonType6;
+                            break;
+                    }
                 });
 
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isWaterMq = !_isWaterMq;
                 Logger.LogInteraction(nameof(DungeonType6));
                 break;
             case "shdw":
@@ -2373,19 +2414,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon7Idx++;
 
-                    DungeonType7 = _dungeon7Idx switch
+                    switch (_dungeon7Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType7
-                    };
+                        case 0:
+                            DungeonType7 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType7 = Constants.DungeonTypes[1]; // VANILLA
+                            _isShadowMq = false;
+                            break;
+                        case 2:
+                            DungeonType7 = Constants.DungeonTypes[2]; // MQ
+                            _isShadowMq = true;
+                            break;
+                    }
                 });
 
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isShadowMq = !_isShadowMq;
                 Logger.LogInteraction(nameof(DungeonType7));
                 break;
             case "sprt":
@@ -2399,19 +2443,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon8Idx++;
 
-                    DungeonType8 = _dungeon8Idx switch
+                    switch (_dungeon8Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType8
-                    };
+                        case 0:
+                            DungeonType8 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType8 = Constants.DungeonTypes[1]; // VANILLA
+                            _isSpiritMq = false;
+                            break;
+                        case 2:
+                            DungeonType8 = Constants.DungeonTypes[2]; // MQ
+                            _isSpiritMq = true;
+                            break;
+                    }
                 });
-
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isSpiritMq = !_isSpiritMq;
+                
                 Logger.LogInteraction(nameof(DungeonType8));
                 break;
             case "botw":
@@ -2425,19 +2472,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon9Idx++;
 
-                    DungeonType9 = _dungeon9Idx switch
+                    switch (_dungeon9Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType9
-                    };
+                        case 0:
+                            DungeonType9 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType9 = Constants.DungeonTypes[1]; // VANILLA
+                            _isBottomMq = false;
+                            break;
+                        case 2:
+                            DungeonType9 = Constants.DungeonTypes[2]; // MQ
+                            _isBottomMq = true;
+                            break;
+                    }
                 });
-
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isBottomMq = !_isBottomMq;
+                
                 Logger.LogInteraction(nameof(DungeonType9));
                 break;
             case "ice":
@@ -2451,13 +2501,20 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon10Idx++;
 
-                    DungeonType10 = _dungeon10Idx switch
+                    switch (_dungeon10Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType10
-                    };
+                        case 0:
+                            DungeonType10 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType10 = Constants.DungeonTypes[1]; // VANILLA
+                            _isCavernMq = false;
+                            break;
+                        case 2:
+                            DungeonType10 = Constants.DungeonTypes[2]; // MQ
+                            _isCavernMq = true;
+                            break;
+                    }
                 });
 
                 // Toggle switch.
@@ -2477,19 +2534,22 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon11Idx++;
 
-                    DungeonType11 = _dungeon11Idx switch
+                    switch (_dungeon11Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType11
-                    };
+                        case 0:
+                            DungeonType11 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType11 = Constants.DungeonTypes[1]; // VANILLA
+                            _isGtgMq = false;
+                            break;
+                        case 2:
+                            DungeonType11 = Constants.DungeonTypes[2]; // MQ
+                            _isGtgMq = true;
+                            break;
+                    }
                 });
 
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isGtgMq = !_isGtgMq;
                 Logger.LogInteraction(nameof(DungeonType11));
                 break;
             case "ganon":
@@ -2503,20 +2563,337 @@ public partial class MainWindowViewModel : ObservableRecipient
                 {
                     _dungeon12Idx++;
 
-                    DungeonType12 = _dungeon12Idx switch
+                    switch (_dungeon12Idx)
                     {
-                        0 => Constants.DungeonTypes[0], // ???
-                        1 => Constants.DungeonTypes[1], // VANILLA
-                        2 => Constants.DungeonTypes[2], // MQ
-                        _ => DungeonType12
-                    };
+                        case 0:
+                            DungeonType12 = Constants.DungeonTypes[0]; // ???
+                            break;
+                        case 1:
+                            DungeonType12 = Constants.DungeonTypes[1]; // VANILLA
+                            _isGanonMq = false;
+                            break;
+                        case 2:
+                            DungeonType12 = Constants.DungeonTypes[2]; // MQ
+                            _isGanonMq = true; 
+                            break;
+                    }
                 });
-
-                // Toggle switch.
-                // If bool is false, then it becomes true.
-                // Since !false = true and !true = false.
-                _isGanonMq = !_isGanonMq;
+                
                 Logger.LogInteraction(nameof(DungeonType12));
+                break;
+        }
+    }
+
+    [RelayCommand]
+    public void IncreaseKeyCountAndToggleKey(string dungeon)
+    {
+        switch (dungeon)
+        {
+            case "frst":
+                if (_isForestMq)
+                {
+                    if (ForestKeyCount < _maxForestKeysMq)
+                    {
+                        ForestKeyImage = Constants.SmallKeyEnabled;
+                        ForestKeyColor = Constants.HasKeyColor;
+                    }
+
+                    ForestKeyCount++;
+
+                    if (ForestKeyCount >= _maxForestKeysMq)
+                    {
+                        ForestKeyCount = _maxForestKeysMq;
+                        ForestKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (ForestKeyCount < _maxForestKeysVanilla)
+                    {
+                        ForestKeyImage = Constants.SmallKeyEnabled;
+                        ForestKeyColor = Constants.HasKeyColor;
+                    }
+
+                    ForestKeyCount++;
+
+                    if (ForestKeyCount >= _maxForestKeysVanilla)
+                    {
+                        ForestKeyCount = _maxForestKeysVanilla;
+                        ForestKeyColor = Constants.AllKeyColor;
+                    }
+                }
+
+                break;
+            case "fire":
+                if (_isFireMq)
+                {
+                    if (FireKeyCount < _maxFireKeysMq)
+                    {
+                        FireKeyImage = Constants.SmallKeyEnabled;
+                        FireKeyColor = Constants.HasKeyColor;
+                    }
+
+                    FireKeyCount++;
+
+                    if (FireKeyCount >= _maxFireKeysMq)
+                    {
+                        FireKeyCount = _maxFireKeysMq;
+                        FireKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (FireKeyCount < _maxFireKeysVanilla)
+                    {
+                        FireKeyImage = Constants.SmallKeyEnabled;
+                        FireKeyColor = Constants.HasKeyColor;
+                    }
+
+                    FireKeyCount++;
+
+                    if (FireKeyCount >= _maxFireKeysVanilla)
+                    {
+                        FireKeyCount = _maxFireKeysVanilla;
+                        FireKeyColor = Constants.AllKeyColor;
+                    }
+                }
+
+                break;
+            case "wtr":
+                if (_isWaterMq)
+                {
+                    if (WaterKeyCount < _maxWaterKeysMq)
+                    {
+                        WaterKeyImage = Constants.SmallKeyEnabled;
+                        WaterKeyColor = Constants.HasKeyColor;
+                    }
+
+                    WaterKeyCount++;
+
+                    if (WaterKeyCount >= _maxWaterKeysMq)
+                    {
+                        WaterKeyCount = _maxWaterKeysMq;
+                        WaterKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (WaterKeyCount < _maxWaterKeysVanilla)
+                    {
+                        WaterKeyImage = Constants.SmallKeyEnabled;
+                        WaterKeyColor = Constants.HasKeyColor;
+                    }
+
+                    WaterKeyCount++;
+
+                    if (WaterKeyCount >= _maxWaterKeysVanilla)
+                    {
+                        WaterKeyCount = _maxWaterKeysVanilla;
+                        WaterKeyColor = Constants.AllKeyColor;
+                    }
+                }
+
+                break;
+            case "shdw":
+                if (_isShadowMq)
+                {
+                    if (ShadowKeyCount < _maxShadowKeysMq)
+                    {
+                        ShadowKeyImage = Constants.SmallKeyEnabled;
+                        ShadowKeyColor = Constants.HasKeyColor;
+                    }
+
+                    ShadowKeyCount++;
+
+                    if (ShadowKeyCount >= _maxShadowKeysMq)
+                    {
+                        ShadowKeyCount = _maxShadowKeysMq;
+                        ShadowKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (ShadowKeyCount < _maxShadowKeysVanilla)
+                    {
+                        ShadowKeyImage = Constants.SmallKeyEnabled;
+                        ShadowKeyColor = Constants.HasKeyColor;
+                    }
+
+                    ShadowKeyCount++;
+
+                    if (ShadowKeyCount >= _maxShadowKeysVanilla)
+                    {
+                        ShadowKeyCount = _maxShadowKeysVanilla;
+                        ShadowKeyColor = Constants.AllKeyColor;
+                    }
+                }
+
+                break;
+            case "sprt":
+                if (_isSpiritMq)
+                {
+                    if (SpiritKeyCount < _maxSpiritKeysMq)
+                    {
+                        SpiritKeyImage = Constants.SmallKeyEnabled;
+                        SpiritKeyColor = Constants.HasKeyColor;
+                    }
+
+                    SpiritKeyCount++;
+
+                    if (SpiritKeyCount >= _maxSpiritKeysMq)
+                    {
+                        SpiritKeyCount = _maxSpiritKeysMq;
+                        SpiritKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (SpiritKeyCount < _maxSpiritKeysVanilla)
+                    {
+                        SpiritKeyImage = Constants.SmallKeyEnabled;
+                        SpiritKeyColor = Constants.HasKeyColor;
+                    }
+
+                    SpiritKeyCount++;
+
+                    if (SpiritKeyCount >= _maxSpiritKeysVanilla)
+                    {
+                        SpiritKeyCount = _maxSpiritKeysVanilla;
+                        SpiritKeyColor = Constants.AllKeyColor;
+                    }
+                }
+
+                break;
+            case "botw":
+                if (_isBottomMq)
+                {
+                    if (BottomKeyCount < _maxBottomKeysMq)
+                    {
+                        BottomKeyImage = Constants.SmallKeyEnabled;
+                        BottomKeyColor = Constants.HasKeyColor;
+                    }
+
+                    BottomKeyCount++;
+
+                    if (BottomKeyCount >= _maxBottomKeysMq)
+                    {
+                        BottomKeyCount = _maxBottomKeysMq;
+                        BottomKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (BottomKeyCount < _maxBottomKeysVanilla)
+                    {
+                        BottomKeyImage = Constants.SmallKeyEnabled;
+                        BottomKeyColor = Constants.HasKeyColor;
+                    }
+
+                    BottomKeyCount++;
+
+                    if (BottomKeyCount >= _maxBottomKeysVanilla)
+                    {
+                        BottomKeyCount = _maxBottomKeysVanilla;
+                        BottomKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                
+                break;
+            case "gtg":
+                if (_isGtgMq)
+                {
+                    if (GtgKeyCount < _maxGtgKeysMq)
+                    {
+                        GtgKeyImage = Constants.SmallKeyEnabled;
+                        GtgKeyColor = Constants.HasKeyColor;
+                    }
+
+                    GtgKeyCount++;
+
+                    if (GtgKeyCount >= _maxGtgKeysMq)
+                    {
+                        GtgKeyCount = _maxGtgKeysMq;
+                        GtgKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (GtgKeyCount < _maxGtgKeysVanilla)
+                    {
+                        GtgKeyImage = Constants.SmallKeyEnabled;
+                        GtgKeyColor = Constants.HasKeyColor;
+                    }
+
+                    GtgKeyCount++;
+
+                    if (GtgKeyCount >= _maxGtgKeysVanilla)
+                    {
+                        GtgKeyCount = _maxGtgKeysVanilla;
+                        GtgKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                
+                break;
+            case "ganon":
+                if (_isGanonMq)
+                {
+                    if (GanonKeyCount < _maxGanonKeysMq)
+                    {
+                        GanonKeyImage = Constants.SmallKeyEnabled;
+                        GanonKeyColor = Constants.HasKeyColor;
+                    }
+
+                    GanonKeyCount++;
+
+                    if (GanonKeyCount >= _maxGanonKeysMq)
+                    {
+                        GanonKeyCount = _maxGanonKeysMq;
+                        GanonKeyColor = Constants.AllKeyColor;
+                    }
+                }
+                else
+                {
+                    if (GanonKeyCount < _maxGanonKeysVanilla)
+                    {
+                        GanonKeyImage = Constants.SmallKeyEnabled;
+                        GanonKeyColor = Constants.HasKeyColor;
+                    }
+
+                    GanonKeyCount++;
+
+                    if (GanonKeyCount >= _maxGanonKeysVanilla)
+                    {
+                        GanonKeyCount = _maxGanonKeysVanilla;
+                        GanonKeyColor = Constants.AllKeyColor;
+                    }
+                }
+
+                break;
+        }
+    }
+
+    [RelayCommand]
+    public void ToggleBossKey(string dungeon)
+    {
+        switch (dungeon)
+        {
+            case "frst":
+                ForestBkImage = GetState(ForestBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                break;
+            case "fire":
+                FireBkImage = GetState(FireBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                break;
+            case "wtr":
+                WaterBkImage = GetState(WaterBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                break;
+            case "shdw":
+                ShadowBkImage = GetState(ShadowBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                break;
+            case "sprt":
+                SpiritBkImage = GetState(SpiritBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                break;
+            case "ganon":
+                GanonBkImage = GetState(GanonBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 break;
         }
     }
@@ -2673,6 +3050,15 @@ public partial class MainWindowViewModel : ObservableRecipient
                 Dungeon11Type = DungeonType11,
                 Dungeon12Type = DungeonType12,
                 
+                ForestKeyColor = ForestKeyColor,
+                FireKeyColor = FireKeyColor,
+                WaterKeyColor = WaterKeyColor,
+                ShadowKeyColor = ShadowKeyColor,
+                SpiritKeyColor = SpiritKeyColor,
+                BottomKeyColor = BottomKeyColor,
+                GanonKeyColor = GanonKeyColor,
+                GtgKeyColor = GtgKeyColor,
+                
                 EmeraldString = KokiriEmeraldImage,
                 RubyString = GoronRubyImage,
                 SapphireString = ZoraSapphireImage,
@@ -2796,6 +3182,15 @@ public partial class MainWindowViewModel : ObservableRecipient
         DungeonType10 = _trackerData.UiData.Dungeon10Type;
         DungeonType11 = _trackerData.UiData.Dungeon11Type;
         DungeonType12 = _trackerData.UiData.Dungeon12Type;
+
+        ForestKeyColor = _trackerData.UiData.ForestKeyColor;
+        FireKeyColor = _trackerData.UiData.FireKeyColor;
+        WaterKeyColor = _trackerData.UiData.WaterKeyColor;
+        ShadowKeyColor = _trackerData.UiData.ShadowKeyColor;
+        SpiritKeyColor = _trackerData.UiData.SpiritKeyColor;
+        BottomKeyColor = _trackerData.UiData.BottomKeyColor;
+        GanonKeyColor = _trackerData.UiData.GanonKeyColor;
+        GtgKeyColor = _trackerData.UiData.GtgKeyColor;
 
         KokiriEmeraldImage = _trackerData.UiData.EmeraldString;
         GoronRubyImage = _trackerData.UiData.RubyString;

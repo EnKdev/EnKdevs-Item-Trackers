@@ -331,14 +331,14 @@
             <TextBlock Text="{Binding DungeonType10}" Panel.ZIndex="1" TextAlignment="Center" Width="100" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="110, 135, 0, 0"/>
             <TextBlock Text="{Binding DungeonType11}" Panel.ZIndex="1" TextAlignment="Center" Width="100" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="110, 320, 0, 0"/>
             <TextBlock Text="{Binding DungeonType12}" Panel.ZIndex="1" TextAlignment="Center" Width="100" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="110, 505, 0, 0"/>
-            <TextBlock Text="{Binding ForestKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-165, 130, 0, 0"/>
-            <TextBlock Text="{Binding FireKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-165, 315, 0, 0"/>
-            <TextBlock Text="{Binding WaterKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-165, 505, 0, 0"/>
-            <TextBlock Text="{Binding ShadowKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, -420, 0, 0"/>
-            <TextBlock Text="{Binding SpiritKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, -235, 0, 0"/>
-            <TextBlock Text="{Binding BottomKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, -50, 0, 0"/>
-            <TextBlock Text="{Binding GtgKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, 315, 0, 0"/>
-            <TextBlock Text="{Binding GanonKeyCount}" Foreground="{Binding NoKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, 505, 0, 0"/>
+            <TextBlock Text="{Binding ForestKeyCount}" Foreground="{Binding ForestKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-165, 130, 0, 0"/>
+            <TextBlock Text="{Binding FireKeyCount}" Foreground="{Binding FireKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-165, 315, 0, 0"/>
+            <TextBlock Text="{Binding WaterKeyCount}" Foreground="{Binding WaterKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-165, 505, 0, 0"/>
+            <TextBlock Text="{Binding ShadowKeyCount}" Foreground="{Binding ShadowKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, -420, 0, 0"/>
+            <TextBlock Text="{Binding SpiritKeyCount}" Foreground="{Binding SpiritKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, -235, 0, 0"/>
+            <TextBlock Text="{Binding BottomKeyCount}" Foreground="{Binding BottomKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, -50, 0, 0"/>
+            <TextBlock Text="{Binding GtgKeyCount}" Foreground="{Binding GtgKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, 315, 0, 0"/>
+            <TextBlock Text="{Binding GanonKeyCount}" Foreground="{Binding GanonKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="625, 505, 0, 0"/>
             <!-- Dungeon Stuff -->
             <Image Source="{Binding DungeonBackground}"/>
             <Image Source="{Binding DekuMapImage}" Width="60" Height="60" Margin="-455, -460, 0, 0">
@@ -619,7 +619,7 @@
             <!-- Child Trade -->
             <Image Source="{Binding WeirdEggIcon}" Width="65" Height="65" Margin="-133, 80, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleWeirdEggCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEggCommand}" CommandParameter="child"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding CuccoIcon}" Width="65" Height="65" Margin="9, 80, 0, 0">
@@ -634,28 +634,28 @@
             </Image>
             <Image Source="{Binding SkullMaskIcon}" Width="65" Height="65" Margin="300, 80, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleSkullMaskCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMaskCommand}" CommandParameter="skull"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding MaskOfTruthIcon}" Width="65" Height="65" Margin="445, 80, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMaskOfTruthCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleMaskCommand}" CommandParameter="truth"/>
                 </Image.InputBindings>
             </Image>
             <!-- Adult Trade -->
             <Image Source="{Binding PocketEggImage}" Width="65" Height="65" Margin="-129, 340, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePocketEggCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleEggCommand}" CommandParameter="adult"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding PocketCuccoImage}" Width="65" Height="65" Margin="14, 340, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding TogglePocketCuccoCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCuccoCommand}" CommandParameter="adult"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding CojiroImage}" Width="65" Height="65" Margin="159, 340, 0, 0">
                 <Image.InputBindings>
-                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCojiroCommand}"/>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCuccoCommand}" CommandParameter="cojiro"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding OddMushroomImage}" Width="65" Height="65" Margin="305, 340, 0, 0">
