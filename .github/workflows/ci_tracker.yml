@@ -37,8 +37,3 @@ jobs:
       env:
         Configuration: Debug
         RuntimeIdentifier: win-${{ matrix.targetplatform }}
-    - name: Upload Build Artifact
-      uses: actions/upload-artifact@v4.3.1
-      with:
-        name: ZIP
-        path: './ci_build/ciBuild.zip'
