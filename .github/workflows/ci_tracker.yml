@@ -1,0 +1,44 @@
+name: Tracker CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        targetplatform: [x64]
+    runs-on: windows-latest
+    env:
+      Solution_Path: EnKdevsItemTrackers.sln
+      OoT_Tracker_Path: EnKdev.ItemTrackers.OoT\EnKdev.ItemTrackers.OoT.csproj
+      # MM_Tracker_Path:
+      Actions_Allow_Unsecure_Commands: true
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.1.1
+      with:
+        fetch-depth: 0
+    - name: Install .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+    - name: Restore WPF Applications
+      run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+      env:
+        Configuration: Debug
+        RuntimeIdentifier: win-${{ matrix.targetplatform }}
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: ZIP
+        path: './ci_build/ciBuild.zip'
