@@ -95,8 +95,6 @@
     <None Remove="Icons\Songs\OoT3D_Sun%27s_Song_Icon_Disabled.png" />
     <None Remove="Icons\Songs\OoT3D_Zelda%27s_Lullaby_Icon.png" />
     <None Remove="Icons\Songs\OoT3D_Zelda%27s_Lullaby_Icon_Disabled.png" />
-    <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon.png" />
-    <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon_Disabled.png" />
     <None Remove="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png" />
     <None Remove="Icons\Upgrade\OoT3D_Biggest_Quiver_Icon.png" />
     <None Remove="Icons\Upgrade\OoT3D_Big_Bomb_Bag_Icon.png" />
@@ -315,12 +313,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Quest\OoT3D_Zora's_Sapphire_Icon_Disabled.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\Upgrade\OoT3D_Adult's_Wallet_Icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\Upgrade\OoT3D_Adult's_Wallet_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png">

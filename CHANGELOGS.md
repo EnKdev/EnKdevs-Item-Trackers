@@ -80,6 +80,11 @@
 - Added functionality to toggle and increase key counts
 - Added functionality to toggle dungeon boss keys
 
+2.0.0-beta.1
+- Added functionality for the trade items
+- Start of private beta testing
+- Modified disabled icons (they're grayscaled now)
+
 ---
 
 1.0.0-mmDev+build.1:

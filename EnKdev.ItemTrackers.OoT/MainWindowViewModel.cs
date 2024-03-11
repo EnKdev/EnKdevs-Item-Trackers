@@ -1669,6 +1669,199 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogInteraction(nameof(ShardImage));
     }
+
+    [RelayCommand]
+    public void ToggleEgg(string age)
+    {
+        Logger.LogCommand(nameof(ToggleEggCommand));
+        
+        switch (age)
+        {
+            case "child":
+                WeirdEggIcon = GetState(WeirdEggIcon)
+                    ? Constants.ChildTradingItemsDisabled[0]
+                    : Constants.ChildTradingItemsEnabled[0];
+                Logger.LogInteraction(nameof(WeirdEggIcon));
+                break;
+            case "adult":
+                PocketEggImage = GetState(PocketEggImage)
+                    ? Constants.AdultTradingItemsDisabled[0]
+                    : Constants.AdultTradingItemsEnabled[0];
+                Logger.LogInteraction(nameof(PocketEggImage));
+                break;
+        }
+    }
+
+    [RelayCommand]
+    public void ToggleCucco(string cucco)
+    {
+        Logger.LogCommand(nameof(ToggleCuccoCommand));
+
+        switch (cucco)
+        {
+            case "child":
+                CuccoIcon = GetState(CuccoIcon)
+                    ? Constants.ChildTradingItemsDisabled[1]
+                    : Constants.ChildTradingItemsEnabled[1];
+                Logger.LogInteraction(nameof(CuccoIcon));
+                break;
+            case "adult":
+                PocketCuccoImage = GetState(PocketCuccoImage)
+                    ? Constants.AdultTradingItemsDisabled[1]
+                    : Constants.AdultTradingItemsEnabled[1];
+                Logger.LogInteraction(nameof(PocketCuccoImage));
+                break;
+            case "cojiro":
+                CojiroImage = GetState(CojiroImage)
+                    ? Constants.AdultTradingItemsDisabled[2]
+                    : Constants.AdultTradingItemsEnabled[2];
+                Logger.LogInteraction(nameof(CojiroImage));
+                break;
+        }
+    }
+
+    [RelayCommand]
+    public void ToggleLetter()
+    {
+        Logger.LogCommand(nameof(ToggleLetterCommand));
+
+        LetterIcon = GetState(LetterIcon)
+            ? Constants.ChildTradingItemsDisabled[2]
+            : Constants.ChildTradingItemsEnabled[2];
+
+        Logger.LogInteraction(nameof(LetterIcon));
+    }
+
+    [RelayCommand]
+    public void ToggleMask(string mask)
+    {
+        Logger.LogCommand(nameof(ToggleMaskCommand));
+
+        switch (mask)
+        {
+            case "skull":
+                SkullMaskIcon = GetState(SkullMaskIcon)
+                    ? Constants.ChildTradingItemsDisabled[3]
+                    : Constants.ChildTradingItemsEnabled[3];
+                Logger.LogInteraction(nameof(SkullMaskIcon));
+                break;
+            case "truth":
+                MaskOfTruthIcon = GetState(MaskOfTruthIcon)
+                    ? Constants.ChildTradingItemsDisabled[4]
+                    : Constants.ChildTradingItemsEnabled[4];
+                Logger.LogInteraction(nameof(MaskOfTruthIcon));
+                break;
+        }
+    }
+
+    [RelayCommand]
+    public void ToggleOddMushroom()
+    {
+        Logger.LogCommand(nameof(ToggleOddMushroomCommand));
+
+        OddMushroomImage = GetState(OddMushroomImage)
+            ? Constants.AdultTradingItemsDisabled[3]
+            : Constants.AdultTradingItemsEnabled[3];
+
+        Logger.LogInteraction(nameof(OddMushroomImage));
+    }
+
+    [RelayCommand]
+    public void ToggleOddPoultice()
+    {
+        Logger.LogCommand(nameof(ToggleOddPoulticeCommand));
+
+        OddPoulticeImage = GetState(OddPoulticeImage)
+            ? Constants.AdultTradingItemsDisabled[4]
+            : Constants.AdultTradingItemsEnabled[4];
+        
+        Logger.LogInteraction(nameof(OddPoulticeImage));
+    }
+
+    [RelayCommand]
+    public void TogglePoachersSaw()
+    {
+        Logger.LogCommand(nameof(TogglePoachersSawCommand));
+
+        PoachersSawImage = GetState(PoachersSawImage)
+            ? Constants.AdultTradingItemsDisabled[5]
+            : Constants.AdultTradingItemsEnabled[5];
+
+        Logger.LogInteraction(nameof(PoachersSawImage));
+    }
+
+    [RelayCommand]
+    public void ToggleGiantsKnife()
+    {
+        Logger.LogCommand(nameof(ToggleGiantsKnifeCommand));
+
+        GiantsKnifeImage = GetState(GiantsKnifeImage)
+            ? Constants.AdultTradingItemsDisabled[6]
+            : Constants.AdultTradingItemsEnabled[6];
+        
+        Logger.LogInteraction(nameof(GiantsKnifeImage));
+    }
+
+    [RelayCommand]
+    public void ToggleBgs()
+    {
+        Logger.LogCommand(nameof(ToggleBgsCommand));
+
+        BrokenGoronsSwordImage = GetState(BrokenGoronsSwordImage)
+            ? Constants.AdultTradingItemsDisabled[7]
+            : Constants.AdultTradingItemsEnabled[7];
+
+        Logger.LogInteraction(nameof(BrokenGoronsSwordImage));
+    }
+
+    [RelayCommand]
+    public void TogglePrescription()
+    {
+        Logger.LogCommand(nameof(TogglePrescriptionCommand));
+
+        PrescriptionImage = GetState(PrescriptionImage)
+            ? Constants.AdultTradingItemsDisabled[8]
+            : Constants.AdultTradingItemsEnabled[8];
+
+        Logger.LogInteraction(nameof(PrescriptionImage));
+    }
+
+    [RelayCommand]
+    public void ToggleEyeballFrog()
+    {
+        Logger.LogCommand(nameof(ToggleEyeballFrogCommand));
+
+        EyeballFrogImage = GetState(EyeballFrogImage)
+            ? Constants.AdultTradingItemsDisabled[9]
+            : Constants.AdultTradingItemsEnabled[9];
+
+        Logger.LogInteraction(nameof(EyeballFrogImage));
+    }
+
+    [RelayCommand]
+    public void ToggleEyeDrops()
+    {
+        Logger.LogCommand(nameof(ToggleEyeDropsCommand));
+
+        EyeDropsImage = GetState(EyeDropsImage)
+            ? Constants.AdultTradingItemsDisabled[10]
+            : Constants.AdultTradingItemsEnabled[10];
+
+        Logger.LogInteraction(nameof(EyeDropsImage));
+    }
+
+    [RelayCommand]
+    public void ToggleClaimCheck()
+    {
+        Logger.LogCommand(nameof(ToggleClaimCheckCommand));
+
+        ClaimCheckImage = GetState(ClaimCheckImage)
+            ? Constants.AdultTradingItemsDisabled[11]
+            : Constants.AdultTradingItemsEnabled[11];
+
+        Logger.LogInteraction(nameof(ClaimCheckImage));
+    }
+    
     #endregion
 
     #region Songs
@@ -2587,6 +2780,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     [RelayCommand]
     public void IncreaseKeyCountAndToggleKey(string dungeon)
     {
+        Logger.LogCommand(nameof(IncreaseKeyCountAndToggleKeyCommand));
+        
         switch (dungeon)
         {
             case "frst":
@@ -2875,25 +3070,33 @@ public partial class MainWindowViewModel : ObservableRecipient
     [RelayCommand]
     public void ToggleBossKey(string dungeon)
     {
+        Logger.LogCommand(nameof(ToggleBossKeyCommand));
+        
         switch (dungeon)
         {
             case "frst":
                 ForestBkImage = GetState(ForestBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                Logger.LogInteraction(nameof(ForestBkImage));
                 break;
             case "fire":
                 FireBkImage = GetState(FireBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                Logger.LogInteraction(nameof(FireBkImage));
                 break;
             case "wtr":
                 WaterBkImage = GetState(WaterBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                Logger.LogInteraction(nameof(WaterBkImage));
                 break;
             case "shdw":
                 ShadowBkImage = GetState(ShadowBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                Logger.LogInteraction(nameof(ShadowBkImage));
                 break;
             case "sprt":
                 SpiritBkImage = GetState(SpiritBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                Logger.LogInteraction(nameof(SpiritBkImage));
                 break;
             case "ganon":
                 GanonBkImage = GetState(GanonBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                Logger.LogInteraction(nameof(GanonBkImage));
                 break;
         }
     }
