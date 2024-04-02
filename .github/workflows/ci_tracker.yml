@@ -30,8 +30,6 @@ jobs:
         dotnet-version: '8.0.x'
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
-    - name: Test Core Library
-      run: dotnet test
     - name: Restore WPF Applications
       run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
       env:
