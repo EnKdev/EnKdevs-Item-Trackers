@@ -4,9 +4,9 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace EnKdev.ItemTrackers.OoT.Internal;
+namespace EnKdev.ItemTrackers.Core.Internal;
 
-public static class CryptoHelper
+internal static class CryptoHelper
 {
     private static byte[] _keyBytes;
     private static byte[] _ivBytes;

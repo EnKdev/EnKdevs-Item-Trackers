@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Reflection.Metadata;
 using System.Windows;
 using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using EnKdev.ItemTrackers.OoT.Data;
+using EnKdev.ItemTrackers.Core.Data;
+using EnKdev.ItemTrackers.Core.Logging;
+using EnKdev.ItemTrackers.Core.Sprites;
 using EnKdev.ItemTrackers.OoT.Models;
 
 namespace EnKdev.ItemTrackers.OoT;
@@ -591,42 +592,42 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     private TrackerData? _trackerData;
 
-    private int _maxForestKeysVanilla = 5;
-    private int _maxForestKeysMq = 6;
+    private const int MaxForestKeysVanilla = 5;
+    private const int MaxForestKeysMq = 6;
 
-    private int _maxFireKeysVanilla = 8;
-    private int _maxFireKeysMq = 5;
+    private const int MaxFireKeysVanilla = 8;
+    private const int MaxFireKeysMq = 5;
 
-    private int _maxWaterKeysVanilla = 6;
-    private int _maxWaterKeysMq = 2;
+    private const int MaxWaterKeysVanilla = 6;
+    private const int MaxWaterKeysMq = 2;
 
-    private int _maxShadowKeysVanilla = 5;
-    private int _maxShadowKeysMq = 6;
+    private const int MaxShadowKeysVanilla = 5;
+    private const int MaxShadowKeysMq = 6;
 
-    private int _maxSpiritKeysVanilla = 5;
-    private int _maxSpiritKeysMq = 7;
+    private const int MaxSpiritKeysVanilla = 5;
+    private const int MaxSpiritKeysMq = 7;
 
-    private int _maxBottomKeysVanilla = 3;
-    private int _maxBottomKeysMq = 2;
+    private const int MaxBottomKeysVanilla = 3;
+    private const int MaxBottomKeysMq = 2;
 
-    private int _maxGanonKeysVanilla = 2;
-    private int _maxGanonKeysMq = 3;
+    private const int MaxGanonKeysVanilla = 2;
+    private const int MaxGanonKeysMq = 3;
 
-    private int _maxGtgKeysVanilla = 9;
-    private int _maxGtgKeysMq = 3;
+    private const int MaxGtgKeysVanilla = 9;
+    private const int MaxGtgKeysMq = 3;
 
-    private bool _isDekuMq = false;
-    private bool _isDcMq = false;
-    private bool _isJabuMq = false;
-    private bool _isForestMq = false;
-    private bool _isFireMq = false;
-    private bool _isWaterMq = false;
-    private bool _isShadowMq = false;
-    private bool _isSpiritMq = false;
-    private bool _isBottomMq = false;
-    private bool _isCavernMq = false;
-    private bool _isGanonMq = false;
-    private bool _isGtgMq = false;
+    private bool _isDekuMq;
+    private bool _isDcMq;
+    private bool _isJabuMq;
+    private bool _isForestMq;
+    private bool _isFireMq;
+    private bool _isWaterMq;
+    private bool _isShadowMq;
+    private bool _isSpiritMq;
+    private bool _isBottomMq;
+    private bool _isCavernMq;
+    private bool _isGanonMq;
+    private bool _isGtgMq;
 
     #endregion
 
@@ -815,11 +816,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Quest Items (Dungeon Rewards)
 
     [RelayCommand]
-    public void ToggleEmerald()
+    private void ToggleEmerald()
     {
         Logger.LogCommand(nameof(ToggleEmeraldCommand));
         
-        KokiriEmeraldImage = GetState(KokiriEmeraldImage) ? 
+        KokiriEmeraldImage =SpriteUtils.GetState(KokiriEmeraldImage) ? 
             Constants.DisabledStones[0] : 
             Constants.EnabledStones[0];
         
@@ -827,7 +828,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetEmeraldLocation()
+    private void SetEmeraldLocation()
     {
         Logger.LogCommand(nameof(SetEmeraldLocationCommand));
         
@@ -861,11 +862,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleGoronRuby()
+    private void ToggleGoronRuby()
     {
         Logger.LogCommand(nameof(ToggleGoronRubyCommand));
         
-        GoronRubyImage = GetState(GoronRubyImage)
+        GoronRubyImage =SpriteUtils.GetState(GoronRubyImage)
             ? Constants.DisabledStones[1]
             : Constants.EnabledStones[1];
         
@@ -873,7 +874,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetRubyLocation()
+    private void SetRubyLocation()
     {
         Logger.LogCommand(nameof(SetRubyLocationCommand));
         
@@ -907,11 +908,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleZorasSapphire()
+    private void ToggleZorasSapphire()
     {
         Logger.LogCommand(nameof(ToggleZorasSapphireCommand));
         
-        ZoraSapphireImage = GetState(ZoraSapphireImage)
+        ZoraSapphireImage =SpriteUtils.GetState(ZoraSapphireImage)
             ? Constants.DisabledStones[2]
             : Constants.EnabledStones[2];
         
@@ -919,7 +920,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetSapphireLocation()
+    private void SetSapphireLocation()
     {
         Logger.LogCommand(nameof(SetSapphireLocationCommand));
         
@@ -953,11 +954,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleLightMedallion()
+    private void ToggleLightMedallion()
     {
         Logger.LogCommand(nameof(ToggleLightMedallionCommand));
         
-        LightMedallionImage = GetState(LightMedallionImage)
+        LightMedallionImage =SpriteUtils.GetState(LightMedallionImage)
             ? Constants.DisabledMeds[0]
             : Constants.EnabledMeds[0];
         
@@ -965,7 +966,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetLightLocation()
+    private void SetLightLocation()
     {
         Logger.LogCommand(nameof(SetLightLocationCommand));
         
@@ -999,11 +1000,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleForestMedallion()
+    private void ToggleForestMedallion()
     {
         Logger.LogCommand(nameof(ToggleForestMedallionCommand));
         
-        ForestMedallionImage = GetState(ForestMedallionImage)
+        ForestMedallionImage =SpriteUtils.GetState(ForestMedallionImage)
             ? Constants.DisabledMeds[1]
             : Constants.EnabledMeds[1];
         
@@ -1011,7 +1012,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetForestLocation()
+    private void SetForestLocation()
     {
         Logger.LogCommand(nameof(SetForestLocationCommand));
         
@@ -1045,11 +1046,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleFireMedallion()
+    private void ToggleFireMedallion()
     {
         Logger.LogCommand(nameof(ToggleFireMedallionCommand));
         
-        FireMedallionImage = GetState(FireMedallionImage)
+        FireMedallionImage =SpriteUtils.GetState(FireMedallionImage)
             ? Constants.DisabledMeds[2]
             : Constants.EnabledMeds[2];
         
@@ -1057,7 +1058,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetFireLocation()
+    private void SetFireLocation()
     {
         Logger.LogCommand(nameof(SetFireLocationCommand));
         
@@ -1091,11 +1092,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleWaterMedallion()
+    private void ToggleWaterMedallion()
     {
         Logger.LogCommand(nameof(ToggleWaterMedallionCommand));
         
-        WaterMedallionImage = GetState(WaterMedallionImage)
+        WaterMedallionImage =SpriteUtils.GetState(WaterMedallionImage)
             ? Constants.DisabledMeds[3]
             : Constants.EnabledMeds[3];
         
@@ -1103,7 +1104,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetWaterLocation()
+    private void SetWaterLocation()
     {
         Logger.LogCommand(nameof(SetWaterLocationCommand));
         
@@ -1137,11 +1138,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleShadowMedallion()
+    private void ToggleShadowMedallion()
     {
         Logger.LogCommand(nameof(ToggleShadowMedallionCommand));
         
-        ShadowMedallionImage = GetState(ShadowMedallionImage)
+        ShadowMedallionImage =SpriteUtils.GetState(ShadowMedallionImage)
             ? Constants.DisabledMeds[4]
             : Constants.EnabledMeds[4];
         
@@ -1149,7 +1150,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetShadowLocation()
+    private void SetShadowLocation()
     {
         Logger.LogCommand(nameof(SetShadowLocationCommand));
         
@@ -1183,11 +1184,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSpiritMedallion()
+    private void ToggleSpiritMedallion()
     {
         Logger.LogCommand(nameof(ToggleSpiritMedallionCommand));
         
-        SpiritMedallionImage = GetState(SpiritMedallionImage)
+        SpiritMedallionImage =SpriteUtils.GetState(SpiritMedallionImage)
             ? Constants.DisabledMeds[5]
             : Constants.EnabledMeds[5];
         
@@ -1195,7 +1196,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void SetSpiritLocation()
+    private void SetSpiritLocation()
     {
         Logger.LogCommand(nameof(SetSpiritLocationCommand));
         
@@ -1233,11 +1234,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Equip Items (Tunics, Swords, Shields, Boots)
     #region Swords
     [RelayCommand]
-    public void ToggleKokiriSword()
+    private void ToggleKokiriSword()
     {
         Logger.LogCommand(nameof(ToggleKokiriSwordCommand));
         
-        KokiriSwordImage = GetState(KokiriSwordImage)
+        KokiriSwordImage =SpriteUtils.GetState(KokiriSwordImage)
             ? Constants.DisabledEquip[0]
             : Constants.EnabledEquip[0];
         
@@ -1245,11 +1246,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleMasterSword()
+    private void ToggleMasterSword()
     {
         Logger.LogCommand(nameof(ToggleMasterSwordCommand));
         
-        MasterSwordImage = GetState(MasterSwordImage)
+        MasterSwordImage =SpriteUtils.GetState(MasterSwordImage)
             ? Constants.DisabledEquip[1]
             : Constants.EnabledEquip[1];
         
@@ -1257,11 +1258,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBiggoronSword()
+    private void ToggleBiggoronSword()
     {
         Logger.LogCommand(nameof(ToggleBiggoronSwordCommand));
         
-        BiggoronSwordImage = GetState(BiggoronSwordImage)
+        BiggoronSwordImage =SpriteUtils.GetState(BiggoronSwordImage)
             ? Constants.DisabledEquip[2]
             : Constants.EnabledEquip[2];
         
@@ -1270,11 +1271,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     #endregion
     #region Shields
     [RelayCommand]
-    public void ToggleDekuShield()
+    private void ToggleDekuShield()
     {
         Logger.LogCommand(nameof(ToggleDekuShieldCommand));
         
-        DekuShieldImage = GetState(DekuShieldImage)
+        DekuShieldImage =SpriteUtils.GetState(DekuShieldImage)
             ? Constants.DisabledEquip[3]
             : Constants.EnabledEquip[3];
         
@@ -1282,11 +1283,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleHylianShield()
+    private void ToggleHylianShield()
     {
         Logger.LogCommand(nameof(ToggleHylianShieldCommand));
         
-        HylianShieldImage = GetState(HylianShieldImage)
+        HylianShieldImage =SpriteUtils.GetState(HylianShieldImage)
             ? Constants.DisabledEquip[4]
             : Constants.EnabledEquip[4];
         
@@ -1294,11 +1295,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleMirrorShield()
+    private void ToggleMirrorShield()
     {
         Logger.LogCommand(nameof(ToggleMirrorShieldCommand));
         
-        MirrorShieldImage = GetState(MirrorShieldImage)
+        MirrorShieldImage =SpriteUtils.GetState(MirrorShieldImage)
             ? Constants.DisabledEquip[5]
             : Constants.EnabledEquip[5];
         
@@ -1307,11 +1308,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     #endregion
     #region Tunics
     [RelayCommand]
-    public void ToggleGoronTunic()
+    private void ToggleGoronTunic()
     {
         Logger.LogCommand(nameof(ToggleGoronTunic));
         
-        GoronTunicImage = GetState(GoronTunicImage)
+        GoronTunicImage =SpriteUtils.GetState(GoronTunicImage)
             ? Constants.DisabledEquip[6]
             : Constants.EnabledEquip[6];
         
@@ -1319,11 +1320,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleZoraTunic()
+    private void ToggleZoraTunic()
     {
         Logger.LogCommand(nameof(ToggleZoraTunicCommand));
         
-        ZoraTunicImage = GetState(ZoraTunicImage)
+        ZoraTunicImage =SpriteUtils.GetState(ZoraTunicImage)
             ? Constants.DisabledEquip[7]
             : Constants.EnabledEquip[7];
         
@@ -1332,11 +1333,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     #endregion
     #region Boots
     [RelayCommand]
-    public void ToggleIronBoots()
+    private void ToggleIronBoots()
     {
         Logger.LogCommand(nameof(ToggleIronBootsCommand));
         
-        IronBootsImage = GetState(IronBootsImage)
+        IronBootsImage =SpriteUtils.GetState(IronBootsImage)
             ? Constants.DisabledEquip[8]
             : Constants.EnabledEquip[8];
         
@@ -1344,11 +1345,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleHoverBoots()
+    private void ToggleHoverBoots()
     {
         Logger.LogCommand(nameof(HoverBootsImage));
         
-        HoverBootsImage = GetState(HoverBootsImage)
+        HoverBootsImage =SpriteUtils.GetState(HoverBootsImage)
             ? Constants.DisabledEquip[9]
             : Constants.EnabledEquip[9];
         
@@ -1359,7 +1360,7 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     #region Upgrades
     [RelayCommand]
-    public void UpgradeOcarina()
+    private void UpgradeOcarina()
     {
         Logger.LogCommand(nameof(UpgradeOcarinaCommand));
         
@@ -1373,13 +1374,11 @@ public partial class MainWindowViewModel : ObservableRecipient
                 OcarinaImage = Constants.EnabledUpgrade[9];
                 _ocarinaState = 2;
                 break;
-            default:
-                break;
         }
     }
 
     [RelayCommand]
-    public void DowngradeOcarina()
+    private void DowngradeOcarina()
     {
         Logger.LogCommand(nameof(DowngradeOcarinaCommand));
         
@@ -1397,7 +1396,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void UpgradeScale()
+    private void UpgradeScale()
     {
         Logger.LogCommand(nameof(UpgradeScaleCommand));
         
@@ -1415,7 +1414,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DowngradeScale()
+    private void DowngradeScale()
     {
         Logger.LogCommand(nameof(DowngradeScaleCommand));
         
@@ -1433,7 +1432,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void UpgradeStrength()
+    private void UpgradeStrength()
     {
         Logger.LogCommand(nameof(UpgradeStrengthCommand));
         
@@ -1455,7 +1454,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DowngradeStrength()
+    private void DowngradeStrength()
     {
         Logger.LogCommand(nameof(DowngradeStrengthCommand));
         
@@ -1477,7 +1476,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void UpgradeBomb()
+    private void UpgradeBomb()
     {
         Logger.LogCommand(nameof(UpgradeBombCommand));
         
@@ -1499,7 +1498,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DowngradeBomb()
+    private void DowngradeBomb()
     {
         Logger.LogCommand(nameof(DowngradeBombCommand));
         
@@ -1521,7 +1520,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void UpgradeQuiver()
+    private void UpgradeQuiver()
     {
         Logger.LogCommand(nameof(UpgradeQuiverCommand));
         
@@ -1543,7 +1542,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DowngradeQuiver()
+    private void DowngradeQuiver()
     {
         Logger.LogCommand(nameof(DowngradeQuiverCommand));
         
@@ -1565,7 +1564,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void UpgradeBullet()
+    private void UpgradeBullet()
     {
         Logger.LogCommand(nameof(UpgradeBulletCommand));
         
@@ -1587,7 +1586,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DowngradeBullet()
+    private void DowngradeBullet()
     {
         Logger.LogCommand(nameof(DowngradeBulletCommand));
         
@@ -1611,7 +1610,7 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     #region Other
     [RelayCommand]
-    public void IncreaseGsCount()
+    private void IncreaseGsCount()
     {
         Logger.LogCommand(nameof(IncreaseGsCountCommand));
         
@@ -1629,7 +1628,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DecreaseGsCount()
+    private void DecreaseGsCount()
     {
         Logger.LogCommand(nameof(DecreaseGsCountCommand));
         
@@ -1647,11 +1646,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleGerudoToken()
+    private void ToggleGerudoToken()
     {
         Logger.LogCommand(nameof(ToggleGerudoTokenCommand));
         
-        GerudoTokenImage = GetState(GerudoTokenImage)
+        GerudoTokenImage =SpriteUtils.GetState(GerudoTokenImage)
             ? Constants.DisabledOther[0]
             : Constants.EnabledOther[0];
         
@@ -1659,11 +1658,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleShard()
+    private void ToggleShard()
     {
         Logger.LogCommand(nameof(ToggleShardCommand));
         
-        ShardImage = GetState(ShardImage)
+        ShardImage =SpriteUtils.GetState(ShardImage)
             ? Constants.DisabledOther[1]
             : Constants.EnabledOther[1];
         
@@ -1671,20 +1670,20 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleEgg(string age)
+    private void ToggleEgg(string age)
     {
         Logger.LogCommand(nameof(ToggleEggCommand));
         
         switch (age)
         {
             case "child":
-                WeirdEggIcon = GetState(WeirdEggIcon)
+                WeirdEggIcon =SpriteUtils.GetState(WeirdEggIcon)
                     ? Constants.ChildTradingItemsDisabled[0]
                     : Constants.ChildTradingItemsEnabled[0];
                 Logger.LogInteraction(nameof(WeirdEggIcon));
                 break;
             case "adult":
-                PocketEggImage = GetState(PocketEggImage)
+                PocketEggImage =SpriteUtils.GetState(PocketEggImage)
                     ? Constants.AdultTradingItemsDisabled[0]
                     : Constants.AdultTradingItemsEnabled[0];
                 Logger.LogInteraction(nameof(PocketEggImage));
@@ -1693,26 +1692,26 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleCucco(string cucco)
+    private void ToggleCucco(string cucco)
     {
         Logger.LogCommand(nameof(ToggleCuccoCommand));
 
         switch (cucco)
         {
             case "child":
-                CuccoIcon = GetState(CuccoIcon)
+                CuccoIcon =SpriteUtils.GetState(CuccoIcon)
                     ? Constants.ChildTradingItemsDisabled[1]
                     : Constants.ChildTradingItemsEnabled[1];
                 Logger.LogInteraction(nameof(CuccoIcon));
                 break;
             case "adult":
-                PocketCuccoImage = GetState(PocketCuccoImage)
+                PocketCuccoImage =SpriteUtils.GetState(PocketCuccoImage)
                     ? Constants.AdultTradingItemsDisabled[1]
                     : Constants.AdultTradingItemsEnabled[1];
                 Logger.LogInteraction(nameof(PocketCuccoImage));
                 break;
             case "cojiro":
-                CojiroImage = GetState(CojiroImage)
+                CojiroImage =SpriteUtils.GetState(CojiroImage)
                     ? Constants.AdultTradingItemsDisabled[2]
                     : Constants.AdultTradingItemsEnabled[2];
                 Logger.LogInteraction(nameof(CojiroImage));
@@ -1721,11 +1720,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleLetter()
+    private void ToggleLetter()
     {
         Logger.LogCommand(nameof(ToggleLetterCommand));
 
-        LetterIcon = GetState(LetterIcon)
+        LetterIcon =SpriteUtils.GetState(LetterIcon)
             ? Constants.ChildTradingItemsDisabled[2]
             : Constants.ChildTradingItemsEnabled[2];
 
@@ -1733,20 +1732,20 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleMask(string mask)
+    private void ToggleMask(string mask)
     {
         Logger.LogCommand(nameof(ToggleMaskCommand));
 
         switch (mask)
         {
             case "skull":
-                SkullMaskIcon = GetState(SkullMaskIcon)
+                SkullMaskIcon =SpriteUtils.GetState(SkullMaskIcon)
                     ? Constants.ChildTradingItemsDisabled[3]
                     : Constants.ChildTradingItemsEnabled[3];
                 Logger.LogInteraction(nameof(SkullMaskIcon));
                 break;
             case "truth":
-                MaskOfTruthIcon = GetState(MaskOfTruthIcon)
+                MaskOfTruthIcon =SpriteUtils.GetState(MaskOfTruthIcon)
                     ? Constants.ChildTradingItemsDisabled[4]
                     : Constants.ChildTradingItemsEnabled[4];
                 Logger.LogInteraction(nameof(MaskOfTruthIcon));
@@ -1755,11 +1754,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleOddMushroom()
+    private void ToggleOddMushroom()
     {
         Logger.LogCommand(nameof(ToggleOddMushroomCommand));
 
-        OddMushroomImage = GetState(OddMushroomImage)
+        OddMushroomImage =SpriteUtils.GetState(OddMushroomImage)
             ? Constants.AdultTradingItemsDisabled[3]
             : Constants.AdultTradingItemsEnabled[3];
 
@@ -1767,11 +1766,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleOddPoultice()
+    private void ToggleOddPoultice()
     {
         Logger.LogCommand(nameof(ToggleOddPoulticeCommand));
 
-        OddPoulticeImage = GetState(OddPoulticeImage)
+        OddPoulticeImage =SpriteUtils.GetState(OddPoulticeImage)
             ? Constants.AdultTradingItemsDisabled[4]
             : Constants.AdultTradingItemsEnabled[4];
         
@@ -1779,11 +1778,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void TogglePoachersSaw()
+    private void TogglePoachersSaw()
     {
         Logger.LogCommand(nameof(TogglePoachersSawCommand));
 
-        PoachersSawImage = GetState(PoachersSawImage)
+        PoachersSawImage =SpriteUtils.GetState(PoachersSawImage)
             ? Constants.AdultTradingItemsDisabled[5]
             : Constants.AdultTradingItemsEnabled[5];
 
@@ -1791,11 +1790,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleGiantsKnife()
+    private void ToggleGiantsKnife()
     {
         Logger.LogCommand(nameof(ToggleGiantsKnifeCommand));
 
-        GiantsKnifeImage = GetState(GiantsKnifeImage)
+        GiantsKnifeImage =SpriteUtils.GetState(GiantsKnifeImage)
             ? Constants.AdultTradingItemsDisabled[6]
             : Constants.AdultTradingItemsEnabled[6];
         
@@ -1803,11 +1802,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBgs()
+    private void ToggleBgs()
     {
         Logger.LogCommand(nameof(ToggleBgsCommand));
 
-        BrokenGoronsSwordImage = GetState(BrokenGoronsSwordImage)
+        BrokenGoronsSwordImage =SpriteUtils.GetState(BrokenGoronsSwordImage)
             ? Constants.AdultTradingItemsDisabled[7]
             : Constants.AdultTradingItemsEnabled[7];
 
@@ -1815,11 +1814,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void TogglePrescription()
+    private void TogglePrescription()
     {
         Logger.LogCommand(nameof(TogglePrescriptionCommand));
 
-        PrescriptionImage = GetState(PrescriptionImage)
+        PrescriptionImage =SpriteUtils.GetState(PrescriptionImage)
             ? Constants.AdultTradingItemsDisabled[8]
             : Constants.AdultTradingItemsEnabled[8];
 
@@ -1827,11 +1826,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleEyeballFrog()
+    private void ToggleEyeballFrog()
     {
         Logger.LogCommand(nameof(ToggleEyeballFrogCommand));
 
-        EyeballFrogImage = GetState(EyeballFrogImage)
+        EyeballFrogImage =SpriteUtils.GetState(EyeballFrogImage)
             ? Constants.AdultTradingItemsDisabled[9]
             : Constants.AdultTradingItemsEnabled[9];
 
@@ -1839,11 +1838,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleEyeDrops()
+    private void ToggleEyeDrops()
     {
         Logger.LogCommand(nameof(ToggleEyeDropsCommand));
 
-        EyeDropsImage = GetState(EyeDropsImage)
+        EyeDropsImage =SpriteUtils.GetState(EyeDropsImage)
             ? Constants.AdultTradingItemsDisabled[10]
             : Constants.AdultTradingItemsEnabled[10];
 
@@ -1851,11 +1850,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleClaimCheck()
+    private void ToggleClaimCheck()
     {
         Logger.LogCommand(nameof(ToggleClaimCheckCommand));
 
-        ClaimCheckImage = GetState(ClaimCheckImage)
+        ClaimCheckImage =SpriteUtils.GetState(ClaimCheckImage)
             ? Constants.AdultTradingItemsDisabled[11]
             : Constants.AdultTradingItemsEnabled[11];
 
@@ -1866,11 +1865,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     #region Songs
     [RelayCommand]
-    public void ToggleZeldasLullaby()
+    private void ToggleZeldasLullaby()
     {
         Logger.LogCommand(nameof(ToggleZeldasLullabyCommand));
         
-        LullabyImage = GetState(LullabyImage)
+        LullabyImage =SpriteUtils.GetState(LullabyImage)
             ? Constants.DisabledSongs[0]
             : Constants.EnabledSongs[0];
         
@@ -1878,11 +1877,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleEponasSong()
+    private void ToggleEponasSong()
     {
         Logger.LogCommand(nameof(ToggleEponasSongCommand));
         
-        EponaImage = GetState(EponaImage)
+        EponaImage =SpriteUtils.GetState(EponaImage)
             ? Constants.DisabledSongs[1]
             : Constants.EnabledSongs[1];
         
@@ -1890,11 +1889,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSariasSong()
+    private void ToggleSariasSong()
     {
         Logger.LogCommand(nameof(ToggleSariasSongCommand));
         
-        SariaImage = GetState(SariaImage)
+        SariaImage =SpriteUtils.GetState(SariaImage)
             ? Constants.DisabledSongs[2]
             : Constants.EnabledSongs[2];
         
@@ -1902,11 +1901,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSongOfStorms()
+    private void ToggleSongOfStorms()
     {
         Logger.LogCommand(nameof(ToggleSongOfStormsCommand));
         
-        SosImage = GetState(SosImage)
+        SosImage =SpriteUtils.GetState(SosImage)
             ? Constants.DisabledSongs[3]
             : Constants.EnabledSongs[3];
         
@@ -1914,11 +1913,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSunsSong()
+    private void ToggleSunsSong()
     {
         Logger.LogCommand(nameof(ToggleSunsSongCommand));
         
-        SunsImage = GetState(SunsImage)
+        SunsImage =SpriteUtils.GetState(SunsImage)
             ? Constants.DisabledSongs[4]
             : Constants.EnabledSongs[4];
         
@@ -1926,11 +1925,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSongOfTime()
+    private void ToggleSongOfTime()
     {
         Logger.LogCommand(nameof(ToggleSongOfTimeCommand));
         
-        SotImage = GetState(SotImage)
+        SotImage =SpriteUtils.GetState(SotImage)
             ? Constants.DisabledSongs[5]
             : Constants.EnabledSongs[5];
         
@@ -1938,11 +1937,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleMinuet()
+    private void ToggleMinuet()
     {
         Logger.LogCommand(nameof(ToggleMinuetCommand));
         
-        MinuetImage = GetState(MinuetImage)
+        MinuetImage =SpriteUtils.GetState(MinuetImage)
             ? Constants.DisabledSongs[6]
             : Constants.EnabledSongs[6];
         
@@ -1950,11 +1949,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBolero()
+    private void ToggleBolero()
     {
         Logger.LogCommand(nameof(ToggleBoleroCommand));
         
-        BoleroImage = GetState(BoleroImage)
+        BoleroImage =SpriteUtils.GetState(BoleroImage)
             ? Constants.DisabledSongs[7]
             : Constants.EnabledSongs[7];
         
@@ -1962,11 +1961,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSerenade()
+    private void ToggleSerenade()
     {
         Logger.LogCommand(nameof(ToggleSerenadeCommand));
         
-        SerenadeImage = GetState(SerenadeImage)
+        SerenadeImage =SpriteUtils.GetState(SerenadeImage)
             ? Constants.DisabledSongs[8]
             : Constants.EnabledSongs[8];
         
@@ -1974,11 +1973,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleRequiem()
+    private void ToggleRequiem()
     {
         Logger.LogCommand(nameof(ToggleRequiemCommand));
         
-        RequiemImage = GetState(RequiemImage)
+        RequiemImage =SpriteUtils.GetState(RequiemImage)
             ? Constants.DisabledSongs[9]
             : Constants.EnabledSongs[9];
         
@@ -1986,11 +1985,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleNocturne()
+    private void ToggleNocturne()
     {
         Logger.LogCommand(nameof(ToggleNocturneCommand));
         
-        NocturneImage = GetState(NocturneImage)
+        NocturneImage =SpriteUtils.GetState(NocturneImage)
             ? Constants.DisabledSongs[10]
             : Constants.EnabledSongs[10];
         
@@ -1998,11 +1997,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void TogglePrelude()
+    private void TogglePrelude()
     {
         Logger.LogCommand(nameof(TogglePreludeCommand));
         
-        PreludeImage = GetState(PreludeImage)
+        PreludeImage =SpriteUtils.GetState(PreludeImage)
             ? Constants.DisabledSongs[11]
             : Constants.EnabledSongs[11];
         
@@ -2012,11 +2011,11 @@ public partial class MainWindowViewModel : ObservableRecipient
 
     #region General Items
     [RelayCommand]
-    public void ToggleStick()
+    private void ToggleStick()
     {
         Logger.LogCommand(nameof(ToggleStickCommand));
         
-        StickImage = GetState(StickImage)
+        StickImage =SpriteUtils.GetState(StickImage)
             ? Constants.DisabledItems[5]
             : Constants.EnabledItems[5];
         
@@ -2024,11 +2023,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleNut()
+    private void ToggleNut()
     {
         Logger.LogCommand(nameof(ToggleNutCommand));
         
-        NutImage = GetState(NutImage)
+        NutImage =SpriteUtils.GetState(NutImage)
             ? Constants.DisabledItems[4]
             : Constants.EnabledItems[4];
         
@@ -2036,11 +2035,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleSlingshot()
+    private void ToggleSlingshot()
     {
         Logger.LogCommand(nameof(ToggleSlingshotCommand));
         
-        SlingshotImage = GetState(SlingshotImage)
+        SlingshotImage =SpriteUtils.GetState(SlingshotImage)
             ? Constants.DisabledItems[8]
             : Constants.EnabledItems[8];
 
@@ -2048,11 +2047,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleDins()
+    private void ToggleDins()
     {
         Logger.LogCommand(nameof(ToggleDinsCommand));
         
-        DinsFireImage = GetState(DinsFireImage)
+        DinsFireImage =SpriteUtils.GetState(DinsFireImage)
             ? Constants.DisabledItems[6]
             : Constants.EnabledItems[6];
         
@@ -2060,11 +2059,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBomb()
+    private void ToggleBomb()
     {
         Logger.LogCommand(nameof(ToggleBombCommand));
         
-        BombItemImage = GetState(BombItemImage)
+        BombItemImage =SpriteUtils.GetState(BombItemImage)
             ? Constants.DisabledItems[0]
             : Constants.EnabledItems[0];
         
@@ -2072,11 +2071,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBombchu()
+    private void ToggleBombchu()
     {
         Logger.LogCommand(nameof(ToggleBombchuCommand));
         
-        BombchuImage = GetState(BombchuImage)
+        BombchuImage =SpriteUtils.GetState(BombchuImage)
             ? Constants.DisabledItems[1]
             : Constants.EnabledItems[1];
         
@@ -2084,11 +2083,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleFarore()
+    private void ToggleFarore()
     {
         Logger.LogCommand(nameof(ToggleFaroreCommand));
         
-        FaroresWindImage = GetState(FaroresWindImage)
+        FaroresWindImage =SpriteUtils.GetState(FaroresWindImage)
             ? Constants.DisabledItems[9]
             : Constants.EnabledItems[9];
         
@@ -2096,11 +2095,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBoomerang()
+    private void ToggleBoomerang()
     {
         Logger.LogCommand(nameof(ToggleBoomerangCommand));
         
-        BoomerangImage = GetState(BoomerangImage)
+        BoomerangImage =SpriteUtils.GetState(BoomerangImage)
             ? Constants.DisabledItems[2]
             : Constants.EnabledItems[2];
         
@@ -2108,7 +2107,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void IncreaseHookshot()
+    private void IncreaseHookshot()
     {
         Logger.LogCommand(nameof(IncreaseHookshotCommand));
         
@@ -2137,7 +2136,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DecreaseHookshot()
+    private void DecreaseHookshot()
     {
         Logger.LogCommand(nameof(DecreaseHookshotCommand));
         
@@ -2168,11 +2167,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     
 
     [RelayCommand]
-    public void ToggleNayru()
+    private void ToggleNayru()
     {
         Logger.LogCommand(nameof(ToggleNayruCommand));
         
-        NayrusLoveImage = GetState(NayrusLoveImage)
+        NayrusLoveImage =SpriteUtils.GetState(NayrusLoveImage)
             ? Constants.DisabledItems[16]
             : Constants.EnabledItems[17];
         
@@ -2180,11 +2179,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleLens()
+    private void ToggleLens()
     {
         Logger.LogCommand(nameof(ToggleLensCommand));
         
-        LensImage = GetState(LensImage)
+        LensImage =SpriteUtils.GetState(LensImage)
             ? Constants.DisabledItems[13]
             : Constants.EnabledItems[13];
         
@@ -2192,11 +2191,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleHammer()
+    private void ToggleHammer()
     {
         Logger.LogCommand(nameof(ToggleHammerCommand));
         
-        MegatonHammerImage = GetState(MegatonHammerImage)
+        MegatonHammerImage =SpriteUtils.GetState(MegatonHammerImage)
             ? Constants.DisabledItems[15]
             : Constants.EnabledItems[16];
         
@@ -2204,11 +2203,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBow()
+    private void ToggleBow()
     {
         Logger.LogCommand(nameof(ToggleBowCommand));
         
-        BowImage = GetState(BowImage)
+        BowImage =SpriteUtils.GetState(BowImage)
             ? Constants.DisabledItems[7]
             : Constants.EnabledItems[7];
         
@@ -2216,11 +2215,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBeans()
+    private void ToggleBeans()
     {
         Logger.LogCommand(nameof(ToggleBeansCommand));
         
-        MagicBeansImage = GetState(MagicBeansImage)
+        MagicBeansImage =SpriteUtils.GetState(MagicBeansImage)
             ? Constants.DisabledItems[17]
             : Constants.EnabledItems[18];
         
@@ -2228,11 +2227,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleFireArrow()
+    private void ToggleFireArrow()
     {
         Logger.LogCommand(nameof(ToggleFireArrowCommand));
         
-        FireArrowImage = GetState(FireArrowImage)
+        FireArrowImage =SpriteUtils.GetState(FireArrowImage)
             ? Constants.DisabledItems[10]
             : Constants.EnabledItems[10];
         
@@ -2240,11 +2239,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleIceArrow()
+    private void ToggleIceArrow()
     {
         Logger.LogCommand(nameof(ToggleIceArrowCommand));
         
-        IceArrowImage = GetState(IceArrowImage)
+        IceArrowImage =SpriteUtils.GetState(IceArrowImage)
             ? Constants.DisabledItems[12]
             : Constants.EnabledItems[12];
         
@@ -2252,11 +2251,11 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleLightArrow()
+    private void ToggleLightArrow()
     {
         Logger.LogCommand(nameof(ToggleLightArrowCommand));
         
-        LightArrowImage = GetState(LightArrowImage)
+        LightArrowImage =SpriteUtils.GetState(LightArrowImage)
             ? Constants.DisabledItems[14]
             : Constants.EnabledItems[15];
         
@@ -2264,7 +2263,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBottle(string bottleNumber)
+    private void ToggleBottle(string bottleNumber)
     {
         Logger.LogCommand(nameof(ToggleBottleCommand));
         
@@ -2273,28 +2272,28 @@ public partial class MainWindowViewModel : ObservableRecipient
         switch (bottleNum)
         {
             case 1:
-                Bottle1Image = GetState(Bottle1Image)
+                Bottle1Image =SpriteUtils.GetState(Bottle1Image)
                     ? Constants.DisabledItems[3]
                     : Constants.EnabledItems[3];
                 
                 Logger.LogInteraction(nameof(Bottle1Image));
                 break;
             case 2:
-                Bottle2Image = GetState(Bottle2Image)
+                Bottle2Image =SpriteUtils.GetState(Bottle2Image)
                     ? Constants.DisabledItems[3]
                     : Constants.EnabledItems[3];
                 
                 Logger.LogInteraction(nameof(Bottle2Image));
                 break;
             case 3:
-                Bottle3Image = GetState(Bottle3Image)
+                Bottle3Image = SpriteUtils.GetState(Bottle3Image)
                     ? Constants.DisabledItems[3]
                     : Constants.EnabledItems[3];
                 
                 Logger.LogInteraction(nameof(Bottle3Image));
                 break;
             case 4:
-                Bottle4Image = GetState(Bottle4Image)
+                Bottle4Image = SpriteUtils.GetState(Bottle4Image)
                     ? Constants.DisabledItems[3] 
                     : Constants.EnabledItems[3];
                 
@@ -2307,105 +2306,105 @@ public partial class MainWindowViewModel : ObservableRecipient
     #region Maps, Compasses, Keys, Boss Keys, Etc.
 
     [RelayCommand]
-    public void ToggleMap(string dungeon)
+    private void ToggleMap(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleMapCommand));
         
         switch (dungeon)
         {
             case "deku":
-                DekuMapImage = GetState(DekuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                DekuMapImage = SpriteUtils.GetState(DekuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(DekuMapImage));
                 break;
             case "dc":
-                DcMapImage = GetState(DcMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                DcMapImage = SpriteUtils.GetState(DcMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(DcMapImage));
                 break;
             case "jabu":
-                JabuMapImage = GetState(JabuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                JabuMapImage = SpriteUtils.GetState(JabuMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(JabuMapImage));
                 break;
             case "frst":
-                ForestMapImage = GetState(ForestMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                ForestMapImage = SpriteUtils.GetState(ForestMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(ForestMapImage));
                 break;
             case "fire":
-                FireMapImage = GetState(FireMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                FireMapImage = SpriteUtils.GetState(FireMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(FireMapImage));
                 break;
             case "wtr":
-                WaterMapImage = GetState(WaterMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                WaterMapImage = SpriteUtils.GetState(WaterMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(WaterMapImage));
                 break;
             case "sprt":
-                SpiritMapImage = GetState(SpiritMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                SpiritMapImage = SpriteUtils.GetState(SpiritMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(SpiritMapImage));
                 break;
             case "shdw":
-                ShadowMapImage = GetState(ShadowMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                ShadowMapImage = SpriteUtils.GetState(ShadowMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(ShadowMapImage));
                 break;
             case "botw":
-                BottomMapImage = GetState(BottomMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                BottomMapImage = SpriteUtils.GetState(BottomMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(BottomMapImage));
                 break;
             case "ice":
-                CavernMapImage = GetState(CavernMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
+                CavernMapImage = SpriteUtils.GetState(CavernMapImage) ? Constants.DungeonMapDisabled : Constants.DungeonMapEnabled;
                 Logger.LogInteraction(nameof(CavernMapImage));
                 break;
         }
     }
 
     [RelayCommand]
-    public void ToggleCompass(string dungeon)
+    private void ToggleCompass(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleCompassCommand));
         
         switch (dungeon)
         {
             case "deku":
-                DekuCompassImage = GetState(DekuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                DekuCompassImage = SpriteUtils.GetState(DekuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(DekuCompassImage));
                 break;
             case "dc":
-                DcCompassImage = GetState(DcCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                DcCompassImage = SpriteUtils.GetState(DcCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(DcCompassImage));
                 break;
             case "jabu":
-                JabuCompassImage = GetState(JabuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                JabuCompassImage = SpriteUtils.GetState(JabuCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(JabuCompassImage));
                 break;
             case "frst":
                 ForestCompassImage =
-                    GetState(ForestCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                    SpriteUtils.GetState(ForestCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(ForestCompassImage));
                 break;
             case "fire":
-                FireCompassImage = GetState(FireCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                FireCompassImage = SpriteUtils.GetState(FireCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(FireCompassImage));
                 break;
             case "wtr":
-                WaterCompassImage = GetState(WaterCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                WaterCompassImage = SpriteUtils.GetState(WaterCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(WaterCompassImage));
                 break;
             case "shdw":
                 ShadowCompassImage =
-                    GetState(ShadowCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                    SpriteUtils.GetState(ShadowCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(ShadowCompassImage));
                 break;
             case "sprt":
                 SpiritCompassImage =
-                    GetState(SpiritCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                    SpriteUtils.GetState(SpiritCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(SpiritCompassImage));
                 break;
             case "botw":
                 BottomCompassImage =
-                    GetState(BottomCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                    SpriteUtils.GetState(BottomCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(BottomCompassImage));
                 break;
             case "ice":
                 CavernCompassImage =
-                    GetState(CavernCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
+                    SpriteUtils.GetState(CavernCompassImage) ? Constants.CompassDisabled : Constants.CompassEnabled;
                 Logger.LogInteraction(nameof(CavernCompassImage));
                 break;
         }
@@ -2413,7 +2412,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleDungeonState(string dungeon)
+    private void ToggleDungeonState(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleDungeonStateCommand));
 
@@ -2778,7 +2777,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void IncreaseKeyCountAndToggleKey(string dungeon)
+    private void IncreaseKeyCountAndToggleKey(string dungeon)
     {
         Logger.LogCommand(nameof(IncreaseKeyCountAndToggleKeyCommand));
         
@@ -2787,7 +2786,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "frst":
                 if (_isForestMq)
                 {
-                    if (ForestKeyCount < _maxForestKeysMq)
+                    if (ForestKeyCount < MaxForestKeysMq)
                     {
                         ForestKeyImage = Constants.SmallKeyEnabled;
                         ForestKeyColor = Constants.HasKeyColor;
@@ -2795,15 +2794,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     ForestKeyCount++;
 
-                    if (ForestKeyCount >= _maxForestKeysMq)
+                    if (ForestKeyCount >= MaxForestKeysMq)
                     {
-                        ForestKeyCount = _maxForestKeysMq;
+                        ForestKeyCount = MaxForestKeysMq;
                         ForestKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (ForestKeyCount < _maxForestKeysVanilla)
+                    if (ForestKeyCount < MaxForestKeysVanilla)
                     {
                         ForestKeyImage = Constants.SmallKeyEnabled;
                         ForestKeyColor = Constants.HasKeyColor;
@@ -2811,9 +2810,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     ForestKeyCount++;
 
-                    if (ForestKeyCount >= _maxForestKeysVanilla)
+                    if (ForestKeyCount >= MaxForestKeysVanilla)
                     {
-                        ForestKeyCount = _maxForestKeysVanilla;
+                        ForestKeyCount = MaxForestKeysVanilla;
                         ForestKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -2822,7 +2821,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "fire":
                 if (_isFireMq)
                 {
-                    if (FireKeyCount < _maxFireKeysMq)
+                    if (FireKeyCount < MaxFireKeysMq)
                     {
                         FireKeyImage = Constants.SmallKeyEnabled;
                         FireKeyColor = Constants.HasKeyColor;
@@ -2830,15 +2829,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     FireKeyCount++;
 
-                    if (FireKeyCount >= _maxFireKeysMq)
+                    if (FireKeyCount >= MaxFireKeysMq)
                     {
-                        FireKeyCount = _maxFireKeysMq;
+                        FireKeyCount = MaxFireKeysMq;
                         FireKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (FireKeyCount < _maxFireKeysVanilla)
+                    if (FireKeyCount < MaxFireKeysVanilla)
                     {
                         FireKeyImage = Constants.SmallKeyEnabled;
                         FireKeyColor = Constants.HasKeyColor;
@@ -2846,9 +2845,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     FireKeyCount++;
 
-                    if (FireKeyCount >= _maxFireKeysVanilla)
+                    if (FireKeyCount >= MaxFireKeysVanilla)
                     {
-                        FireKeyCount = _maxFireKeysVanilla;
+                        FireKeyCount = MaxFireKeysVanilla;
                         FireKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -2857,7 +2856,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "wtr":
                 if (_isWaterMq)
                 {
-                    if (WaterKeyCount < _maxWaterKeysMq)
+                    if (WaterKeyCount < MaxWaterKeysMq)
                     {
                         WaterKeyImage = Constants.SmallKeyEnabled;
                         WaterKeyColor = Constants.HasKeyColor;
@@ -2865,15 +2864,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     WaterKeyCount++;
 
-                    if (WaterKeyCount >= _maxWaterKeysMq)
+                    if (WaterKeyCount >= MaxWaterKeysMq)
                     {
-                        WaterKeyCount = _maxWaterKeysMq;
+                        WaterKeyCount = MaxWaterKeysMq;
                         WaterKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (WaterKeyCount < _maxWaterKeysVanilla)
+                    if (WaterKeyCount < MaxWaterKeysVanilla)
                     {
                         WaterKeyImage = Constants.SmallKeyEnabled;
                         WaterKeyColor = Constants.HasKeyColor;
@@ -2881,9 +2880,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     WaterKeyCount++;
 
-                    if (WaterKeyCount >= _maxWaterKeysVanilla)
+                    if (WaterKeyCount >= MaxWaterKeysVanilla)
                     {
-                        WaterKeyCount = _maxWaterKeysVanilla;
+                        WaterKeyCount = MaxWaterKeysVanilla;
                         WaterKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -2892,7 +2891,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "shdw":
                 if (_isShadowMq)
                 {
-                    if (ShadowKeyCount < _maxShadowKeysMq)
+                    if (ShadowKeyCount < MaxShadowKeysMq)
                     {
                         ShadowKeyImage = Constants.SmallKeyEnabled;
                         ShadowKeyColor = Constants.HasKeyColor;
@@ -2900,15 +2899,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     ShadowKeyCount++;
 
-                    if (ShadowKeyCount >= _maxShadowKeysMq)
+                    if (ShadowKeyCount >= MaxShadowKeysMq)
                     {
-                        ShadowKeyCount = _maxShadowKeysMq;
+                        ShadowKeyCount = MaxShadowKeysMq;
                         ShadowKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (ShadowKeyCount < _maxShadowKeysVanilla)
+                    if (ShadowKeyCount < MaxShadowKeysVanilla)
                     {
                         ShadowKeyImage = Constants.SmallKeyEnabled;
                         ShadowKeyColor = Constants.HasKeyColor;
@@ -2916,9 +2915,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     ShadowKeyCount++;
 
-                    if (ShadowKeyCount >= _maxShadowKeysVanilla)
+                    if (ShadowKeyCount >= MaxShadowKeysVanilla)
                     {
-                        ShadowKeyCount = _maxShadowKeysVanilla;
+                        ShadowKeyCount = MaxShadowKeysVanilla;
                         ShadowKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -2927,7 +2926,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "sprt":
                 if (_isSpiritMq)
                 {
-                    if (SpiritKeyCount < _maxSpiritKeysMq)
+                    if (SpiritKeyCount < MaxSpiritKeysMq)
                     {
                         SpiritKeyImage = Constants.SmallKeyEnabled;
                         SpiritKeyColor = Constants.HasKeyColor;
@@ -2935,15 +2934,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     SpiritKeyCount++;
 
-                    if (SpiritKeyCount >= _maxSpiritKeysMq)
+                    if (SpiritKeyCount >= MaxSpiritKeysMq)
                     {
-                        SpiritKeyCount = _maxSpiritKeysMq;
+                        SpiritKeyCount = MaxSpiritKeysMq;
                         SpiritKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (SpiritKeyCount < _maxSpiritKeysVanilla)
+                    if (SpiritKeyCount < MaxSpiritKeysVanilla)
                     {
                         SpiritKeyImage = Constants.SmallKeyEnabled;
                         SpiritKeyColor = Constants.HasKeyColor;
@@ -2951,9 +2950,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     SpiritKeyCount++;
 
-                    if (SpiritKeyCount >= _maxSpiritKeysVanilla)
+                    if (SpiritKeyCount >= MaxSpiritKeysVanilla)
                     {
-                        SpiritKeyCount = _maxSpiritKeysVanilla;
+                        SpiritKeyCount = MaxSpiritKeysVanilla;
                         SpiritKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -2962,7 +2961,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "botw":
                 if (_isBottomMq)
                 {
-                    if (BottomKeyCount < _maxBottomKeysMq)
+                    if (BottomKeyCount < MaxBottomKeysMq)
                     {
                         BottomKeyImage = Constants.SmallKeyEnabled;
                         BottomKeyColor = Constants.HasKeyColor;
@@ -2970,15 +2969,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     BottomKeyCount++;
 
-                    if (BottomKeyCount >= _maxBottomKeysMq)
+                    if (BottomKeyCount >= MaxBottomKeysMq)
                     {
-                        BottomKeyCount = _maxBottomKeysMq;
+                        BottomKeyCount = MaxBottomKeysMq;
                         BottomKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (BottomKeyCount < _maxBottomKeysVanilla)
+                    if (BottomKeyCount < MaxBottomKeysVanilla)
                     {
                         BottomKeyImage = Constants.SmallKeyEnabled;
                         BottomKeyColor = Constants.HasKeyColor;
@@ -2986,9 +2985,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     BottomKeyCount++;
 
-                    if (BottomKeyCount >= _maxBottomKeysVanilla)
+                    if (BottomKeyCount >= MaxBottomKeysVanilla)
                     {
-                        BottomKeyCount = _maxBottomKeysVanilla;
+                        BottomKeyCount = MaxBottomKeysVanilla;
                         BottomKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -2997,7 +2996,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "gtg":
                 if (_isGtgMq)
                 {
-                    if (GtgKeyCount < _maxGtgKeysMq)
+                    if (GtgKeyCount < MaxGtgKeysMq)
                     {
                         GtgKeyImage = Constants.SmallKeyEnabled;
                         GtgKeyColor = Constants.HasKeyColor;
@@ -3005,15 +3004,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     GtgKeyCount++;
 
-                    if (GtgKeyCount >= _maxGtgKeysMq)
+                    if (GtgKeyCount >= MaxGtgKeysMq)
                     {
-                        GtgKeyCount = _maxGtgKeysMq;
+                        GtgKeyCount = MaxGtgKeysMq;
                         GtgKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (GtgKeyCount < _maxGtgKeysVanilla)
+                    if (GtgKeyCount < MaxGtgKeysVanilla)
                     {
                         GtgKeyImage = Constants.SmallKeyEnabled;
                         GtgKeyColor = Constants.HasKeyColor;
@@ -3021,9 +3020,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     GtgKeyCount++;
 
-                    if (GtgKeyCount >= _maxGtgKeysVanilla)
+                    if (GtgKeyCount >= MaxGtgKeysVanilla)
                     {
-                        GtgKeyCount = _maxGtgKeysVanilla;
+                        GtgKeyCount = MaxGtgKeysVanilla;
                         GtgKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -3032,7 +3031,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             case "ganon":
                 if (_isGanonMq)
                 {
-                    if (GanonKeyCount < _maxGanonKeysMq)
+                    if (GanonKeyCount < MaxGanonKeysMq)
                     {
                         GanonKeyImage = Constants.SmallKeyEnabled;
                         GanonKeyColor = Constants.HasKeyColor;
@@ -3040,15 +3039,15 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     GanonKeyCount++;
 
-                    if (GanonKeyCount >= _maxGanonKeysMq)
+                    if (GanonKeyCount >= MaxGanonKeysMq)
                     {
-                        GanonKeyCount = _maxGanonKeysMq;
+                        GanonKeyCount = MaxGanonKeysMq;
                         GanonKeyColor = Constants.AllKeyColor;
                     }
                 }
                 else
                 {
-                    if (GanonKeyCount < _maxGanonKeysVanilla)
+                    if (GanonKeyCount < MaxGanonKeysVanilla)
                     {
                         GanonKeyImage = Constants.SmallKeyEnabled;
                         GanonKeyColor = Constants.HasKeyColor;
@@ -3056,9 +3055,9 @@ public partial class MainWindowViewModel : ObservableRecipient
 
                     GanonKeyCount++;
 
-                    if (GanonKeyCount >= _maxGanonKeysVanilla)
+                    if (GanonKeyCount >= MaxGanonKeysVanilla)
                     {
-                        GanonKeyCount = _maxGanonKeysVanilla;
+                        GanonKeyCount = MaxGanonKeysVanilla;
                         GanonKeyColor = Constants.AllKeyColor;
                     }
                 }
@@ -3068,34 +3067,34 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void ToggleBossKey(string dungeon)
+    private void ToggleBossKey(string dungeon)
     {
         Logger.LogCommand(nameof(ToggleBossKeyCommand));
         
         switch (dungeon)
         {
             case "frst":
-                ForestBkImage = GetState(ForestBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                ForestBkImage = SpriteUtils.GetState(ForestBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 Logger.LogInteraction(nameof(ForestBkImage));
                 break;
             case "fire":
-                FireBkImage = GetState(FireBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                FireBkImage = SpriteUtils.GetState(FireBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 Logger.LogInteraction(nameof(FireBkImage));
                 break;
             case "wtr":
-                WaterBkImage = GetState(WaterBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                WaterBkImage = SpriteUtils.GetState(WaterBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 Logger.LogInteraction(nameof(WaterBkImage));
                 break;
             case "shdw":
-                ShadowBkImage = GetState(ShadowBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                ShadowBkImage = SpriteUtils.GetState(ShadowBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 Logger.LogInteraction(nameof(ShadowBkImage));
                 break;
             case "sprt":
-                SpiritBkImage = GetState(SpiritBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                SpiritBkImage = SpriteUtils.GetState(SpiritBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 Logger.LogInteraction(nameof(SpiritBkImage));
                 break;
             case "ganon":
-                GanonBkImage = GetState(GanonBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
+                GanonBkImage = SpriteUtils.GetState(GanonBkImage) ? Constants.BossKeyDisabled : Constants.BossKeyEnabled;
                 Logger.LogInteraction(nameof(GanonBkImage));
                 break;
         }
@@ -3335,22 +3334,22 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void WriteData()
+    private void WriteData()
     {
         Logger.LogCommand(nameof(WriteDataCommand));
 
         PrepareData();
-        DataWriter.WriteData(_trackerData);
+        StateWriter.WriteState(_trackerData);
     }
 
     [RelayCommand]
-    public void ReadData()
+    private void ReadData()
     {
         Logger.LogCommand(nameof(ReadDataCommand));
         
         try
         {
-            _trackerData = DataReader.ReadData();
+            _trackerData = StateReader.ReadState<TrackerData>();
             SetTrackerUi();
             SetTrackerCtrl();
         }
@@ -3580,7 +3579,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     }
 
     [RelayCommand]
-    public void DeleteData()
+    private void DeleteData()
     {
         Logger.LogCommand(nameof(DeleteDataCommand));
         
@@ -3588,13 +3587,6 @@ public partial class MainWindowViewModel : ObservableRecipient
         {
             File.Delete($"./trackerState");
         }
-    }
-
-    private static bool GetState(string spriteName)
-    {
-        // Returns true if the sprite is active
-        // Or false is inactive
-        return !spriteName.Contains("_Disabled");
     }
     
     #endregion
