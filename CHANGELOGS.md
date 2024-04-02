@@ -89,6 +89,9 @@
 - End of beta testing phase
 - Upgraded to .NET 8
 
+2.1.0
+- Internal reworks
+
 ---
 
 1.0.0-mmDev+build.1:
