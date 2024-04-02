@@ -85,6 +85,10 @@
 - Start of private beta testing
 - Modified disabled icons (they're grayscaled now)
 
+2.0.0
+- End of beta testing phase
+- Upgraded to .NET 8
+
 ---
 
 1.0.0-mmDev+build.1:
