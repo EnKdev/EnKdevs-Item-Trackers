@@ -124,9 +124,6 @@
     <None Update="HowToUse.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="log4net.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Logs\DO NOT DELETE">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -657,7 +654,6 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="log4net" Version="2.0.17" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Semver" Version="2.3.0" />
   </ItemGroup>
@@ -745,6 +741,10 @@
     <Content Include="Fonts\FOT-Chiaro-Std-B.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnKdev.ItemTrackers.Core\EnKdev.ItemTrackers.Core.csproj" />
   </ItemGroup>
 
 </Project>

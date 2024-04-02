@@ -18,8 +18,6 @@ jobs:
     runs-on: windows-latest
     env:
       Solution_Path: EnKdevsItemTrackers.sln
-      OoT_Tracker_Path: EnKdev.ItemTrackers.OoT\EnKdev.ItemTrackers.OoT.csproj
-      # MM_Tracker_Path:
       Actions_Allow_Unsecure_Commands: true
     steps:
     - name: Checkout
