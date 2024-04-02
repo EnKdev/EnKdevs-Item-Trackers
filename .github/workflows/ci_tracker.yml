@@ -18,8 +18,6 @@ jobs:
     runs-on: windows-latest
     env:
       Solution_Path: EnKdevsItemTrackers.sln
-      OoT_Tracker_Path: EnKdev.ItemTrackers.OoT\EnKdev.ItemTrackers.OoT.csproj
-      # MM_Tracker_Path:
       Actions_Allow_Unsecure_Commands: true
     steps:
     - name: Checkout
@@ -32,6 +30,8 @@ jobs:
         dotnet-version: '8.0.x'
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
+    - name: Test Core Library
+      run: dotnet test
     - name: Restore WPF Applications
       run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
       env:
