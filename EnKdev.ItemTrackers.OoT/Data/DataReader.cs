@@ -3,8 +3,6 @@ using System.IO;
 using System.Windows;
 using EnKdev.ItemTrackers.OoT.Internal;
 using EnKdev.ItemTrackers.OoT.Models;
-using log4net;
-using log4net.Config;
 using Newtonsoft.Json;
 
 namespace EnKdev.ItemTrackers.OoT.Data;
@@ -17,8 +15,8 @@ public static class DataReader
 
         try
         {
-            var contents = File.ReadAllBytes($"./trackerState");
-            var data = PrivateCryptoKey.DecryptData(contents);
+            var contents = File.ReadAllText($"./trackerState");
+            var data = CryptoHelper.DecodeAndDecrypt(contents);
             parsedData = JsonConvert.DeserializeObject<TrackerData>(data);
 
             if (parsedData == null)

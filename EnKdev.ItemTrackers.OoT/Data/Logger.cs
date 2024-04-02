@@ -4,7 +4,6 @@ using System.Reflection;
 using log4net;
 using log4net.Config;
 using log4net.Core;
-using log4net.Repository.Hierarchy;
 
 namespace EnKdev.ItemTrackers.OoT.Data;
 

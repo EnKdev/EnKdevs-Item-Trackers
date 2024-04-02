@@ -2,14 +2,30 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <AssemblyName>EnKdev.ItemTrackers.OoT</AssemblyName>
     <RootNamespace>EnKdev.ItemTrackers.OoT</RootNamespace>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\AdultTrade\OoT3D_Broken_Gorons_Sword_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Claim_Check_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Cojiro_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Eyeball_Frog_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Eye_Drops_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Giants_Knife_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Odd_Mushroom_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Odd_Poultice_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Poachers_Saw_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Pocket_Cucco_Icon_Disabled.png" />
+    <None Remove="Icons\AdultTrade\OoT3D_Prescription_Icon_Disabled.png" />
+    <None Remove="Icons\ChildTrade\OoT3D_Cucco_Icon_Disabled.png" />
+    <None Remove="Icons\ChildTrade\OoT3D_Mask_of_Truth_Icon_Disabled.png" />
+    <None Remove="Icons\ChildTrade\OoT3D_Skull_Mask_Icon_Disabled.png" />
+    <None Remove="Icons\ChildTrade\OoT3D_Zeldas_Letter_Icon_Disabled.png" />
     <None Remove="Icons\Equip\OoT3D_Biggoron%27s_Sword_Icon.png" />
     <None Remove="Icons\Equip\OoT3D_Biggoron%27s_Sword_Icon_Disabled.png" />
     <None Remove="Icons\Equip\OoT3D_Deku_Shield_Icon.png" />
@@ -32,8 +48,12 @@
     <None Remove="Icons\Equip\OoT3D_Mirror_Shield_Icon_Disabled.png" />
     <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon.png" />
     <None Remove="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Boss_Key_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Compass_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Dungeon_Map_Icon_Disabled.png" />
     <None Remove="Icons\Item\OoT3D_Magic_Bean_Icon.png" />
     <None Remove="Icons\Item\OoT3D_Magic_Bean_Icon_Disabled.png" />
+    <None Remove="Icons\Item\OoT3D_Small_Key_Icon_Disabled.png" />
     <None Remove="Icons\Quest\OoT3D_Fire_Medallion_Icon.png" />
     <None Remove="Icons\Quest\OoT3D_Fire_Medallion_Icon_Disabled.png" />
     <None Remove="Icons\Quest\OoT3D_Forest_Medallion_Icon.png" />
@@ -76,8 +96,6 @@
     <None Remove="Icons\Songs\OoT3D_Sun%27s_Song_Icon_Disabled.png" />
     <None Remove="Icons\Songs\OoT3D_Zelda%27s_Lullaby_Icon.png" />
     <None Remove="Icons\Songs\OoT3D_Zelda%27s_Lullaby_Icon_Disabled.png" />
-    <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon.png" />
-    <None Remove="Icons\Upgrade\OoT3D_Adult%27s_Wallet_Icon_Disabled.png" />
     <None Remove="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png" />
     <None Remove="Icons\Upgrade\OoT3D_Biggest_Quiver_Icon.png" />
     <None Remove="Icons\Upgrade\OoT3D_Big_Bomb_Bag_Icon.png" />
@@ -115,6 +133,51 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Icons\AdultTrade\OoT3D_Broken_Gorons_Sword_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Claim_Check_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Cojiro_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Eyeball_Frog_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Eye_Drops_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Giants_Knife_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Odd_Mushroom_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Odd_Poultice_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Poachers_Saw_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Pocket_Cucco_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\AdultTrade\OoT3D_Prescription_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\ChildTrade\OoT3D_Cucco_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\ChildTrade\OoT3D_Mask_of_Truth_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\ChildTrade\OoT3D_Skull_Mask_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\ChildTrade\OoT3D_Zeldas_Letter_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\Equip\OoT3D_Biggoron's_Sword_Icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -181,10 +244,22 @@
     <Content Include="Icons\Equip\OoT3D_Zora_Tunic_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Icons\Item\OoT3D_Boss_Key_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Compass_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Dungeon_Map_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\Item\OoT3D_Magic_Bean_Icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Item\OoT3D_Magic_Bean_Icon_Disabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Item\OoT3D_Small_Key_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Quest\OoT3D_Fire_Medallion_Icon.png">
@@ -239,12 +314,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Quest\OoT3D_Zora's_Sapphire_Icon_Disabled.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\Upgrade\OoT3D_Adult's_Wallet_Icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\Upgrade\OoT3D_Adult's_Wallet_Icon_Disabled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Upgrade\OoT3D_Biggest_Bomb_Bag_Icon.png">
@@ -572,18 +641,28 @@
     <Content Include="Icons\AdultTrade\OoT3D_Giants_Knife_Icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Remove="Images\OoTTrackerDungeons.png" />
+    <Content Include="Images\OoTTrackerDungeons.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\OoTTrackerItems.png" />
+    <Content Include="Images\OoTTrackerItems.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\OoTTrackerOther.png" />
+    <Content Include="Images\OoTTrackerOther.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
-    <PackageReference Include="log4net" Version="2.0.15" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="log4net" Version="2.0.17" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Semver" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Icons\AdultTrade\" />
-    <Folder Include="Icons\ChildTrade\" />
     <Folder Include="Icons\Other" />
   </ItemGroup>
 

@@ -4,9 +4,9 @@ namespace EnKdev.ItemTrackers.OoT.Models;
 
 public class TradeData
 {
-    [JsonProperty("childTradeStage")]
-    public int TradeStageChild { get; set; }
-    
-    [JsonProperty("adultTradeStage")]
-    public int TradeStageAdult { get; set; }
+    [JsonProperty("childTradeData")]
+    public ChildTradeData ChildTradeData { get; set; }
+
+    [JsonProperty("adultTradeData")]
+    public AdultTradeData AdultTradeData { get; set; }
 }
