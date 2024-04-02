@@ -18,7 +18,10 @@ public static class StateWriter
     {
         try
         {
-            using var file = File.Create("./trackerState");
+            using (var file = File.Create("./trackerState"))
+            {
+            }
+            
             var fileText = JsonConvert.SerializeObject(obj);
             var encryptedData = CryptoHelper.EncryptAndEncode(fileText);
             File.WriteAllText("./trackerState", encryptedData);
