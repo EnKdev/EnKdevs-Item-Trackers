@@ -5,7 +5,7 @@ namespace EnKdev.ItemTrackers.Core.Version;
 /// <summary>
 /// Class that handles everything related to semantic versioning.
 /// </summary>
-public static class Versioner
+public static class Versioning
 {
     /// <summary>
     /// Generates a version string for a given application.

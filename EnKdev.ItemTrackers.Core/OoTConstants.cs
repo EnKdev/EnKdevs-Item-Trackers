@@ -1,6 +1,4 @@
-﻿using EnKdev.ItemTrackers.Core.Version;
-
-namespace EnKdev.ItemTrackers.Core;
+﻿namespace EnKdev.ItemTrackers.Core;
 
 public static class OoTConstants
 {

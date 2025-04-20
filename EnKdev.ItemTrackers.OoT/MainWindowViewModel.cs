@@ -1,10 +1,12 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using EnKdev.ItemTrackers.Core;
 using EnKdev.ItemTrackers.Core.Logging;
 using EnKdev.ItemTrackers.OoT.Commands;
 using EnKdev.ItemTrackers.OoT.Internal;
-using EnKdev.ItemTrackers.OoT.Models;
 
 namespace EnKdev.ItemTrackers.OoT;
 
@@ -17,7 +19,18 @@ public partial class MainWindowViewModel : ObservableRecipient
     private const int MaxHeartPieces = 36;
     private const int MaxGsTokens = 100;
 
-    private TrackerData? _trackerData;
+    private readonly List<string> _stateFiles =
+    [
+        "OoT.TrackerState.Arrows.dat",
+        "OoT.TrackerState.Items.dat",
+        "OoT.TrackerState.Upgrades.dat",
+        "OoT.TrackerState.Equip.dat"
+    ];
+
+    private static bool _arrowStateExists;
+    private static bool _itemStateExists;
+    private static bool _upgradeStateExists;
+    private static bool _equipStateExists;
     
     // Observable properties
     [ObservableProperty]
@@ -40,6 +53,27 @@ public partial class MainWindowViewModel : ObservableRecipient
         Resolver.ResolveItemIcons(TrackerProperties);
 
         InitVariables();
+
+        foreach (var stateFile in _stateFiles.Where(stateFile => File.Exists($"./Saves/{stateFile}")))
+        {
+            switch (stateFile)
+            {
+                case "OoT.TrackerState.Arrows.dat":
+                    _arrowStateExists = true;
+                    break;
+                case "OoT.TrackerState.Items.dat":
+                    _itemStateExists = true;
+                    break;
+                case "OoT.TrackerState.Upgrades.dat":
+                    _upgradeStateExists = true;
+                    break;
+                case "OoT.TrackerState.Equip.dat":
+                    _equipStateExists = true;
+                    break;
+            }
+        }
+        
+        LoadStates(TrackerProperties);
     }
 
     private void InitVariables()
@@ -174,6 +208,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleEquipCommand));
         CommandHandler.ToggleEquip(equipId, TrackerProperties);
+        
+        SaveHelper.SaveEquipState(TrackerProperties);
     }
     
     // ====================
@@ -187,6 +223,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeStrengthCommand));
         CommandHandler.ChangeStrength(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -196,6 +234,8 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Logger.LogCommand(nameof(ChangeScaleCommand));
         CommandHandler.ChangeScale(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
     
     // =================
@@ -207,6 +247,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleItemCommand));
         CommandHandler.ToggleItem(itemId, TrackerProperties);
+        
+        SaveHelper.SaveItemState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -216,6 +258,8 @@ public partial class MainWindowViewModel : ObservableRecipient
 
         Logger.LogCommand(nameof(ChangeOcarinaCommand));
         CommandHandler.ChangeOcarina(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -225,6 +269,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeHookshotCommand));
         CommandHandler.ChangeHookshot(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
     
     // ==================
@@ -236,6 +282,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleArrowCommand));
         CommandHandler.ToggleArrow(arrowId, TrackerProperties);
+        SaveHelper.SaveArrowState(TrackerProperties);
     }
     
     // ===================
@@ -247,6 +294,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleBottleCommand));
         CommandHandler.ToggleBottle(bottleId, TrackerProperties);
+        SaveHelper.SaveItemState(TrackerProperties);
     }
     
     // =================
@@ -260,6 +308,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeQuiverCommand));
         CommandHandler.ChangeQuiver(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -269,6 +319,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeBombBagCommand));
         CommandHandler.ChangeBombBag(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -278,6 +330,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeBulletBagCommand));
         CommandHandler.ChangeBulletBag(TrackerProperties, isUpgradeBool);
+        
+        SaveHelper.SaveUpgradeState(TrackerProperties);
     }
     
     // ==================
@@ -291,6 +345,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeChildTradeCommand));
         CommandHandler.ChangeChildTrade(TrackerProperties, isAdvancingBool);
+        
+        SaveHelper.SaveItemState(TrackerProperties);
     }
     
     [RelayCommand]
@@ -300,6 +356,8 @@ public partial class MainWindowViewModel : ObservableRecipient
         
         Logger.LogCommand(nameof(ChangeChildTradeCommand));
         CommandHandler.ChangeAdultTrade(TrackerProperties, isAdvancingBool);
+        
+        SaveHelper.SaveItemState(TrackerProperties);
     }
     
     // ====================
@@ -359,5 +417,28 @@ public partial class MainWindowViewModel : ObservableRecipient
             };
         
         Logger.LogInteraction(nameof(properties.HeartPieceProgression));
+    }
+
+    private static void LoadStates(TrackerProperties properties)
+    {
+        if (_arrowStateExists)
+        {
+            SaveHelper.ReadArrowState(properties);
+        }
+
+        if (_itemStateExists)
+        {
+            SaveHelper.ReadItemState(properties);
+        }
+
+        if (_upgradeStateExists)
+        {
+            SaveHelper.ReadUpgradeState(properties);
+        }
+        
+        if (_equipStateExists)
+        {
+            SaveHelper.ReadEquipState(properties);
+        }
     }
 }
