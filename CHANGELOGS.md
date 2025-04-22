@@ -139,6 +139,9 @@
 - Rearranged some of the location labels
 - Fixed saving and loading quest-related info and other things
 
+3.0.0-beta.4+122248
+- Fixed equip tracker state not loading properly
+
 # Important notice:<br/>
 Previous made `trackerState` files from V2.0.0 are incompatible with V3.0.0.<br/>
 This is due to a major change of how data is represented internally.

@@ -78,7 +78,7 @@ public partial class MainWindowViewModel : ObservableRecipient
                 case "OoT.TrackerState.Upgrades.dat":
                     _upgradeStateExists = true;
                     break;
-                case "OoT.TrackerState.Equip.dat":
+                case "OoT.TrackerState.Equips.dat":
                     _equipStateExists = true;
                     break;
                 case "OoT.TrackerState.Dungeons.dat":
