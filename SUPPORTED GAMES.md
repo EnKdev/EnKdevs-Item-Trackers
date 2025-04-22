@@ -1,9 +1,11 @@
 # List of Supported games<br/>
 
 **Supported**:
-- Ocarina of Time | Tracker Version: 2.1.0
+- Ocarina of Time | Tracker Version: 3.0.0-beta.1+15055a9
 
-**WIP**:
+**In development:**
+
+**Planned**:
 - Majora's Mask
 - A Link to the Past
 - Super Metroid

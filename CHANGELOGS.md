@@ -122,6 +122,12 @@
 - Finished refactoring and re-implementing most of the things.
 - This concludes the alpha phase of 3.0.0
 
+3.0.0-beta.1+15055a9
+- The first beta build of the 3.0.0 tracker is upon us! This also means closed beta testing is starting.
+- Squashed bugs, finished restructuring the internal save structure completely, etc.
+- Did I mention that it took me WAY TOO LONG for this to get here?
+- I blame the refactor for this.
+
 # Important notice:<br/>
 Previous made `trackerState` files from V2.0.0 are incompatible with V3.0.0.<br/>
 This is due to a major change of how data is represented internally.

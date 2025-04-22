@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
 using System.Windows;
 using EnKdev.ItemTrackers.Core;
 using EnKdev.ItemTrackers.Core.Internal.Json;
@@ -93,6 +96,82 @@ public static class CommandHandler
         }
 
         Logger.LogInteraction(nameof(properties.HeartPieceCount));
+    }
+
+    public static void ShowInfo()
+    {
+        var infoText = $"{AppConstants.AppTitle}\n" +
+                       $"Core Library Version: {Constants.LibraryVersion} ({Constants.LibraryName})";
+        
+        MessageBox.Show(infoText, "About", MessageBoxButton.OK);
+    }
+
+    public static void NewRun()
+    {
+        Logger.LogInformation("Starting new run and backing current run up.");
+
+        if (!Directory.Exists("./Saves/OldRuns"))
+        {
+            Directory.CreateDirectory("./Saves/OldRuns");
+        }
+        
+        var now = DateTime.Now;
+        var fileName = $"ArchivedRun-{now.Day}{now.Month}{now.Year}{now.Hour}{now.Minute}{now.Second}";
+
+        if (File.Exists($"./Saves/OldRuns/{fileName}.zip"))
+        {
+            File.Delete($"./Saves/OldRuns/{fileName}.zip");
+        }
+
+        var tempDir = Path.Combine(Path.GetTempPath(), $"EnKdev.ItemTrackers.OoT_Tmp_{Guid.NewGuid()}");
+        Directory.CreateDirectory(tempDir);
+
+        try
+        {
+            foreach (var state in Directory.GetFiles("./Saves/", "*.dat", SearchOption.TopDirectoryOnly))
+            {
+                var destFile = Path.Combine(tempDir, Path.GetFileName(state));
+                File.Copy(state, destFile, true);
+            }
+
+            ZipFile.CreateFromDirectory(tempDir, $"./Saves/OldRuns/{fileName}.zip");
+
+            foreach (var state in Directory.GetFiles("./Saves/", "*.dat", SearchOption.TopDirectoryOnly))
+            {
+                try
+                {
+                    File.Delete(state);
+                }
+                catch (IOException e)
+                {
+                    MessageBox.Show(e.Message, "Error starting new run.", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(tempDir))
+            {
+                Directory.Delete(tempDir, true);
+            }
+        }
+    }
+
+    public static void DeleteRun()
+    {
+        Logger.LogInformation("Deleting current run without backing it up.");
+        
+        foreach (var state in Directory.GetFiles("./Saves/", "*.dat", SearchOption.TopDirectoryOnly))
+        {
+            File.Delete(state);
+        }
+    }
+
+    public static void Quit()
+    {
+        Logger.LogInformation("Quitting application.");
+        
+        Application.Current.Shutdown();
     }
 
     // =====================

@@ -55,6 +55,7 @@ public static class Resolver
         properties.GearBackground = OoTConstants.GearBg;
         properties.DungeonBackground = OoTConstants.DungeonBg;
         properties.QuestBackground = OoTConstants.QuestBg;
+        properties.ToolBackground = OoTConstants.ToolBg;
     }
 
     public static void ResolveDefaultIcons(TrackerProperties properties)

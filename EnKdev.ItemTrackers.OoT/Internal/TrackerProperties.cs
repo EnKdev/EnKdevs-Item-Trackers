@@ -586,4 +586,7 @@ public partial class TrackerProperties : ObservableRecipient
 
     [ObservableProperty]
     private string? _questBackground;
+
+    [ObservableProperty]
+    private string? _toolBackground;
 }

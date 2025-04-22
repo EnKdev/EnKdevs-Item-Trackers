@@ -24,6 +24,7 @@ public static class OoTConstants
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
     public const string DungeonBg = "pack://application:,,,/Images/OoTTrackerDungeons.png";
     public const string QuestBg = "pack://application:,,,/Images/OoTTrackerQuest.png";
+    public const string ToolBg = "pack://application:,,,/Images/TrackerToolSide.png";
     
     public const string HeartContainer = "pack://application:,,,/Icons/Other/OoT3D_Heart_Container_Icon.png";
     public const string HeartPiece = "pack://application:,,,/Icons/Other/OoT3D_Piece_of_Heart_Icon.png";

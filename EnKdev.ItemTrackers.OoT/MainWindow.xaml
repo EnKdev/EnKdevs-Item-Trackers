@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:EnKdev.ItemTrackers.OoT"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="1089" Width="715" FontFamily="{StaticResource 'FOT-Chiaro Std B'}" 
+        Title="{Binding Title}" Height="1089" Width="815" FontFamily="{StaticResource 'FOT-Chiaro Std B'}" 
         Foreground="White" AllowsTransparency="True" WindowStyle="None" Background="Transparent"
         MouseDown="MainWindow_OnMouseDown" ResizeMode="NoResize" Topmost="True"
         Deactivated="MainWindow_OnDeactivated">
@@ -19,10 +19,35 @@
             <RowDefinition Height="350"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="468"/>
             <ColumnDefinition Width="235"/>
         </Grid.ColumnDefinitions>
         <Grid Row="0" Column="0">
+            <Image Source="{Binding TrackerProperties.ToolBackground}" Height="350"/>
+            <!-- Tools -->
+            <Image Source="./Images/Info.png" Width="50" Height="50" Margin="0, -250, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ShowInfoCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="./Images/NewRun.png" Width="50" Height="50" Margin="0, -75, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding NewRunCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="./Images/DeleteRun.png" Width="50" Height="50" Margin="0, 75, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding DeleteRunCommand}"/>
+                </Image.InputBindings>
+            </Image>
+            <Image Source="./Images/Exit.png" Width="50" Height="50" Margin="0, 250, 0, 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ExitAppCommand}"/>
+                </Image.InputBindings>
+            </Image>
+        </Grid>
+        <Grid Row="0" Column="1">
             <Image Source="{Binding TrackerProperties.QuestBackground}" Height="350"/>
             <!-- Quest Progress -->
             <Image Source="{Binding TrackerProperties.ShardImage}" Width="45" Margin="-335, -215, 0, 0">
@@ -183,7 +208,7 @@
             <Image Source="{Binding TrackerProperties.HeartPieceProgression}" Width="100" Margin="-18, -155, 0, 0"/>
             <TextBlock Text="{Binding TrackerProperties.HeartPieceCount}" Width="25" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-45, 173, 0, 0"/>
         </Grid>
-        <Grid Row="1" Column="0">
+        <Grid Row="1" Column="1">
             <Image Source="{Binding TrackerProperties.GearBackground}" Height="350"/>
             <!-- Swords -->
             <Image Source="{Binding TrackerProperties.KokiriSwordImage}" Width="60" Margin="-70, -230, 0, 0">
@@ -273,7 +298,7 @@
                 </Image.InputBindings>
             </Image>
         </Grid>
-        <Grid Row="2" Column="0">
+        <Grid Row="2" Column="1">
             <Image Source="{Binding TrackerProperties.ItemBackground}" Height="350"/>
             <!-- Item Row 1 -->
             <Image Source="{Binding TrackerProperties.StickImage}" Width="50" Margin="-345, -235, 0, 0">
@@ -404,7 +429,7 @@
                 </Image.InputBindings>
             </Image>
         </Grid>
-        <Grid Row="0" RowSpan="3" Column="1">
+        <Grid Row="0" RowSpan="3" Column="2">
             <Image Source="{Binding TrackerProperties.DungeonBackground}" Height="1050" Width="235"/>
             <!-- Dungeon Info -->
             <TextBlock Text="{Binding TrackerProperties.DungeonType1}" Panel.ZIndex="1" TextAlignment="Left" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="135, -930, 0, 0"/>

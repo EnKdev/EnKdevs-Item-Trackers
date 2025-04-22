@@ -24,13 +24,23 @@ public partial class MainWindowViewModel : ObservableRecipient
         "OoT.TrackerState.Arrows.dat",
         "OoT.TrackerState.Items.dat",
         "OoT.TrackerState.Upgrades.dat",
-        "OoT.TrackerState.Equip.dat"
+        "OoT.TrackerState.Equip.dat",
+        "OoT.TrackerState.Dungeons.dat",
+        "OoT.TrackerState.Quest.dat",
+        "OoT.TrackerState.Other.dat",
+        "OoT.TrackerState.Data.dat",
+        "OoT.TrackerState.Songs.dat"
     ];
 
     private static bool _arrowStateExists;
     private static bool _itemStateExists;
     private static bool _upgradeStateExists;
     private static bool _equipStateExists;
+    private static bool _dungeonStateExists;
+    private static bool _questStateExists;
+    private static bool _otherStateExists;
+    private static bool _dataStateExists;
+    private static bool _songStateExists;
     
     // Observable properties
     [ObservableProperty]
@@ -69,6 +79,21 @@ public partial class MainWindowViewModel : ObservableRecipient
                     break;
                 case "OoT.TrackerState.Equip.dat":
                     _equipStateExists = true;
+                    break;
+                case "OoT.TrackerState.Dungeons.dat":
+                    _dungeonStateExists = true;
+                    break;
+                case "OoT.TrackerState.Quest.dat":
+                    _questStateExists = true;
+                    break;
+                case "OoT.TrackerState.Other.dat":
+                    _otherStateExists = true;
+                    break;
+                case "OoT.TrackerState.Data.dat":
+                    _dataStateExists = true;
+                    break;
+                case "OoT.TrackerState.Songs.dat":
+                    _songStateExists = true;
                     break;
             }
         }
@@ -135,6 +160,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleOtherCommand));
         CommandHandler.ToggleOther(otherId, TrackerProperties);
+        
+        SaveHelper.SaveOtherState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -151,6 +178,8 @@ public partial class MainWindowViewModel : ObservableRecipient
                 CommandHandler.DecreaseGoldSkulltulaCount(TrackerProperties);
                 break;
         }
+        
+        SaveHelper.SaveDataState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -168,6 +197,8 @@ public partial class MainWindowViewModel : ObservableRecipient
                 ProcessHeartPieceProgression(TrackerProperties);
                 break;
         }
+        
+        SaveHelper.SaveDataState(TrackerProperties);
     }
     
     // ==============================
@@ -179,6 +210,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleQuestCommand));
         CommandHandler.ToggleQuest(progressionId, TrackerProperties);
+        
+        SaveHelper.SaveQuestState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -186,6 +219,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(SetLocationCommand));
         CommandHandler.UpdateLocation(progressionId, TrackerProperties);
+        
+        SaveHelper.SaveQuestState(TrackerProperties);
     }
     
     // =================
@@ -197,6 +232,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleSongCommand));
         CommandHandler.ToggleSong(songId, TrackerProperties);
+        
+        SaveHelper.SaveSongState(TrackerProperties);
     }
     
     // ==================
@@ -282,6 +319,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleArrowCommand));
         CommandHandler.ToggleArrow(arrowId, TrackerProperties);
+        
         SaveHelper.SaveArrowState(TrackerProperties);
     }
     
@@ -294,6 +332,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleBottleCommand));
         CommandHandler.ToggleBottle(bottleId, TrackerProperties);
+        
         SaveHelper.SaveItemState(TrackerProperties);
     }
     
@@ -369,6 +408,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleMapCommand));
         CommandHandler.ToggleMap(TrackerProperties, dungeonId);
+        
+        SaveHelper.SaveDungeonState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -376,6 +417,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleCompassCommand));
         CommandHandler.ToggleCompass(TrackerProperties, dungeonId);
+        
+        SaveHelper.SaveDungeonState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -383,6 +426,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleDungeonStateCommand));
         CommandHandler.UpdateDungeonState(TrackerProperties, dungeonId);
+        
+        SaveHelper.SaveDungeonState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -390,6 +435,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(HandleKeysCommand));
         CommandHandler.HandleKeys(TrackerProperties, dungeonId);
+        
+        SaveHelper.SaveDungeonState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -397,6 +444,8 @@ public partial class MainWindowViewModel : ObservableRecipient
     {
         Logger.LogCommand(nameof(ToggleBossKeyCommand));
         CommandHandler.ToggleBossKey(TrackerProperties, dungeonId);
+        
+        SaveHelper.SaveDungeonState(TrackerProperties);
     }
     
     // Util methods
@@ -417,6 +466,46 @@ public partial class MainWindowViewModel : ObservableRecipient
             };
         
         Logger.LogInteraction(nameof(properties.HeartPieceProgression));
+    }
+
+    [RelayCommand]
+    private void ShowInfo()
+    {
+        Logger.LogCommand(nameof(ShowInfoCommand));
+        CommandHandler.ShowInfo();
+    }
+
+    [RelayCommand]
+    private void NewRun()
+    {
+        Logger.LogCommand(nameof(NewRunCommand));
+        
+        // Step 1: Reset the tracker
+        Reset();
+        
+        // Step 2: Pack up the previous made states into an archive and move it
+        CommandHandler.NewRun();
+    }
+
+    [RelayCommand]
+    private void DeleteRun()
+    {
+        Logger.LogCommand(nameof(DeleteRunCommand));
+        
+        // Step 1: Reset the tracker
+        Reset();
+        
+        // Step 2: Delete all previously made states.
+        CommandHandler.DeleteRun();
+    }
+
+    [RelayCommand]
+    private void ExitApp()
+    {
+        Logger.LogCommand(nameof(ExitAppCommand));
+        
+        // Sayonara.
+        CommandHandler.Quit();
     }
 
     private static void LoadStates(TrackerProperties properties)
@@ -440,5 +529,49 @@ public partial class MainWindowViewModel : ObservableRecipient
         {
             SaveHelper.ReadEquipState(properties);
         }
+        
+        if (_dungeonStateExists)
+        {
+            SaveHelper.ReadDungeonState(properties);
+        }
+        
+        if (_questStateExists)
+        {
+            SaveHelper.ReadQuestState(properties);
+        }
+        
+        if (_otherStateExists)
+        {
+            SaveHelper.ReadOtherState(properties);
+        }
+        
+        if (_dataStateExists)
+        {
+            SaveHelper.ReadDataState(properties);
+        }
+
+        if (_songStateExists)
+        {
+            SaveHelper.ReadSongState(properties);
+        }
+    }
+
+    private void Reset()
+    {
+        Title = AppConstants.AppTitle;
+
+        Resolver.ResolveDefaultLocations(TrackerProperties);
+        Resolver.ResolveDefaultDungeonTypes(TrackerProperties);
+        Resolver.ResolveDefaultKeyColors(TrackerProperties);
+        Resolver.ResolveBackgrounds(TrackerProperties);
+        Resolver.ResolveDefaultIcons(TrackerProperties);
+        Resolver.ResolveKeyIcons(TrackerProperties);
+        Resolver.ResolveDungeonIcons(TrackerProperties);
+        Resolver.ResolveSongIcons(TrackerProperties);
+        Resolver.ResolveEquipIcons(TrackerProperties);
+        Resolver.ResolveGearIcons(TrackerProperties);
+        Resolver.ResolveItemIcons(TrackerProperties);
+
+        InitVariables();
     }
 }

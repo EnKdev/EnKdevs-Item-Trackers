@@ -8,6 +8,9 @@
     <AssemblyName>EnKdev.ItemTrackers.OoT</AssemblyName>
     <RootNamespace>EnKdev.ItemTrackers.OoT</RootNamespace>
     <LangVersion>13</LangVersion>
+    <IsPackable>false</IsPackable>
+    <Version>3.0.0</Version>
+    <ApplicationIcon>OoTTracker.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -679,12 +682,33 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Remove="Images\OoTTrackerOther.png" />
+    <None Remove="Images\Info.png" />
+    <Content Include="Images\Info.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\TrackerToolSide.png" />
+    <Content Include="Images\TrackerToolSide.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\Exit.png" />
+    <Content Include="Images\Exit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\NewRun.png" />
+    <Content Include="Images\NewRun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Images\DeleteRun.png" />
+    <Content Include="Images\DeleteRun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Semver" Version="3.0.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
