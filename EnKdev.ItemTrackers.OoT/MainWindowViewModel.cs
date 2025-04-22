@@ -24,7 +24,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         "OoT.TrackerState.Arrows.dat",
         "OoT.TrackerState.Items.dat",
         "OoT.TrackerState.Upgrades.dat",
-        "OoT.TrackerState.Equip.dat",
+        "OoT.TrackerState.Equips.dat",
         "OoT.TrackerState.Dungeons.dat",
         "OoT.TrackerState.Quest.dat",
         "OoT.TrackerState.Other.dat",
@@ -137,6 +137,10 @@ public partial class MainWindowViewModel : ObservableRecipient
         TrackerProperties.Dungeon10Idx = 0;
         TrackerProperties.Dungeon11Idx = 0;
         TrackerProperties.Dungeon12Idx = 0;
+
+        TrackerProperties.HeartPieceCount = 0;
+        TrackerProperties.HeartContainerCount = 0;
+        TrackerProperties.GsTokens = 0;
 
         TrackerProperties.HpProg = 0;
         

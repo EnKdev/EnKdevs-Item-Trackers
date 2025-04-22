@@ -12,4 +12,7 @@ public class QuestState
     
     [JsonProperty("locationIndex")]
     public int LocationIndex { get; set; }
+    
+    [JsonProperty("locationName")]
+    public string? Location { get; set; }
 }

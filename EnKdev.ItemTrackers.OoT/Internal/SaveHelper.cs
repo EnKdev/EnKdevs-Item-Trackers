@@ -424,59 +424,68 @@ public static class SaveHelper
             {
                 Id = "Progression_LightMedallion",
                 SpritePath = properties.LightMedallionImage,
-                LocationIndex = properties.Location1Idx
+                LocationIndex = properties.Location4Idx,
+                Location = properties.Location4
             },
             new()
             {
                 Id = "Progression_ForestMedallion",
                 SpritePath = properties.ForestMedallionImage,
-                LocationIndex = properties.Location2Idx
+                LocationIndex = properties.Location5Idx,
+                Location = properties.Location5
             },
             new()
             {
                 Id = "Progression_FireMedallion",
                 SpritePath = properties.FireMedallionImage,
-                LocationIndex = properties.Location3Idx
+                LocationIndex = properties.Location6Idx,
+                Location = properties.Location6
             },
             new()
             {
                 Id = "Progression_WaterMedallion",
                 SpritePath = properties.WaterMedallionImage,
-                LocationIndex = properties.Location4Idx
+                LocationIndex = properties.Location7Idx,
+                Location = properties.Location7
             },
             new()
             {
                 Id = "Progression_ShadowMedallion",
                 SpritePath = properties.ShadowMedallionImage,
-                LocationIndex = properties.Location5Idx
+                LocationIndex = properties.Location8Idx,
+                Location = properties.Location8
             },
             new()
             {
                 Id = "Progression_SpiritMedallion",
                 SpritePath = properties.SpiritMedallionImage,
-                LocationIndex = properties.Location6Idx
+                LocationIndex = properties.Location9Idx,
+                Location = properties.Location9
             },
             new()
             {
                 Id = "Progression_KokiriEmerald",
                 SpritePath = properties.KokiriEmeraldImage,
-                LocationIndex = properties.Location7Idx
+                LocationIndex = properties.Location1Idx,
+                Location = properties.Location1
             },
             new()
             {
                 Id = "Progression_GoronRuby",
                 SpritePath = properties.GoronRubyImage,
-                LocationIndex = properties.Location8Idx
+                LocationIndex = properties.Location2Idx,
+                Location = properties.Location2
             },
             new()
             {
                 Id = "Progression_ZoraSapphire",
                 SpritePath = properties.ZoraSapphireImage,
-                LocationIndex = properties.Location9Idx
+                LocationIndex = properties.Location3Idx,
+                Location = properties.Location3
             }
         };
         
-        StateWriter.WriteState(questState, "OoT.TrackerState.Quests.dat");
+        StateWriter.WriteState(questState, "OoT.TrackerState.Quest.dat");
     }
 
     public static void SaveOtherState(TrackerProperties properties)
@@ -808,7 +817,7 @@ public static class SaveHelper
     
     public static void ReadQuestState(TrackerProperties properties)
     {
-        var questState = StateReader.ReadState<List<QuestState?>>("OoT.TrackerState.Quests.dat");
+        var questState = StateReader.ReadState<List<QuestState?>>("OoT.TrackerState.Quest.dat");
         
         if (questState == null)
         {
@@ -816,31 +825,40 @@ public static class SaveHelper
         }
         
         properties.LightMedallionImage = questState[0]?.SpritePath;
-        properties.Location1Idx = questState[0]?.LocationIndex ?? 0;
+        properties.Location4Idx = questState[0]?.LocationIndex ?? 0;
+        properties.Location4 = questState[0]?.Location;
         
         properties.ForestMedallionImage = questState[1]?.SpritePath;
-        properties.Location2Idx = questState[1]?.LocationIndex ?? 0;
+        properties.Location5Idx = questState[1]?.LocationIndex ?? 0;
+        properties.Location5 = questState[1]?.Location;
         
         properties.FireMedallionImage = questState[2]?.SpritePath;
-        properties.Location3Idx = questState[2]?.LocationIndex ?? 0;
+        properties.Location6Idx = questState[2]?.LocationIndex ?? 0;
+        properties.Location6 = questState[2]?.Location;
         
         properties.WaterMedallionImage = questState[3]?.SpritePath;
-        properties.Location4Idx = questState[3]?.LocationIndex ?? 0;
+        properties.Location7Idx = questState[3]?.LocationIndex ?? 0;
+        properties.Location7 = questState[3]?.Location;
         
         properties.ShadowMedallionImage = questState[4]?.SpritePath;
-        properties.Location5Idx = questState[4]?.LocationIndex ?? 0;
+        properties.Location8Idx = questState[4]?.LocationIndex ?? 0;
+        properties.Location8 = questState[4]?.Location;
         
         properties.SpiritMedallionImage = questState[5]?.SpritePath;
-        properties.Location6Idx = questState[5]?.LocationIndex ?? 0;
+        properties.Location9Idx = questState[5]?.LocationIndex ?? 0;
+        properties.Location9 = questState[5]?.Location;
         
         properties.KokiriEmeraldImage = questState[6]?.SpritePath;
-        properties.Location7Idx = questState[6]?.LocationIndex ?? 0;
+        properties.Location1Idx = questState[6]?.LocationIndex ?? 0;
+        properties.Location1 = questState[6]?.Location;
         
         properties.GoronRubyImage = questState[7]?.SpritePath;
-        properties.Location8Idx = questState[7]?.LocationIndex ?? 0;
+        properties.Location2Idx = questState[7]?.LocationIndex ?? 0;
+        properties.Location2 = questState[7]?.Location;
         
         properties.ZoraSapphireImage = questState[8]?.SpritePath;
-        properties.Location9Idx = questState[8]?.LocationIndex ?? 0;
+        properties.Location3Idx = questState[8]?.LocationIndex ?? 0;
+        properties.Location3 = questState[8]?.Location;
     }
     
     public static void ReadOtherState(TrackerProperties properties)

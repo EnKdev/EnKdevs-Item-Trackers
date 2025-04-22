@@ -68,55 +68,55 @@
             </Image>
             <TextBlock Text="{Binding TrackerProperties.GsTokens}" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-195, 111, 0, 0"></TextBlock>
             <!-- Medallions and Stones -->
-            <Image Source="{Binding TrackerProperties.LightMedallionImage}" Width="40" Margin="257, -165, 0, 0">
+            <Image Source="{Binding TrackerProperties.LightMedallionImage}" Panel.ZIndex="2" Width="40" Margin="257, -165, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_LightMedallion"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_LightMedallion"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ForestMedallionImage}" Width="40" Margin="345, -115, 0, 0">
+            <Image Source="{Binding TrackerProperties.ForestMedallionImage}" Panel.ZIndex="2" Width="40" Margin="345, -115, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_ForestMedallion"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_ForestMedallion"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.FireMedallionImage}" Width="40" Margin="345, -15, 0, 0">
+            <Image Source="{Binding TrackerProperties.FireMedallionImage}" Panel.ZIndex="2" Width="40" Margin="345, -15, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_FireMedallion"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_FireMedallion"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.WaterMedallionImage}" Width="40" Margin="258, 35, 0, 0">
+            <Image Source="{Binding TrackerProperties.WaterMedallionImage}" Panel.ZIndex="2" Width="40" Margin="258, 35, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_WaterMedallion"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_WaterMedallion"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.SpiritMedallionImage}" Width="40" Margin="170, -15, 0, 0">
+            <Image Source="{Binding TrackerProperties.SpiritMedallionImage}" Panel.ZIndex="2" Width="40" Margin="170, -15, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_SpiritMedallion"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_SpiritMedallion"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ShadowMedallionImage}" Width="40" Margin="170, -115, 0, 0">
+            <Image Source="{Binding TrackerProperties.ShadowMedallionImage}" Panel.ZIndex="2" Width="40" Margin="170, -115, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_ShadowMedallion"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_ShadowMedallion"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.KokiriEmeraldImage}" Width="40" Margin="165, 205, 0, 0">
+            <Image Source="{Binding TrackerProperties.KokiriEmeraldImage}" Panel.ZIndex="2" Width="40" Margin="165, 205, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_KokiriEmerald"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_KokiriEmerald"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.GoronRubyImage}" Width="40" Margin="258, 205, 0, 0">
+            <Image Source="{Binding TrackerProperties.GoronRubyImage}" Panel.ZIndex="2" Width="40" Margin="258, 205, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_GoronRuby"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_GoronRuby"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ZoraSapphireImage}" Width="40" Margin="345, 205, 0, 0">
+            <Image Source="{Binding TrackerProperties.ZoraSapphireImage}" Panel.ZIndex="2" Width="40" Margin="345, 205, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ToggleQuestCommand}" CommandParameter="Progression_ZorasSapphire"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding SetLocationCommand}" CommandParameter="Progression_ZorasSapphire"/>
@@ -184,15 +184,15 @@
                 </Image.InputBindings>
             </Image>
             <!-- Location Infos -->
-            <TextBlock Text="{Binding TrackerProperties.Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165, 250, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="255, 250, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="345, 250, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="255, -215, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="345, -165, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="345, -65, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="255, -15, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165, -65, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165, -165, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location1}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165, 260, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location2}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="255, 260, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location3}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="345, 260, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location4}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="255, -225, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location5}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="345, -175, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location6}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="345, 45, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location7}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="255, 95, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location8}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165, 45, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.Location9}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165, -175, 0, 0"/>
             <!-- Heart Containers, Heart Pieces -->
             <Image Source="{Binding TrackerProperties.HeartPiece}" Width="40" Margin="-120, 30, 0, 0">
                 <Image.InputBindings>
@@ -501,7 +501,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Forest"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ForestKeyImage}" Panel.ZIndex="1"  Width="50" Margin="50, -288, 0, 0">
+            <Image Source="{Binding TrackerProperties.ForestKeyImage}" Panel.ZIndex="2"  Width="50" Margin="50, -288, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Forest"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Forest|dec"/>
@@ -524,7 +524,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Fire"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.FireKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, -107, 0, 0">
+            <Image Source="{Binding TrackerProperties.FireKeyImage}" Panel.ZIndex="2" Width="50" Margin="50, -107, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Fire"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Fire|dec"/>
@@ -547,7 +547,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Water"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.WaterKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, 70, 0, 0">
+            <Image Source="{Binding TrackerProperties.WaterKeyImage}" Panel.ZIndex="2" Width="50" Margin="50, 70, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Water"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Water|dec"/>
@@ -570,7 +570,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Shadow"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ShadowKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, 248, 0, 0">
+            <Image Source="{Binding TrackerProperties.ShadowKeyImage}" Panel.ZIndex="2" Width="50" Margin="50, 248, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Shadow"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Shadow|dec"/>
@@ -593,7 +593,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Spirit"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.SpiritKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, 434, 0, 0">
+            <Image Source="{Binding TrackerProperties.SpiritKeyImage}" Panel.ZIndex="2" Width="50" Margin="50, 434, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Spirit"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Spirit|dec"/>
@@ -616,7 +616,7 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Bottom"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.BottomKeyImage}" Panel.ZIndex="1" Width="50" Margin="95, 621, 0, 0">
+            <Image Source="{Binding TrackerProperties.BottomKeyImage}" Panel.ZIndex="2" Width="50" Margin="95, 621, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Bottom"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Bottom|dec"/>
@@ -635,7 +635,7 @@
                 </Image.InputBindings>
             </Image>
             <!---->
-            <Image Source="{Binding TrackerProperties.GtgKeyImage}" Panel.ZIndex="1" Width="50" Margin="-142, 960, 0, 0">
+            <Image Source="{Binding TrackerProperties.GtgKeyImage}" Panel.ZIndex="2" Width="50" Margin="-142, 960, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Training"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Training|dec"/>
@@ -643,7 +643,7 @@
                 </Image.InputBindings>
             </Image>
             <!---->
-            <Image Source="{Binding TrackerProperties.GanonKeyImage}" Panel.ZIndex="1" Width="50" Margin="57, 960, 0, 0">
+            <Image Source="{Binding TrackerProperties.GanonKeyImage}" Panel.ZIndex="2" Width="50" Margin="57, 960, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Ganon"/>
                     <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Ganon|dec"/>
