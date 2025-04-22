@@ -2,32 +2,31 @@
 Before you start using this software, I just want to point out a few things before you should use this:
 
 It should be noted that this software is meant to be used as you're playing through
-an Ocarina of Time Randomizer run, whether be it one generated through the usual web generator
+an Ocarina of Time Randomizer run, whether it is one generated through the usual web generator
 or through Ship of Harkinian.
 
-To activate an item on the tracker, simply left click on it.
-To deactivate an item on the tracker, you have to left click it again.
+To activate an item on the tracker, simply left-click on it.
+To deactivate an item on the tracker, you have to left-click it again.
 The spiritual stones and medallions have a third interaction that's special to those.
 If you click with your right mouse button on them, you can set their location reflecting on in which
 dungeon these dungeon rewards are.
 
+The same goes for dungeons.
+If you right-click the compass, you can set whether it's vanilla or master quest.
+It is recommended that you do so before you set any keys, as for some reason, the tracker puts the MQ state as default.
+
+For the mini dungeons that don't have a compass like Ganon's Castle and GTG, you need to click with the middle mouse button
+on the key sprite to set it as Vanilla or MQ.
+
 Please note:
 Due to certain limitations posed by the UI technology used, some things can be coming off as slowly
 or a bit janky.
-There is sadly not much I can do to fix that behavior.
-All I can advice you to do is to click slowly and not fast.
-
-Secondly, if you are done with making progress for your current run, I implore you to press the Save button!
-It will save your trackers state so you can just load it back in the next time you continue your randomizer run.
-
-Thirdly, please use the Delete button as sparingly as possible.
-It should only be used if your trackers state has somehow become corrupted and can't be read.
-If that happens and you closed the tracker before that came to be, then sorry mate, tough luck.
-(It is also advised to have a screenshot at the ready as a plan b to restore the previous tracker state if you made one)
+There is sadly little I can do to fix that behavior.
+All I can advise you to do is to click slowly and not fast.
 
 And that's it, that should be all the instructions I can give to you for using this tracker.
-If you have any suggestions for improvements, please leave an Issue over at the trackers github page.
+If you have any suggestions for improvements, please leave an Issue over at the tracker GitHub page.
 You can find it here: https://github.com/EnKdev/EnKdevs-Item-Trackers
 
 With that done, I hope this tracker will come handy to you.
--EnKdev
+- EnKdev
