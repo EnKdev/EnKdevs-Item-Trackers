@@ -113,6 +113,7 @@ public static class DungeonUtils
     /// </summary>
     /// <typeparam name="T">The type representing the color state for the keys.</typeparam>
     /// <param name="isMq">Indicates whether the dungeon is in its Master Quest variant, affecting maximum key count.</param>
+    /// <param name="isDecreased">Indicates whether the key count is being decreased or increased.</param>   
     /// <param name="getKeyCount">A function to retrieve the current key count.</param>
     /// <param name="setKeyCount">An action to update the current key count.</param>
     /// <param name="setKeyColor">An action to update the key color state.</param>
@@ -120,25 +121,38 @@ public static class DungeonUtils
     /// <param name="maxKeysVanilla">The maximum key count allowed for the standard dungeon variant.</param>
     /// <param name="maxKeysMq">The maximum key count allowed for the Master Quest dungeon variant.</param>
     /// <param name="enabledImage">The image to be set when the key count is at or above the maximum allowable keys.</param>
+    /// <param name="disabledImage">The image to be set when the key count is below the maximum allowable keys.</param>   
     /// <param name="hasKeyColor">The color state to set when at least one key is available.</param>
     /// <param name="allKeyColor">The color state to set when the key count reaches the maximum allowable keys.</param>
     /// <param name="noKeyColor">The optional color state to set when no keys are available.</param>
     public static void HandleKeys<T>(
-        bool isMq, Func<int> getKeyCount, Action<int> setKeyCount,Action<T> setKeyColor,
-        Action<string> setKeyImage, int maxKeysVanilla, int maxKeysMq,
-        string enabledImage, T hasKeyColor, T allKeyColor,
+        bool isMq, bool isDecreased, Func<int> getKeyCount, Action<int> setKeyCount,Action<T> setKeyColor,
+        Action<string> setKeyImage, int maxKeysMq, int maxKeysVanilla,
+        string enabledImage, string disabledImage, T hasKeyColor, T allKeyColor,
         T? noKeyColor = default)
     {
         var maxKeys = isMq ? maxKeysVanilla : maxKeysMq;
         var currentKeyCount = getKeyCount();
+        
+        if (isDecreased)
+        {
+            currentKeyCount--;
+            
+            if (currentKeyCount <= 0)
+            {
+                currentKeyCount = 0;
+            }
+        }
+        else
+        {
+            currentKeyCount++;   
+        }
 
         if (currentKeyCount < maxKeys)
         {
             setKeyImage(enabledImage);
             setKeyColor(hasKeyColor);
         }
-
-        currentKeyCount++;
 
         if (currentKeyCount >= maxKeys)
         {
@@ -148,8 +162,10 @@ public static class DungeonUtils
         
         setKeyCount(currentKeyCount);
         
+        // ReSharper disable once InvertIf
         if (noKeyColor != null && currentKeyCount == 0)
         {
+            setKeyImage(disabledImage);
             setKeyColor(noKeyColor);
         }
     }

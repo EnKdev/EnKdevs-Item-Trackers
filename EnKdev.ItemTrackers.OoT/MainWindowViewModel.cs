@@ -56,6 +56,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         Resolver.ResolveBackgrounds(TrackerProperties);
         Resolver.ResolveDefaultIcons(TrackerProperties);
         Resolver.ResolveKeyIcons(TrackerProperties);
+        Resolver.ResolveKeyCounts(TrackerProperties);
         Resolver.ResolveDungeonIcons(TrackerProperties);
         Resolver.ResolveSongIcons(TrackerProperties);
         Resolver.ResolveEquipIcons(TrackerProperties);
@@ -566,6 +567,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         Resolver.ResolveBackgrounds(TrackerProperties);
         Resolver.ResolveDefaultIcons(TrackerProperties);
         Resolver.ResolveKeyIcons(TrackerProperties);
+        Resolver.ResolveKeyCounts(TrackerProperties);
         Resolver.ResolveDungeonIcons(TrackerProperties);
         Resolver.ResolveSongIcons(TrackerProperties);
         Resolver.ResolveEquipIcons(TrackerProperties);

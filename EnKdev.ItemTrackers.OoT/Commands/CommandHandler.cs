@@ -830,113 +830,148 @@ public static class CommandHandler
 
     public static void HandleKeys(TrackerProperties properties, string dungeonId)
     {
-        Logger.LogInformation($"Handling keys for dungeon {dungeonId}");
+        var shouldDecrease = false;
+        
+        if (dungeonId.Contains('|'))
+        {
+            var parts = dungeonId.Split('|');
+            shouldDecrease = parts[1] == "dec";
+            Logger.LogInformation($"Handling keys for dungeon {parts[0]}");
+        }
+        else
+        {
+            Logger.LogInformation($"Handling keys for dungeon {dungeonId}");
+        }
 
         switch (dungeonId)
         {
             case "Dungeon_Forest":
+            case "Dungeon_Forest|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsForestMq,
+                    properties.IsForestMq, shouldDecrease,
                     () => properties.ForestKeyCount,
                     count => properties.ForestKeyCount = count,
                     color => properties.ForestKeyColor = color,
                     image => properties.ForestKeyImage = image,
-                    AppConstants.MaxForestKeysVanilla,
                     AppConstants.MaxForestKeysMq,
+                    AppConstants.MaxForestKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor, 
+                    AppConstants.NoKeyColor);
                 break;
             case "Dungeon_Fire":
+            case "Dungeon_Fire|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsFireMq,
+                    properties.IsFireMq, shouldDecrease,
                     () => properties.FireKeyCount,
                     count => properties.FireKeyCount = count,
                     color => properties.FireKeyColor = color,
                     image => properties.FireKeyImage = image,
-                    AppConstants.MaxFireKeysVanilla,
                     AppConstants.MaxFireKeysMq,
+                    AppConstants.MaxFireKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
             case "Dungeon_Water":
+            case "Dungeon_Water|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsWaterMq,
+                    properties.IsWaterMq, shouldDecrease,
                     () => properties.WaterKeyCount,
                     count => properties.WaterKeyCount = count,
                     color => properties.WaterKeyColor = color,
                     image => properties.WaterKeyImage = image,
-                    AppConstants.MaxWaterKeysVanilla,
                     AppConstants.MaxWaterKeysMq,
+                    AppConstants.MaxWaterKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
             case "Dungeon_Shadow":
+            case "Dungeon_Shadow|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsShadowMq,
+                    properties.IsShadowMq, shouldDecrease,
                     () => properties.ShadowKeyCount,
                     count => properties.ShadowKeyCount = count,
                     color => properties.ShadowKeyColor = color,
                     image => properties.ShadowKeyImage = image,
-                    AppConstants.MaxShadowKeysVanilla,
                     AppConstants.MaxShadowKeysMq,
+                    AppConstants.MaxShadowKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
             case "Dungeon_Spirit":
+            case "Dungeon_Spirit|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsSpiritMq,
+                    properties.IsSpiritMq, shouldDecrease,
                     () => properties.SpiritKeyCount,
                     count => properties.SpiritKeyCount = count,
                     color => properties.SpiritKeyColor = color,
                     image => properties.SpiritKeyImage = image,
-                    AppConstants.MaxSpiritKeysVanilla,
                     AppConstants.MaxSpiritKeysMq,
+                    AppConstants.MaxSpiritKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
             case "Dungeon_Bottom":
+            case "Dungeon_Bottom|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsBottomMq,
+                    properties.IsBottomMq, shouldDecrease,
                     () => properties.BottomKeyCount,
                     count => properties.BottomKeyCount = count,
                     color => properties.BottomKeyColor = color,
                     image => properties.BottomKeyImage = image,
-                    AppConstants.MaxBottomKeysVanilla,
                     AppConstants.MaxBottomKeysMq,
+                    AppConstants.MaxBottomKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
             case "Dungeon_Training":
+            case "Dungeon_Training|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsGtgMq,
+                    properties.IsGtgMq, shouldDecrease,
                     () => properties.GtgKeyCount,
                     count => properties.GtgKeyCount = count,
                     color => properties.GtgKeyColor = color,
                     image => properties.GtgKeyImage = image,
-                    AppConstants.MaxGtgKeysVanilla,
                     AppConstants.MaxGtgKeysMq,
+                    AppConstants.MaxGtgKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
-            case "Dungeon_Ganon":
+            case "Dungeon_Ganon": 
+            case "Dungeon_Ganon|dec":
                 DungeonUtils.HandleKeys(
-                    properties.IsGanonMq,
+                    properties.IsGanonMq, shouldDecrease,
                     () => properties.GanonKeyCount,
                     count => properties.GanonKeyCount = count,
                     color => properties.GanonKeyColor = color,
                     image => properties.GanonKeyImage = image,
-                    AppConstants.MaxGanonKeysVanilla,
                     AppConstants.MaxGanonKeysMq,
+                    AppConstants.MaxGanonKeysVanilla,
                     OoTConstants.SmallKeyEnabled,
+                    OoTConstants.SmallKeyDisabled,
                     AppConstants.HasKeyColor,
-                    AppConstants.AllKeyColor);
+                    AppConstants.AllKeyColor,
+                    AppConstants.NoKeyColor);
                 break;
         }
     }

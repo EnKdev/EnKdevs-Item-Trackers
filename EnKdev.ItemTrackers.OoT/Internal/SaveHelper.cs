@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Documents;
+using System.Windows.Media;
 using EnKdev.ItemTrackers.Core.Data;
 using EnKdev.ItemTrackers.OoT.Data.DataModels;
+using Microsoft.VisualBasic;
 
 namespace EnKdev.ItemTrackers.OoT.Internal;
 
@@ -265,7 +268,8 @@ public static class SaveHelper
                 MapSprite = properties.DekuMapImage,
                 CompassSprite = properties.DekuCompassImage,
                 IsMasterQuest = properties.IsDekuMq,
-                DungeonIndex = properties.Dungeon1Idx
+                DungeonIndex = properties.Dungeon1Idx,
+                DungeonType = properties.DungeonType1
             },
             new()
             {
@@ -274,7 +278,8 @@ public static class SaveHelper
                 MapSprite = properties.DcMapImage,
                 CompassSprite = properties.DcCompassImage,
                 IsMasterQuest = properties.IsDcMq,
-                DungeonIndex = properties.Dungeon2Idx
+                DungeonIndex = properties.Dungeon2Idx,
+                DungeonType = properties.DungeonType2
             },
             new()
             {
@@ -283,7 +288,8 @@ public static class SaveHelper
                 MapSprite = properties.JabuMapImage,
                 CompassSprite = properties.JabuCompassImage,
                 IsMasterQuest = properties.IsJabuMq,
-                DungeonIndex = properties.Dungeon3Idx
+                DungeonIndex = properties.Dungeon3Idx,
+                DungeonType = properties.DungeonType3
             },
             // ---------
             new()
@@ -295,8 +301,10 @@ public static class SaveHelper
                 KeySprite = properties.ForestKeyImage,
                 BossKeySprite = properties.ForestBkImage,
                 CollectedKeys = properties.ForestKeyCount,
+                CountColor = properties.ForestKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsForestMq,
-                DungeonIndex = properties.Dungeon4Idx
+                DungeonIndex = properties.Dungeon4Idx,
+                DungeonType = properties.DungeonType4
             },
             new()
             {
@@ -307,8 +315,10 @@ public static class SaveHelper
                 KeySprite = properties.FireKeyImage,
                 BossKeySprite = properties.FireBkImage,
                 CollectedKeys = properties.FireKeyCount,
+                CountColor = properties.FireKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsFireMq,
-                DungeonIndex = properties.Dungeon5Idx
+                DungeonIndex = properties.Dungeon5Idx,
+                DungeonType = properties.DungeonType5
             },
             new()
             {
@@ -319,8 +329,10 @@ public static class SaveHelper
                 KeySprite = properties.WaterKeyImage,
                 BossKeySprite = properties.WaterBkImage,
                 CollectedKeys = properties.WaterKeyCount,
+                CountColor = properties.WaterKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsWaterMq,
-                DungeonIndex = properties.Dungeon6Idx
+                DungeonIndex = properties.Dungeon6Idx,
+                DungeonType = properties.DungeonType6
             },
             new()
             {
@@ -331,8 +343,10 @@ public static class SaveHelper
                 KeySprite = properties.ShadowKeyImage,
                 BossKeySprite = properties.ShadowBkImage,
                 CollectedKeys = properties.ShadowKeyCount,
+                CountColor = properties.ShadowKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsShadowMq,
-                DungeonIndex = properties.Dungeon7Idx
+                DungeonIndex = properties.Dungeon7Idx,
+                DungeonType = properties.DungeonType7
             },
             new()
             {
@@ -343,8 +357,10 @@ public static class SaveHelper
                 KeySprite = properties.SpiritKeyImage,
                 BossKeySprite = properties.SpiritBkImage,
                 CollectedKeys = properties.SpiritKeyCount,
+                CountColor = properties.SpiritKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsSpiritMq,
-                DungeonIndex = properties.Dungeon8Idx
+                DungeonIndex = properties.Dungeon8Idx,
+                DungeonType = properties.DungeonType8
             },
             // ---------
             new()
@@ -354,7 +370,8 @@ public static class SaveHelper
                 MapSprite = properties.CavernMapImage,
                 CompassSprite = properties.CavernCompassImage,
                 IsMasterQuest = properties.IsCavernMq,
-                DungeonIndex = properties.Dungeon9Idx
+                DungeonIndex = properties.Dungeon9Idx,
+                DungeonType = properties.DungeonType9
             },
             new()
             {
@@ -364,17 +381,21 @@ public static class SaveHelper
                 CompassSprite = properties.BottomCompassImage,
                 KeySprite = properties.BottomKeyImage,
                 CollectedKeys = properties.BottomKeyCount,
+                CountColor = properties.BottomKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsBottomMq,
-                DungeonIndex = properties.Dungeon10Idx
+                DungeonIndex = properties.Dungeon10Idx,
+                DungeonType = properties.DungeonType10
             },
             new()
             {
-                Id = "Dungeon_Gerudo",
+                Id = "Dungeon_Training",
                 Name = "Gerudo Training Ground",
                 KeySprite = properties.GtgKeyImage,
                 CollectedKeys = properties.GtgKeyCount,
+                CountColor = properties.GtgKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsGtgMq,
-                DungeonIndex = properties.Dungeon11Idx
+                DungeonIndex = properties.Dungeon11Idx,
+                DungeonType = properties.DungeonType11
             },
             new()
             {
@@ -383,8 +404,10 @@ public static class SaveHelper
                 KeySprite = properties.GanonKeyImage,
                 BossKeySprite = properties.GanonBkImage,
                 CollectedKeys = properties.GanonKeyCount,
+                CountColor = properties.GanonKeyColor?.Color.ToString(),
                 IsMasterQuest = properties.IsGanonMq,
-                DungeonIndex = properties.Dungeon12Idx
+                DungeonIndex = properties.Dungeon12Idx,
+                DungeonType = properties.DungeonType12
             }
         };
         
@@ -678,76 +701,109 @@ public static class SaveHelper
     public static void ReadDungeonState(TrackerProperties properties)
     {
         var dungeonState = StateReader.ReadState<List<DungeonState?>>("OoT.TrackerState.Dungeons.dat");
-        
+
         if (dungeonState == null)
         {
             return;
         }
-        
+
         properties.DekuMapImage = dungeonState[0]?.MapSprite;
         properties.DekuCompassImage = dungeonState[0]?.CompassSprite;
         properties.IsDekuMq = dungeonState[0]?.IsMasterQuest ?? false;
-        
+        properties.Dungeon1Idx = dungeonState[0]?.DungeonIndex ?? 0;
+        properties.DungeonType1 = dungeonState[0]?.DungeonType ?? "???";
+
         properties.DcMapImage = dungeonState[1]?.MapSprite;
         properties.DcCompassImage = dungeonState[1]?.CompassSprite;
         properties.IsDcMq = dungeonState[1]?.IsMasterQuest ?? false;
-        
+        properties.Dungeon2Idx = dungeonState[1]?.DungeonIndex ?? 0;
+        properties.DungeonType2 = dungeonState[1]?.DungeonType ?? "???";
+
         properties.JabuMapImage = dungeonState[2]?.MapSprite;
         properties.JabuCompassImage = dungeonState[2]?.CompassSprite;
         properties.IsJabuMq = dungeonState[2]?.IsMasterQuest ?? false;
-        
+        properties.Dungeon3Idx = dungeonState[2]?.DungeonIndex ?? 0;
+        properties.DungeonType3 = dungeonState[2]?.DungeonType ?? "???";
+
         properties.ForestMapImage = dungeonState[3]?.MapSprite;
         properties.ForestCompassImage = dungeonState[3]?.CompassSprite;
         properties.ForestKeyImage = dungeonState[3]?.KeySprite;
         properties.ForestBkImage = dungeonState[3]?.BossKeySprite;
         properties.ForestKeyCount = dungeonState[3]?.CollectedKeys ?? 0;
+        properties.ForestKeyColor = PrepareBrush(dungeonState[3]?.CountColor);
         properties.IsForestMq = dungeonState[3]?.IsMasterQuest ?? false;
+        properties.Dungeon4Idx = dungeonState[3]?.DungeonIndex ?? 0;
+        properties.DungeonType4 = dungeonState[3]?.DungeonType ?? "???";
         
         properties.FireMapImage = dungeonState[4]?.MapSprite;
         properties.FireCompassImage = dungeonState[4]?.CompassSprite;
         properties.FireKeyImage = dungeonState[4]?.KeySprite;
         properties.FireBkImage = dungeonState[4]?.BossKeySprite;
         properties.FireKeyCount = dungeonState[4]?.CollectedKeys ?? 0;
+        properties.FireKeyColor = PrepareBrush(dungeonState[4]?.CountColor);
         properties.IsFireMq = dungeonState[4]?.IsMasterQuest ?? false;
+        properties.Dungeon5Idx = dungeonState[4]?.DungeonIndex ?? 0;
+        properties.DungeonType5 = dungeonState[4]?.DungeonType ?? "???";
         
         properties.WaterMapImage = dungeonState[5]?.MapSprite;
         properties.WaterCompassImage = dungeonState[5]?.CompassSprite;
         properties.WaterKeyImage = dungeonState[5]?.KeySprite;
         properties.WaterBkImage = dungeonState[5]?.BossKeySprite;
         properties.WaterKeyCount = dungeonState[5]?.CollectedKeys ?? 0;
+        properties.WaterKeyColor = PrepareBrush(dungeonState[5]?.CountColor);
         properties.IsWaterMq = dungeonState[5]?.IsMasterQuest ?? false;
+        properties.Dungeon6Idx = dungeonState[5]?.DungeonIndex ?? 0;
+        properties.DungeonType6 = dungeonState[5]?.DungeonType ?? "???";
         
         properties.ShadowMapImage = dungeonState[6]?.MapSprite;
         properties.ShadowCompassImage = dungeonState[6]?.CompassSprite;
         properties.ShadowKeyImage = dungeonState[6]?.KeySprite;
         properties.ShadowBkImage = dungeonState[6]?.BossKeySprite;
         properties.ShadowKeyCount = dungeonState[6]?.CollectedKeys ?? 0;
+        properties.ShadowKeyColor = PrepareBrush(dungeonState[6]?.CountColor);
         properties.IsShadowMq = dungeonState[6]?.IsMasterQuest ?? false;
+        properties.Dungeon7Idx = dungeonState[6]?.DungeonIndex ?? 0;
+        properties.DungeonType7 = dungeonState[6]?.DungeonType ?? "???";
         
         properties.SpiritMapImage = dungeonState[7]?.MapSprite;
         properties.SpiritCompassImage = dungeonState[7]?.CompassSprite;
         properties.SpiritKeyImage = dungeonState[7]?.KeySprite;
         properties.SpiritBkImage = dungeonState[7]?.BossKeySprite;
         properties.SpiritKeyCount = dungeonState[7]?.CollectedKeys ?? 0;
+        properties.SpiritKeyColor = PrepareBrush(dungeonState[7]?.CountColor);
         properties.IsSpiritMq = dungeonState[7]?.IsMasterQuest ?? false;
+        properties.Dungeon8Idx = dungeonState[7]?.DungeonIndex ?? 0;
+        properties.DungeonType8 = dungeonState[7]?.DungeonType ?? "???";
         
         properties.CavernMapImage = dungeonState[8]?.MapSprite;
         properties.CavernCompassImage = dungeonState[8]?.CompassSprite;
         properties.IsCavernMq = dungeonState[8]?.IsMasterQuest ?? false;
+        properties.Dungeon9Idx = dungeonState[8]?.DungeonIndex ?? 0;
+        properties.DungeonType9 = dungeonState[8]?.DungeonType ?? "???";
         
         properties.BottomMapImage = dungeonState[9]?.MapSprite;
         properties.BottomCompassImage = dungeonState[9]?.CompassSprite;
         properties.BottomKeyImage = dungeonState[9]?.KeySprite;
         properties.BottomKeyCount = dungeonState[9]?.CollectedKeys ?? 0;
+        properties.BottomKeyColor = PrepareBrush(dungeonState[9]?.CountColor);
+        properties.IsBottomMq = dungeonState[9]?.IsMasterQuest ?? false;
+        properties.Dungeon10Idx = dungeonState[9]?.DungeonIndex ?? 0;
+        properties.DungeonType10 = dungeonState[9]?.DungeonType ?? "???";
         
         properties.GtgKeyImage = dungeonState[10]?.KeySprite;
         properties.GtgKeyCount = dungeonState[10]?.CollectedKeys ?? 0;
+        properties.GtgKeyColor = PrepareBrush(dungeonState[10]?.CountColor);
         properties.IsGtgMq = dungeonState[10]?.IsMasterQuest ?? false;
+        properties.Dungeon11Idx = dungeonState[10]?.DungeonIndex ?? 0;
+        properties.DungeonType11 = dungeonState[10]?.DungeonType ?? "???";
         
         properties.GanonKeyImage = dungeonState[11]?.KeySprite;
         properties.GanonBkImage = dungeonState[11]?.BossKeySprite;
         properties.GanonKeyCount = dungeonState[11]?.CollectedKeys ?? 0;
+        properties.GanonKeyColor = PrepareBrush(dungeonState[11]?.CountColor);
         properties.IsGanonMq = dungeonState[11]?.IsMasterQuest ?? false;
+        properties.Dungeon12Idx = dungeonState[11]?.DungeonIndex ?? 0;
+        properties.DungeonType12 = dungeonState[11]?.DungeonType ?? "???";
     }
     
     public static void ReadQuestState(TrackerProperties properties)
@@ -837,5 +893,16 @@ public static class SaveHelper
         properties.NocturneImage = songState[9]?.SpritePath;
         properties.RequiemImage = songState[10]?.SpritePath;
         properties.PreludeImage = songState[11]?.SpritePath;
+    }
+
+    private static SolidColorBrush PrepareBrush(string? hexCode)
+    {
+        var color = Color.FromRgb(0, 0, 0);
+        var brush = new SolidColorBrush(color);
+
+        color = (Color)ColorConverter.ConvertFromString(hexCode ?? "#000000");
+        brush = new SolidColorBrush(color);
+
+        return brush;
     }
 }

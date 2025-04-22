@@ -28,6 +28,12 @@ public class DungeonState
     [JsonProperty("collectedKeys")]
     public int CollectedKeys { get; set; }
     
+    [JsonProperty("countColor")]
+    public string? CountColor { get; set; }
+    
     [JsonProperty("dungeonIndex")]
     public int DungeonIndex { get; set; }
+    
+    [JsonProperty("dungeonType")]
+    public string? DungeonType { get; set; }
 }

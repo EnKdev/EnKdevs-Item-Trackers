@@ -445,14 +445,14 @@
             <TextBlock Text="{Binding TrackerProperties.DungeonType11}" Panel.ZIndex="1" TextAlignment="Left" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-140, 1025, 0, 0"/>
             <TextBlock Text="{Binding TrackerProperties.DungeonType12}" Panel.ZIndex="1" TextAlignment="Left" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="105, 1025, 0, 0"/>
             <!-- Key Counts -->
-            <TextBlock Text="{Binding TrackerProperties.ForestKeyCount}" Foreground="{Binding TrackerProperties.ForestKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, -262, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.FireKeyCount}" Foreground="{Binding TrackerProperties.FireKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, -80, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.WaterKeyCount}" Foreground="{Binding TrackerProperties.WaterKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, 95, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.ShadowKeyCount}" Foreground="{Binding TrackerProperties.ShadowKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, 274, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.SpiritKeyCount}" Foreground="{Binding TrackerProperties.SpiritKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, 461, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.BottomKeyCount}" Foreground="{Binding TrackerProperties.BottomKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="120, 645, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.GtgKeyCount}" Foreground="{Binding TrackerProperties.GtgKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-115, 985, 0, 0"/>
-            <TextBlock Text="{Binding TrackerProperties.GanonKeyCount}" Foreground="{Binding TrackerProperties.GanonKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="80" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="85, 985, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.ForestKeyCount}" Foreground="{Binding TrackerProperties.ForestKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, -262, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.FireKeyCount}" Foreground="{Binding TrackerProperties.FireKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, -80, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.WaterKeyCount}" Foreground="{Binding TrackerProperties.WaterKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, 95, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.ShadowKeyCount}" Foreground="{Binding TrackerProperties.ShadowKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, 274, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.SpiritKeyCount}" Foreground="{Binding TrackerProperties.SpiritKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75, 461, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.BottomKeyCount}" Foreground="{Binding TrackerProperties.BottomKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="120, 645, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.GtgKeyCount}" Foreground="{Binding TrackerProperties.GtgKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-115, 985, 0, 0"/>
+            <TextBlock Text="{Binding TrackerProperties.GanonKeyCount}" Foreground="{Binding TrackerProperties.GanonKeyColor}" Panel.ZIndex="1" TextAlignment="Center" Width="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="85, 985, 0, 0"/>
             <!-- Maps and Compasses -->
             <Image Source="{Binding TrackerProperties.DekuMapImage}" Width="50" Margin="-47, -850, 0, 0">
                 <Image.InputBindings>
@@ -501,9 +501,10 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Forest"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ForestKeyImage}" Width="50" Margin="50, -288, 0, 0">
+            <Image Source="{Binding TrackerProperties.ForestKeyImage}" Panel.ZIndex="1"  Width="50" Margin="50, -288, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Forest"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Forest|dec"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding TrackerProperties.ForestBkImage}" Width="50" Margin="148, -288, 0, 0">
@@ -523,9 +524,10 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Fire"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.FireKeyImage}" Width="50" Margin="50, -107, 0, 0">
+            <Image Source="{Binding TrackerProperties.FireKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, -107, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Fire"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Fire|dec"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding TrackerProperties.FireBkImage}" Width="50" Margin="148, -107, 0, 0">
@@ -545,9 +547,10 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Water"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.WaterKeyImage}" Width="50" Margin="50, 70, 0, 0">
+            <Image Source="{Binding TrackerProperties.WaterKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, 70, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Water"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Water|dec"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding TrackerProperties.WaterBkImage}" Width="50" Margin="148, 70, 0, 0">
@@ -567,9 +570,10 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Shadow"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.ShadowKeyImage}" Width="50" Margin="50, 248, 0, 0">
+            <Image Source="{Binding TrackerProperties.ShadowKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, 248, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Shadow"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Shadow|dec"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding TrackerProperties.ShadowBkImage}" Width="50" Margin="148, 248, 0, 0">
@@ -589,9 +593,10 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Spirit"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.SpiritKeyImage}" Width="50" Margin="50, 434, 0, 0">
+            <Image Source="{Binding TrackerProperties.SpiritKeyImage}" Panel.ZIndex="1" Width="50" Margin="50, 434, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Spirit"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Spirit|dec"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding TrackerProperties.SpiritBkImage}" Width="50" Margin="148, 434, 0, 0">
@@ -611,9 +616,10 @@
                     <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Bottom"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="{Binding TrackerProperties.BottomKeyImage}" Width="50" Margin="95, 621, 0, 0">
+            <Image Source="{Binding TrackerProperties.BottomKeyImage}" Panel.ZIndex="1" Width="50" Margin="95, 621, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Bottom"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Bottom|dec"/>
                 </Image.InputBindings>
             </Image>
             <!---->
@@ -629,17 +635,19 @@
                 </Image.InputBindings>
             </Image>
             <!---->
-            <Image Source="{Binding TrackerProperties.GtgKeyImage}" Width="50" Margin="-142, 960, 0, 0">
+            <Image Source="{Binding TrackerProperties.GtgKeyImage}" Panel.ZIndex="1" Width="50" Margin="-142, 960, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Training"/>
-                    <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Training"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Training|dec"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Training"/>
                 </Image.InputBindings>
             </Image>
             <!---->
-            <Image Source="{Binding TrackerProperties.GanonKeyImage}" Width="50" Margin="57, 960, 0, 0">
+            <Image Source="{Binding TrackerProperties.GanonKeyImage}" Panel.ZIndex="1" Width="50" Margin="57, 960, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Ganon"/>
-                    <MouseBinding Gesture="RightClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Ganon"/>
+                    <MouseBinding Gesture="RightClick" Command="{Binding HandleKeysCommand}" CommandParameter="Dungeon_Ganon|dec"/>
+                    <MouseBinding Gesture="MiddleClick" Command="{Binding ToggleDungeonStateCommand}" CommandParameter="Dungeon_Ganon"/>
                 </Image.InputBindings>
             </Image>
             <Image Source="{Binding TrackerProperties.GanonBkImage}" Width="50" Margin="155, 960, 0, 0">

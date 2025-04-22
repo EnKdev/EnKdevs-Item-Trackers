@@ -1,4 +1,5 @@
-﻿using EnKdev.ItemTrackers.Core;
+﻿using System.Windows.Controls.Primitives;
+using EnKdev.ItemTrackers.Core;
 using EnKdev.ItemTrackers.Core.Internal.Json;
 using EnKdev.ItemTrackers.OoT.Internal;
 
@@ -97,6 +98,18 @@ public static class Resolver
         properties.ShadowBkImage = OoTConstants.BossKeyDisabled!;
         properties.SpiritBkImage = OoTConstants.BossKeyDisabled!;
         properties.GanonBkImage = OoTConstants.BossKeyDisabled!;
+    }
+
+    public static void ResolveKeyCounts(TrackerProperties properties)
+    {
+        properties.ForestKeyCount = 0;
+        properties.FireKeyCount = 0;
+        properties.WaterKeyCount = 0;
+        properties.ShadowKeyCount = 0;
+        properties.SpiritKeyCount = 0;
+        properties.BottomKeyCount = 0;
+        properties.GanonKeyCount = 0;
+        properties.GtgKeyCount = 0;
     }
 
     public static void ResolveDungeonIcons(TrackerProperties properties)

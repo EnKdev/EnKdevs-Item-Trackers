@@ -128,6 +128,12 @@
 - Did I mention that it took me WAY TOO LONG for this to get here?
 - I blame the refactor for this.
 
+3.0.0-beta.2+122121
+- Fixed a bug that prevented the key count from increasing when clicking on a key sprite.
+- Fixed a bug that didn't properly reset the entire app when starting or deleting a run.
+- Fixed a bug that didn't load dungeon types and key colors when opening the app with an active tracker state.
+- Re-implemented functionality to decrease key counts.
+
 # Important notice:<br/>
 Previous made `trackerState` files from V2.0.0 are incompatible with V3.0.0.<br/>
 This is due to a major change of how data is represented internally.
