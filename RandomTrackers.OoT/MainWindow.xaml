@@ -27,22 +27,22 @@
         <Grid Row="0" Column="0">
             <Image Source="{Binding TrackerProperties.ToolBackground}" Height="350"/>
             <!-- Tools -->
-            <Image Source="./Images/Info.png" Width="50" Height="50" Margin="0, -250, 0, 0">
+            <Image Source="./Images/Info.png" Width="75" Height="75" Margin="0, -250, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ShowInfoCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="./Images/NewRun.png" Width="50" Height="50" Margin="0, -75, 0, 0">
+            <Image Source="./Images/NewRun.png" Width="75" Height="75" Margin="0, -85, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding NewRunCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="./Images/DeleteRun.png" Width="50" Height="50" Margin="0, 75, 0, 0">
+            <Image Source="./Images/DeleteRun.png" Width="75" Height="75" Margin="0, 85, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding DeleteRunCommand}"/>
                 </Image.InputBindings>
             </Image>
-            <Image Source="./Images/Exit.png" Width="50" Height="50" Margin="0, 250, 0, 0">
+            <Image Source="./Images/Exit.png" Width="75" Height="75" Margin="0, 250, 0, 0">
                 <Image.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ExitAppCommand}"/>
                 </Image.InputBindings>
