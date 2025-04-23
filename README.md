@@ -1,10 +1,10 @@
-# EnKdevs Item Trackers
+# RandomTrackers
 A collection of item trackers for various game randomizers.
 
-List of supported games: [Supported Games](https://github.com/EnKdev/EnKdevs-Item-Trackers/blob/3.0.0-develop/SUPPORTED%20GAMES.md)<br/>
+List of supported games: [Supported Games](https://enkdev.xyz/trackers)<br/>
 
 ---
-### [Changelogs](https://github.com/EnKdev/EnKdevs-Item-Trackers/blob/main/CHANGELOGS.md) & [Latest Release](https://github.com/EnKdev/EnKdevs-Item-Trackers/releases)
+### [Changelogs](https://enkdev.xyz/trackers/changelogs) & [Latest Releases](https://enkdev.xyz/trackers/downloads)
 
 ---
 
