@@ -195,6 +195,9 @@ public partial class TrackerProperties : ObservableRecipient
     private int _hpProg;
 
     [ObservableProperty]
+    private int _magicMeterStage;
+
+    [ObservableProperty]
     private bool _isDekuMq;
     
     [ObservableProperty]
@@ -232,6 +235,9 @@ public partial class TrackerProperties : ObservableRecipient
 
     [ObservableProperty]
     private string? _heartPieceProgression;
+
+    [ObservableProperty]
+    private string _magicMeterImage;
     
     [ObservableProperty] 
     private SolidColorBrush? _forestKeyColor;

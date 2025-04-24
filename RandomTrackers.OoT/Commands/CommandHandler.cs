@@ -29,6 +29,40 @@ public static class CommandHandler
         }
     }
 
+    public static void IncreaseMagicMeter(TrackerProperties properties, int maxStage)
+    {
+        Logger.LogInformation("Increasing Magic Meter.");
+        
+        // Cap at the max magic meter stage. (2)
+        if (properties.MagicMeterStage == maxStage)
+        {
+            properties.MagicMeterStage = maxStage;
+        }
+        else
+        {
+            properties.MagicMeterStage++;
+        }
+        
+        Logger.LogInteraction(nameof(properties.MagicMeterStage));
+    }
+
+    public static void DecreaseMagicMeter(TrackerProperties properties)
+    {
+        Logger.LogInformation("Decreasing Magic Meter.");
+        
+        // Cap at the min magic meter stage. (0)
+        if (properties.MagicMeterStage == 0)
+        {
+            properties.MagicMeterStage = 0;
+        }
+        else
+        {
+            properties.MagicMeterStage--;
+        }
+        
+        Logger.LogInteraction(nameof(properties.MagicMeterStage));
+    }
+
     public static void IncreaseGoldSkulltulaCount(TrackerProperties properties, int maxCount)
     {
         Logger.LogInformation("Increasing Gold Skulltula count.");

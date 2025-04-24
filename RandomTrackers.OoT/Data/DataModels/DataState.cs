@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace EnKdev.ItemTrackers.OoT.Data.DataModels;
+namespace RandomTrackers.OoT.Data.DataModels;
 
 public class DataState
 {
@@ -15,4 +15,7 @@ public class DataState
     
     [JsonProperty("hpImage")]
     public string? HpImage { get; set; }
+    
+    [JsonProperty("magicMeterStage")]
+    public int MagicMeterStage { get; set; }
 }

@@ -69,7 +69,7 @@ public static class Resolver
         properties.WaterMedallionImage = OoTData?.Progression![6].DisabledSprite!;
         properties.ShadowMedallionImage = OoTData?.Progression![7].DisabledSprite!;
         properties.SpiritMedallionImage = OoTData?.Progression![8].DisabledSprite!;
-
+        
         properties.GerudoTokenImage = OoTData?.Other![0].ItemDisabled!;
         properties.ShardImage = OoTData?.Other![1].ItemDisabled!;
 
@@ -78,6 +78,7 @@ public static class Resolver
         properties.HeartContainer = OoTConstants.HeartContainer;
         properties.HeartPiece = OoTConstants.HeartPiece;
         properties.HeartPieceProgression = OoTConstants.HeartPieceProgression[0];
+        properties.MagicMeterImage = OoTConstants.MagicMeters[0];
     }
 
     public static void ResolveKeyIcons(TrackerProperties properties)

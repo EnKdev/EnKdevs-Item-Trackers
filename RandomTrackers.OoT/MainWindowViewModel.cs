@@ -16,6 +16,7 @@ public partial class MainWindowViewModel : ObservableRecipient
     [ObservableProperty]
     private TrackerProperties _trackerProperties = new();
 
+    private const int MaxMagicMeterStage = 2;
     private const int MaxHeartContainers = 8;
     private const int MaxHeartPieces = 36;
     private const int MaxGsTokens = 100;
@@ -144,6 +145,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         TrackerProperties.GsTokens = 0;
 
         TrackerProperties.HpProg = 0;
+        TrackerProperties.MagicMeterStage = 0;
         
         TrackerProperties.IsDekuMq = false;
         TrackerProperties.IsDcMq = false;
@@ -168,6 +170,25 @@ public partial class MainWindowViewModel : ObservableRecipient
         CommandHandler.ToggleOther(otherId, TrackerProperties);
         
         SaveHelper.SaveOtherState(TrackerProperties);
+    }
+
+    [RelayCommand]
+    private void ChangeMagicMeter(string action)
+    {
+        Logger.LogCommand(nameof(ChangeMagicMeterCommand));
+
+        switch (action)
+        {
+            case "adv":
+                CommandHandler.IncreaseMagicMeter(TrackerProperties, MaxMagicMeterStage);
+                break;
+            case "reg":
+                CommandHandler.DecreaseMagicMeter(TrackerProperties);
+                break;
+        }
+        
+        ProcessMagicMeterProgress(TrackerProperties);
+        SaveHelper.SaveDataState(TrackerProperties);
     }
 
     [RelayCommand]
@@ -474,6 +495,23 @@ public partial class MainWindowViewModel : ObservableRecipient
         Logger.LogInteraction(nameof(properties.HeartPieceProgression));
     }
 
+    private static void ProcessMagicMeterProgress(TrackerProperties properties)
+    {
+        if (properties.MagicMeterStage == 0)
+        {
+            properties.MagicMeterImage = OoTConstants.MagicMeters[0];
+        }
+        else
+            properties.MagicMeterImage = properties.MagicMeterStage switch
+            {
+                1 => OoTConstants.MagicMeters[1],
+                2 => OoTConstants.MagicMeters[2],
+                _ => properties.MagicMeterImage
+            };
+        
+        Logger.LogInteraction(nameof(properties.MagicMeterImage));
+    }
+
     [RelayCommand]
     private void ShowInfo()
     {
@@ -554,6 +592,10 @@ public partial class MainWindowViewModel : ObservableRecipient
         if (_dataStateExists)
         {
             SaveHelper.ReadDataState(properties);
+            
+            // Workaround for the magic meter being able to be saved and loaded.
+            // Somehow, when trying to save the current URI of the image, it won't even show up anymore.
+            ProcessMagicMeterProgress(properties);
         }
 
         if (_songStateExists)

@@ -60,6 +60,9 @@
     <None Remove="Icons\Other\HeartPiece1Quarter.png" />
     <None Remove="Icons\Other\HeartPiece3Thirds.png" />
     <None Remove="Icons\Other\HeartPieceFull.png" />
+    <None Remove="Icons\Other\MagicMeterEmpty.png" />
+    <None Remove="Icons\Other\MagicMeterFull.png" />
+    <None Remove="Icons\Other\MagicMeterHalf.png" />
     <None Remove="Icons\Other\NoHeartPiece.png" />
     <None Remove="Icons\Other\OoT3D_Heart_Container_Icon.png" />
     <None Remove="Icons\Other\OoT3D_Piece_of_Heart_Icon.png" />
@@ -283,6 +286,15 @@
     </Content>
     <Content Include="Icons\Other\HeartPieceFull.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Other\MagicMeterEmpty.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Other\MagicMeterFull.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Other\MagicMeterHalf.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Other\NoHeartPiece.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

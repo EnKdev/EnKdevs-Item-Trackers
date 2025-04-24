@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Media;
-using EnKdev.ItemTrackers.OoT.Data.DataModels;
+using RandomTrackers.OoT.Data.DataModels;
 using RandomTrackers.Core.Data;
 
 namespace RandomTrackers.OoT.Internal;
 
 public static class SaveHelper
 {
-    public static void SaveArrowState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveArrowState(TrackerProperties properties)
     {
         PrepareDirectory();
         
@@ -34,7 +34,7 @@ public static class SaveHelper
         StateWriter.WriteState(arrowState, "OoT.TrackerState.Arrows.dat");
     }
 
-    public static void SaveItemState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveItemState(TrackerProperties properties)
     {
         PrepareDirectory();
 
@@ -140,7 +140,7 @@ public static class SaveHelper
         StateWriter.WriteState(itemState, "OoT.TrackerState.Items.dat");
     }
 
-    public static void SaveUpgradeState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveUpgradeState(TrackerProperties properties)
     {
         var upgradeState = new List<UpgradeState?>
         {
@@ -191,7 +191,7 @@ public static class SaveHelper
         StateWriter.WriteState(upgradeState, "OoT.TrackerState.Upgrades.dat");
     }
 
-    public static void SaveEquipState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveEquipState(TrackerProperties properties)
     {
         PrepareDirectory();
 
@@ -252,7 +252,7 @@ public static class SaveHelper
         StateWriter.WriteState(equipState, "OoT.TrackerState.Equips.dat");
     }
 
-    public static void SaveDungeonState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveDungeonState(TrackerProperties properties)
     {
         PrepareDirectory();
 
@@ -411,7 +411,7 @@ public static class SaveHelper
         StateWriter.WriteState(dungeonState, "OoT.TrackerState.Dungeons.dat");
     }
 
-    public static void SaveQuestState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveQuestState(TrackerProperties properties)
     {
         PrepareDirectory();
 
@@ -485,7 +485,7 @@ public static class SaveHelper
         StateWriter.WriteState(questState, "OoT.TrackerState.Quest.dat");
     }
 
-    public static void SaveOtherState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveOtherState(TrackerProperties properties)
     {
         PrepareDirectory();
 
@@ -506,22 +506,23 @@ public static class SaveHelper
         StateWriter.WriteState(otherState, "OoT.TrackerState.Other.dat");
     }
 
-    public static void SaveDataState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveDataState(TrackerProperties properties)
     {
         PrepareDirectory();
 
-        var dataState = new DataState()
+        var dataState = new DataState
         {
             HeartPieces = properties.HeartPieceCount,
             HeartContainers = properties.HeartContainerCount,
             GsTokens = properties.GsTokens,
-            HpImage = properties.HeartPieceProgression
+            HpImage = properties.HeartPieceProgression,
+            MagicMeterStage = properties.MagicMeterStage
         };
         
         StateWriter.WriteState(dataState, "OoT.TrackerState.Data.dat");
     }
 
-    public static void SaveSongState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void SaveSongState(TrackerProperties properties)
     {
         PrepareDirectory();
 
@@ -601,7 +602,7 @@ public static class SaveHelper
         }
     }
 
-    public static void ReadArrowState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadArrowState(TrackerProperties properties)
     {
         var arrowState = StateReader.ReadState<List<ArrowState?>>("OoT.TrackerState.Arrows.dat");
 
@@ -615,7 +616,7 @@ public static class SaveHelper
         properties.LightArrowImage = arrowState[2]?.SpritePath;
     }
 
-    public static void ReadItemState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadItemState(TrackerProperties properties)
     {
         var itemState = StateReader.ReadState<ItemState>("OoT.TrackerState.Items.dat");
 
@@ -649,7 +650,7 @@ public static class SaveHelper
         properties.NayrusLoveImage = itemState.Items[12]?.SpritePath;
     }
     
-    public static void ReadUpgradeState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadUpgradeState(TrackerProperties properties)
     {
         var upgradeState = StateReader.ReadState<List<UpgradeState?>>("OoT.TrackerState.Upgrades.dat");
 
@@ -680,7 +681,7 @@ public static class SaveHelper
         properties.HookshotImage = upgradeState[6]?.SpritePath;
     }
     
-    public static void ReadEquipState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadEquipState(TrackerProperties properties)
     {
         var equipState = StateReader.ReadState<List<EquipState?>>("OoT.TrackerState.Equips.dat");
 
@@ -704,7 +705,7 @@ public static class SaveHelper
         properties.IronBootsImage = equipState[9]?.SpritePath;
     }
 
-    public static void ReadDungeonState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadDungeonState(TrackerProperties properties)
     {
         var dungeonState = StateReader.ReadState<List<DungeonState?>>("OoT.TrackerState.Dungeons.dat");
 
@@ -812,7 +813,7 @@ public static class SaveHelper
         properties.DungeonType12 = dungeonState[11]?.DungeonType ?? "???";
     }
     
-    public static void ReadQuestState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadQuestState(TrackerProperties properties)
     {
         var questState = StateReader.ReadState<List<QuestState?>>("OoT.TrackerState.Quest.dat");
         
@@ -858,7 +859,7 @@ public static class SaveHelper
         properties.Location3 = questState[8]?.Location;
     }
     
-    public static void ReadOtherState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadOtherState(TrackerProperties properties)
     {
         var otherState = StateReader.ReadState<List<OtherState?>>("OoT.TrackerState.Other.dat");
         
@@ -871,7 +872,7 @@ public static class SaveHelper
         properties.ShardImage = otherState[1]?.SpritePath;
     }
     
-    public static void ReadDataState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadDataState(TrackerProperties properties)
     {
         var dataState = StateReader.ReadState<DataState>("OoT.TrackerState.Data.dat");
         
@@ -884,9 +885,10 @@ public static class SaveHelper
         properties.HeartContainerCount = dataState.HeartContainers;
         properties.GsTokens = dataState.GsTokens;
         properties.HeartPieceProgression = dataState.HpImage;
+        properties.MagicMeterStage = dataState.MagicMeterStage;
     }
 
-    public static void ReadSongState(RandomTrackers.OoT.Internal.TrackerProperties properties)
+    public static void ReadSongState(TrackerProperties properties)
     {
         var songState = StateReader.ReadState<List<SongState?>>("OoT.TrackerState.Songs.dat");
 

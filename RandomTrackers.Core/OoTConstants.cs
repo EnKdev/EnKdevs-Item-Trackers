@@ -19,6 +19,13 @@ public static class OoTConstants
 	    "pack://application:,,,/Icons/Other/HeartPiece3Thirds.png",
 	    "pack://application:,,,/Icons/Other/HeartPieceFull.png"
     ];
+
+    public static readonly List<string> MagicMeters =
+    [
+	    "pack://application:,,,/Icons/Other/MagicMeterEmpty.png",
+	    "pack://application:,,,/Icons/Other/MagicMeterHalf.png",
+	    "pack://application:,,,/Icons/Other/MagicMeterFull.png"
+    ];
     
     public const string ItemBg = "pack://application:,,,/Images/OoTTrackerItems.png";
     public const string GearBg = "pack://application:,,,/Images/OoTTrackerGear.png";
