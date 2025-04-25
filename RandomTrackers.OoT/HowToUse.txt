@@ -12,7 +12,7 @@ If you click with your right mouse button on them, you can set their location re
 dungeon these dungeon rewards are.
 
 The same goes for dungeons.
-If you right-click the compass, you can set whether it's vanilla or master quest.
+If you right-click the map, you can set whether it's vanilla or Master Quest.
 It is recommended that you do so before you set any keys, as for some reason, the tracker puts the MQ state as default.
 
 For the mini dungeons that don't have a compass like Ganon's Castle and GTG, you need to click with the middle mouse button
@@ -26,7 +26,7 @@ All I can advise you to do is to click slowly and not fast.
 
 And that's it, that should be all the instructions I can give to you for using this tracker.
 If you have any suggestions for improvements, please leave an Issue over at the tracker GitHub page.
-You can find it here: https://github.com/EnKdev/EnKdevs-Item-Trackers
+You can find it here: https://github.com/EnKdev/RandomTrackers
 
 With that done, I hope this tracker will come handy to you.
 - EnKdev
