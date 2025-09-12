@@ -1,23 +1,10 @@
-# EnKdevs Ocarina of Time/Majora's Mask Trackers
-Two Trackers written in C# and XAML.
+# RandomTrackers
+A collection of item trackers for various game randomizers.
 
-Current Version (OoT): <b>2.1.0</b><br/>
-Current Version (MM): <b>Not started yet</b>
-
-Next Version (OoT): <b>3.0.0-ootDev+build.1</b><br/>
-Next Version (MM): <b>1.0.0-mmDev+build.1</b>
-<br/>
-
-### On plan for 3.0.0 (OoT):
-- More UI redesigns and internal reworks.
-
-### On plan for 1.0.0-mmDev+build.1:
-- Designing the UI screens (Masks, Dungeons, Items, Quest)
-- Implementing base functionality
+List of supported games: [Supported Games](https://enkdev.xyz/trackers)<br/>
 
 ---
-
-### [Changelogs](https://github.com/EnKdev/EnKdevs-Item-Trackers/blob/main/CHANGELOGS.md) & [Latest Release](https://github.com/EnKdev/EnKdevs-Item-Trackers/releases)
+### [Changelogs](https://enkdev.xyz/trackers/changelogs) & [Latest Releases](https://enkdev.xyz/trackers/downloads)
 
 ---
 
@@ -25,19 +12,15 @@ Next Version (MM): <b>1.0.0-mmDev+build.1</b>
 
 Tools Used:
 
-- Visual Studio 2022 Community
-- JetBrains ReSharper 2023.3.4
-- JetBrains Rider 2024.1 RC
-
-IDE used for the code: JetBrains Rider 2024
-
-IDE used for UI Work: Visual Studio 2022 Community
+- JetBrains ReSharper 2024.3.3
+- IDE used for the code: JetBrains Rider 2024.3.3
+- IDE used for UI Work: Visual Studio 2022 Community
 
 ---
 
 ### Requirements:
 
-- [.NET 7 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+- [.NET 9 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 
 ---
 
@@ -50,5 +33,5 @@ IDE used for UI Work: Visual Studio 2022 Community
 
 ## Important Notes
 
-With Version 2.0.0 of the Ocarina of Time Tracker, previously existing tracker states won't be usable.<br/>
+With Version 3.0.0 of the Ocarina of Time Tracker, previously existing tracker states won't be usable.<br/>
 Make sure to secure your previously existing progress by the usage of a screenshot so you can transfer it to the new format.

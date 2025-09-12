@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>13</LangVersion>
+        <IsPackable>false</IsPackable>
+        <Version>2.1.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="log4net" Version="3.0.3" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Semver" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="log4net.config">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>
