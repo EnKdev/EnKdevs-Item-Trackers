@@ -17,7 +17,7 @@ jobs:
         targetplatform: [x64]
     runs-on: windows-latest
     env:
-      Solution_Path: EnKdevsItemTrackers.sln
+      Solution_Path: RandomTrackers.sln
       Actions_Allow_Unsecure_Commands: true
     steps:
     - name: Checkout
