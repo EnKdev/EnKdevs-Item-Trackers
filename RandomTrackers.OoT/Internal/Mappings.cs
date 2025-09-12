@@ -9,7 +9,7 @@ public static class Mappings
     private static readonly OoTData? OoTData = Globals.InstanceData;
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         DungeonMapMappings = new()
         {
             { "Dungeon_Deku", (p => p.DekuMapImage, (p, val) => p.DekuMapImage = val!) },
@@ -25,7 +25,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         DungeonCompassMappings = new()
         {
             { "Dungeon_Deku", (p => p.DekuCompassImage, (p, val) => p.DekuCompassImage = val!) },
@@ -41,7 +41,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         DungeonBossKeyMappings = new()
         {
             { "Dungeon_Forest", (p => p.ForestBkImage, (p, val) => p.ForestBkImage = val!) },
@@ -53,7 +53,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         ArrowMappings = new()
         {
             { "Arrow_Fire", (p => p.FireArrowImage, (p, val) => p.FireArrowImage = val!) },
@@ -62,7 +62,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         BottleMappings = new()
         {
             { "Bottle1", (p => p.Bottle1Image, (p, val) => p.Bottle1Image = val!) },
@@ -72,7 +72,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> GetSprite, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> SetSprite)>
+        Dictionary<string, (Func<TrackerProperties, string?> GetSprite, Action<TrackerProperties, string?> SetSprite)>
         ItemMappings = new()
         {
             { "Item_Bombchu", (p => p.BombchuImage, (p, val) => p.BombchuImage = val!) },
@@ -95,7 +95,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         QuestMappings = new()
         {
             { "Progression_LightMedallion", (p => p.LightMedallionImage, (p, val) => p.LightMedallionImage = val!) },
@@ -110,8 +110,8 @@ public static class Mappings
         };
 
     private static readonly Dictionary<string,
-            (Func<RandomTrackers.OoT.Internal.TrackerProperties, int>, Action<RandomTrackers.OoT.Internal.TrackerProperties, int>,
-            Func<RandomTrackers.OoT.Internal.TrackerProperties, string?>, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?>,
+            (Func<TrackerProperties, int>, Action<TrackerProperties, int>,
+            Func<TrackerProperties, string?>, Action<TrackerProperties, string?>,
             Func<int, string?>, int)>
         LocationMappings = new()
         {
@@ -289,9 +289,9 @@ public static class Mappings
         };
 
     private static readonly Dictionary<string,
-            (Func<RandomTrackers.OoT.Internal.TrackerProperties, int>, Action<RandomTrackers.OoT.Internal.TrackerProperties, int>,
-            Func<RandomTrackers.OoT.Internal.TrackerProperties, string?>, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?>,
-            Func<RandomTrackers.OoT.Internal.TrackerProperties, bool>, Action<RandomTrackers.OoT.Internal.TrackerProperties, bool>,
+            (Func<TrackerProperties, int>, Action<TrackerProperties, int>,
+            Func<TrackerProperties, string?>, Action<TrackerProperties, string?>,
+            Func<TrackerProperties, bool>, Action<TrackerProperties, bool>,
             Func<int, string?>, int)>
         DungeonStateMappings = new()
         {
@@ -442,7 +442,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         EquipMappings = new()
         {
             { "Equip_Boots_Iron", (p => p.IronBootsImage, (p, val) => p.IronBootsImage = val!) },
@@ -458,7 +458,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         SongMappings = new()
         {
             { "Song_Lullaby", (p => p.LullabyImage, (p, val) => p.LullabyImage = val!) },
@@ -476,7 +476,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         ChildTradeMappings = new()
         {
             { "Trade_Child_WeirdEgg", (p => p.ChildTradeItemImage, (p, val) => p.ChildTradeItemImage = val!) },
@@ -487,7 +487,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         AdultTradeMappings = new()
         {
             { "Trade_Adult_PocketEgg", (p => p.AdultTradeItemImage, (p, val) => p.AdultTradeItemImage = val!) },
@@ -505,7 +505,7 @@ public static class Mappings
         };
 
     private static readonly
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+        Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         OtherMappings = new()
         {
             { "Other_Token", (p => p.GerudoTokenImage, (p, val) => p.GerudoTokenImage = val!) },
@@ -525,7 +525,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value
     /// of the dungeon map image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetDungeonMapMappings() => DungeonMapMappings;
 
     /// <summary>
@@ -539,7 +539,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value
     /// of the dungeon compass image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetDungeonCompassMappings() => DungeonCompassMappings;
 
     /// <summary>
@@ -553,7 +553,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value
     /// of the dungeon boss key image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetDungeonBossKeyMappings() => DungeonBossKeyMappings;
 
     /// <summary>
@@ -567,7 +567,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value of
     /// the arrow item image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetArrowMappings() => ArrowMappings;
 
     /// <summary>
@@ -581,7 +581,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value of
     /// the bottle item image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetBottleMappings() => BottleMappings;
 
     /// <summary>
@@ -593,7 +593,7 @@ public static class Mappings
     /// tuples containing functions to get or set the item's state and sprite within a TrackerProperties object.
     /// </returns>
     public static
-        Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> GetSprite, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> SetSprite)>
+        Dictionary<string, (Func<TrackerProperties, string?> GetSprite, Action<TrackerProperties, string?> SetSprite)>
         GetItemMappings() => ItemMappings;
 
     /// <summary>
@@ -608,7 +608,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value of
     /// the quest item image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetQuestMappings() => QuestMappings;
 
     /// <summary>
@@ -628,8 +628,8 @@ public static class Mappings
     /// 6. An integer representing the default threshold value for the property.
     /// </returns>
     public static Dictionary<string,
-            (Func<RandomTrackers.OoT.Internal.TrackerProperties, int>, Action<RandomTrackers.OoT.Internal.TrackerProperties, int>,
-        Func<RandomTrackers.OoT.Internal.TrackerProperties, string?>, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?>,
+            (Func<TrackerProperties, int>, Action<TrackerProperties, int>,
+        Func<TrackerProperties, string?>, Action<TrackerProperties, string?>,
         Func<int, string?>, int)>
         GetLocationMappings() => LocationMappings;
 
@@ -647,9 +647,9 @@ public static class Mappings
     /// string representations, and a default integer state value.
     /// </returns>
     public static Dictionary<string,
-            (Func<RandomTrackers.OoT.Internal.TrackerProperties, int>, Action<RandomTrackers.OoT.Internal.TrackerProperties, int>,
-            Func<RandomTrackers.OoT.Internal.TrackerProperties, string?>, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?>,
-            Func<RandomTrackers.OoT.Internal.TrackerProperties, bool>, Action<RandomTrackers.OoT.Internal.TrackerProperties, bool>,
+            (Func<TrackerProperties, int>, Action<TrackerProperties, int>,
+            Func<TrackerProperties, string?>, Action<TrackerProperties, string?>,
+            Func<TrackerProperties, bool>, Action<TrackerProperties, bool>,
             Func<int, string?>, int)>
         GetDungeonStateMappings() => DungeonStateMappings;
 
@@ -664,7 +664,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value of
     /// the equipment item image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetEquipMappings() => EquipMappings;
 
     /// <summary>
@@ -678,7 +678,7 @@ public static class Mappings
     /// and the values are tuples. Each tuple consists of a function to get the string value
     /// of the song item image and a function to set the string value in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetSongMappings() => SongMappings;
 
     /// <summary>
@@ -692,6 +692,6 @@ public static class Mappings
     /// consists of a function to get a string value and a function to set a string value
     /// in a TrackerProperties object.
     /// </returns>
-    public static Dictionary<string, (Func<RandomTrackers.OoT.Internal.TrackerProperties, string?> Get, Action<RandomTrackers.OoT.Internal.TrackerProperties, string?> Set)>
+    public static Dictionary<string, (Func<TrackerProperties, string?> Get, Action<TrackerProperties, string?> Set)>
         GetOtherMappings() => OtherMappings;
 }

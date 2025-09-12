@@ -147,16 +147,18 @@ public partial class MainWindowViewModel : ObservableRecipient
         TrackerProperties.HpProg = 0;
         TrackerProperties.MagicMeterStage = 0;
         
-        TrackerProperties.IsDekuMq = false;
-        TrackerProperties.IsDcMq = false;
-        TrackerProperties.IsJabuMq = false;
-        TrackerProperties.IsForestMq = false;
-        TrackerProperties.IsFireMq = false;
-        TrackerProperties.IsWaterMq = false;
-        TrackerProperties.IsShadowMq = false;
-        TrackerProperties.IsSpiritMq = false;
-        TrackerProperties.IsBottomMq = false;
-        TrackerProperties.IsCavernMq = false;
+        TrackerProperties.IsDekuMq = true;
+        TrackerProperties.IsDcMq = true;
+        TrackerProperties.IsJabuMq = true;
+        TrackerProperties.IsForestMq = true;
+        TrackerProperties.IsFireMq = true;
+        TrackerProperties.IsWaterMq = true;
+        TrackerProperties.IsShadowMq = true;
+        TrackerProperties.IsSpiritMq = true;
+        TrackerProperties.IsBottomMq = true;
+        TrackerProperties.IsCavernMq = true;
+        TrackerProperties.IsGtgMq = true;
+        TrackerProperties.IsGanonMq = true;
     }
     
     // ==================

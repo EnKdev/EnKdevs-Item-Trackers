@@ -126,12 +126,13 @@ public static class DungeonUtils
     /// <param name="allKeyColor">The color state to set when the key count reaches the maximum allowable keys.</param>
     /// <param name="noKeyColor">The optional color state to set when no keys are available.</param>
     public static void HandleKeys<T>(
-        bool isMq, bool isDecreased, Func<int> getKeyCount, Action<int> setKeyCount,Action<T> setKeyColor,
+        bool isMq, bool isDecreased, Func<int> getKeyCount, Action<int> setKeyCount, Action<T> setKeyColor,
         Action<string> setKeyImage, int maxKeysMq, int maxKeysVanilla,
         string enabledImage, string disabledImage, T hasKeyColor, T allKeyColor,
         T? noKeyColor = default)
     {
-        var maxKeys = isMq ? maxKeysVanilla : maxKeysMq;
+        // We're assuming that a dungeon is MQ unless we specify it's vanilla explicitely
+        var maxKeys = isMq ? maxKeysMq : maxKeysVanilla;
         var currentKeyCount = getKeyCount();
         
         if (isDecreased)
